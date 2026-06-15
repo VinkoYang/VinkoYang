@@ -18,6 +18,7 @@ links:
   twitter: ""
   linkedin: "https://www.linkedin.com/in/wenhaoyang-vinko"
   cv: ""  # e.g., "papers/cv.pdf" — leave blank to hide the CV icon
+  youtube: "https://www.youtube.com/@vinkoyang"
 
 # ============================================================
 # STEP 3: Site Settings
@@ -41,7 +42,6 @@ nav_pages:
   - name: talks
   - name: research
   - name: lab
-  - name: software
   - name: team
   - name: teaching
   - name: blogs

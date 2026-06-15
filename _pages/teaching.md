@@ -17,7 +17,7 @@ permalink: /teaching/
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
 {% for sem in course.semesters %}
-<span style="background: var(--tag-bg, #f0f4ff); color: var(--tag-color, #3b5bdb); border-radius: 999px; padding: 2px 12px; font-size: 0.82rem; white-space: nowrap;">{{ sem }}</span>
+<span class="chip chip-muted">{{ sem }}</span>
 {% endfor %}
 </div>
 </div>

@@ -18,16 +18,28 @@
   {% endif %}
 
   <div class="pub-actions">
-    {% if bibtest %}
+    {% if entry.pdf %}
+    <a href="{{ site.url }}{{ site.baseurl }}/papers/{{ entry.pdf }}" target="_blank" class="btn-pill btn-pdf">PDF</a>
+    {% elsif bibtest %}
     <a href="{{ site.url }}{{ site.baseurl }}/papers/{{ entry.file }}" target="_blank" class="btn-pill btn-pdf">PDF</a>
     {% endif %}
 
     {% if entry.doi %}
       {% if entry.type == 'unpublished' %}
-      <a href="{{ entry.doi | prepend: 'https://arxiv.org/abs/' }}" target="_blank" class="btn-pill btn-arxiv">arXiv</a>
+        {% unless entry.arxiv %}
+        <a href="{{ entry.doi | prepend: 'https://arxiv.org/abs/' }}" target="_blank" class="btn-pill btn-arxiv">arXiv</a>
+        {% endunless %}
       {% else %}
       <a href="{{ entry.doi | prepend: 'http://doi.org/' }}" target="_blank" class="btn-pill btn-doi">DOI</a>
       {% endif %}
+    {% endif %}
+
+    {% if entry.arxiv %}
+    <a href="{{ entry.arxiv }}" target="_blank" class="btn-pill btn-arxiv">arXiv</a>
+    {% endif %}
+
+    {% if entry.url %}
+    <a href="{{ entry.url }}" target="_blank" class="btn-pill btn-website">Website</a>
     {% endif %}
 
     {% if entry.type == 'unpublished' or entry.type == 'article' or entry.type == 'thesis' or entry.type == 'inproceedings' or entry.type == 'report' %}
