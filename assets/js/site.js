@@ -193,12 +193,17 @@
         }
       });
     }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0,
+      rootMargin: '0px'
     });
 
     fadeElements.forEach(function (el) {
-      observer.observe(el);
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('visible');
+      } else {
+        observer.observe(el);
+      }
     });
   } else {
     fadeElements.forEach(function (el) {
