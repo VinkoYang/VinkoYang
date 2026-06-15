@@ -66,11 +66,11 @@ permalink: /team/
 <tbody>
 {% for member in site.data.alumni %}
 <tr>
-<td>{{ member.name }}</td>
-<td>{{ member.degree }}</td>
-<td>{{ member.duration }}</td>
-<td style="font-style: italic;">{{ member.thesis }}</td>
-<td>{{ member.info }}</td>
+<td data-label="Name">{{ member.name }}</td>
+<td data-label="Degree">{{ member.degree }}</td>
+<td data-label="Duration">{{ member.duration }}</td>
+<td data-label="Thesis" style="font-style: italic;">{{ member.thesis }}</td>
+<td data-label="Current Position">{{ member.info }}</td>
 </tr>
 {% endfor %}
 </tbody>
