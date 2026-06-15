@@ -1,3 +1,55 @@
+@Comment{
+  =============================================================
+  ref.bib  Publication and Talk entries for the academic website
+  =============================================================
+
+  ENTRY TYPES
+    article        Journal articles
+    inproceedings  Conference papers
+    unpublished    Preprints / working papers
+    book           Thesis, monograph
+    incollection   Talks  (keywords={invited} or keywords={talk})
+    report         Technical reports
+
+  STANDARD FIELDS
+    title    = {Paper Title},
+    author   = {Last, First and Last2, First2},
+    year     = {2025},
+    doi      = {10.xxxx/xxxxx},        -> DOI button (published entries)
+                                          -> arXiv button (unpublished entries)
+    abstract = {Paper abstract...},    -> Abstract button (collapsible)
+
+  CUSTOM FIELDS  (trigger extra buttons on the website)
+    url    = {https://...},                          -> Website button
+    arxiv  = {https://arxiv.org/abs/xxxx.xxxxx},    -> arXiv button
+    pdf    = {filename.pdf},                         -> PDF button
+                                                        (place file in /papers/)
+
+  EXAMPLE  inproceedings entry with all fields
+    inproceedings{yang2025example,
+      title     = {An Example Paper Title},
+      author    = {Yang, Wenhao and Doe, Jane},
+      booktitle = {Proceedings of the Example Conference},
+      pages     = {1--10},
+      year      = {2025},
+      doi       = {10.1145/1234567.1234568},
+      url       = {https://example.com/paper},
+      arxiv     = {https://arxiv.org/abs/2501.00001},
+      pdf       = {yang2025example.pdf},
+      abstract  = {This is the abstract.},
+    }
+
+  EXAMPLE  talk entry
+    incollection{talk2025example,
+      title     = {Talk Title},
+      author    = {Yang, Wenhao},
+      booktitle = {Conference or Venue Name},
+      year      = {2025},
+      keywords  = {invited},
+    }
+  =============================================================
+}
+
 # publications
 
 @inproceedings{yang2021augmented,
@@ -7,7 +59,10 @@
   volume={85079},
   pages={V002T07A003},
   year={2021},
-  organization={American Society of Mechanical Engineers}
+  organization={American Society of Mechanical Engineers},
+  url={https://asmedigitalcollection.asme.org/MSEC/proceedings-abstract/MSEC2021/85079/1115433},
+  doi={10.1115/MSEC2021-62468},
+  abstract={TTo solve the problems of complex robot programming tasks, we propose an Augmented Reality (AR) based human-robot interface for planning a collision-free path in a complex environment. Current robot programming methods usually require a high level of experience in robot programming (online programming), the time-consuming 3D modeling of the working environment for collision detection (offline programming), and a tedious and inefficient re-planing to adapt environment or task changes (both online and offline programming). In order to address these problems, an end-to-end AR human-robot interface is proposed, which provides a new affordance to users by enabling them to plan the path in the AR environment. A set of user-interactive tools allow users to define and edit waypoints as the high-level guidance and the direct inputs for the toolpath planning package, Kinematics and Dynamics Library (KDL). With the fast sensing of the workspace and accurate rendering, an in-situ simulation module is utilized for collision check and verification by the users’ perception. Users will repeat the process of 1) waypoints definition and editing, and 2) the collision checking and path feasibility verification, until a satisfactory path is obtained. A preliminary testing is conducted in a use case with complex obstacles to verified the effectiveness and the efficiency of the proposed interface.}
 }
 
 @inproceedings{yang2022visualization,
@@ -87,16 +142,24 @@
   pages={6948--6958},
   year={2025},
   note={arXiv:2411.13587},
-  doi={10.48550/arXiv.2411.13587}
+  doi={10.48550/arXiv.2411.13587},
+  url={https://openaccess.thecvf.com/content/ICCV2025/html/Wang_Exploring_the_Adversarial_Vulnerabilities_of_Vision-Language-Action_Models_in_Robotics_ICCV_2025_paper.html},
+  arxiv={https://arxiv.org/abs/2411.13587},
+  pdf={Wang_Exploring_the_Adversarial_Vulnerabilities_of_Vision-Language-Action_Models_in_Robotics_ICCV_2025_paper.pdf},
+  abstract={Recently in robotics, Vision-Language-Action (VLA) models have emerged as a transformative approach, enabling robots to execute complex tasks by integrating visual and linguistic inputs within an end-to-end learning framework. Despite their significant capabilities, VLA models introduce new attack surfaces. This paper systematically evaluates their robustness. Recognizing the unique demands of robotic execution, our attack objectives target the inherent spatial and functional characteristics of robotic systems. In particular, we introduce two untargeted attack objectives that leverage spatial foundations to destabilize robotic actions, and a targeted attack objective that manipulates the robotic trajectory. Additionally, we design an adversarial patch generation approach that places a small, colorful patch within the camera's view, effectively executing the attack in both digital and physical environments. Our evaluation reveals a marked degradation in task success rates, with up to a 100% reduction across a suite of simulated robotic tasks, highlighting critical security gaps in current VLA architectures. By unveiling these vulnerabilities and proposing actionable evaluation metrics, we advance both the understanding and enhancement of safety for VLA-based robotic systems, underscoring the necessity for continuously developing robust defense strategies prior to physical-world deployments.}
+
 }
 
-@article{liu2026all,
+@inproceedings{liu2026all,
   title={All you need is one: Capsule prompt tuning with a single vector},
   author={Liu, Yiyang and Liang, James and Fan, Heng and Yang, Wenhao and Cui, Yiming and Han, Xiaotian and Huangg, Lifu and Liu, Dongfang and Wang, Qifan and Han, Cheng},
   journal={Advances in Neural Information Processing Systems},
   volume={38},
   pages={88139--88166},
-  year={2026}
+  year={2026},
+  url={https://proceedings.neurips.cc/paper_files/paper/2025/hash/7f8b8bc8ebac661c442c4dafd5d98c08-Abstract-Conference.html},
+  pdf={NeurIPS-2025-all-you-need-is-one-capsule-prompt-tuning-with-a-single-vector-Paper-Conference.pdf},
+  abstract={Prompt-based learning has emerged as a parameter-efficient finetuning (PEFT) approach to facilitate Large Language Model (LLM) adaptation to downstream tasks by conditioning generation with task-aware guidance. Despite its successes, current prompt-based learning methods heavily rely on laborious grid searching for optimal prompt length and typically require considerable number of prompts, introducing additional computational burden. Worse yet, our pioneer findings indicate that the task-aware prompt design is inherently limited by its absence of instance-aware information, leading to a subtle attention interplay with the input sequence. In contrast, simply incorporating instance-aware information as a part of the guidance can enhance the prompt-tuned model performance without additional fine-tuning. Moreover, we find an interesting phenomenon, namely "attention anchor", that incorporating instance-aware tokens at the earliest position of the sequence can successfully preserve strong attention to critical structural information and exhibit more active attention interaction with all input tokens. In light of our observation, we introduce Capsule Prompt-Tuning (CaPT), an efficient and effective solution that leverages off-the-shelf, informative instance semantics into prompt-based learning. Our approach innovatively integrates both instance-aware and task-aware information in a nearly parameter-free manner (i.e., one single capsule prompt). Empirical results demonstrate that our method can exhibit superior performance across various language tasks (e.g., 84.03\% average accuracy on T5-Large), serving as an "attention anchor," while enjoying high parameter efficiency (e.g., 0.003\% of model parameters on Llama3.2-1B).}
 }
 
 ##################################

@@ -9,32 +9,48 @@ permalink: /research/
 
 <input type="text" class="pub-search" id="researchSearch" placeholder="Search by title or keyword...">
 
-{% comment %}
-  Keywords are auto-collected from _data/research.yml at build time.
-  Adding or removing keywords in research.yml will automatically update the filter buttons below.
-{% endcomment %}
 {% assign kw_string = "" %}
 {% for item in site.data.research %}
   {% if item.keywords %}
     {% for kw in item.keywords %}
-      {% if kw and kw != "" %}
-        {% assign kw_string = kw_string | append: kw | append: "|||" %}
-      {% endif %}
+      {% if kw and kw != "" %}{% assign kw_string = kw_string | append: kw | append: "|||" %}{% endif %}
     {% endfor %}
   {% endif %}
 {% endfor %}
 {% assign kw_array = kw_string | split: "|||" | uniq | sort %}
 
-<div class="research-filter-bar">
-<button class="research-filter-btn active" data-kw="__all__">All</button>
-{% for kw in kw_array %}{% if kw != "" %}<button class="research-filter-btn" data-kw="{{ kw | downcase }}">{{ kw }}</button>{% endif %}{% endfor %}
+{% assign yr_string = "" %}
+{% for item in site.data.research %}
+  {% if item.start_date %}
+    {% assign yr = item.start_date | split: "-" | first %}
+    {% assign yr_string = yr_string | append: yr | append: "|||" %}
+  {% endif %}
+{% endfor %}
+{% assign year_array = yr_string | split: "|||" | uniq | sort | reverse %}
+
+<div class="research-filter-bar" markdown="0">
+<div class="research-dropdown">
+<button class="research-dropdown-btn" id="kwDropdownBtn" aria-expanded="false"><i class="fa-solid fa-tag"></i> <span id="kwLabel">Keyword</span> <i class="fa-solid fa-chevron-down"></i></button>
+<div class="research-dropdown-menu" id="kwDropdownMenu">
+<div class="research-dropdown-item selected" data-kw="__all__">All keywords</div>
+{% for kw in kw_array %}{% if kw != "" %}<div class="research-dropdown-item" data-kw="{{ kw | downcase }}">{{ kw }}</div>{% endif %}{% endfor %}
+</div>
+</div>
+<div class="research-dropdown">
+<button class="research-dropdown-btn" id="yearDropdownBtn" aria-expanded="false"><i class="fa-regular fa-calendar"></i> <span id="yearLabel">Year</span> <i class="fa-solid fa-chevron-down"></i></button>
+<div class="research-dropdown-menu" id="yearDropdownMenu">
+<div class="research-dropdown-item selected" data-year="__all__">All years</div>
+{% for yr in year_array %}{% if yr != "" %}<div class="research-dropdown-item" data-year="{{ yr }}">{{ yr }}</div>{% endif %}{% endfor %}
+</div>
+</div>
 </div>
 
 {% assign sorted_research = site.data.research | sort: "end_date" | reverse %}
 <div class="research-list" id="researchList">
 {% for item in sorted_research %}
 {% assign kw_joined = item.keywords | join: "|" %}
-<div class="research-card-h" data-research-searchable data-keywords="{{ kw_joined | downcase }}">
+{% assign card_year = item.start_date | split: "-" | first %}
+<div class="research-card-h" data-research-searchable data-keywords="{{ kw_joined | downcase }}" data-year="{{ card_year }}">
 <div class="research-card-h-img">
 {% if item.image and item.image != "" %}
 <img src="{{ site.url }}{{ site.baseurl }}/images/{{ item.image }}" alt="{{ item.title }}" loading="lazy">
@@ -79,9 +95,9 @@ permalink: /research/
 <script>
 (function () {
   var searchInput = document.getElementById('researchSearch');
-  var filterBtns = document.querySelectorAll('.research-filter-btn');
   var cards = document.querySelectorAll('[data-research-searchable]');
   var activeKw = '__all__';
+  var activeYear = '__all__';
 
   function applyFilters() {
     var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
@@ -89,23 +105,57 @@ permalink: /research/
       var text = card.textContent.toLowerCase();
       var kwAttr = card.getAttribute('data-keywords') || '';
       var kwArr = kwAttr.split('|').map(function (k) { return k.trim(); });
+      var cardYear = card.getAttribute('data-year') || '';
       var matchesText = !query || text.includes(query);
       var matchesKw = activeKw === '__all__' || kwArr.indexOf(activeKw) >= 0;
-      card.style.display = (matchesText && matchesKw) ? '' : 'none';
+      var matchesYear = activeYear === '__all__' || cardYear === activeYear;
+      card.style.display = (matchesText && matchesKw && matchesYear) ? '' : 'none';
     });
   }
 
-  if (searchInput) {
-    searchInput.addEventListener('input', applyFilters);
+  if (searchInput) searchInput.addEventListener('input', applyFilters);
+
+  function setupDropdown(btnId, menuId, labelId, onSelect) {
+    var btn = document.getElementById(btnId);
+    var menu = document.getElementById(menuId);
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = menu.classList.contains('open');
+      document.querySelectorAll('.research-dropdown-menu').forEach(function (m) { m.classList.remove('open'); });
+      document.querySelectorAll('.research-dropdown-btn').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+      if (!isOpen) {
+        menu.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+    menu.querySelectorAll('.research-dropdown-item').forEach(function (item) {
+      item.addEventListener('click', function () {
+        menu.querySelectorAll('.research-dropdown-item').forEach(function (i) { i.classList.remove('selected'); });
+        item.classList.add('selected');
+        menu.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        onSelect(item, btn);
+        applyFilters();
+      });
+    });
   }
 
-  filterBtns.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      filterBtns.forEach(function (b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      activeKw = btn.getAttribute('data-kw');
-      applyFilters();
-    });
+  setupDropdown('kwDropdownBtn', 'kwDropdownMenu', 'kwLabel', function (item, btn) {
+    activeKw = item.getAttribute('data-kw');
+    document.getElementById('kwLabel').textContent = activeKw === '__all__' ? 'Keyword' : item.textContent.trim();
+    activeKw !== '__all__' ? btn.classList.add('active') : btn.classList.remove('active');
+  });
+
+  setupDropdown('yearDropdownBtn', 'yearDropdownMenu', 'yearLabel', function (item, btn) {
+    activeYear = item.getAttribute('data-year');
+    document.getElementById('yearLabel').textContent = activeYear === '__all__' ? 'Year' : item.textContent.trim();
+    activeYear !== '__all__' ? btn.classList.add('active') : btn.classList.remove('active');
+  });
+
+  document.addEventListener('click', function () {
+    document.querySelectorAll('.research-dropdown-menu').forEach(function (m) { m.classList.remove('open'); });
+    document.querySelectorAll('.research-dropdown-btn').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
   });
 })();
 </script>

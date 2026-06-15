@@ -65,41 +65,6 @@
     });
   }
 
-  // ----- Research Search + Keyword Filter -----
-
-  var researchSearch = document.getElementById('researchSearch');
-  var filterBtns = document.querySelectorAll('.research-filter-btn');
-  var activeKw = '__all__';
-
-  function applyResearchFilters() {
-    var query = researchSearch ? researchSearch.value.toLowerCase().trim() : '';
-    var cards = document.querySelectorAll('[data-research-searchable]');
-
-    cards.forEach(function (card) {
-      var text = card.textContent.toLowerCase();
-      var kwAttr = card.getAttribute('data-keywords') || '';
-      var kwArr = kwAttr.split('|').map(function (k) { return k.trim(); });
-
-      var matchesText = !query || text.includes(query);
-      var matchesKw = activeKw === '__all__' || kwArr.indexOf(activeKw) >= 0;
-
-      card.style.display = (matchesText && matchesKw) ? '' : 'none';
-    });
-  }
-
-  if (researchSearch) {
-    researchSearch.addEventListener('input', applyResearchFilters);
-  }
-
-  filterBtns.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      filterBtns.forEach(function (b) { b.classList.remove('active'); });
-      this.classList.add('active');
-      activeKw = this.getAttribute('data-kw');
-      applyResearchFilters();
-    });
-  });
-
   // ----- Copy BibTeX Button -----
 
   document.querySelectorAll('.pub-collapse').forEach(function (collapse) {
@@ -193,12 +158,17 @@
         }
       });
     }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0,
+      rootMargin: '0px'
     });
 
     fadeElements.forEach(function (el) {
-      observer.observe(el);
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('visible');
+      } else {
+        observer.observe(el);
+      }
     });
   } else {
     fadeElements.forEach(function (el) {
