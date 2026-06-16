@@ -2,10 +2,11 @@
 ---
 
 <div class="pub-entry" data-pub-searchable>
-  <div class="text-justify">{{ reference }}</div>
-
-  <!-- You can use the below to make your name bold -->
-  <!-- <div class="text-justify">{{ reference | replace_first: 'Bryngelson, S. H.', '<b>Bryngelson, S. H.</b>' }}</div> -->
+  {% assign _last = site.scholar.last_name %}
+  {% assign _first_init = site.scholar.first_name[0] | slice: 0, 1 %}
+  {% assign _author_pat = _last | append: ", " | append: _first_init | append: "." %}
+  {% assign _bold_pat = "<strong>" | append: _author_pat | append: "</strong>" %}
+  <div class="text-justify">{{ reference | replace: _author_pat, _bold_pat }}</div>
 
   {% assign bibtest = false %}
   {% if entry.file %}
@@ -51,15 +52,9 @@
     {% endif %}
   </div>
 
-  {% if entry.abstract %}
-  <div class="pub-collapse" id="bib-{{ entry.key }}">
-    <pre>{{ entry.bibtex | remove: "entry.abstract" }}</pre>
-  </div>
-  {% else %}
   <div class="pub-collapse" id="bib-{{ entry.key }}">
     <pre>{{ entry.bibtex }}</pre>
   </div>
-  {% endif %}
 
   {% if entry.abstract %}
   <div class="pub-collapse" id="abs-{{ entry.key }}">

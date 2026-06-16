@@ -65,6 +65,18 @@
     });
   }
 
+  // ----- Strip internal-only fields from displayed BibTeX -----
+  // Removes pdf, note, arxiv lines so they don't appear in the BIB popup or get copied.
+
+  var BIB_FIELD_STRIP = /^\s*(pdf|note|arxiv)\s*=/i;
+
+  document.querySelectorAll('[id^="bib-"] pre').forEach(function (pre) {
+    var lines = pre.textContent.split('\n');
+    pre.textContent = lines.filter(function (line) {
+      return !BIB_FIELD_STRIP.test(line);
+    }).join('\n');
+  });
+
   // ----- Copy BibTeX Button -----
 
   document.querySelectorAll('.pub-collapse').forEach(function (collapse) {
