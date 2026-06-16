@@ -1,6 +1,6 @@
 - name: "Universal Robots UR10e"
   category: "Collaborative Robot"
-  image: "equip_ur10e.jpeg"
+  image: "lab/equip_ur10e.jpeg"
   description: >
     A 6-DOF collaborative robot arm with 12.5 kg payload and 1300 mm reach.
     Equipped with a Robotiq Wrist Camera, a Robotiq 2F gripper, a Robotiq AirPick vacuum gripper, and a Robotiq Screwdriving Solution for automated fastening and assembly.
@@ -8,7 +8,7 @@
 
 - name: "UFactory Xarm 6"
   category: "Collaborative Robot"
-  image: "equip_xarm6.jpeg"
+  image: "lab/equip_xarm6.jpeg"
   description: >
     A lightweight 6-DOF collaborative robot with a 5 kg payload and 700 mm reach. 
     The system is equipped with an xArm two-finger gripper for adaptable and precise object handling and an Orbbec Gemini 335 depth camera for object detection, depth sensing, and vision-guided manipulation.
@@ -16,7 +16,7 @@
 
 - name: "Virtualis Motion VR Station"
   category: "XR station"
-  image: "equip_virtrualis.jpeg"
+  image: "lab/equip_virtrualis.jpeg"
   description: >
    An advanced balance assessment and rehabilitation platform that integrates a 360-degree dynamic force plate with immersive virtual reality. 
    The system enables precise evaluation of human balance and postural control through Computerized Dynamic Posturography (CDP), including standardized 
@@ -24,21 +24,21 @@
 
 - name: "Clearpath Husky with Robot Arm"
   category: "Mobile Manipulator"
-  image: "equip_husky.jpeg"
+  image: "lab/equip_husky.jpeg"
   description: >
     A rugged, all-terrain unmanned ground vehicle (UGV) designed for autonomous mobile robotics research. Integrated with a robotic arm, 
     the platform enables mobile manipulation capabilities for tasks that combine navigation and object interaction in complex environments.
 
 - name: "Varjo VR-3"
   category: "XR Headset"
-  image: "equip-Varjo-VR-3.png"
+  image: "lab/equip-Varjo-VR-3.png"
   description: >
     High-fidelity VR headset designed for ultra-high-fidelity immersive experiences. 
     Featuring human-eye resolution and precise integrated eye tracking, it enables highly realistic rendering and detailed user behavior analysis.
 
 - name: "Meta Quest 3 & 3s"
   category: "XR Headset"
-  image: "equip-metaquest3.png"
+  image: "lab/equip-metaquest3.png"
   description: >
     The Meta Quest 3 and Quest 3S are standalone mixed reality headsets that support both fully immersive VR 
     and passthrough-based AR experiences. With inside-out tracking and wireless operation, they provide a flexible 

@@ -1,6 +1,17 @@
 // =============================================================
-// Lab page — equipment grid cards
+// Lab page — hero banner & equipment grid cards
 // =============================================================
+
+.page-hero {
+  width: 100%;
+  line-height: 0;
+
+  img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+}
 
 .equipment-grid {
   display: grid;

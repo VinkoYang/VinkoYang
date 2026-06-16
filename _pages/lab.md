@@ -3,6 +3,7 @@ title: "Lab"
 layout: gridlay
 sitemap: false
 permalink: /lab/
+hero_image: images/lab/xrai_lab_wide.png
 ---
 
 ## XRAI Lab

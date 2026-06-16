@@ -5,9 +5,9 @@
 #   description: >             # 课程简介
 #     ...
 #   syllabus: "files/xxx.pdf"  # 留空则不显示链接
-#   textbook:
-#     title: "书名"
-#     url: "https://..."       # 留空则不显示
+#   textbooks:                 # 可多个，留空列表则不显示
+#     - title: "书名"
+#       url: "https://..."     # 留空则不显示
 #   projects:                  # 可多个，留空列表则不显示
 #     - title: "Team A Project"
 #       url: "https://..."
@@ -23,10 +23,16 @@
     programming methodologies, and hands-on operation of collaborative robot arms.
     Students gain practical experience with real hardware and develop skills in
     robot task automation for manufacturing environments.
-  syllabus: ""
-  textbook:
-    title: ""
-    url: ""
+  syllabus: "files/ST_Collab._Robot_Ops_and_Pro_INEN_5301_Fall_2025.pdf"
+  textbooks:
+    - title: "Robotics: Modelling, Planning and Control by Siciliano, Bruno"
+      url: "https://people.disim.univaq.it/~costanzo.manes/EDU_stuff/Robotics_Modelling,%20Planning%20and%20Control_Sciavicco_extract.pdf"
+    - title: "User manual - UR10e e-Series"
+      url: "https://www.universal-robots.com/download/manuals-e-seriesur20ur30/user/ur10e/512/user-manual-ur10e-e-series-sw-512-english-international-en/"
+    - title: "Industrial Robotics Control"
+      url: "https://link.springer.com/book/10.1007/978-1-4842-8989-1"
+    - title: "Robotics and Automation Handbook"
+      url: "https://dl.icdst.org/pdfs/files/5bc4ddc0b1b8f7e5738d8440fe191904.pdf"
   projects: []
 
 - code: "INEN 5301-01"
@@ -39,10 +45,8 @@
     in modern manufacturing systems. Topics include AR/VR hardware platforms,
     spatial computing, human-machine interaction, and industrial use cases such as
     remote assistance, digital twins, and operator training.
-  syllabus: ""
-  textbook:
-    title: ""
-    url: ""
+  syllabus: "files/files files/ST_AR_VR_in_Manufacturing_INEN_5301_Spring_2026.pdf"
+  textbooks: []
   projects: []
 
 - code: "INEN 5358"
@@ -53,10 +57,10 @@
     An introductory course on robotics covering robot anatomy, coordinate frames,
     forward and inverse kinematics, trajectory planning, and basic control. Designed
     for graduate students with an engineering or computer science background.
-  syllabus: ""
-  textbook:
-    title: ""
-    url: ""
+  syllabus: "Intro_Robotics_INEN_5358_Spring_2025.pdf"
+  textbooks: 
+    - title: "Introduction to Robotics: Mechanics and Control"
+      url: "https://www.changjiangcai.com/files/text-books/Introduction-to-Robotics-3rd-edition.pdf"
   projects: []
 
 - code: "INEN 6110"
@@ -68,7 +72,5 @@
     technical writing, and scientific communication. Students present their research
     progress and engage with invited industry and academic speakers.
   syllabus: ""
-  textbook:
-    title: ""
-    url: ""
+  textbooks: []
   projects: []

@@ -26,23 +26,41 @@ permalink: /teaching/
 <p style="margin: var(--space-4) 0 var(--space-3) 0; font-size: 0.95rem; line-height: 1.6;">{{ course.description }}</p>
 {% endif %}
 
-<div style="display: flex; flex-wrap: wrap; gap: var(--space-4); font-size: 0.9rem;">
 {% if course.syllabus and course.syllabus != "" %}
+<div style="font-size: 0.9rem;">
 <a href="{{ site.url }}{{ site.baseurl }}/{{ course.syllabus }}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px;">
   <i class="fa-solid fa-file-pdf"></i> Syllabus
 </a>
+</div>
 {% endif %}
-{% if course.textbook and course.textbook.url != "" %}
-<a href="{{ course.textbook.url }}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px;">
-  <i class="fa-solid fa-book"></i> {{ course.textbook.title | default: "Textbook" }}
+
+{% assign has_textbooks = false %}
+{% for tb in course.textbooks %}{% if tb.url and tb.url != "" %}{% assign has_textbooks = true %}{% endif %}{% endfor %}
+{% if has_textbooks %}
+<div style="font-size: 0.9rem; margin-top: var(--space-2);">
+<span style="font-weight: 600; margin-right: var(--space-2);">Textbooks:</span>
+<div style="display: flex; flex-wrap: wrap; column-gap: var(--space-3); row-gap: 4px; margin-top: 1px;">
+{% for tb in course.textbooks %}{% if tb.url and tb.url != "" %}
+<a href="{{ tb.url }}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px;">
+  <i class="fa-solid fa-book"></i> {{ tb.title | default: "Textbook" }}
 </a>
+{% endif %}{% endfor %}
+</div>
+</div>
 {% endif %}
+
+{% if course.projects and course.projects.size > 0 %}
+<div style="font-size: 0.9rem; margin-top: var(--space-2);">
+<span style="font-weight: 600; margin-right: var(--space-2);">Projects:</span>
+<div style="display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-1);">
 {% for project in course.projects %}
 <a href="{{ project.url }}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px;">
   <i class="fa-solid fa-star"></i> {{ project.title }}
 </a>
 {% endfor %}
 </div>
+</div>
+{% endif %}
 
 </div>
 {% endfor %}
