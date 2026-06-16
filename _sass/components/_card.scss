@@ -30,7 +30,15 @@
   margin-bottom: var(--space-6);
   box-shadow: var(--shadow-sm);
 
-  h3, h4 {
+  h3 {
+    margin-top: 0;
+    color: var(--accent);
+    &::after {
+      display: none;
+    }
+  }
+
+  h4 {
     margin-top: 0;
     &::after {
       display: none;
@@ -39,5 +47,30 @@
 
   li, p {
     max-width: none;
+  }
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .experience-dates {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding-left: var(--space-4);
+  }
+
+  @media (max-width: 575.98px) {
+    flex-direction: column;
+
+    .experience-dates {
+      margin-top: var(--space-1);
+      padding-left: 0;
+      white-space: normal;
+    }
   }
 }

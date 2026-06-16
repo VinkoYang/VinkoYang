@@ -22,8 +22,15 @@ permalink: /research/
 {% assign yr_string = "" %}
 {% for item in site.data.research %}
   {% if item.start_date %}
-    {% assign yr = item.start_date | split: "-" | first %}
-    {% assign yr_string = yr_string | append: yr | append: "|||" %}
+    {% assign start_yr = item.start_date | split: "-" | first | plus: 0 %}
+    {% if item.end_date %}
+      {% assign end_yr = item.end_date | split: "-" | first | plus: 0 %}
+    {% else %}
+      {% assign end_yr = 'now' | date: "%Y" | plus: 0 %}
+    {% endif %}
+    {% for y in (start_yr..end_yr) %}
+      {% assign yr_string = yr_string | append: y | append: "|||" %}
+    {% endfor %}
   {% endif %}
 {% endfor %}
 {% assign year_array = yr_string | split: "|||" | uniq | sort | reverse %}
@@ -49,8 +56,9 @@ permalink: /research/
 <div class="research-list" id="researchList">
 {% for item in sorted_research %}
 {% assign kw_joined = item.keywords | join: "|" %}
-{% assign card_year = item.start_date | split: "-" | first %}
-<div class="research-card-h" data-research-searchable data-keywords="{{ kw_joined | downcase }}" data-year="{{ card_year }}">
+{% assign card_start_yr = item.start_date | split: "-" | first %}
+{% if item.end_date %}{% assign card_end_yr = item.end_date | split: "-" | first %}{% else %}{% assign card_end_yr = 'now' | date: "%Y" %}{% endif %}
+<div class="research-card-h" data-research-searchable data-keywords="{{ kw_joined | downcase }}" data-start-year="{{ card_start_yr }}" data-end-year="{{ card_end_yr }}">
 <div class="research-card-h-img">
 {% if item.image and item.image != "" %}
 <img src="{{ site.url }}{{ site.baseurl }}/images/{{ item.image }}" alt="{{ item.title }}" loading="lazy">
@@ -105,10 +113,12 @@ permalink: /research/
       var text = card.textContent.toLowerCase();
       var kwAttr = card.getAttribute('data-keywords') || '';
       var kwArr = kwAttr.split('|').map(function (k) { return k.trim(); });
-      var cardYear = card.getAttribute('data-year') || '';
+      var startYr = parseInt(card.getAttribute('data-start-year') || '0', 10);
+      var endYr = parseInt(card.getAttribute('data-end-year') || '9999', 10);
+      var selectedYr = parseInt(activeYear, 10);
       var matchesText = !query || text.includes(query);
       var matchesKw = activeKw === '__all__' || kwArr.indexOf(activeKw) >= 0;
-      var matchesYear = activeYear === '__all__' || cardYear === activeYear;
+      var matchesYear = activeYear === '__all__' || (selectedYr >= startYr && selectedYr <= endYr);
       card.style.display = (matchesText && matchesKw && matchesYear) ? '' : 'none';
     });
   }

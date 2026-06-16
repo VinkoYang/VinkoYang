@@ -3,15 +3,15 @@
   location: "U.S.A."
   dates: "Aug. 2019 – Dec. 2023"
   details:
-    - "Engineering Ph.D. Program | Supervisor: Dr. Yunbo Zhang"
-    - "Dissertation: Enhancing human-robot collaboration through intuitive Augmented Reality interface and precise visualization"
+    - "Engineering Ph.D. Program | Supervisor: <a href='https://www.willyunbozhang.com' target='_blank'>Dr. Yunbo Zhang</a>"
+    - "Dissertation: <a href='https://www.proquest.com/docview/2908918372?pq-origsite=gscholar&fromopenview=true&sourcetype=Dissertations%20&%20Theses' target='_blank'>Enhancing human-robot collaboration through intuitive Augmented Reality interface and precise visualization</a>"
 
 - degree: "M.S."
   institution: "The Hong Kong University of Science and Technology"
   location: "Hong Kong, China"
   dates: "Aug. 2018 – Jun. 2019"
   details:
-    - "Major: Mechanical Engineering | GPA 4.0/4.0 | Advisor: Prof. Kai Tang"
+    - "Major: Mechanical Engineering | GPA 4.0/4.0 | Advisor: <a href='https://seng.hkust.edu.hk/about/people/faculty/kai-tang' target='_blank'>Prof. Kai Tang</a>"
     - "Thesis Project: Robotic engraving of complex models"
 
 - degree: "B.S."

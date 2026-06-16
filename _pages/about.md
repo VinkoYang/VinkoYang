@@ -40,12 +40,12 @@ permalink: /about/
 <h3>Education</h3>
 {% for edu in site.data.education %}
 <div>
-<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+<div class="experience-header">
 <div>
 <h4 style="margin: 0; margin-bottom: var(--space-1);">{{ edu.degree }} ｜ {{ edu.institution }}</h4>
 <p style="margin: 0; font-size: 0.9rem; color: var(--text-tertiary);">{{ edu.location }}</p>
 </div>
-<p style="margin: 0; font-size: 0.9rem; color: var(--text-tertiary); white-space: nowrap;">{{ edu.dates }}</p>
+<p class="experience-dates">{{ edu.dates }}</p>
 </div>
 <ul style="margin-top: var(--space-2); padding-left: 1.5rem;">
 {% for detail in edu.details %}
@@ -67,13 +67,13 @@ permalink: /about/
 <h3>Professional Experience</h3>
 {% for job in site.data.experience.professional_experience %}
 <div>
-<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+<div class="experience-header">
 <div>
 <h4 style="margin: 0; margin-bottom: var(--space-1);">{{ job.position }}</h4>
 <p style="margin: 0; margin-bottom: var(--space-1); color: var(--text-secondary);">{{ job.company }}</p>
 <p style="margin: 0; font-size: 0.9rem; color: var(--text-tertiary);">{{ job.location }}</p>
 </div>
-<p style="margin: 0; font-size: 0.9rem; color: var(--text-tertiary); white-space: nowrap;">{{ job.dates }}</p>
+<p class="experience-dates">{{ job.dates }}</p>
 </div>
 <ul style="margin-top: var(--space-2); padding-left: 1.5rem;">
 {% for highlight in job.highlights %}
@@ -91,13 +91,13 @@ permalink: /about/
 <h3>Teaching Experience</h3>
 {% for job in site.data.experience.teaching_experience %}
 <div>
-<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+<div class="experience-header">
 <div>
 <h4 style="margin: 0; margin-bottom: var(--space-1);">{{ job.position }}</h4>
 <p style="margin: 0; margin-bottom: var(--space-1); color: var(--text-secondary);">{{ job.institution }}{% if job.course %} · {{ job.course }}{% endif %}</p>
 <p style="margin: 0; font-size: 0.9rem; color: var(--text-tertiary);">{{ job.location }}</p>
 </div>
-<p style="margin: 0; font-size: 0.9rem; color: var(--text-tertiary); white-space: nowrap;">{{ job.dates }}</p>
+<p class="experience-dates">{{ job.dates }}</p>
 </div>
 {% if job.description %}
 <p style="margin: var(--space-2) 0; font-size: 0.95rem;">{{ job.description }}</p>
@@ -127,7 +127,7 @@ permalink: /about/
 <h3>Grants</h3>
 <ul>
 {% for grant in site.data.grants %}
-<li>{{ grant.name }}</li>
+<li>{{ grant.name | replace: "Yang, W.", "<strong>Yang, W.</strong>" }}</li>
 {% endfor %}
 </ul>
 </div>
