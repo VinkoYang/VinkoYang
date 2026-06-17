@@ -71,8 +71,12 @@ permalink: /research/
 <h3 class="research-card-h-title">{{ item.title }}</h3>
 {% if item.authors or item.mentors or item.start_date %}
 <div class="research-meta">
-{% if item.authors and item.authors.size > 0 %}<span><i class="fa-solid fa-user"></i> {% for a in item.authors %}{% if a.url %}<a href="{{ a.url }}" target="_blank">{{ a.name }}</a>{% else %}{{ a.name }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</span>{% endif %}
-{% if item.mentors and item.mentors.size > 0 %}<span><i class="fa-solid fa-graduation-cap"></i> {% for m in item.mentors %}{% if m.url %}<a href="{{ m.url }}" target="_blank">{{ m.name }}</a>{% else %}{{ m.name }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</span>{% endif %}
+{% if item.authors and item.authors.size > 0 %}
+<span><i class="fa-solid fa-user"></i> {% for a in item.authors %}{% if a.name and a.name != "" %}{% assign _ps = site.data.people.students | where: "name", a.name | first %}{% unless _ps %}{% assign _ps = site.data.people.collaborators | where: "name", a.name | first %}{% endunless %}{% unless _ps %}{% assign _ps = site.data.people.alumni | where: "name", a.name | first %}{% endunless %}{% if a.name == site.name %}{% assign _href = site.data.people.pi.website %}{% elsif _ps.website and _ps.website != "" %}{% assign _href = _ps.website %}{% elsif a.url and a.url != "" %}{% assign _href = a.url %}{% else %}{% assign _href = "" %}{% endif %}{% if _href != "" %}<a href="{{ _href }}" target="_blank">{{ a.name }}</a>{% else %}{{ a.name }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endif %}{% endfor %}</span>
+{% endif %}
+{% if item.mentors and item.mentors.size > 0 %}
+<span><i class="fa-solid fa-graduation-cap"></i> {% for m in item.mentors %}{% if m.name and m.name != "" %}{% assign _ps = site.data.people.students | where: "name", m.name | first %}{% unless _ps %}{% assign _ps = site.data.people.collaborators | where: "name", m.name | first %}{% endunless %}{% unless _ps %}{% assign _ps = site.data.people.alumni | where: "name", m.name | first %}{% endunless %}{% if m.name == site.name %}{% assign _href = site.data.people.pi.website %}{% elsif _ps.website and _ps.website != "" %}{% assign _href = _ps.website %}{% elsif m.url and m.url != "" %}{% assign _href = m.url %}{% else %}{% assign _href = "" %}{% endif %}{% if _href != "" %}<a href="{{ _href }}" target="_blank">{{ m.name }}</a>{% else %}{{ m.name }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endif %}{% endfor %}</span>
+{% endif %}
 {% if item.start_date %}<span><i class="fa-regular fa-calendar"></i> {{ item.start_date }}{% if item.end_date %} &ndash; {{ item.end_date }}{% else %} &ndash; Present{% endif %}</span>{% endif %}
 </div>
 {% endif %}

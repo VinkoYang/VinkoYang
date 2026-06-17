@@ -31,22 +31,16 @@ permalink: /team/
 {% if site.links.linkedin and site.links.linkedin != "" %}<a href="{{ site.links.linkedin }}" class="icon-link" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>{% endif %}
 {% if site.links.youtube and site.links.youtube != "" %}<a href="{{ site.links.youtube }}" class="icon-link" title="YouTube"><i class="fa-brands fa-youtube"></i></a>{% endif %}
 </div>
-{% if site.data.pi[0].education %}
-<ul style="margin-top: var(--space-4);">
-{% for education in site.data.pi[0].education %}
-<li>{{ education | replace: "-","&#8211;" }}</li>
-{% endfor %}
-</ul>
-{% endif %}
 </div>
 </div>
 </div>
 
-{% if site.data.team_members.size > 0 %}
-## Current Students and Postdocs
+{% assign visible_students = site.data.people.students | where_exp: "s", "s.show_team == true" %}
+{% if visible_students.size > 0 %}
+## Current Students
 
 <div class="team-grid">
-{% for member in site.data.team_members %}
+{% for member in visible_students %}
 <div class="team-card">
 <img src="{{ site.url }}{{ site.baseurl }}/images/{{ member.photo }}" class="team-photo" alt="{{ member.name }}" loading="lazy">
 <h4 class="team-name">{{ member.name }}</h4>
@@ -62,7 +56,7 @@ permalink: /team/
 </div>
 {% endif %}
 
-{% if site.data.alumni.size > 0 %}
+{% if site.data.people.alumni.size > 0 %}
 ## Alumni
 
 <div class="section-card">
@@ -71,13 +65,34 @@ permalink: /team/
 <tr><th>Name</th><th>Degree</th><th>Duration</th><th>Thesis</th><th>Current Position</th></tr>
 </thead>
 <tbody>
-{% for member in site.data.alumni %}
+{% for member in site.data.people.alumni %}
 <tr>
 <td data-label="Name">{{ member.name }}</td>
 <td data-label="Degree">{{ member.degree }}</td>
 <td data-label="Duration">{{ member.duration }}</td>
 <td data-label="Thesis" style="font-style: italic;">{{ member.thesis }}</td>
 <td data-label="Current Position">{{ member.info }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+{% endif %}
+
+{% assign collab_list = site.data.people.collaborators | where_exp: "c", "c.show_collaborator == true" | sort: "last_name" %}
+{% if collab_list.size > 0 %}
+## Collaborators
+
+<div class="section-card">
+<table class="alumni-table">
+<thead>
+<tr><th>Name</th><th>Affiliation</th></tr>
+</thead>
+<tbody>
+{% for c in collab_list %}
+<tr>
+<td data-label="Name">{% if c.website and c.website != "" %}<a href="{{ c.website }}" target="_blank">{{ c.name }}</a>{% else %}{{ c.name }}{% endif %}</td>
+<td data-label="Affiliation">{% if c.email and c.email != "" %}<a href="mailto:{{ c.email }}">{{ c.affiliation }}</a>{% else %}{{ c.affiliation }}{% endif %}</td>
 </tr>
 {% endfor %}
 </tbody>

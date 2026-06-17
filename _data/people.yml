@@ -1,17 +1,191 @@
-# Students and mentees, shown on the About page.
-# Each entry needs: name, location, degree, year
-- name: Saleh Mohammad Mobin
-  location: Lamar University
-  degree: Doctoral of Industrial Engineering
-  year: 2024 – now
+# =============================================================================
+# people.yml — Single source of truth for all lab members
+# =============================================================================
+# Sections: pi | collaborators | students | alumni | other
+#
+# Pages that consume this file:
+#   _pages/about.md    → people.pi, people.students (show_about: true)
+#   _pages/team.md     → people.pi, people.students (show_team: true),
+#                         people.alumni, people.collaborators
+#   _pages/research.md → auto-links author/mentor names to their website
+# =============================================================================
 
-- name: Lakshmana Ayyalasomayajula
-  location: Lamar University
-  degree: Doctoral of Industrial Engineering
-  year: 2025 – now
 
-- name: Muhammad Ilyas Mubarik
-  location: Lamar University
-  degree: Master of Industrial Engineering
-  year: 2026
+# -----------------------------------------------------------------------------
+# PI
+# Used in: about.md (education list), team.md (PI card), research.md (author link)
+# Fields:
+#   website        – canonical URL linked from research page author credits
+#   education      – full degree list shown in about.md / team.md
+#   educationshort – condensed list shown in sidebar
+# -----------------------------------------------------------------------------
+pi:
+  website: "https://wenhaoyang.com/about/"
+  education:
+    - "2023 - Ph.D. Rochester Institute of Technology"
+    - "2019 - M.S. The Hong Kong University of Science and Technology"
+    - "2018 - B.S. Nanjing University of Aeronautics and Astronautics"
+  educationshort:
+    - "2023 - Ph.D. Rochester Institute of Technology"
+    - "2019 - M.S. The Hong Kong University of Science and Technology"
+    - "2018 - B.S. Nanjing University of Aeronautics and Astronautics"
 
+
+# -----------------------------------------------------------------------------
+# Collaborators (external mentors, co-advisors, visiting researchers, etc.)
+# Used in: team.md (Collaborators section), research.md (mentor link lookup)
+# Required: name
+# Optional: affiliation, website, photo, email
+# Display flags:
+#   show_collaborator – true → show in team.md Collaborators table
+# Sort field:
+#   last_name – used for alphabetical sorting by last name in team.md
+# -----------------------------------------------------------------------------
+# EXAMPLE:
+# collaborators:
+#   - name: Jane Smith
+#     last_name: Smith
+#     show_collaborator: true
+#     affiliation: MIT
+#     website: https://janesmith.mit.edu
+#     email: jsmith@mit.edu
+collaborators:
+  - name: "Yueqing Li"
+    last_name: "Li"
+    show_collaborator: true
+    affiliation: "Lamar University"
+    website: "https://www.lamar.edu/engineering/industrial/faculty/yueqing-li/"
+    email: "yueqing.li@lamar.edu"
+
+  - name: "Cheng-Hsien Lin"
+    last_name: "Lin"
+    show_collaborator: true
+    affiliation: "Lamar University"
+    website: "https://www.lamar.edu/arts-sciences/criminal-justice/faculty-cj/dr.-cheng-hsien-lin.html"
+    email: "chlin@lamar.edu"
+
+  - name: "Xinyu Liu"
+    last_name: "Liu"
+    show_collaborator: true
+    affiliation: "Lamar University"
+    website: "https://www.lamar.edu/engineering/industrial/faculty/xinyu-liu/"
+    email: "xinyu.liu@lamar.edu"
+
+# -----------------------------------------------------------------------------
+# Students (current and incoming members)
+# Used in: team.md (card grid), about.md (mentoring list), research.md (author link)
+#
+# Required: name
+# Display flags:
+#   show_team  – true → show card in team.md grid
+#   show_about – true → show in about.md "Students and Mentoring" list
+# Card fields (team.md):
+#   photo    – relative path under images/ (e.g. team/mobin.jpg)
+#   info     – short role label shown on the card
+#   email, website, scholar, github, researchgate, cv
+# Mentoring list fields (about.md):
+#   location – institution
+#   degree   – degree program
+#   year     – enrollment year or range (e.g. "2024 – now")
+# Research link field:
+#   website  – URL linked when the name appears in research.yml authors/mentors
+# -----------------------------------------------------------------------------
+# EXAMPLE:
+# students:
+#   - name: Alice Chen
+#     show_team: true
+#     show_about: true
+#     photo: team/alice.jpg
+#     info: Ph.D. Student
+#     email: achen@lamar.edu
+#     website: https://alicechen.github.io
+#     location: Lamar University
+#     degree: Doctoral of Industrial Engineering
+#     year: 2025 – now
+students:
+  - name: Saleh Mohammad Mobin
+    show_team: true
+    show_about: true
+    photo: team/mobin.jpg
+    info: DE Student
+    email: smobin@lamar.edu
+    location: Lamar University
+    degree: Doctoral of Industrial Engineering
+    year: 2024 – now
+
+  - name: Lakshmana Ayyalasomayajula (Avinash)
+    show_team: true
+    show_about: true
+    photo: team/avinash.jpg
+    info: DE Student
+    email: layyalasomay@lamar.edu
+    location: Lamar University
+    degree: Doctoral of Industrial Engineering
+    year: 2025 – now
+
+  - name: Rezwanul Ashraf Ruddro
+    show_team: true
+    show_about: true
+    photo: team/rezwanul.jpg
+    info: DE Student
+    email: rruddro@lamar.edu
+    location: Lamar University
+    degree: Doctoral of Industrial Engineering
+    year: 2026 – now
+
+  - name: John Gust
+    show_team: false
+    show_about: false
+    website: "https://www.linkedin.com/in/john-gust-86b94280/"
+    info: Student
+
+  - name: "This could be you!"
+    show_team: true
+    show_about: false
+    photo: rock.jpg
+    info: See openings for more info
+
+
+# -----------------------------------------------------------------------------
+# Alumni (former members)
+# Used in: team.md (alumni table)
+# Required: name
+# Optional: duration, degree, thesis, info (current position)
+#   thesis – can contain HTML (e.g. <a href="...">title</a>)
+#   info   – current position after leaving the lab
+# -----------------------------------------------------------------------------
+# EXAMPLE:
+# alumni:
+#   - name: Bob Lee
+#     duration: 2022-2024
+#     degree: M.S.
+#     thesis: "<a href='https://...' target='_blank'>Thesis Title Here</a>"
+#     info: "Engineer at Tesla"
+alumni:
+  - name: Muhammad Ilyas Mubarik
+    duration: 2024-2026
+    degree: M.S.
+    thesis: "<a href='https://www.proquest.com/openview/8c5aa49f0903d4c8a7c414659a57f401/1?pq-origsite=gscholar&cbl=18750&diss=y' target='_blank'>Advanced Mixed Reality Training for First Responders in Hurricane Scenarios</a>"
+    website: "https://www.linkedin.com/in/ilyasmubarik/"
+    info: ""
+
+  - name: Rezwanul Ashraf Ruddro
+    duration: 2025-2026
+    degree: M.S.
+    thesis: "<a href='https://www.proquest.com/openview/3a91da983e9b038992ccc20282733db7/1?pq-origsite=gscholar&cbl=18750&diss=y' target='_blank'>Development of an Immersive VR Learning System With LLM-Integrated Avatar for Educational Assistance</a>"
+    website: "https://www.linkedin.com/in/rezwanul-ashraf-ruddro-28772b199/"
+    info: "Continuing DE studentment at Lamar University"
+
+
+# -----------------------------------------------------------------------------
+# Other (admin support, affiliates, etc.)
+# Used in: team.md (Other section, if enabled)
+# Required: name
+# Optional: role, email, website, note
+# -----------------------------------------------------------------------------
+# EXAMPLE:
+# other:
+#   - name: Heather Martindale
+#     role: Administrative Support
+#     email: hmartindale@lamar.edu
+other: []

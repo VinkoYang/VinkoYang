@@ -27,13 +27,6 @@ permalink: /about/
 {% if site.links.linkedin and site.links.linkedin != "" %}<a href="{{ site.links.linkedin }}" class="icon-link" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>{% endif %}
 {% if site.links.youtube and site.links.youtube != "" %}<a href="{{ site.links.youtube }}" class="icon-link" title="YouTube"><i class="fa-brands fa-youtube"></i></a>{% endif %}
 </div>
-{% if site.data.pi[0].education %}
-<ul style="margin-top: var(--space-4);">
-{% for education in site.data.pi[0].education %}
-<li>{{ education | replace: "-","&#8211;" }}</li>
-{% endfor %}
-</ul>
-{% endif %}
 </div>
 </div>
 </div>
@@ -147,11 +140,12 @@ permalink: /about/
 </div>
 {% endif %}
 
-{% if site.data.people %}
+{% assign mentored_students = site.data.people.students | where_exp: "s", "s.show_about == true" %}
+{% if mentored_students.size > 0 %}
 <div class="section-card">
 <h3>Students and Mentoring</h3>
 <ul>
-{% for student in site.data.people %}
+{% for student in mentored_students %}
 <li>{{ student.name }}, {{ student.location }} ({{ student.degree }}, {{ student.year }})</li>
 {% endfor %}
 </ul>

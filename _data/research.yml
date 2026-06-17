@@ -154,6 +154,8 @@
   image: "research/2026_AIBuildingBlocks_ObjectDetection.gif"
   start_date: "2026-3"
   end_date: "2026-4"
+  authors:
+    - name: "Wenhao Yang"
   keywords:
     - Augmented Reality
     - Mixed Reality
@@ -175,6 +177,10 @@
   image: "research/2026_Vertical-HorizontalIllusion.png"
   start_date: "2026-2"
   end_date: "2026-3"
+  authors:
+    - name: "Wenhao Yang"
+    - name: "Yueqing Li"
+    - name: "Xinyu Liu"
   keywords:
     - Mixed Reality
     - Head-Mounted Displays
@@ -195,6 +201,10 @@
   image: "research/2026-4_Motion.png"
   start_date: "2026-2"
   end_date: "2026-3"
+  authors:
+    - name: "Aiden Ma"
+  mentors:
+    - name: "Wenhao Yang"
   keywords:
     - Mixed Reality
     - Motion Capture
@@ -215,6 +225,12 @@
   image: "research/2026_mrtraining.gif"
   start_date: "2024-10"
   end_date: "2026-4"
+  authors:
+    - name: "Muhammad Ilyas Mubarik"
+  mentors:
+    - name: "Wenhao Yang"
+    - name: "Yueqing Li"
+    - name: "Cheng-Hsien Lin"
   keywords:
     - Mixed Reality
     - First Responders
@@ -238,10 +254,8 @@
   end_date: "2026-5"
   authors:
     - name: "John Gust"
-      url: "https://www.linkedin.com/in/john-gust-86b94280/"
   mentors:
     - name: "Wenhao Yang"
-      url: "https://wenhaoyang.com/about/"
   keywords:
     - Augmented Reality
     - Interactive Learning
