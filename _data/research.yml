@@ -225,3 +225,25 @@
     bib: ""
     poster: ""
     slide: "files/2026_mrtraining_slide.pdf"
+
+- title: "Development of an Interactive AR-Based Educational Application for Demonstrating Newton's Cradle Motion"
+  image: "research/2026_NewtonsCradle.gif"
+  start_date: "2026-1"
+  end_date: "2026-5"
+  keywords:
+    - Augmented Reality
+    - Interactive Learning
+    - Human-Computer Interaction
+    - Unity Engine
+  abstract: >
+    This project presents the development of an interactive augmented reality (AR) application designed to demonstrate the 
+    motion of a Newton's cradle for educational purposes. With the increasing use of mobile devices among children, the 
+    application aims to leverage AR technology to provide an engaging and accessible platform for learning fundamental physics 
+    concepts such as momentum transfer, energy conservation, and damping.
+  links:
+    paper: ""
+    webpage: ""
+    video: "https://www.linkedin.com/posts/john-gust-86b94280_hello-all-i-know-it-has-been-some-time-ugcPost-7447084083580522496-cDdI/?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAABE5glMBvocFmmUUFAEkMIdirSQbWkg136I"
+    bib: ""
+    poster: ""
+    slide: "2026_NewtonsCradle_slide.pdf"

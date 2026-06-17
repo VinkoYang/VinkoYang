@@ -58,7 +58,8 @@ permalink: /research/
 {% assign kw_joined = item.keywords | join: "|" %}
 {% assign card_start_yr = item.start_date | split: "-" | first %}
 {% if item.end_date %}{% assign card_end_yr = item.end_date | split: "-" | first %}{% else %}{% assign card_end_yr = 'now' | date: "%Y" %}{% endif %}
-<div class="research-card-h" data-research-searchable data-keywords="{{ kw_joined | downcase }}" data-start-year="{{ card_start_yr }}" data-end-year="{{ card_end_yr }}">
+{% assign card_id = item.title | slugify %}
+<div class="research-card-h" id="{{ card_id }}" data-research-searchable data-keywords="{{ kw_joined | downcase }}" data-start-year="{{ card_start_yr }}" data-end-year="{{ card_end_yr }}">
 <div class="research-card-h-img">
 {% if item.image and item.image != "" %}
 <img src="{{ site.url }}{{ site.baseurl }}/images/{{ item.image }}" alt="{{ item.title }}" loading="lazy">

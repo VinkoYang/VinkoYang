@@ -47,7 +47,9 @@
     remote assistance, digital twins, and operator training.
   syllabus: "files/files files/ST_AR_VR_in_Manufacturing_INEN_5301_Spring_2026.pdf"
   textbooks: []
-  projects: []
+  projects: 
+    - title: "Development of an Interactive AR-Based Educational Application for Demonstrating Newton's Cradle Motion"
+      url: "/research/#development-of-an-interactive-ar-based-educational-application-for-demonstrating-newton-s-cradle-motion"
 
 - code: "INEN 5358"
   name: "Introduction to Robotics"
