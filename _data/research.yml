@@ -204,3 +204,24 @@
     video: ""
     bib: ""
     poster: "papers/Motion_Spring_Conference_Poster.pdf"
+
+- title: "Advanced Mixed Reality Training for First Responders in Hurricane Scenarios"
+  image: "research/2026_mrtraining.gif"
+  start_date: "2024-10"
+  end_date: "2026-4"
+  keywords:
+    - Mixed Reality
+    - First Responders
+    - Hurricane Scenarios
+    - Training Simulation
+  abstract: >
+    This project develops and evaluates an advanced Mixed Reality (MR) training platform for hurricane and flood response, 
+    aimed at enhancing preparedness for both first responders and community members. Built using Unity and deployed on the Meta Quest 3, 
+    the system overlays dynamic virtual hazards nto real-world environments.
+  links:
+    paper: "mubarik2026mrtraining.pdf"
+    webpage: ""
+    video: ""
+    bib: ""
+    poster: ""
+    slide: "files/2026_mrtraining_slide.pdf"
