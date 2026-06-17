@@ -19,10 +19,15 @@
     - "Fall 2024"
     - "Fall 2025"
   description: >
-    Covers fundamental concepts of industrial robotics, including robot kinematics, 
-    programming methodologies, and hands-on operation of collaborative robot arms.
-    Students gain practical experience with real hardware and develop skills in
-    robot task automation for manufacturing environments.
+    This hands-on course covers fundamental concepts of industrial robotics, including
+    kinematics, programming, and collaborative robot operations. Students gain practical
+    experience programming a real UR10e cobot using PolyScope X interface under guidance
+    from certified trainers. Through realistic lab scenarios, you will develop skills in
+    robot task automation, learn to create and optimize robot programs, and master the
+    unique features of PolyScope X for manufacturing applications. Upon completion,
+    students earn the "Educational Robotics Training - Core" certification. See the
+    [UR Academy Brochure](https://academy.universal-robots.com/media/g52jayc3/ur-academy-brochure-training-eng-may-2026.pdf)
+    for certification details.
   syllabus: "files/ST_Collab._Robot_Ops_and_Pro_INEN_5301_Fall_2025.pdf"
   textbooks:
     - title: "Robotics: Modelling, Planning and Control by Siciliano, Bruno"
@@ -34,6 +39,9 @@
     - title: "Robotics and Automation Handbook"
       url: "https://dl.icdst.org/pdfs/files/5bc4ddc0b1b8f7e5738d8440fe191904.pdf"
   projects: []
+  links:
+    - title: "Universal Robots Academy Free e-Learning Courses"
+      url: "https://academy.universal-robots.com/free-e-learning/"
 
 - code: "INEN 5301-01"
   name: "AR/VR in Manufacturing"

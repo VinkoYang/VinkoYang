@@ -7,6 +7,12 @@
   image: "research/2020_ARrobotinterface.jpg"
   start_date: "2019-08"
   end_date: "2020-11"
+  authors:
+    - name: "Wenhao Yang"
+      url: ""
+  mentors:
+    - name: ""
+      url: ""
   keywords:
     - Human-Robot Interaction
     - Augmented Reality
@@ -230,6 +236,12 @@
   image: "research/2026_NewtonsCradle.gif"
   start_date: "2026-1"
   end_date: "2026-5"
+  authors:
+    - name: "John Gust"
+      url: "https://www.linkedin.com/in/john-gust-86b94280/"
+  mentors:
+    - name: "Wenhao Yang"
+      url: "https://wenhaoyang.com/about/"
   keywords:
     - Augmented Reality
     - Interactive Learning

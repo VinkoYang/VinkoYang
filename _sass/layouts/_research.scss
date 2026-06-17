@@ -169,12 +169,34 @@
     }
   }
 
-  .research-duration {
+  .research-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-4);
+    margin: 0;
     font-size: 0.8rem;
     color: var(--text-tertiary);
-    margin: 0;
 
-    i { margin-right: var(--space-1); }
+    p {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-4);
+      margin: 0;
+    }
+
+    span {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+    }
+
+    a {
+      color: var(--text-tertiary);
+      text-decoration: none;
+      &:hover { color: var(--accent); }
+    }
   }
 
   .research-card-h-keywords {

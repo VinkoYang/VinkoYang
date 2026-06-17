@@ -62,5 +62,20 @@ permalink: /teaching/
 </div>
 {% endif %}
 
+{% assign has_links = false %}
+{% for lk in course.links %}{% if lk.url and lk.url != "" %}{% assign has_links = true %}{% endif %}{% endfor %}
+{% if has_links %}
+<div style="font-size: 0.9rem; margin-top: var(--space-2);">
+<span style="font-weight: 600; margin-right: var(--space-2);">Links:</span>
+<div style="display: flex; flex-wrap: wrap; column-gap: var(--space-3); row-gap: 4px; margin-top: 1px;">
+{% for lk in course.links %}{% if lk.url and lk.url != "" %}
+<a href="{{ lk.url }}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px;">
+  <i class="fa-solid fa-link"></i> {{ lk.title | default: "Link" }}
+</a>
+{% endif %}{% endfor %}
+</div>
+</div>
+{% endif %}
+
 </div>
 {% endfor %}
