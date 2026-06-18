@@ -117,6 +117,7 @@
   .research-card-h-img {
     flex: 0 0 240px;
     width: 240px;
+    min-height: 180px;
     position: relative;
     overflow: hidden;
     background: var(--bg-secondary);
