@@ -273,3 +273,32 @@
     bib: ""
     poster: ""
     slide: "2026_NewtonsCradle_slide.pdf"
+
+- title: "An Immersive Virtual Reality Learning System with an LLM-Integrated Conversational Avatar for Real-Time Educational Assistance"
+  image: "research/2026_llmavatar.gif"
+  start_date: "2025-9"
+  end_date: "2026-5"
+  authors:
+    - name: "Rezwanul Ashraf Ruddro"
+  mentors:
+    - name: "Wenhao Yang"
+    - name: "Yueqing Li"
+    - name: "Yan Yan"
+  keywords:
+    - Virtual Reality
+    - Large Language Models
+    - Human-Computer Interaction
+    - Unity Engine
+    - AI-Assisted Learning
+  abstract: >
+    This project develops an immersive VR learning system integrated with an LLM-powered conversational avatar for real-time 
+    educational assistance. The system enables in-environment question answering within a virtual classroom, addressing the 
+    lack of open-ended interaction in existing VR tools. A Unity-based prototype with a local LLM was evaluated through case 
+    studies and baseline comparison with a PC-based AI system.
+  links:
+    paper: "https://www.proquest.com/openview/3a91da983e9b038992ccc20282733db7/1?pq-origsite=gscholar&cbl=18750&diss=y"
+    webpage: ""
+    video: "https://youtu.be/vNtLc10wYJM"
+    bib: ""
+    poster: ""
+    slide: "2026_llmavatar_slide.pdf"

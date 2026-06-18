@@ -71,6 +71,13 @@ collaborators:
     website: "https://www.lamar.edu/engineering/industrial/faculty/xinyu-liu/"
     email: "xinyu.liu@lamar.edu"
 
+  - name: "Yan Yan"
+    last_name: "Yan"
+    show_collaborator: true
+    affiliation: "Lamar University"
+    website: "https://www.lamar.edu/education/curriculum-and-instruction/faculty-staff/yan-yan-fp/"
+    email: "yyan1@lamar.edu"
+
 # -----------------------------------------------------------------------------
 # Students (current and incoming members)
 # Used in: team.md (card grid), about.md (mentoring list), research.md (author link)
@@ -132,6 +139,7 @@ students:
     location: Lamar University
     degree: Doctoral of Industrial Engineering
     year: 2026 – now
+    website: "https://www.linkedin.com/in/rezwanul-ashraf-ruddro-28772b199/"
 
   - name: John Gust
     show_team: false
