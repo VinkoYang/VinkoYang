@@ -37,6 +37,13 @@ permalink: /research/
 
 <div class="research-filter-bar" markdown="0">
 <div class="research-dropdown">
+<button class="research-dropdown-btn" id="focusDropdownBtn" aria-expanded="false"><i class="fa-solid fa-layer-group"></i> <span id="focusLabel">Focus</span> <i class="fa-solid fa-chevron-down"></i></button>
+<div class="research-dropdown-menu" id="focusDropdownMenu">
+<div class="research-dropdown-item selected" data-focus="__all__">All areas</div>
+{% for area in site.data.research_areas %}<div class="research-dropdown-item" data-focus="{{ area.id }}">{{ area.name }}</div>{% endfor %}
+</div>
+</div>
+<div class="research-dropdown">
 <button class="research-dropdown-btn" id="kwDropdownBtn" aria-expanded="false"><i class="fa-solid fa-tag"></i> <span id="kwLabel">Keyword</span> <i class="fa-solid fa-chevron-down"></i></button>
 <div class="research-dropdown-menu" id="kwDropdownMenu">
 <div class="research-dropdown-item selected" data-kw="__all__">All keywords</div>
@@ -59,7 +66,8 @@ permalink: /research/
 {% assign card_start_yr = item.start_date | split: "-" | first %}
 {% if item.end_date %}{% assign card_end_yr = item.end_date | split: "-" | first %}{% else %}{% assign card_end_yr = 'now' | date: "%Y" %}{% endif %}
 {% assign card_id = item.title | slugify %}
-<div class="research-card-h" id="{{ card_id }}" data-research-searchable data-keywords="{{ kw_joined | downcase }}" data-start-year="{{ card_start_yr }}" data-end-year="{{ card_end_yr }}">
+{% assign focus_joined = item.focus | join: "|" %}
+<div class="research-card-h" id="{{ card_id }}" data-research-searchable data-keywords="{{ kw_joined | downcase }}" data-focus="{{ focus_joined }}" data-start-year="{{ card_start_yr }}" data-end-year="{{ card_end_yr }}">
 <div class="research-card-h-img">
 {% if item.image and item.image != "" %}
 <img src="{{ site.url }}{{ site.baseurl }}/images/{{ item.image }}" alt="{{ item.title }}" loading="lazy">
@@ -112,6 +120,7 @@ permalink: /research/
 (function () {
   var searchInput = document.getElementById('researchSearch');
   var cards = document.querySelectorAll('[data-research-searchable]');
+  var activeFocus = '__all__';
   var activeKw = '__all__';
   var activeYear = '__all__';
 
@@ -121,13 +130,16 @@ permalink: /research/
       var text = card.textContent.toLowerCase();
       var kwAttr = card.getAttribute('data-keywords') || '';
       var kwArr = kwAttr.split('|').map(function (k) { return k.trim(); });
+      var focusAttr = card.getAttribute('data-focus') || '';
+      var focusArr = focusAttr.split('|').map(function (f) { return f.trim(); });
       var startYr = parseInt(card.getAttribute('data-start-year') || '0', 10);
       var endYr = parseInt(card.getAttribute('data-end-year') || '9999', 10);
       var selectedYr = parseInt(activeYear, 10);
       var matchesText = !query || text.includes(query);
+      var matchesFocus = activeFocus === '__all__' || focusArr.indexOf(activeFocus) >= 0;
       var matchesKw = activeKw === '__all__' || kwArr.indexOf(activeKw) >= 0;
       var matchesYear = activeYear === '__all__' || (selectedYr >= startYr && selectedYr <= endYr);
-      card.style.display = (matchesText && matchesKw && matchesYear) ? '' : 'none';
+      card.style.display = (matchesText && matchesFocus && matchesKw && matchesYear) ? '' : 'none';
     });
   }
 
@@ -158,6 +170,12 @@ permalink: /research/
       });
     });
   }
+
+  setupDropdown('focusDropdownBtn', 'focusDropdownMenu', 'focusLabel', function (item, btn) {
+    activeFocus = item.getAttribute('data-focus');
+    document.getElementById('focusLabel').textContent = activeFocus === '__all__' ? 'Focus' : item.textContent.trim();
+    activeFocus !== '__all__' ? btn.classList.add('active') : btn.classList.remove('active');
+  });
 
   setupDropdown('kwDropdownBtn', 'kwDropdownMenu', 'kwLabel', function (item, btn) {
     activeKw = item.getAttribute('data-kw');

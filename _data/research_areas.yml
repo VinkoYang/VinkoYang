@@ -1,0 +1,92 @@
+# Research focus areas — rendered on the Lab page before Equipment.
+# projects.slug must match the Jekyll slugify output of the project title in research.yml
+
+- id: 1
+  name: "Human-Centered XR & AI"
+  image: "lab/class-1_HumanCenteredXRAI.jpg"
+  description: "Studying how people perceive and interact within XR environments to design intuitive, cognitively-aware, AI-enhanced interfaces."
+  projects:
+    - title: "Human-Centered AR HRI with Cognition Awareness"
+      slug: "system-design-of-a-human-centered-ar-hri-with-cognition-awareness"
+    - title: "Vertical-Horizontal Illusion Across Screens and XR Headsets"
+      slug: "seeing-isn-t-believing-the-vertical-horizontal-illusion-across-screens-and-xr-headsets"
+    - title: "Real-Time Object Detection for MR on Meta Quest 3S"
+      slug: "real-time-object-detection-for-mixed-reality-on-meta-quest-3s-using-ai-building-blocks"
+  funding: "NSF Human-Centered Computing (HCC), NIH"
+  domains:
+    - Human Factors
+    - Spatial Perception
+    - Healthcare
+    - Cognitive Systems
+
+- id: 2
+  name: "Immersive Learning & Workforce Training"
+  image: "lab/class-2_edu.jpg"
+  description: "Designing and evaluating XR-based systems that accelerate skill acquisition, knowledge transfer, and workforce readiness across education and professional domains."
+  projects:
+    - title: "VR Learning System with LLM-Powered Conversational Avatar"
+      slug: "an-immersive-virtual-reality-learning-system-with-an-llm-integrated-conversational-avatar-for-real-time-educational-assistance"
+    - title: "MR Training for First Responders in Hurricane Scenarios"
+      slug: "advanced-mixed-reality-training-for-first-responders-in-hurricane-scenarios"
+    - title: "AR Educational App for Newton's Cradle Physics"
+      slug: "development-of-an-interactive-ar-based-educational-application-for-demonstrating-newton-s-cradle-motion"
+  funding: "NSF IUSE, DHS / FEMA, Department of Education"
+  domains:
+    - Higher Education
+    - K–12
+    - Emergency Response
+    - Technical Training
+
+- id: 3
+  name: "XR-Mediated Human-Robot Collaboration"
+  image: "lab/class-3_HCR.jpg"
+  description: "Developing XR interfaces that enable natural, safe, and efficient communication between humans and robotic systems in complex real-world environments."
+  projects:
+    - title: "AR-Based Human-Robot Interaction System"
+      slug: "augmented-reality-based-human-robot-interaction-system"
+    - title: "Tele-Robot System with Mixed-Reality Interaction"
+      slug: "a-tele-robot-system-with-mixed-reality-interaction"
+    - title: "Human-Centered AR HRI with Cognition Awareness"
+      slug: "system-design-of-a-human-centered-ar-hri-with-cognition-awareness"
+  funding: "NSF NRI, DOD, DOE"
+  domains:
+    - Industrial Robotics
+    - Teleoperation
+    - Collaborative Manufacturing
+    - Remote Operations
+
+- id: 4
+  name: "Digital Twin & Intelligent Manufacturing"
+  image: "lab/class-4_DT_SM.jpg"
+  description: "Integrating digital twin and AR technologies to build data-driven manufacturing environments with intelligent visualization, monitoring, and maintenance workflows."
+  projects:
+    - title: "AR-Assisted Maintenance and Repair System"
+      slug: "augmented-reality-assisted-maintenance-and-repair-system-development"
+    - title: "AR Smart Factory Management System"
+      slug: "augmented-reality-assisted-smart-factory-management-system-development"
+    - title: "Global Calibration for VST AR Misregistration"
+      slug: "a-global-calibration-to-solve-the-misregistration-problems-in-vst-ar-system"
+  funding: "NSF, DOE, Industry Partnerships"
+  domains:
+    - Predictive Maintenance
+    - Smart Factory
+    - Industrial IoT
+    - Quality Control
+
+- id: 5
+  name: "Adaptive & Intelligent XR Systems"
+  image: "lab/class-5_AdaptiveIntelligentXR.jpg"
+  description: "Building AI-driven XR pipelines that sense user context, adapt in real time, and deliver personalized interaction across rehabilitation, training, and industrial settings."
+  projects:
+    - title: "MOTION: AI-Driven Motion Capture for AR Rehabilitation"
+      slug: "motion-ai-driven-biomechanical-motion-capture-for-augmented-reality-rehabilitation"
+    - title: "VR Learning System with LLM-Powered Conversational Avatar"
+      slug: "an-immersive-virtual-reality-learning-system-with-an-llm-integrated-conversational-avatar-for-real-time-educational-assistance"
+    - title: "Real-Time Object Detection for MR on Meta Quest 3S"
+      slug: "real-time-object-detection-for-mixed-reality-on-meta-quest-3s-using-ai-building-blocks"
+  funding: "NIH, NSF, Industry R&D"
+  domains:
+    - Rehabilitation
+    - Personalized Training
+    - AI-Assisted Interaction
+    - Spatial Computing

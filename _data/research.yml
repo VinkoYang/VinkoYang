@@ -5,6 +5,7 @@
 
 - title: "Augmented reality-based human-robot interaction system"
   image: "research/2020_ARrobotinterface.jpg"
+  focus: [3]
   start_date: "2019-08"
   end_date: "2020-11"
   authors:
@@ -29,6 +30,7 @@
 
 - title: "System design of a human-centered AR HRI with cognition awareness"
   image: "research/2021_ARrobotcognition.jpg"
+  focus: [1, 3]
   start_date: "2019-11"
   end_date: "2021-10"
   keywords:
@@ -50,6 +52,7 @@
 
 - title: "Visualization error analysis for augmented reality stereo VST system"
   image: "research/2021_ARstereoVST.jpg"
+  focus: [1]
   start_date: "2021-5"
   end_date: "2021-11"
   keywords:
@@ -65,6 +68,7 @@
 
 - title: "An application of depth map completion and super-resolution in AR rendering"
   image: "research/2021_ARdepthmap.jpg"
+  focus: [1]
   start_date: "2021-9"
   end_date: "2021-11"
   keywords:
@@ -81,6 +85,7 @@
 
 - title: "Augmented reality assisted maintenance and repair system development"
   image: "research/2021_arrepair.jpg"
+  focus: [4]
   start_date: "2021-12"
   end_date: "2022-2"
   keywords:
@@ -96,6 +101,7 @@
 
 - title: "Augmented reality assisted smart factory management system development"
   image: "research/2021_smartfactory.jpg"
+  focus: [4]
   start_date: "2021-12"
   end_date: "2022-2"
   keywords:
@@ -113,6 +119,7 @@
 
 - title: "A global calibration to solve the misregistration problems in VST AR system"
   image: "research/2021_ARstereoVST.jpg"
+  focus: [4]
   start_date: "2021-10"
   end_date: "2023-2"
   keywords:
@@ -132,6 +139,7 @@
 
 - title: "A Tele-robot System with Mixed-Reality Interaction"
   image: "research/2022_telerobot.jpg"
+  focus: [3]
   start_date: "2022-6"
   end_date: "2022-9"
   keywords:
@@ -152,6 +160,7 @@
 
 - title: "Real-Time Object Detection for Mixed Reality on Meta Quest 3S Using AI Building Blocks"
   image: "research/2026_AIBuildingBlocks_ObjectDetection.gif"
+  focus: [1, 5]
   start_date: "2026-3"
   end_date: "2026-4"
   authors:
@@ -175,6 +184,7 @@
 
 - title: "Seeing Isn't Believing: The Vertical-Horizontal Illusion Across Screens and XR Headsets"
   image: "research/2026_Vertical-HorizontalIllusion.png"
+  focus: [1]
   start_date: "2026-2"
   end_date: "2026-3"
   authors:
@@ -199,6 +209,7 @@
 
 - title: "MOTION: AI-Driven Biomechanical Motion Capture for Augmented Reality Rehabilitation"
   image: "research/2026-4_Motion.jpg"
+  focus: [5]
   start_date: "2026-2"
   end_date: "2026-3"
   authors:
@@ -223,6 +234,7 @@
 
 - title: "Advanced Mixed Reality Training for First Responders in Hurricane Scenarios"
   image: "research/2026_mrtraining.gif"
+  focus: [2]
   start_date: "2024-10"
   end_date: "2026-4"
   authors:
@@ -250,6 +262,7 @@
 
 - title: "Development of an Interactive AR-Based Educational Application for Demonstrating Newton's Cradle Motion"
   image: "research/2026_NewtonsCradle.gif"
+  focus: [2]
   start_date: "2026-1"
   end_date: "2026-5"
   authors:
@@ -276,6 +289,7 @@
 
 - title: "An Immersive Virtual Reality Learning System with an LLM-Integrated Conversational Avatar for Real-Time Educational Assistance"
   image: "research/2026_llmavatar.gif"
+  focus: [2, 5]
   start_date: "2025-9"
   end_date: "2026-5"
   authors:

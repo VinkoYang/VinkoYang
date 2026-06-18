@@ -19,6 +19,37 @@ Through interdisciplinary research, XRAI Lab seeks to redefine how intelligent m
 </p>
 </div>
 
+## Research Focus
+
+<div class="rf-grid" markdown="0">
+{% for area in site.data.research_areas %}
+<div class="section-card">
+  <div class="rf-card">
+    <div class="rf-image-wrap">
+      <img src="{{ site.url }}{{ site.baseurl }}/images/{{ area.image }}" alt="{{ area.name }}" loading="lazy">
+    </div>
+    <div class="rf-content">
+      <div class="rf-header">
+        <span class="rf-number">{{ area.id }}</span>
+        <h3 class="rf-name">{{ area.name }}</h3>
+      </div>
+      <p class="rf-desc">{{ area.description }}</p>
+      <ul class="rf-projects">
+        {% for proj in area.projects %}
+        <li><a href="{{ site.url }}{{ site.baseurl }}/research/#{{ proj.slug }}">{{ proj.title }}</a></li>
+        {% endfor %}
+      </ul>
+      <div class="rf-domains">
+        {% for domain in area.domains %}
+        <span class="chip chip-muted">{{ domain }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+</div>
+
 ## Equipment
 
 <div class="equipment-grid">
