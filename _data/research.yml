@@ -1,6 +1,31 @@
-# Research projects, shown on the Research page.
-# Each entry: title, image, duration, end_date (YYYY-MM for sorting), keywords, abstract, links
-# Projects are displayed in reverse chronological order by end_date.
+# Research projects — shown on the Research page and linked from the Lab page Research Focus section.
+# Projects are sorted in reverse chronological order by end_date.
+#
+# Required fields:
+#   title       — full project title (also used to generate the anchor ID on the Research page)
+#   image       — path relative to /images/, e.g. "research/2026_myproject.jpg"
+#   end_date    — YYYY-MM, used for sorting (use an estimated date for ongoing work)
+#   abstract    — one-paragraph summary
+#
+# Optional fields:
+#   start_date  — YYYY-MM
+#   focus       — list of Research Area IDs (1–5) defined in _data/research_areas.yml
+#                 A project can belong to multiple areas, e.g. focus: [2, 5]
+#                 1 = Human-Centered XR & AI
+#                 2 = Immersive Learning & Workforce Training
+#                 3 = XR-Mediated Human-Robot Collaboration
+#                 4 = Digital Twin & Intelligent Manufacturing
+#                 5 = Adaptive & Intelligent XR Systems
+#   keywords    — list of tags shown on the Research page and used by the Keyword filter
+#   authors     — list of {name, url} (name must match people.yml for auto-linking)
+#   mentors     — list of {name, url} (same auto-linking rules as authors)
+#   links:
+#     paper     — filename in /papers/ (e.g. "yang2024can.pdf"), OR a full external URL
+#     webpage   — full external URL
+#     video     — full external URL (YouTube, etc.)
+#     poster    — path relative to site root, e.g. "papers/myposter.pdf"
+#     slide     — path relative to site root, must include "files/" prefix, e.g. "files/2026_myslide.pdf"
+#     bib       — full external URL to BibTeX / citation page
 
 
 - title: "Augmented reality-based human-robot interaction system"
