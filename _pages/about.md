@@ -141,14 +141,25 @@ permalink: /about/
 {% endif %}
 
 {% assign mentored_students = site.data.people.students | where_exp: "s", "s.show_about == true" %}
-{% if mentored_students.size > 0 %}
+{% assign mentored_alumni = site.data.people.alumni | where_exp: "a", "a.mentoring_role != nil and a.mentoring_role != ''" %}
+{% assign all_mentored = mentored_students | concat: mentored_alumni %}
+{% if all_mentored.size > 0 %}
 <div class="section-card">
 <h3>Students and Mentoring</h3>
+{% assign mentoring_categories = "doctoral_advisor,master_advisor,doctoral_committee,master_committee" | split: "," %}
+{% assign mentoring_labels = "Doctoral Dissertation Advisor,Master Thesis Advisor,Doctoral Dissertation Committee,Master Thesis Committee" | split: "," %}
+{% for cat in mentoring_categories %}
+  {% assign cat_students = all_mentored | where: "mentoring_role", cat %}
+  {% if cat_students.size > 0 %}
+    {% assign cat_index = forloop.index0 %}
+<h4 style="margin-top: var(--space-4); margin-bottom: var(--space-2);">{{ mentoring_labels[cat_index] }}</h4>
 <ul>
-{% for student in mentored_students %}
-<li>{{ student.name }}, {{ student.location }} ({{ student.degree }}, {{ student.year }})</li>
-{% endfor %}
+    {% for student in cat_students %}
+<li>{{ student.name }}{% if student.location %}, {{ student.location }}{% elsif student.affiliation %}, {{ student.affiliation }}{% endif %}{% if student.degree or student.year or student.duration %} ({% if student.degree %}{{ student.degree }}{% endif %}{% if student.degree and student.duration %}, {% endif %}{% if student.duration %}{{ student.duration }}{% elsif student.year %}{{ student.year }}{% endif %}){% endif %}</li>
+    {% endfor %}
 </ul>
+  {% endif %}
+{% endfor %}
 </div>
 {% endif %}
 

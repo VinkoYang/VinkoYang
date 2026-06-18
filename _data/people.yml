@@ -113,6 +113,7 @@ students:
   - name: Saleh Mohammad Mobin
     show_team: true
     show_about: true
+    mentoring_role: doctoral_advisor
     photo: team/mobin.jpg
     info: DE Student
     email: smobin@lamar.edu
@@ -123,6 +124,7 @@ students:
   - name: Lakshmana Ayyalasomayajula (Avinash)
     show_team: true
     show_about: true
+    mentoring_role: doctoral_advisor
     photo: team/avinash.jpg
     info: DE Student
     email: layyalasomay@lamar.edu
@@ -133,6 +135,7 @@ students:
   - name: Rezwanul Ashraf Ruddro
     show_team: true
     show_about: true
+    mentoring_role: doctoral_advisor
     photo: team/rezwanul.jpg
     info: DE Student
     email: rruddro@lamar.edu
@@ -176,6 +179,7 @@ alumni:
     thesis: "<a href='https://www.proquest.com/openview/8c5aa49f0903d4c8a7c414659a57f401/1?pq-origsite=gscholar&cbl=18750&diss=y' target='_blank'>Advanced Mixed Reality Training for First Responders in Hurricane Scenarios</a>"
     website: "https://www.linkedin.com/in/ilyasmubarik/"
     info: ""
+    mentoring_role: master_advisor
 
   - name: Rezwanul Ashraf Ruddro
     duration: 2025-2026
@@ -183,7 +187,7 @@ alumni:
     thesis: "<a href='https://www.proquest.com/openview/3a91da983e9b038992ccc20282733db7/1?pq-origsite=gscholar&cbl=18750&diss=y' target='_blank'>Development of an Immersive VR Learning System With LLM-Integrated Avatar for Educational Assistance</a>"
     website: "https://www.linkedin.com/in/rezwanul-ashraf-ruddro-28772b199/"
     info: "Continuing DE studentment at Lamar University"
-
+    mentoring_role: master_advisor
 
 # -----------------------------------------------------------------------------
 # Other (admin support, affiliates, etc.)
