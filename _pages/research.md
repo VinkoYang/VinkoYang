@@ -103,7 +103,7 @@ permalink: /research/
 {% if item.links.slide and item.links.slide != "" %}{% assign has_link = true %}{% endif %}
 {% if has_link %}
 <div class="research-card-h-links">
-{% if item.links.paper and item.links.paper != "" %}<a href="{{ site.baseurl }}/papers/{{ item.links.paper }}" target="_blank" type="application/pdf" class="research-link"><i class="fa-regular fa-file-pdf"></i> Paper</a>{% endif %}
+{% if item.links.paper and item.links.paper != "" %}{% if item.links.paper contains "://" %}<a href="{{ item.links.paper }}" target="_blank" class="research-link"><i class="fa-regular fa-file-pdf"></i> Paper</a>{% else %}<a href="{{ site.baseurl }}/papers/{{ item.links.paper }}" target="_blank" type="application/pdf" class="research-link"><i class="fa-regular fa-file-pdf"></i> Paper</a>{% endif %}{% endif %}
 {% if item.links.webpage and item.links.webpage != "" %}<a href="{{ item.links.webpage }}" target="_blank" class="research-link"><i class="fa-solid fa-globe"></i> Webpage</a>{% endif %}
 {% if item.links.video and item.links.video != "" %}<a href="{{ item.links.video }}" target="_blank" class="research-link"><i class="fa-brands fa-youtube"></i> Video</a>{% endif %}
 {% if item.links.poster and item.links.poster != "" %}<a href="{{ site.baseurl }}/{{ item.links.poster }}" target="_blank" type="application/pdf" class="research-link"><i class="fa-regular fa-image"></i> Poster</a>{% endif %}
