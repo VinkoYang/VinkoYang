@@ -1,8 +1,14 @@
 # News items shown on the home page sidebar.
 # The 3 most recent are shown; all appear on /allnews.
 # Each entry needs: date, headline
+- date: May 18, 2026
+  headline: "'A Human-Centered AI Task Management System for Cognitive Load Reduction and Decision Support in Industrial Plant Management' accepted in the AHFE International Open Access" Journal of Computing and Information Science in Engineering."
+
 - date: May 16, 2026
   headline: "I attended the IISE Annual Conference & Expo 2026 in Arlington, TX"
+
+- date: April 26, 2026
+  headline: "'Seeing Isn't Believing: The Vertical-horizontal Illusion Across Screens and Xr Headsets' accepted in the IDETC/CIE2026 conference proceedings."
 
 - date: August 23, 2023
   headline: "Joining IDETC-CIE 2023 in Boston, MA! Presenting two groundbreaking works: tackling cybersecurity risks in smart manufacturing and advancing global calibration in VST AR system."

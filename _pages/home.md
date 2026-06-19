@@ -10,13 +10,13 @@ permalink: /
 
 ### About me
 
-Dr. Wenhao Yang is an Assistant Professor in the Department of Industrial and Systems Engineering at
+Dr. Wenhao Yang is an Assistant Professor in the [Department of Industrial and Systems Engineering](https://www.lamar.edu/engineering/industrial/) at
 [Lamar University](https://www.lamar.edu), where he joined in Fall 2024.
 His [research]({{ site.url }}{{ site.baseurl }}/research) focuses on the integration of Augmented Reality (AR),
 Virtual Reality (VR), and Mixed Reality (MR) with robotics and industrial systems, with particular emphasis on
 human-robot interaction, immersive training environments, and resilient system design.
 
-He received his Ph.D. in Industrial and Systems Engineering from
+He received his Ph.D. in the Depsrtment of Industrial and Systems Engineering from
 [Rochester Institute of Technology (RIT)](https://www.rit.edu) in 2023.
 His work spans interdisciplinary areas including advanced manufacturing, human-computer interaction (HCI), and
 user-centered system design, aiming to develop scalable and effective solutions for complex engineering challenges.
