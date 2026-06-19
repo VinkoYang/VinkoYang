@@ -31,7 +31,43 @@
 <p style="margin-top: var(--space-4);"><a href="{{ site.url }}{{ site.baseurl }}/allnews.html">See all news &rarr;</a></p>
 </div>
 
-<div class="section-card" style="margin-top: var(--space-6); text-align: center;">
+<div class="section-card" style="margin-top: var(--space-6); text-align: center; padding-left: 0.75rem; padding-right: 0.75rem;">
 <h4 style="margin-top: 0;">Visitor Map</h4>
-<script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=2c3947&w=a&t=tt&d=y6T8LBp_9ogzCge7zZknwfh8sXC24mspb9qOqnriZtw&co=e8edf2&ct=2c3947&cmo=1591dc&cmn=ff0000'></script>
+<div id="mmv-container" style="color: #1591DC;"></div>
+<script>
+(function() {
+  var DARK_BG  = '2a2924';
+  var LIGHT_BG = 'ffffff';
+  var BASE = 'https://mapmyvisitors.com/map.js?cl=6fa8d4&w=300&t=tt&d=y6T8LBp_9ogzCge7zZknwfh8sXC24mspb9qOqnriZtw&ct=4a7fb5&cmo=2c3947&cmn=f4ae52&co=';
+
+  function applyAccent(root) {
+    root.querySelectorAll('.mapmyvisitors-visitors, .mapmyvisitors-date').forEach(function(el) {
+      el.style.setProperty('color', '#1591DC', 'important');
+    });
+  }
+
+  function loadMap() {
+    var isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
+    var co = isDark ? DARK_BG : LIGHT_BG;
+    var container = document.getElementById('mmv-container');
+    container.innerHTML = '';
+    var s = document.createElement('script');
+    s.id = 'mapmyvisitors';
+    s.src = BASE + co;
+    container.appendChild(s);
+
+    new MutationObserver(function(mutations, obs) {
+      applyAccent(container);
+    }).observe(container, { childList: true, subtree: true });
+  }
+
+  loadMap();
+
+  new MutationObserver(function(mutations) {
+    mutations.forEach(function(m) {
+      if (m.attributeName === 'data-bs-theme') loadMap();
+    });
+  }).observe(document.documentElement, { attributes: true });
+})();
+</script>
 </div>
