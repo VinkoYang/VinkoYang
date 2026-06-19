@@ -152,10 +152,11 @@ permalink: /about/
   {% assign cat_students = all_mentored | where: "mentoring_role", cat %}
   {% if cat_students.size > 0 %}
     {% assign cat_index = forloop.index0 %}
+    {% assign sorted_students = cat_students | sort: "year_end" | reverse %}
 <h4 style="margin-top: var(--space-4); margin-bottom: var(--space-2);">{{ mentoring_labels[cat_index] }}</h4>
 <ul>
-    {% for student in cat_students %}
-<li>{{ student.name }}{% if student.location %}, {{ student.location }}{% elsif student.affiliation %}, {{ student.affiliation }}{% endif %}{% if student.degree or student.year or student.duration %} ({% if student.degree %}{{ student.degree }}{% endif %}{% if student.degree and student.duration %}, {% endif %}{% if student.duration %}{{ student.duration }}{% elsif student.year %}{{ student.year }}{% endif %}){% endif %}</li>
+    {% for student in sorted_students %}
+<li>{{ student.name }}{% if student.location %}, {{ student.location }}{% elsif student.affiliation %}, {{ student.affiliation }}{% endif %}{% if student.degree or student.year_start %} ({% if student.degree %}{{ student.degree }}{% endif %}{% if student.degree and student.year_start %}, {% endif %}{% if student.year_start %}{{ student.year_start }}{% if student.year_end %} – {{ student.year_end }}{% endif %}{% endif %}){% endif %}{% if student.thesis %}<br><span style="font-size: 0.9em; color: var(--text-secondary);">Thesis: {{ student.thesis }}</span>{% endif %}</li>
     {% endfor %}
 </ul>
   {% endif %}

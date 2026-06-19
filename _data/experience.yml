@@ -6,7 +6,7 @@ professional_experience:
     dates: "Jul. 2024 – Present"
     highlights:
       - "Research Interests: Human-robot Interaction, Robotics manipulation, Programming by Demonstration, Robotics System Design, Augmented & Virtual Reality, Human Factors, Tele-robots, Cobots, Cyber-Physical Systems, Digital Twin, Industry 4.0, Smart Factory."
-      - "Teaching: Robotics Operations and Programming (INEN-5301), AR/VR in manufacturing (INEN-5301), Introduction to Robotics (INEN-5358), Professional Seminar (INEN-6110)."
+      - "Teaching: <a href='/teaching/#inen-5301-05'>Robotics Operations and Programming (INEN-5301)</a>, <a href='/teaching/#inen-5301-01'>AR/VR in manufacturing (INEN-5301)</a>, <a href='/teaching/#inen-5358'>Introduction to Robotics (INEN-5358)</a>, <a href='/teaching/#inen-6110'>Professional Seminar (INEN-6110)</a>."
 
   - position: "Software Engineer"
     company: "Meta Reality Labs"
@@ -54,10 +54,10 @@ teaching_experience:
     dates: "Jul. 2024 – Present"
     description: "Department of Industrial and Systems Engineering, taking online and face-to-face classes in graduate levels:"
     courses:
-      - "Robotics Operations and Programming (INEN-5301)"
-      - "AR/VR in manufacturing (INEN-5301)"
-      - "Introduction to Robotics (INEN-5358)"
-      - "Professional Seminar (INEN-6110)"
+      - "<a href='/teaching/#inen-5301-05'>Robotics Operations and Programming (INEN-5301)</a>"
+      - "<a href='/teaching/#inen-5301-01'>AR/VR in manufacturing (INEN-5301)</a>"
+      - "<a href='/teaching/#inen-5358'>Introduction to Robotics (INEN-5358)</a>"
+      - "<a href='/teaching/#inen-6110'>Professional Seminar (INEN-6110)</a>"
 
   - position: "Guest Lecturer"
     institution: "Monroe Community College"

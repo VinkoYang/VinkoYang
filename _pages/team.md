@@ -65,13 +65,14 @@ permalink: /team/
 <tr><th>Name</th><th>Degree</th><th>Duration</th><th>Thesis</th><th>Current Position</th></tr>
 </thead>
 <tbody>
-{% for member in site.data.people.alumni %}
+{% assign sorted_alumni = site.data.people.alumni | sort: "year_end" | reverse %}
+{% for member in sorted_alumni %}
 <tr>
-<td data-label="Name">{{ member.name }}</td>
+<td data-label="Name">{% if member.website and member.website != "" %}<a href="{{ member.website }}" target="_blank">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}</td>
 <td data-label="Degree">{{ member.degree }}</td>
-<td data-label="Duration">{{ member.duration }}</td>
+<td data-label="Duration">{% if member.year_start %}{{ member.year_start }}{% if member.year_end %} – {{ member.year_end }}{% endif %}{% endif %}</td>
 <td data-label="Thesis" style="font-style: italic;">{{ member.thesis }}</td>
-<td data-label="Current Position">{{ member.info }}</td>
+<td data-label="Current Position">{{ member.current_position }}</td>
 </tr>
 {% endfor %}
 </tbody>

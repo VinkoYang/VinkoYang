@@ -119,7 +119,8 @@ students:
     email: smobin@lamar.edu
     location: Lamar University
     degree: Doctoral of Industrial Engineering
-    year: 2024 – now
+    year_start: 2024 
+    year_end: now
 
   - name: Lakshmana Ayyalasomayajula (Avinash)
     show_team: true
@@ -130,7 +131,8 @@ students:
     email: layyalasomay@lamar.edu
     location: Lamar University
     degree: Doctoral of Industrial Engineering
-    year: 2025 – now
+    year_start: 2025 
+    year_end: now
 
   - name: Rezwanul Ashraf Ruddro
     show_team: true
@@ -141,7 +143,8 @@ students:
     email: rruddro@lamar.edu
     location: Lamar University
     degree: Doctoral of Industrial Engineering
-    year: 2026 – now
+    year_start: 2026 
+    year_end: now
     website: "https://www.linkedin.com/in/rezwanul-ashraf-ruddro-28772b199/"
 
   - name: John Gust
@@ -163,7 +166,7 @@ students:
 # Required: name
 # Optional: duration, degree, thesis, info (current position)
 #   thesis – can contain HTML (e.g. <a href="...">title</a>)
-#   info   – current position after leaving the lab
+#   current_position – current position after leaving the lab
 # -----------------------------------------------------------------------------
 # EXAMPLE:
 # alumni:
@@ -171,22 +174,24 @@ students:
 #     duration: 2022-2024
 #     degree: M.S.
 #     thesis: "<a href='https://...' target='_blank'>Thesis Title Here</a>"
-#     info: "Engineer at Tesla"
+#     current_position: "Engineer at Tesla"
 alumni:
   - name: Muhammad Ilyas Mubarik
-    duration: 2024-2026
+    year_start: 2024 
+    year_end: 2026
     degree: M.S.
     thesis: "<a href='https://www.proquest.com/openview/8c5aa49f0903d4c8a7c414659a57f401/1?pq-origsite=gscholar&cbl=18750&diss=y' target='_blank'>Advanced Mixed Reality Training for First Responders in Hurricane Scenarios</a>"
     website: "https://www.linkedin.com/in/ilyasmubarik/"
-    info: ""
+    current_position: ""
     mentoring_role: master_advisor
 
   - name: Rezwanul Ashraf Ruddro
-    duration: 2025-2026
+    year_start: 2025 
+    year_end: 2026
     degree: M.S.
     thesis: "<a href='https://www.proquest.com/openview/3a91da983e9b038992ccc20282733db7/1?pq-origsite=gscholar&cbl=18750&diss=y' target='_blank'>Development of an Immersive VR Learning System With LLM-Integrated Avatar for Educational Assistance</a>"
     website: "https://www.linkedin.com/in/rezwanul-ashraf-ruddro-28772b199/"
-    info: "Continuing DE studentment at Lamar University"
+    current_position: "Continuing DE student at Lamar University"
     mentoring_role: master_advisor
 
 # -----------------------------------------------------------------------------

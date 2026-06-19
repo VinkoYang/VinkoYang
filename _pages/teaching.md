@@ -8,7 +8,7 @@ permalink: /teaching/
 ## Teaching
 
 {% for course in site.data.teaching %}
-<div class="section-card">
+<div class="section-card" id="{{ course.code | downcase | replace: ' ', '-' }}">
 
 <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-2);">
 <div>
