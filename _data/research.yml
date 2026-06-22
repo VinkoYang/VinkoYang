@@ -44,8 +44,7 @@
     - Augmented Reality
     - Robot Programming
   abstract: >
-    This project proposed and developed an intuitive and immersive AR-based interface for cobot (AUBO i5) programming,
-    aiming to address the challenges in performing path planning tasks in complex environments.
+    This project proposed and developed an intuitive and immersive AR-based interface for cobot (AUBO i5) programming, aiming to address the challenges in performing path planning tasks in complex environments.
   links:
     paper: ""
     webpage: ""
@@ -65,9 +64,7 @@
     - Cognitive Load Theory
     - Learning Science
   abstract: >
-    This work proposed a novel system, HAR2bot, for path planning tasks in complex environments.
-    The proposed system effectively balances the communication between the operator and the robot to minimize the cognitive
-    burden associated with the design loop, leading to improved task efficiency and accuracy.
+    This work proposed a novel system, HAR2bot, for path planning tasks in complex environments. The proposed system effectively balances the communication between the operator and the robot to minimize the cognitive burden associated with the design loop, leading to improved task efficiency and accuracy.
   links:
     paper: ""
     webpage: ""
@@ -99,8 +96,7 @@
   keywords:
     - Augmented Reality
   abstract: >
-    This project presents an experiment on an AR-based human-robot interaction scenario, aimed at demonstrating the effectiveness of a proposed method for 
-    addressing occlusion problems in the rendering of virtual objects. The method involves the use of depth completion and super-resolution techniques to enhance the visual quality.
+    This project presents an experiment on an AR-based human-robot interaction scenario, aimed at demonstrating the effectiveness of a proposed method for addressing occlusion problems in the rendering of virtual objects. The method involves the use of depth completion and super-resolution techniques to enhance the visual quality.
   links:
     paper: ""
     webpage: ""
@@ -116,8 +112,7 @@
   keywords:
     - Augmented Reality
   abstract: >
-    This project demonstrates the potential of utilizing digital twin technology with an Augmented Reality interface for improved maintenance procedures. 
-    By presenting a demo system of a repair process, this work aims to highlight the benefits of using AR for clear and intuitive visualization of the device being repaired, resulting in improved accuracy and ease of instruction for technicians.
+    This project demonstrates the potential of utilizing digital twin technology with an Augmented Reality interface for improved maintenance procedures. By presenting a demo system of a repair process, this work aims to highlight the benefits of using AR for clear and intuitive visualization of the device being repaired, resulting in improved accuracy and ease of instruction for technicians.
   links:
     paper: ""
     webpage: ""
@@ -134,8 +129,7 @@
     - Smart Factory
     - Digital Twin
   abstract: >
-    An AR headset-based prototyping system has been developed to offer a clear and intuitive digital visualization for the purpose of exploring the 
-    potential applications of smart factories. This project presents a case study of a maintenance application in a CNC machine shop for technicians.
+    An AR headset-based prototyping system has been developed to offer a clear and intuitive digital visualization for the purpose of exploring the potential applications of smart factories. This project presents a case study of a maintenance application in a CNC machine shop for technicians.
   links:
     paper: ""
     webpage: ""
@@ -153,9 +147,7 @@
     - Errors
     - Robots
   abstract: >
-    The purpose of this study is to introduce a calibration method for the registration problem in a video seethrough 
-    Augmented Reality (AR) system. This study investigates error sources and presents an efficient calibration procedure 
-    to reduce the misalignment accuracy via HMD-to-Camera transformation.
+    The purpose of this study is to introduce a calibration method for the registration problem in a video seethrough Augmented Reality (AR) system. This study investigates error sources and presents an efficient calibration procedure to reduce the misalignment accuracy via HMD-to-Camera transformation.
   links:
     paper: ""
     webpage: "https://asmedigitalcollection.asme.org/computingengineering/article/24/3/031003/1166670/A-Global-Correction-Framework-for-Camera"
@@ -173,9 +165,7 @@
     - User Interface
     - Robotics
   abstract: >
-    This study describes the development of a tele-robot control system that utilizes a Mixed Reality headset, 
-    (HoloLens 2), to remotely control Automated Guided Vehicles (Rover Pro). The system features a user-friendly 
-    interface that offers three control methods: motion control, physical button control, and virtual button control.
+    This study describes the development of a tele-robot control system that utilizes a Mixed Reality headset, (HoloLens 2), to remotely control Automated Guided Vehicles (Rover Pro). The system features a user-friendly interface that offers three control methods: motion control, physical button control, and virtual button control.
   links:
     paper: ""
     webpage: ""
@@ -197,9 +187,7 @@
     - Unity
     - Meta Quest 3S
   abstract: >
-    This research project focuses on the development and deployment of a real-time object detection system 
-    for Mixed Reality (MR) and Virtual Reality (VR) environments using the Meta Quest 3S platform. 
-    Leveraging the newly released AI Building Blocks provided in Meta SDK v83+ and the Meta XR MR Utility Kit v83+.
+    This research project focuses on the development and deployment of a real-time object detection system for Mixed Reality (MR) and Virtual Reality (VR) environments using the Meta Quest 3S platform. Leveraging the newly released AI Building Blocks provided in Meta SDK v83+ and the Meta XR MR Utility Kit v83+.
   links:
     paper: ""
     webpage: "https://github.com/VinkoYang/ObjectDetectionMetaQuest3S_Demo"
@@ -222,10 +210,7 @@
     - Human Computer Interaction 
     - Spatial Perception
   abstract: >
-    The Vertical-Horizontal Illusion (VHI) biases perceived geometric proportions across visual displays. 
-    This study introduces the Square Recognition Test (SRT), a unified method to measure perceived squareness across devices. 
-    A within-subject study (N = 24) on PC, mobile, and AR HMDs shows a consistent bias toward slightly wider-than-tall rectangles 
-    (PSE ≈ 1.02-1.04), indicating device-invariant VHI effects. 
+    The Vertical-Horizontal Illusion (VHI) biases perceived geometric proportions across visual displays. This study introduces the Square Recognition Test (SRT), a unified method to measure perceived squareness across devices. A within-subject study (N = 24) on PC, mobile, and AR HMDs shows a consistent bias toward slightly wider-than-tall rectangles (PSE ≈ 1.02-1.04), indicating device-invariant VHI effects. 
   links:
     paper: ""
     webpage: ""
@@ -247,9 +232,7 @@
     - Embodied Interaction
     - Adaptive Interfaces
   abstract: >
-    MOTION is an AI-powered AR rehabilitation system that uses real-time biomechanical motion capture and adaptive feedback 
-    to improve movement accuracy and engagement. By combining body tracking, gamified interaction, and remote clinician support, 
-    the platform enables accessible and personalized rehabilitation in XR environments.
+    MOTION is an AI-powered AR rehabilitation system that uses real-time biomechanical motion capture and adaptive feedback to improve movement accuracy and engagement. By combining body tracking, gamified interaction, and remote clinician support, the platform enables accessible and personalized rehabilitation in XR environments.
   links:
     paper: ""
     webpage: ""
@@ -274,9 +257,7 @@
     - Hurricane Scenarios
     - Training Simulation
   abstract: >
-    This project develops and evaluates an advanced Mixed Reality (MR) training platform for hurricane and flood response, 
-    aimed at enhancing preparedness for both first responders and community members. Built using Unity and deployed on the Meta Quest 3, 
-    the system overlays dynamic virtual hazards nto real-world environments.
+    This project develops and evaluates an advanced Mixed Reality (MR) training platform for hurricane and flood response, aimed at enhancing preparedness for both first responders and community members. Built using Unity and deployed on the Meta Quest 3, the system overlays dynamic virtual hazards nto real-world environments.
   links:
     paper: "mubarik2026mrtraining.pdf"
     webpage: ""
@@ -300,10 +281,7 @@
     - Human-Computer Interaction
     - Unity Engine
   abstract: >
-    This project presents the development of an interactive augmented reality (AR) application designed to demonstrate the 
-    motion of a Newton's cradle for educational purposes. With the increasing use of mobile devices among children, the 
-    application aims to leverage AR technology to provide an engaging and accessible platform for learning fundamental physics 
-    concepts such as momentum transfer, energy conservation, and damping.
+    This project presents the development of an interactive augmented reality (AR) application designed to demonstrate the motion of a Newton's cradle for educational purposes. With the increasing use of mobile devices among children, the application aims to leverage AR technology to provide an engaging and accessible platform for learning fundamental physics concepts such as momentum transfer, energy conservation, and damping.
   links:
     paper: ""
     webpage: ""
@@ -330,10 +308,7 @@
     - Unity Engine
     - AI-Assisted Learning
   abstract: >
-    This project develops an immersive VR learning system integrated with an LLM-powered conversational avatar for real-time 
-    educational assistance. The system enables in-environment question answering within a virtual classroom, addressing the 
-    lack of open-ended interaction in existing VR tools. A Unity-based prototype with a local LLM was evaluated through case 
-    studies and baseline comparison with a PC-based AI system.
+    This project develops an immersive VR learning system integrated with an LLM-powered conversational avatar for real-time educational assistance. The system enables in-environment question answering within a virtual classroom, addressing the lack of open-ended interaction in existing VR tools. A Unity-based prototype with a local LLM was evaluated through case studies and baseline comparison with a PC-based AI system.
   links:
     paper: ""
     webpage: "https://www.proquest.com/openview/3a91da983e9b038992ccc20282733db7/1?pq-origsite=gscholar&cbl=18750&diss=y"

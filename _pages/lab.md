@@ -50,6 +50,25 @@ Through interdisciplinary research, XRAI Lab seeks to redefine how intelligent m
 {% endfor %}
 </div>
 
+## Recent Research
+
+{% assign _rr_sorted = site.data.research | sort: "end_date" | reverse %}
+{% assign _rr_found = 0 %}
+{% for _rr_item in _rr_sorted %}{% if _rr_found == 0 %}{% if _rr_item.links.video and _rr_item.links.video != "" %}{% if _rr_item.links.video contains "youtu" %}{% assign _rr_project = _rr_item %}{% assign _rr_found = 1 %}{% endif %}{% endif %}{% endif %}{% endfor %}
+{% if _rr_found == 1 %}
+{% if _rr_project.links.video contains "youtu.be/" %}{% assign _rr_vid = _rr_project.links.video | split: "youtu.be/" | last | split: "?" | first %}{% else %}{% assign _rr_vid = _rr_project.links.video | split: "v=" | last | split: "&" | first %}{% endif %}
+<div class="section-card rr-card" markdown="0">
+<div class="rr-header">
+<h3 class="rr-title">{{ _rr_project.title }}</h3>
+<a href="{{ site.url }}{{ site.baseurl }}/videos/" class="rr-more-btn">More &raquo;</a>
+</div>
+<div class="rr-video-wrap">
+<iframe src="https://www.youtube.com/embed/{{ _rr_vid }}" title="{{ _rr_project.title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<p class="rr-abstract">{{ _rr_project.abstract | strip_newlines | strip }}</p>
+</div>
+{% endif %}
+
 ## Equipment
 
 <div class="equipment-grid">

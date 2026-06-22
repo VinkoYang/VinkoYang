@@ -137,6 +137,77 @@
   gap: var(--space-2);
 }
 
+// ------ Recent Research section --------------------------------
+
+.rr-card {
+  position: relative;
+}
+
+.rr-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.rr-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary) !important;
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+  line-height: 1.4;
+
+  &::after { display: none; }
+}
+
+.rr-more-btn {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+
+  &:hover {
+    background-color: var(--accent);
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.rr-video-wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-4);
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+.rr-abstract {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+  max-width: none;
+}
+
 // ------ Equipment grid ----------------------------------------
 
 .page-hero {
