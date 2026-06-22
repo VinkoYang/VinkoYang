@@ -144,10 +144,6 @@
 }
 
 .rr-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: var(--space-4);
   margin-bottom: var(--space-4);
 }
 
@@ -204,8 +200,14 @@
   font-size: 0.875rem;
   color: var(--text-secondary);
   line-height: 1.7;
-  margin: 0;
+  margin: 0 0 var(--space-4);
   max-width: none;
+}
+
+.rr-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
 }
 
 // ------ Equipment grid ----------------------------------------

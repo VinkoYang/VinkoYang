@@ -60,12 +60,15 @@ Through interdisciplinary research, XRAI Lab seeks to redefine how intelligent m
 <div class="section-card rr-card" markdown="0">
 <div class="rr-header">
 <h3 class="rr-title">{{ _rr_project.title }}</h3>
-<a href="{{ site.url }}{{ site.baseurl }}/videos/" class="rr-more-btn">More &raquo;</a>
 </div>
 <div class="rr-video-wrap">
 <iframe src="https://www.youtube.com/embed/{{ _rr_vid }}" title="{{ _rr_project.title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 <p class="rr-abstract">{{ _rr_project.abstract | strip_newlines | strip }}</p>
+<div class="rr-actions">
+<a href="{{ site.url }}{{ site.baseurl }}/videos/" class="rr-more-btn">Watch More &raquo;</a>
+<a href="{{ site.url }}{{ site.baseurl }}/research/" class="rr-more-btn">Find More Projects &raquo;</a>
+</div>
 </div>
 {% endif %}
 
