@@ -539,3 +539,47 @@ I credit the [Allen Lab](https://www.allanlab.org/) for creating a beautiful aca
 ## License
 
 MIT
+
+---
+
+## Local Development
+
+### Prerequisites
+
+- Ruby 3.x — install via [rbenv](https://github.com/rbenv/rbenv) or [RubyInstaller](https://rubyinstaller.org/) (Windows)
+- Bundler: `gem install bundler`
+
+### Install Dependencies
+
+```bash
+bundle install
+```
+
+### Run the Dev Server
+
+```bash
+bundle exec jekyll serve
+```
+
+Then open `http://localhost:4000` in your browser. The server watches for file changes and rebuilds automatically — just refresh the page.
+
+### Useful Flags
+
+| Flag | Effect |
+|------|--------|
+| `--livereload` | Auto-refresh browser on file change |
+| `--drafts` | Include posts in `_drafts/` |
+| `--incremental` | Faster rebuilds (only changed files) |
+| `--port 4001` | Change the default port |
+
+```bash
+# Example: live-reload on a custom port
+bundle exec jekyll serve --livereload --port 4001
+```
+
+### Troubleshooting
+
+- **Gem conflicts** — run `bundle update` to resolve dependency mismatches.
+- **Port already in use** — kill the existing process (`lsof -i :4000` on Mac/Linux, `netstat -ano | findstr :4000` on Windows) or use `--port`.
+- **Changes not showing** — `_config.yml` changes require a full server restart; other files hot-reload automatically.
+- **`jekyll-scholar` errors** — make sure your BibTeX in `assets/ref.bib` is valid; a malformed entry will abort the build.

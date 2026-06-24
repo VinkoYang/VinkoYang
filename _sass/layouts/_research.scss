@@ -203,7 +203,11 @@
   .research-card-h-keywords {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-3);
+    gap: var(--space-1);
+
+    > p {
+      display: contents;
+    }
   }
 
   .research-card-h-abstract {
@@ -211,14 +215,18 @@
     color: var(--text-secondary);
     line-height: 1.75;
     margin: 0;
-    flex: 1;
+    max-width: none;
   }
 
   .research-card-h-links {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-3);
-    margin-top: var(--space-1);
+    gap: 0.2rem;
+    margin-top: auto;
+
+    > p {
+      display: contents;
+    }
   }
 }
 

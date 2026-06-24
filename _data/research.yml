@@ -26,6 +26,7 @@
 #     poster    — path relative to site root, e.g. "papers/myposter.pdf"
 #     slide     — path relative to site root, must include "files/" prefix, e.g. "files/2026_myslide.pdf"
 #     bib       — full external URL to BibTeX / citation page
+#     github    — full external URL to GitHub repository
 
 
 - title: "Augmented reality-based human-robot interaction system"
@@ -316,3 +317,33 @@
     bib: ""
     poster: ""
     slide: "files/2026_llmavatar_slide.pdf"
+
+- title: "AI Identification and Mapping of Invasive Aquatic Plants"
+  image: "research/2026_plantIdentifier.jpg"
+  focus: [1]
+  start_date: "2025-9"
+  end_date: "2026-5"
+  authors:
+    - name: "Lucas Parker"
+    - name: "Adolfo Lares Leon"
+    - name: "Cade Dotson"
+    - name: "Irving Granados"
+    - name: "Quinn Shoemaker"
+  mentors:
+    - name: "Wenhao Yang"
+  keywords:
+    - Computer Vision
+    - Machine Learning
+    - Environmental Monitoring
+    - Remote Sensing
+    - AI-Assisted Learning
+  abstract: >
+    This project develops an AI-based system using a convolutional neural network to identify aquatic plant species from images, particularly distinguishing yellow floating heart from visually similar classes. A custom dataset, together with data preprocessing, augmentation, and iterative model optimization, was used to achieve strong classification accuracy and generalization performance. The final system, equipped with a real-time user interface, provides a scalable and efficient solution for automated plant identification, reducing reliance on manual inspection.
+  links:
+    paper: ""
+    webpage: "https://invasive-plant-identifier-xgcth8imhbdwbkcw6m3qcr.streamlit.app/"
+    video: ""
+    bib: ""
+    poster: "files/2026_MechGenius_Poster.pdf"
+    slide: "files/2026_MechGenius_Slide.pdf"
+    github: "https://github.com/lparker25/Invasive-Plant-Identifier"
