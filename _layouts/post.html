@@ -2,13 +2,76 @@
 layout: default
 ---
 
-<article itemscope itemtype="http://schema.org/BlogPosting">
-  <h2 itemprop="name headline">{{ page.title | escape }}</h2>
-  <p class="text-muted" style="font-size: 0.875rem;">
-    <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
-    {% if page.author %} &middot; <span itemprop="author">{{ page.author }}</span>{% endif %}
-  </p>
-  <div itemprop="articleBody">
-    {{ content }}
+<div class="post-wrapper">
+
+  <nav class="post-breadcrumb" aria-label="breadcrumb">
+    <a href="{{ site.url }}{{ site.baseurl }}/">{{ site.name }}</a>
+    <span class="bc-sep">&rsaquo;</span>
+    <a href="{{ site.url }}{{ site.baseurl }}/blogs/">Blogs</a>
+    <span class="bc-sep">&rsaquo;</span>
+    <span class="bc-current">{{ page.title | truncate: 50 }}</span>
+  </nav>
+
+  <div class="post-layout">
+
+    <article class="post-content" itemscope itemtype="http://schema.org/BlogPosting">
+      <h1 itemprop="name headline">{{ page.title | escape }}</h1>
+      <p class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+        {% if page.categories %}&nbsp;&middot;&nbsp;<span class="chip chip-muted" style="font-size:0.78rem;">{{ page.categories }}</span>{% endif %}
+        {% if page.author %}&nbsp;&middot;&nbsp;<span itemprop="author">{{ page.author }}</span>{% endif %}
+      </p>
+      <div itemprop="articleBody" class="post-body">
+        {{ content }}
+      </div>
+    </article>
+
+    <aside class="post-toc" id="postToc" aria-label="Table of contents">
+      <div class="toc-inner">
+        <p class="toc-title">On This Page</p>
+        <nav id="tocNav"></nav>
+      </div>
+    </aside>
+
   </div>
-</article>
+</div>
+
+<script>
+(function () {
+  var body    = document.querySelector('.post-body');
+  var tocNav  = document.getElementById('tocNav');
+  var tocAside = document.getElementById('postToc');
+  if (!body || !tocNav) return;
+
+  var headings = body.querySelectorAll('h2, h3');
+  if (headings.length < 2) { tocAside.style.display = 'none'; return; }
+
+  var ul = document.createElement('ul');
+  headings.forEach(function (h, i) {
+    if (!h.id) h.id = 'toc-h-' + i;
+    var li = document.createElement('li');
+    li.className = h.tagName === 'H3' ? 'toc-h3' : 'toc-h2';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent.replace(/¶$/, '').trim();
+    li.appendChild(a);
+    ul.appendChild(li);
+  });
+  tocNav.appendChild(ul);
+
+  var links = tocNav.querySelectorAll('a');
+  function clearActive() { links.forEach(function (a) { a.classList.remove('active'); }); }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        clearActive();
+        var active = tocNav.querySelector('a[href="#' + entry.target.id + '"]');
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-8% 0px -82% 0px' });
+
+  headings.forEach(function (h) { observer.observe(h); });
+})();
+</script>

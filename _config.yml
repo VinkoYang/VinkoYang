@@ -61,6 +61,8 @@ sass:
   quiet_deps: true
   style: compressed
 
+permalink: /blogs/:title/
+
 markdown: kramdown
 highlighter: rouge
 lsi: false

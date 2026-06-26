@@ -10,14 +10,14 @@
 </p>
 
 <h3 align="center">
-  <a href="https://sbryngelson.github.io/academic-website-template/">See the live demo &rarr;</a>
+  <a href="https://sbryngelson.github.io/academic-website-template/">See the live demo →</a>
 </h3>
 
 <p align="center">
-  <a href="#quick-start">Quick Start</a> &middot;
-  <a href="#features">Features</a> &middot;
-  <a href="#customization">Customization</a> &middot;
-  <a href="#publications">Publications</a> &middot;
+  <a href="#quick-start">Quick Start</a> ·
+  <a href="#features">Features</a> ·
+  <a href="#customization">Customization</a> ·
+  <a href="#publications">Publications</a> ·
   <a href="#hosting">Hosting</a>
 </p>
 
@@ -236,6 +236,7 @@ __Using this template? Share your site and I'll add it here!__
 ## Features
 
 ### Design
+
 - **Source Serif 4 + DM Sans** typography — elegant serif headings paired with a clean geometric sans body
 - **Warm parchment palette** with subtle noise texture for depth, not flat generic whites
 - **Dark mode** — toggle in navbar, auto-detects system preference, persists across visits
@@ -244,6 +245,7 @@ __Using this template? Share your site and I'll add it here!__
 - **Responsive** — CSS Grid layouts that adapt from desktop to tablet to mobile
 
 ### Interactions
+
 - **Site-wide search** — press `Cmd+K` (or `Ctrl+K`) to instantly search all pages
 - **Copy BibTeX** — hover any bibtex block to reveal a one-click copy button
 - **Animated link underlines** — smooth gradient underlines that grow on hover
@@ -253,18 +255,21 @@ __Using this template? Share your site and I'll add it here!__
 - **Smooth expand/collapse** — CSS transitions on publication abstracts and BibTeX entries
 
 ### Publications
+
 - **Auto-generated from BibTeX** via Jekyll Scholar — just edit `assets/ref.bib`
 - **Search bar** — filter publications by title, author, or year
 - **Year badges** — small accent-colored pills for quick scanning
 - **Pill buttons** — PDF, DOI, arXiv, BIB, Abstract
 
 ### For New Users
+
 - **Interactive setup script** — run `./setup.sh` to fill in your name, title, and institution
 - **4-step `_config.yml`** — numbered sections with inline comments guide you through setup
 - **Well-commented data files** — every field in `_data/*.yml` is explained with examples
 - **Smart link handling** — empty links in config are automatically hidden (no broken icons)
 
 ### Technical
+
 - **Modular SASS** — organized into `base/`, `components/`, `layouts/`, `utilities/`
 - **Selective Bootstrap 5.3.3** — only imports the modules used, not the full bundle
 - **Single JS file** (4KB minified) — dark mode, search, toggles, scroll effects, copy button
@@ -274,26 +279,26 @@ __Using this template? Share your site and I'll add it here!__
 
 ## Screenshots
 
-| | |
-|:---:|:---:|
+|                                                    |                                    |
+| :------------------------------------------------: | :--------------------------------: |
 | ![Publications](images/screenshots/publications.png) | ![Team](images/screenshots/team.png) |
-| Publications with search & year badges | Team page with card grid |
-| ![Search](images/screenshots/search.png) | |
-| Site-wide search (Cmd+K) | |
+|       Publications with search & year badges       |      Team page with card grid      |
+|       ![Search](images/screenshots/search.png)       |                                    |
+|              Site-wide search (Cmd+K)              |                                    |
 
 ## Quick Start
 
 1. **Fork** [this repository](https://github.com/sbryngelson/academic-website-template)
 2. **Delete** `_config_demo.yml` (it's only for the demo site)
 3. **Install** [Jekyll](https://jekyllrb.com/docs/installation/) and run `bundle install`
-3. **Configure** your site:
+4. **Configure** your site:
    ```bash
    ./setup.sh          # interactive setup, or
    vim _config.yml     # edit Steps 1-4 directly
    ```
-4. **Add your publications** to `assets/ref.bib`
-5. **Customize** data files in `_data/` (team members, news, awards, etc.)
-6. **Preview** your site:
+5. **Add your publications** to `assets/ref.bib`
+6. **Customize** data files in `_data/` (team members, news, awards, etc.)
+7. **Preview** your site:
    ```bash
    bundle exec jekyll serve
    # open http://localhost:4000
@@ -311,7 +316,7 @@ cd YOUR_USERNAME.github.io
 
 ### Step 2: Install Dependencies
 
-You need Ruby and Jekyll installed. See [Jekyll's installation guide](https://jekyllrb.com/docs/installation/).
+You need Ruby and Jekyll installed. See [Jekyll&#39;s installation guide](https://jekyllrb.com/docs/installation/).
 
 ```bash
 # Install Ruby gems
@@ -456,25 +461,25 @@ Your site will be live at `https://YOUR_USERNAME.github.io` within a few minutes
 
 The config file is organized into 4 numbered steps:
 
-| Step | Section | What to fill in |
-|------|---------|-----------------|
-| 1 | **Your Identity** | Name, title, institution, email, photo |
-| 2 | **Your Links** | Google Scholar, GitHub, ORCID, Twitter, LinkedIn, CV |
-| 3 | **Site Settings** | Accent color, dark mode toggle, analytics |
-| 4 | **Your Pages** | Comment out any pages you don't need |
+| Step | Section                 | What to fill in                                      |
+| ---- | ----------------------- | ---------------------------------------------------- |
+| 1    | **Your Identity** | Name, title, institution, email, photo               |
+| 2    | **Your Links**    | Google Scholar, GitHub, ORCID, Twitter, LinkedIn, CV |
+| 3    | **Site Settings** | Accent color, dark mode toggle, analytics            |
+| 4    | **Your Pages**    | Comment out any pages you don't need                 |
 
 ### Data Files
 
-| File | Purpose |
-|------|---------|
-| `_data/team_members.yml` | Current students and postdocs |
-| `_data/alumni.yml` | Former lab members |
-| `_data/news.yml` | News items (3 most recent shown on home) |
-| `_data/awards.yml` | Awards and honors |
-| `_data/grants.yml` | Grants and funding |
-| `_data/funders.yml` | Funder logos |
-| `_data/people.yml` | Students and mentees |
-| `_data/pi.yml` | Optional: detailed education for About page |
+| File                       | Purpose                                     |
+| -------------------------- | ------------------------------------------- |
+| `_data/team_members.yml` | Current students and postdocs               |
+| `_data/alumni.yml`       | Former lab members                          |
+| `_data/news.yml`         | News items (3 most recent shown on home)    |
+| `_data/awards.yml`       | Awards and honors                           |
+| `_data/grants.yml`       | Grants and funding                          |
+| `_data/funders.yml`      | Funder logos                                |
+| `_data/people.yml`       | Students and mentees                        |
+| `_data/pi.yml`           | Optional: detailed education for About page |
 
 Each file has inline comments explaining every field. Entries marked `# EXAMPLE` should be replaced or deleted.
 
@@ -516,7 +521,7 @@ To enable it: go to your repo's **Settings > Pages > Source** and select **GitHu
 
 ### Custom Domain
 
-Purchase a domain, update the `CNAME` file, and configure DNS. See [GitHub's guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
+Purchase a domain, update the `CNAME` file, and configure DNS. See [GitHub&#39;s guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
 
 ### Self-Hosting
 
@@ -565,12 +570,12 @@ Then open `http://localhost:4000` in your browser. The server watches for file c
 
 ### Useful Flags
 
-| Flag | Effect |
-|------|--------|
-| `--livereload` | Auto-refresh browser on file change |
-| `--drafts` | Include posts in `_drafts/` |
+| Flag              | Effect                               |
+| ----------------- | ------------------------------------ |
+| `--livereload`  | Auto-refresh browser on file change  |
+| `--drafts`      | Include posts in`_drafts/`         |
 | `--incremental` | Faster rebuilds (only changed files) |
-| `--port 4001` | Change the default port |
+| `--port 4001`   | Change the default port              |
 
 ```bash
 # Example: live-reload on a custom port
