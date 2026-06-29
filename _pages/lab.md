@@ -5,17 +5,16 @@ sitemap: false
 permalink: /lab/
 hero_image: images/lab/xrai_lab_wide.png
 ---
-
 ## XRAI Lab
 
 <div class="section-card">
 <h3>About XRAI Lab</h3>
 <p style="font-size: 0.95rem; line-height: 1.75; margin-bottom: var(--space-4);">
-The <strong>XRAI Lab</strong> aims to advance the seamless integration of Extended Reality (XR), Artificial Intelligence (AI), and Robotics to create intelligent, interactive, and adaptive systems.
-We focus on developing next-generation technologies that bridge physical and virtual worlds, enabling intuitive interaction, enhanced human capabilities, and collaborative autonomy.
+The <strong>Extended Reality, Artificial Intelligence, and Robotics (XRAI) Lab</strong> aims to advance the seamless integration of Extended Reality (XR), Artificial Intelligence (AI), and Robotics to create intelligent, interactive, and adaptive systems.
+Our research focuses on next-generation technologies that seamlessly bridge the physical and virtual worlds, enabling intuitive human–machine interaction, augmenting human capabilities, and supporting collaborative autonomy.
 </p>
 <p style="font-size: 0.95rem; line-height: 1.75; margin: 0;">
-Through interdisciplinary research, XRAI Lab seeks to redefine how intelligent machines are designed, experienced, and integrated into real-world applications, including manufacturing, education, and human-centered systems.
+Through interdisciplinary innovation, the XRAI Lab redefines how intelligent systems are designed, experienced, and deployed across real-world applications, including advanced manufacturing, engineering education, and human-centered automation.
 </p>
 </div>
 
@@ -57,6 +56,7 @@ Through interdisciplinary research, XRAI Lab seeks to redefine how intelligent m
 {% for _rr_item in _rr_sorted %}{% if _rr_found == 0 %}{% if _rr_item.links.video and _rr_item.links.video != "" %}{% if _rr_item.links.video contains "youtu" %}{% assign _rr_project = _rr_item %}{% assign _rr_found = 1 %}{% endif %}{% endif %}{% endif %}{% endfor %}
 {% if _rr_found == 1 %}
 {% if _rr_project.links.video contains "youtu.be/" %}{% assign _rr_vid = _rr_project.links.video | split: "youtu.be/" | last | split: "?" | first %}{% else %}{% assign _rr_vid = _rr_project.links.video | split: "v=" | last | split: "&" | first %}{% endif %}
+
 <div class="section-card rr-card" markdown="0">
 <div class="rr-header">
 <h3 class="rr-title">{{ _rr_project.title }}</h3>
@@ -66,8 +66,8 @@ Through interdisciplinary research, XRAI Lab seeks to redefine how intelligent m
 </div>
 <p class="rr-abstract">{{ _rr_project.abstract | strip_newlines | strip }}</p>
 <div class="rr-actions">
-<a href="{{ site.url }}{{ site.baseurl }}/videos/" class="rr-more-btn">Watch More &raquo;</a>
-<a href="{{ site.url }}{{ site.baseurl }}/research/" class="rr-more-btn">Find More Projects &raquo;</a>
+<a href="{{ site.url }}{{ site.baseurl }}/videos/" class="rr-more-btn">Watch More »</a>
+<a href="{{ site.url }}{{ site.baseurl }}/research/" class="rr-more-btn">Find More Projects »</a>
 </div>
 </div>
 {% endif %}
