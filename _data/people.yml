@@ -78,6 +78,41 @@ collaborators:
     website: "https://www.lamar.edu/education/curriculum-and-instruction/faculty-staff/yan-yan-fp/"
     email: "yyan1@lamar.edu"
 
+  - name: "Cheng Han"
+    last_name: "Han"
+    show_collaborator: true
+    affiliation: "University of Missouri - Kansas City (UMKC)"
+    website: "https://sse.umkc.edu/profiles/cheng-han.html"
+    email: "chk9k@umkc.edu"
+
+  - name: "Dongfang Liu"
+    last_name: "Liu"
+    show_collaborator: true
+    affiliation: "Rochester Institute of Technology (RIT)"
+    website: "https://www.rit.edu/directory/dxleec-dongfang-liu"
+    email: "dongfang.liu@rit.edu"
+
+  - name: "Qifan Wang"
+    last_name: "Wang"
+    show_collaborator: true
+    affiliation: "Meta MRS Research"
+    website: "https://wqfcr.github.io/"
+    email: "wqfcr618@gmail.com"
+
+  - name: "Jiebo Luo"
+    last_name: "Luo"
+    show_collaborator: true
+    affiliation: "University of Rochester"
+    website: "https://www.cs.rochester.edu/people/faculty/luo_jiebo/index.html"
+    email: "jluo@cs.rochester.edu"
+
+  - name: "Ruixiang Tang"
+    last_name: "Tang"
+    show_collaborator: true
+    affiliation: "Rutgers University–New Brunswick"
+    website: "https://www.ruixiangtang.net/"
+    email: "ruixiang.tang@rutgers.edu"
+
 # -----------------------------------------------------------------------------
 # Students (current and incoming members)
 # Used in: team.md (card grid), about.md (mentoring list), research.md (author link)

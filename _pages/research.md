@@ -70,7 +70,11 @@ permalink: /research/
 <div class="research-card-h" id="{{ card_id }}" data-research-searchable data-keywords="{{ kw_joined | downcase }}" data-focus="{{ focus_joined }}" data-start-year="{{ card_start_yr }}" data-end-year="{{ card_end_yr }}">
 <div class="research-card-h-img">
 {% if item.image and item.image != "" %}
+  {% if item.image contains ".pdf" %}
+<canvas class="research-card-pdf" data-pdf="{{ site.url }}{{ site.baseurl }}/images/{{ item.image }}"></canvas>
+  {% else %}
 <img src="{{ site.url }}{{ site.baseurl }}/images/{{ item.image }}" alt="{{ item.title }}" loading="lazy">
+  {% endif %}
 {% else %}
 <div class="research-card-h-img-placeholder"><i class="fa-solid fa-flask"></i></div>
 {% endif %}
@@ -102,8 +106,10 @@ permalink: /research/
 {% if item.links.poster and item.links.poster != "" %}{% assign has_link = true %}{% endif %}
 {% if item.links.slide and item.links.slide != "" %}{% assign has_link = true %}{% endif %}
 {% if item.links.github and item.links.github != "" %}{% assign has_link = true %}{% endif %}
+{% if item.links.arxiv and item.links.arxiv != "" %}{% assign has_link = true %}{% endif %}
+{% if item.links.supplementary and item.links.supplementary != "" %}{% assign has_link = true %}{% endif %}
 {% if has_link %}
-<div class="research-card-h-links">{% if item.links.paper and item.links.paper != "" %}{% if item.links.paper contains "://" %}<a href="{{ item.links.paper }}" target="_blank" class="research-link"><i class="fa-regular fa-file-pdf"></i> Paper</a>{% else %}<a href="{{ site.baseurl }}/papers/{{ item.links.paper }}" target="_blank" type="application/pdf" class="research-link"><i class="fa-regular fa-file-pdf"></i> Paper</a>{% endif %}{% endif %}{% if item.links.webpage and item.links.webpage != "" %}<a href="{{ item.links.webpage }}" target="_blank" class="research-link"><i class="fa-solid fa-globe"></i> Webpage</a>{% endif %}{% if item.links.video and item.links.video != "" %}<a href="{{ item.links.video }}" target="_blank" class="research-link"><i class="fa-brands fa-youtube"></i> Video</a>{% endif %}{% if item.links.poster and item.links.poster != "" %}<a href="{{ site.baseurl }}/{{ item.links.poster }}" target="_blank" type="application/pdf" class="research-link"><i class="fa-regular fa-image"></i> Poster</a>{% endif %}{% if item.links.slide and item.links.slide != "" %}<a href="{{ site.baseurl }}/{{ item.links.slide }}" target="_blank" type="application/pdf" class="research-link"><i class="fa-regular fa-file-powerpoint"></i> Slide</a>{% endif %}{% if item.links.bib and item.links.bib != "" %}<a href="{{ item.links.bib }}" target="_blank" class="research-link"><i class="fa-solid fa-quote-right"></i> BibTeX</a>{% endif %}{% if item.links.github and item.links.github != "" %}<a href="{{ item.links.github }}" target="_blank" class="research-link"><i class="fa-brands fa-github"></i> GitHub</a>{% endif %}
+<div class="research-card-h-links">{% if item.links.paper and item.links.paper != "" %}{% if item.links.paper contains "://" %}<a href="{{ item.links.paper }}" target="_blank" class="research-link"><i class="fa-regular fa-file-pdf"></i> Paper</a>{% else %}<a href="{{ site.baseurl }}/papers/{{ item.links.paper }}" target="_blank" type="application/pdf" class="research-link"><i class="fa-regular fa-file-pdf"></i> Paper</a>{% endif %}{% endif %}{% if item.links.webpage and item.links.webpage != "" %}<a href="{{ item.links.webpage }}" target="_blank" class="research-link"><i class="fa-solid fa-globe"></i> Webpage</a>{% endif %}{% if item.links.video and item.links.video != "" %}<a href="{{ item.links.video }}" target="_blank" class="research-link"><i class="fa-brands fa-youtube"></i> Video</a>{% endif %}{% if item.links.arxiv and item.links.arxiv != "" %}<a href="{{ item.links.arxiv }}" target="_blank" class="research-link"><i class="fa-solid fa-file-lines"></i> arXiv</a>{% endif %}{% if item.links.poster and item.links.poster != "" %}<a href="{{ site.baseurl }}/{{ item.links.poster }}" target="_blank" type="application/pdf" class="research-link"><i class="fa-regular fa-image"></i> Poster</a>{% endif %}{% if item.links.slide and item.links.slide != "" %}<a href="{{ site.baseurl }}/{{ item.links.slide }}" target="_blank" type="application/pdf" class="research-link"><i class="fa-regular fa-file-powerpoint"></i> Slide</a>{% endif %}{% if item.links.supplementary and item.links.supplementary != "" %}<a href="{{ item.links.supplementary }}" target="_blank" class="research-link"><i class="fa-regular fa-file-zipper"></i> Supplementary</a>{% endif %}{% if item.links.bib and item.links.bib != "" %}<a href="{{ item.links.bib }}" class="research-link"><i class="fa-solid fa-quote-right"></i> BibTeX</a>{% endif %}{% if item.links.github and item.links.github != "" %}<a href="{{ item.links.github }}" target="_blank" class="research-link"><i class="fa-brands fa-github"></i> GitHub</a>{% endif %}
 </div>
 {% endif %}
 </div>
@@ -187,6 +193,34 @@ permalink: /research/
   document.addEventListener('click', function () {
     document.querySelectorAll('.research-dropdown-menu').forEach(function (m) { m.classList.remove('open'); });
     document.querySelectorAll('.research-dropdown-btn').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+  });
+})();
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+(function () {
+  var PDFJS = window['pdfjs-dist/build/pdf'];
+  PDFJS.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+  document.querySelectorAll('canvas.research-card-pdf[data-pdf]').forEach(function (canvas) {
+    var url = canvas.getAttribute('data-pdf');
+    var dpr = window.devicePixelRatio || 1;
+    PDFJS.getDocument(url).promise.then(function (pdf) {
+      return pdf.getPage(1);
+    }).then(function (page) {
+      var container = canvas.parentElement;
+      var w = container.offsetWidth || 240;
+      var h = container.offsetHeight || 180;
+      var viewport = page.getViewport({ scale: 1 });
+      var scale = Math.max(w / viewport.width, h / viewport.height) * dpr;
+      var scaled = page.getViewport({ scale: scale });
+      canvas.width = scaled.width;
+      canvas.height = scaled.height;
+      canvas.style.width = (scaled.width / dpr) + 'px';
+      canvas.style.height = (scaled.height / dpr) + 'px';
+      page.render({ canvasContext: canvas.getContext('2d'), viewport: scaled });
+    }).catch(function () {});
   });
 })();
 </script>

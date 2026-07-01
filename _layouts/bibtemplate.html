@@ -1,7 +1,7 @@
 ---
 ---
 
-<div class="pub-entry" data-pub-searchable>
+<div class="pub-entry" id="{{ entry.key }}" data-pub-searchable>
   {% assign _last = site.scholar.last_name %}
   {% assign _first_init = site.scholar.first_name[0] | slice: 0, 1 %}
   {% assign _author_pat = _last | append: ", " | append: _first_init | append: "." %}
@@ -41,6 +41,10 @@
 
     {% if entry.url %}
     <a href="{{ entry.url }}" target="_blank" class="btn-pill btn-website">Website</a>
+    {% endif %}
+
+    {% if entry.project %}
+    <a href="{{ entry.project }}" class="btn-pill btn-project">Project</a>
     {% endif %}
 
     {% if entry.type == 'unpublished' or entry.type == 'article' or entry.type == 'thesis' or entry.type == 'inproceedings' or entry.type == 'report' %}

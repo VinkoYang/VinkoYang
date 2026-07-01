@@ -347,3 +347,40 @@
     poster: "files/2026_MechGenius_Poster.pdf"
     slide: "files/2026_MechGenius_Slide.pdf"
     github: "https://github.com/lparker25/Invasive-Plant-Identifier"
+
+
+- title: "Exploring the Adversarial Vulnerabilities of Vision-Language-Action Models in Robotics"
+  image: "research/2025_ICCV_open_vla.pdf"
+  focus: [3]
+  start_date: "2025-2"
+  end_date: "2025-7"
+  authors:
+    - name: "Taowen Wang"
+    - name: "James Liang"
+    - name: "Luna Xinyu Zhang"
+  mentors:
+    - name: "Wenhao Yang"
+    - name: "Cheng Han"
+    - name: "Dongfang Liu"
+    - name: "Qifan Wang"
+    - name: "Jiebo Luo"
+    - name: "Ruixiang Tang"
+  keywords:
+    - Vision-Language-Action (VLA)
+    - Robotics
+    - Adversarial Attacks
+    - Robustness Evaluation
+    - Robot Trajectory Manipulation
+    - Embodied AI
+  abstract: >
+    Vision-Language-Action (VLA) models enable robots to perform complex tasks by integrating visual and language inputs, but they also introduce new security risks. This work systematically evaluates VLA robustness by designing both untargeted and targeted attacks that exploit spatial and functional properties of robotics. We further propose a physical adversarial patch attack, effective in both simulation and real-world settings. Experiments show up to a 100% drop in task success rates, revealing critical vulnerabilities and motivating the need for stronger defenses in VLA-based robotic systems.
+  links:
+    paper: "https://openaccess.thecvf.com/content/ICCV2025/papers/Wang_Exploring_the_Adversarial_Vulnerabilities_of_Vision-Language-Action_Models_in_Robotics_ICCV_2025_paper.pdf"
+    webpage: "https://openaccess.thecvf.com/content/ICCV2025/html/Wang_Exploring_the_Adversarial_Vulnerabilities_of_Vision-Language-Action_Models_in_Robotics_ICCV_2025_paper.html"
+    video: ""
+    bib: "/publications/#wang2025exploring"
+    poster: ""
+    slide: ""
+    github: "https://vlaattacker.github.io/"
+    arxiv: "https://arxiv.org/abs/2411.13587"
+    supplementary: "https://openaccess.thecvf.com/content/ICCV2025/supplemental/Wang_Exploring_the_Adversarial_ICCV_2025_supplemental.pdf"
