@@ -279,12 +279,12 @@ __Using this template? Share your site and I'll add it here!__
 
 ## Screenshots
 
-|                                                    |                                    |
-| :------------------------------------------------: | :--------------------------------: |
+|                                                      |                                      |
+| :--------------------------------------------------: | :----------------------------------: |
 | ![Publications](images/screenshots/publications.png) | ![Team](images/screenshots/team.png) |
-|       Publications with search & year badges       |      Team page with card grid      |
-|       ![Search](images/screenshots/search.png)       |                                    |
-|              Site-wide search (Cmd+K)              |                                    |
+|        Publications with search & year badges        |       Team page with card grid       |
+|       ![Search](images/screenshots/search.png)       |                                      |
+|               Site-wide search (Cmd+K)               |                                      |
 
 ## Quick Start
 
