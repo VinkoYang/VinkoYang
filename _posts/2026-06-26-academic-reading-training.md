@@ -2,7 +2,7 @@
 layout: post
 title: "How to Actually Read an Academic Paper: A Structured Training Template"
 date: 2026-06-26
-categories: ["Reading & Critical Thinking"]
+categories: ["Teaching & Learning"]
 tags: ["academic-writing", "critical-thinking", "research-skills", "teaching"]
 ---
 Most students read papers the wrong way — they read for content, not for logic.
