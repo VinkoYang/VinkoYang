@@ -2,7 +2,8 @@
 layout: post
 title: "Version Control Tutorial & Introduction"
 date: 2026-07-17
-categories: "Unity"
+categories: ["Teaching & Learning"]
+tags: ["unity", "game-development", "version-control", "tutorial"]
 ---
 # Unity Version Control Tutorial & Introduction
 

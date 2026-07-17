@@ -2,7 +2,8 @@
 layout: post
 title: "Useful Links & Resources"
 date: 2026-06-18
-categories: "Resources"
+categories: ["Research & Scholarship"]
+tags: ["resources", "tools", "productivity", "research"]
 ---
 
 

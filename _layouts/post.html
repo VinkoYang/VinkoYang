@@ -18,9 +18,14 @@ layout: default
       <h1 itemprop="name headline">{{ page.title | escape }}</h1>
       <p class="post-meta">
         <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
-        {% if page.categories %}&nbsp;&middot;&nbsp;<span class="chip chip-muted" style="font-size:0.78rem;">{{ page.categories }}</span>{% endif %}
+        {% if page.categories %}&nbsp;&middot;&nbsp;<span class="chip chip-muted" style="font-size:0.78rem;">{{ page.categories | join: ", " }}</span>{% endif %}
         {% if page.author %}&nbsp;&middot;&nbsp;<span itemprop="author">{{ page.author }}</span>{% endif %}
       </p>
+      {% if page.tags %}
+      <div class="chip-container" style="margin: 0 0 1.5rem;">
+        {% for tag in page.tags %}<span class="chip chip-muted" style="font-size:0.75rem;">#{{ tag }}</span>{% endfor %}
+      </div>
+      {% endif %}
       <div itemprop="articleBody" class="post-body">
         {{ content }}
       </div>

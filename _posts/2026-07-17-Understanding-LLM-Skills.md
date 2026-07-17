@@ -2,7 +2,8 @@
 layout: post
 title: "A Beginner's Guide to LLM Skills: How Language Models Learn to Act"
 date: 2026-07-17
-categories: "LLM"
+categories: ["Industry Insights"]
+tags: ["LLM", "AI-agents", "machine-learning", "VR-education"]
 ---
 # A Beginner's Guide to LLM Skills: How Language Models Learn to Act
 
