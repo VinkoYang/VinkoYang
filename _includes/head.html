@@ -9,11 +9,12 @@
   <meta property="og:description" content="{{ site.description }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
-  {% if site.photo %}<meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/images/{{ site.photo }}">{% endif %}
+  {% assign share_image = site.share_image | default: site.photo %}
+  {% if share_image %}<meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/images/{{ share_image }}">{% endif %}
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.name | escape }}{% endif %}">
   <meta name="twitter:description" content="{{ site.description }}">
-  {% if site.photo %}<meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/images/{{ site.photo }}">{% endif %}
+  {% if share_image %}<meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/images/{{ share_image }}">{% endif %}
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
