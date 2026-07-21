@@ -41,7 +41,6 @@
   display: grid;
   grid-template-columns: 1fr 220px;
   gap: var(--space-10);
-  align-items: start;
 
   @media (max-width: 860px) {
     grid-template-columns: 1fr;

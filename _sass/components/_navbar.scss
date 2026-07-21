@@ -3,6 +3,9 @@
 // =============================================================
 
 .navbar {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0 !important;
   border-bottom: 1px solid var(--border-color);
   padding: var(--space-3) var(--space-4);
   transition: box-shadow var(--transition-base);
