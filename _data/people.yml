@@ -145,18 +145,6 @@ collaborators:
 #     degree: Doctoral of Industrial Engineering
 #     year: 2025 – now
 students:
-  - name: Saleh Mohammad Mobin
-    show_team: true
-    show_about: true
-    mentoring_role: doctoral_advisor
-    photo: team/mobin.jpg
-    info: DE Student
-    email: smobin@lamar.edu
-    location: Lamar University
-    degree: Doctoral of Industrial Engineering
-    year_start: 2024 
-    year_end: now
-
   - name: Lakshmana Ayyalasomayajula (Avinash)
     show_team: true
     show_about: true
