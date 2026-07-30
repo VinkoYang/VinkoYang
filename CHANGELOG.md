@@ -1,0 +1,62 @@
+# 更新日志 Changelog
+
+本文件记录 `dev` 分支的技术改动，合并到 `source`（发布）时打 tag。
+版本号遵循语义化版本 semver：`vX.Y.Z`
+
+- **Z（patch）**：文字/内容补丁，无结构改动。例：改简介文字、修一个错别字、加一条 news。
+- **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
+- **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
+
+**当前版本：v1.6.0**（`source` 分支，已发布，2026-07-29）。
+
+## 两份日志，别混
+
+| 文件 | 受众 | 写什么 |
+|---|---|---|
+| 本文件 `CHANGELOG.md` | 自己（技术记录） | 改了哪些文件/数据结构，为什么改 |
+| `_data/web/whatsnew.yml` | 访客，公开在 `/whatsnew/` | 只写访客能感知的变化，一两句话 |
+
+## 使用约定
+
+**提交到 `dev` 时**：往最上面「待发布」段里追加一条改动记录。
+
+**合并 `dev` → `source` 时**（= 一次发布），三步：
+
+1. 把这次改动总结成访客视角的条目，加进 `_data/web/whatsnew.yml` **最上面**。
+2. 决定版本号该加 X/Y/Z 哪一位（看上面规则），把「待发布」换成实际版本号和日期。
+3. 上面新起一个 `## [待发布]` 段，供下次 dev 提交继续追加。
+
+然后合并打 tag：
+
+```bash
+git checkout source && git merge --no-ff dev
+git tag -a v1.7.0 -m "版本说明"
+git push origin source --tags
+```
+
+---
+
+## [待发布]
+
+- 数据模型迁移：`_data/` 拆成 `_data/profile/`（简历相关，网页与 CV 共用）和 `_data/web/`（纯网站展示数据），所有 `site.data.*` 引用同步更新（about/team/research/lab/teaching/videos/home/feed/sidebar 等）。
+- 新增 CV 自动生成流水线：`cv/build-cv.js` 直接从 `_data/profile/*.yml` + `_data/web/people.yml` + `assets/ref.bib` + `_config.yml` 生成 HTML，puppeteer 打印为 `files/cv.pdf`（CI 每次 push 重新构建，PDF 不入库）。改简历数据 = 网页和 CV 一起更新。
+- `cv/style.css` 全新排版：语义化 class、CSS 变量、SVG mask 图标、日期/年份右对齐、防跨页断行。
+- 新增 CV 专属数据文件：`summary.yml`、`committee_memberships.yml`、`conference_service.yml`、`student_guidance.yml`、`certifications.yml`、`memberships.yml`。
+- `_data/profile/education.yml` 补全学位细节、`experience.yml`/`awards.yml` 补齐历史 CV 中缺失的条目。
+- 修复 `assets/ref.bib` 中 `liu2026all` 词条类型错误（`@inproceedings` 误标，实际应为 `@article`，此前会在发表列表渲染出 "undefined"）。
+- `_config.yml` 新增 `phone`、`office` 字段（CV 页眉用）。
+- `package.json` 新增依赖 `js-yaml`、`puppeteer`，新增脚本 `npm run cv`。
+
+## 历史版本
+
+从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版：
+
+- v1.6.0 - 2026-07-29 — 上线 blog 板块(LLM skills / Unity VC / 文献检索指南)、avatar+favicon 换 SVG、post 目录样式
+- v1.5.0 - 2026-07-11 — Lab 页打磨、alumni 更新、加 Google Analytics、可访问性/对比度修正
+- v1.4.0 - 2026-06-21 — 加访客地图、独立 Videos 页、research 项目排版改进
+- v1.3.0 - 2026-06-18 — Lab 页通栏 banner、PI 简介扩充、people 数据合并、图片压缩提速
+- v1.2.0 - 2026-06-15 — 换自定义域名、主页改版、publication 搜索/引用改进
+- v1.1.0 - 2026-06-13 — 加 Lab 页(设备/alumni 表)、扩充 research 项目(AR/遥操作机器人/网络安全)
+- v1.0.0 - 2026-06-11 — 站点用自己内容首次上线：publications、academic services、education
+
+v1.0.0 之前(2020-2026-04)是上游模板 sbryngelson/academic-website-template 自身的开发历史，不算进本站版本号。

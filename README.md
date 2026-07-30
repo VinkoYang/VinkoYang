@@ -322,7 +322,8 @@ You need Ruby and Jekyll installed. See [Jekyll&#39;s installation guide](https:
 # Install Ruby gems
 bundle install
 
-# Optional: install Node.js dependencies (only needed if you want to edit JS)
+# Optional: install Node.js dependencies
+# (needed only to edit JS or to preview the generated CV PDF locally — CI installs these itself)
 npm install
 ```
 
@@ -470,16 +471,25 @@ The config file is organized into 4 numbered steps:
 
 ### Data Files
 
-| File                       | Purpose                                     |
-| -------------------------- | ------------------------------------------- |
-| `_data/team_members.yml` | Current students and postdocs               |
-| `_data/alumni.yml`       | Former lab members                          |
-| `_data/news.yml`         | News items (3 most recent shown on home)    |
-| `_data/awards.yml`       | Awards and honors                           |
-| `_data/grants.yml`       | Grants and funding                          |
-| `_data/funders.yml`      | Funder logos                                |
-| `_data/people.yml`       | Students and mentees                        |
-| `_data/pi.yml`           | Optional: detailed education for About page |
+`_data/` is split into two namespaces (`site.data.profile.*` and `site.data.web.*` in Liquid):
+
+| File                                                  | Purpose                                                   |
+| ----------------------------------------------------- | --------------------------------------------------------- |
+| `_data/profile/education.yml`                       | Degrees — also feeds the generated CV PDF                |
+| `_data/profile/experience.yml`                      | Professional & teaching experience — also feeds the CV   |
+| `_data/profile/awards.yml`                          | Awards and honors — also feeds the CV                    |
+| `_data/profile/grants.yml`                          | Grants and funding — also feeds the CV                   |
+| `_data/profile/services.yml`                        | Reviewer/editorial service — also feeds the CV           |
+| `_data/profile/teaching.yml`                        | Course details for the Teaching page — also feeds the CV |
+| `_data/web/people.yml`                              | Students, alumni, collaborators (Team/About pages)        |
+| `_data/web/news.yml`                                | News items (3 most recent shown on home)                  |
+| `_data/web/research.yml`                            | Research/project entries (Research, Lab, Videos pages)    |
+| `_data/web/research_areas.yml`                      | Lab research focus areas                                  |
+| `_data/web/equipment.yml`                           | Lab equipment listing                                     |
+| `_data/web/funders.yml`                             | Funder logos                                              |
+| `_data/web/great_mathematicians_and_physicists.csv` | Table data for one blog post                              |
+
+Files under `_data/profile/` are the canonical CV data — editing them updates both the About page **and** the generated CV PDF (see `cv/README.md`). See also `_data/profile/summary.yml`, `committee_memberships.yml`, `conference_service.yml`, `student_guidance.yml`, `certifications.yml`, `memberships.yml`, which are CV-only sections not shown on the site.
 
 Each file has inline comments explaining every field. Entries marked `# EXAMPLE` should be replaced or deleted.
 
@@ -510,6 +520,54 @@ For JavaScript, edit `assets/js/site.js` then run `npm run build` to minify. Pre
 Publications are managed via [Jekyll Scholar](https://github.com/inukshuk/jekyll-scholar) using BibTeX. Edit `assets/ref.bib` with your references.
 
 Update `scholar.last_name` and `scholar.first_name` in `_config.yml` to auto-bold your name in the publication list.
+
+## CV (auto-generated PDF)
+
+The CV linked from the site (`files/cv.pdf`) is **generated from the same data the website uses** — there is no PDF to maintain by hand and no Word/LaTeX source to keep in sync. Edit a YAML file, push, and both the website and the CV update.
+
+```
+_data/profile/*.yml   ┐
+_data/web/people.yml  ├─> cv/build-cv.js ─> HTML ─(headless Chrome)─> files/cv.pdf
+assets/ref.bib        │        + cv/style.css
+_config.yml           ┘
+```
+
+### Updating your CV
+
+1. Edit the relevant data file:
+
+   | Section of the CV | Edit this |
+   | ----------------- | --------- |
+   | Name, title, department, phone, office, email, social links | `_config.yml` |
+   | Professional summary | `_data/profile/summary.yml` |
+   | Professional & teaching experience | `_data/profile/experience.yml` |
+   | Education | `_data/profile/education.yml` |
+   | Publications | `assets/ref.bib` (`@article` / `@inproceedings`) |
+   | Talks & presentations | `assets/ref.bib` (`@incollection`, `keywords={invited}` or `{talk}`) |
+   | Grants | `_data/profile/grants.yml` |
+   | Editorial & review service | `_data/profile/services.yml` |
+   | Committee memberships | `_data/profile/committee_memberships.yml` |
+   | Conference leadership & service | `_data/profile/conference_service.yml` |
+   | Doctoral / Master advisees | `_data/web/people.yml` (set `mentoring_role:`) |
+   | Dissertation committees you serve on | `_data/profile/student_guidance.yml` |
+   | Honors & awards | `_data/profile/awards.yml` |
+   | Certifications | `_data/profile/certifications.yml` |
+   | Professional memberships | `_data/profile/memberships.yml` |
+
+2. *(Optional)* preview the PDF locally:
+
+   ```bash
+   npm install   # first time only
+   npm run cv    # writes files/cv.pdf
+   ```
+
+3. Commit and push. GitHub Actions rebuilds `files/cv.pdf` and deploys it with the site.
+
+The "Last updated" date in the PDF footer is the build date, so it is always current automatically. `files/cv.pdf` and `cv/cv.generated.html` are git-ignored build artifacts — don't commit them.
+
+### Restyling the CV
+
+All layout and typography live in `cv/style.css` (fonts, accent color, section headings, entry rows, contact icons). Page size, margins and the footer are set in the `pdf()` call at the bottom of `cv/build-cv.js`. See [`cv/README.md`](cv/README.md) for the full field-by-field reference.
 
 ## Hosting
 

@@ -31,10 +31,10 @@ permalink: /about/
 </div>
 </div>
 
-{% if site.data.education %}
+{% if site.data.profile.education %}
 <div class="section-card">
 <h3>Education</h3>
-{% for edu in site.data.education %}
+{% for edu in site.data.profile.education %}
 <div>
 <div class="experience-header">
 <div>
@@ -58,10 +58,10 @@ permalink: /about/
 
 
 
-{% if site.data.experience.professional_experience %}
+{% if site.data.profile.experience.professional_experience %}
 <div class="section-card">
 <h3>Professional Experience</h3>
-{% for job in site.data.experience.professional_experience %}
+{% for job in site.data.profile.experience.professional_experience %}
 <div>
 <div class="experience-header">
 <div>
@@ -82,10 +82,10 @@ permalink: /about/
 </div>
 {% endif %}
 
-{% if site.data.experience.teaching_experience %}
+{% if site.data.profile.experience.teaching_experience %}
 <div class="section-card">
 <h3>Teaching Experience</h3>
-{% for job in site.data.experience.teaching_experience %}
+{% for job in site.data.profile.experience.teaching_experience %}
 <div>
 <div class="experience-header">
 <div>
@@ -118,30 +118,30 @@ permalink: /about/
 </div>
 {% endif %}
 
-{% if site.data.grants %}
+{% if site.data.profile.grants %}
 <div class="section-card">
 <h3>Grants</h3>
 <ul>
-{% for grant in site.data.grants %}
+{% for grant in site.data.profile.grants %}
 <li>{{ grant.name | replace: "Yang, W.", "<strong>Yang, W.</strong>" }}</li>
 {% endfor %}
 </ul>
 </div>
 {% endif %}
 
-{% if site.data.awards %}
+{% if site.data.profile.awards %}
 <div class="section-card">
 <h3>Awards</h3>
 <ul>
-{% for award in site.data.awards %}
+{% for award in site.data.profile.awards %}
 <li>{{ award.name | replace: "-","&#8211;" }}</li>
 {% endfor %}
 </ul>
 </div>
 {% endif %}
 
-{% assign mentored_students = site.data.people.students | where_exp: "s", "s.show_about == true" %}
-{% assign mentored_alumni = site.data.people.alumni | where_exp: "a", "a.mentoring_role != nil and a.mentoring_role != ''" %}
+{% assign mentored_students = site.data.web.people.students | where_exp: "s", "s.show_about == true" %}
+{% assign mentored_alumni = site.data.web.people.alumni | where_exp: "a", "a.mentoring_role != nil and a.mentoring_role != ''" %}
 {% assign all_mentored = mentored_students | concat: mentored_alumni %}
 {% if all_mentored.size > 0 %}
 <div class="section-card">
@@ -164,10 +164,10 @@ permalink: /about/
 </div>
 {% endif %}
 
-{% if site.data.services %}
+{% if site.data.profile.services %}
 <div class="section-card">
 <h3>Academic Services</h3>
-{% for service in site.data.services %}
+{% for service in site.data.profile.services %}
 <h4 style="margin-top: var(--space-4); margin-bottom: var(--space-2);">{{ service.category }}</h4>
 <ul>
 {% for item in service.items %}
@@ -178,11 +178,11 @@ permalink: /about/
 </div>
 {% endif %}
 
-{% if site.data.funders %}
+{% if site.data.web.funders %}
 <div class="section-card">
 <h4>Sponsors</h4>
 <div class="sponsor-logos" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--space-6);">
-{% for funder in site.data.funders %}
+{% for funder in site.data.web.funders %}
 <a href="{{ funder.url }}" target="_blank"><img src="{{ site.url }}{{ site.baseurl }}/images/{{ funder.image }}" alt="Funder logo" style="max-height: 80px; max-width: 200px; border-radius: 0;" loading="lazy"></a>
 {% endfor %}
 </div>

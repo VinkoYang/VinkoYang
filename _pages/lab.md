@@ -21,7 +21,7 @@ Through interdisciplinary innovation, the XRAI Lab redefines how intelligent sys
 ## Research Focus
 
 <div class="rf-grid" markdown="0">
-{% for area in site.data.research_areas %}
+{% for area in site.data.web.research_areas %}
 <div class="section-card">
   <div class="rf-card">
     <div class="rf-image-wrap">
@@ -51,7 +51,7 @@ Through interdisciplinary innovation, the XRAI Lab redefines how intelligent sys
 
 ## Recent Research
 
-{% assign _rr_sorted = site.data.research | sort: "end_date" | reverse %}
+{% assign _rr_sorted = site.data.web.research | sort: "end_date" | reverse %}
 {% assign _rr_found = 0 %}
 {% for _rr_item in _rr_sorted %}{% if _rr_found == 0 %}{% if _rr_item.links.video and _rr_item.links.video != "" %}{% if _rr_item.links.video contains "youtu" %}{% assign _rr_project = _rr_item %}{% assign _rr_found = 1 %}{% endif %}{% endif %}{% endif %}{% endfor %}
 {% if _rr_found == 1 %}
@@ -75,7 +75,7 @@ Through interdisciplinary innovation, the XRAI Lab redefines how intelligent sys
 ## Equipment
 
 <div class="equipment-grid">
-{% for item in site.data.equipment %}
+{% for item in site.data.web.equipment %}
 <div class="equipment-card">
 {% if item.image and item.image != "" %}
 <img src="{{ site.url }}{{ site.baseurl }}/images/{{ item.image }}" class="equipment-thumb" alt="{{ item.name }}" loading="lazy">

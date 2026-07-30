@@ -41,7 +41,7 @@ Dr. Yang welcomes motivated students to join his group and contribute to cutting
 
 ### Recent Projects
 
-{% assign sorted_research = site.data.research | sort: "end_date" | reverse %}
+{% assign sorted_research = site.data.web.research | sort: "end_date" | reverse %}
 <div class="home-projects-grid" markdown="0">
 {% for item in sorted_research limit:3 %}
 <a href="{{ site.url }}{{ site.baseurl }}/research" class="home-project-card">

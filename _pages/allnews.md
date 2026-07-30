@@ -9,7 +9,7 @@ permalink: /allnews.html
 
 <div class="section-card" markdown="0">
 <div class="news-timeline">
-{% for article in site.data.news %}
+{% for article in site.data.web.news %}
 <div class="news-item">
 <span class="news-date">{{ article.date }}</span>
 <span class="news-headline">{{ article.headline }}</span>

@@ -10,7 +10,7 @@ permalink: /research/
 <input type="text" class="pub-search" id="researchSearch" placeholder="Search by title or keyword...">
 
 {% assign kw_string = "" %}
-{% for item in site.data.research %}
+{% for item in site.data.web.research %}
   {% if item.keywords %}
     {% for kw in item.keywords %}
       {% if kw and kw != "" %}{% assign kw_string = kw_string | append: kw | append: "|||" %}{% endif %}
@@ -20,7 +20,7 @@ permalink: /research/
 {% assign kw_array = kw_string | split: "|||" | uniq | sort %}
 
 {% assign yr_string = "" %}
-{% for item in site.data.research %}
+{% for item in site.data.web.research %}
   {% if item.start_date %}
     {% assign start_yr = item.start_date | split: "-" | first | plus: 0 %}
     {% if item.end_date %}
@@ -40,7 +40,7 @@ permalink: /research/
 <button class="research-dropdown-btn" id="focusDropdownBtn" aria-expanded="false"><i class="fa-solid fa-layer-group"></i> <span id="focusLabel">Focus</span> <i class="fa-solid fa-chevron-down"></i></button>
 <div class="research-dropdown-menu" id="focusDropdownMenu">
 <div class="research-dropdown-item selected" data-focus="__all__">All areas</div>
-{% for area in site.data.research_areas %}<div class="research-dropdown-item" data-focus="{{ area.id }}">{{ area.name }}</div>{% endfor %}
+{% for area in site.data.web.research_areas %}<div class="research-dropdown-item" data-focus="{{ area.id }}">{{ area.name }}</div>{% endfor %}
 </div>
 </div>
 <div class="research-dropdown">
@@ -59,7 +59,7 @@ permalink: /research/
 </div>
 </div>
 
-{% assign sorted_research = site.data.research | sort: "end_date" | reverse %}
+{% assign sorted_research = site.data.web.research | sort: "end_date" | reverse %}
 <div class="research-list" id="researchList">
 {% for item in sorted_research %}
 {% assign kw_joined = item.keywords | join: "|" %}
@@ -84,10 +84,10 @@ permalink: /research/
 {% if item.authors or item.mentors or item.start_date %}
 <div class="research-meta">
 {% if item.authors and item.authors.size > 0 %}
-<span><i class="fa-solid fa-user"></i> {% for a in item.authors %}{% if a.name and a.name != "" %}{% assign _ps = site.data.people.students | where: "name", a.name | first %}{% unless _ps %}{% assign _ps = site.data.people.collaborators | where: "name", a.name | first %}{% endunless %}{% unless _ps %}{% assign _ps = site.data.people.alumni | where: "name", a.name | first %}{% endunless %}{% if a.name == site.name %}{% assign _href = site.data.people.pi.website %}{% elsif _ps.website and _ps.website != "" %}{% assign _href = _ps.website %}{% elsif a.url and a.url != "" %}{% assign _href = a.url %}{% else %}{% assign _href = "" %}{% endif %}{% if _href != "" %}<a href="{{ _href }}" target="_blank">{{ a.name }}</a>{% else %}{{ a.name }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endif %}{% endfor %}</span>
+<span><i class="fa-solid fa-user"></i> {% for a in item.authors %}{% if a.name and a.name != "" %}{% assign _ps = site.data.web.people.students | where: "name", a.name | first %}{% unless _ps %}{% assign _ps = site.data.web.people.collaborators | where: "name", a.name | first %}{% endunless %}{% unless _ps %}{% assign _ps = site.data.web.people.alumni | where: "name", a.name | first %}{% endunless %}{% if a.name == site.name %}{% assign _href = site.data.web.people.pi.website %}{% elsif _ps.website and _ps.website != "" %}{% assign _href = _ps.website %}{% elsif a.url and a.url != "" %}{% assign _href = a.url %}{% else %}{% assign _href = "" %}{% endif %}{% if _href != "" %}<a href="{{ _href }}" target="_blank">{{ a.name }}</a>{% else %}{{ a.name }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endif %}{% endfor %}</span>
 {% endif %}
 {% if item.mentors and item.mentors.size > 0 %}
-<span><i class="fa-solid fa-graduation-cap"></i> {% for m in item.mentors %}{% if m.name and m.name != "" %}{% assign _ps = site.data.people.students | where: "name", m.name | first %}{% unless _ps %}{% assign _ps = site.data.people.collaborators | where: "name", m.name | first %}{% endunless %}{% unless _ps %}{% assign _ps = site.data.people.alumni | where: "name", m.name | first %}{% endunless %}{% if m.name == site.name %}{% assign _href = site.data.people.pi.website %}{% elsif _ps.website and _ps.website != "" %}{% assign _href = _ps.website %}{% elsif m.url and m.url != "" %}{% assign _href = m.url %}{% else %}{% assign _href = "" %}{% endif %}{% if _href != "" %}<a href="{{ _href }}" target="_blank">{{ m.name }}</a>{% else %}{{ m.name }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endif %}{% endfor %}</span>
+<span><i class="fa-solid fa-graduation-cap"></i> {% for m in item.mentors %}{% if m.name and m.name != "" %}{% assign _ps = site.data.web.people.students | where: "name", m.name | first %}{% unless _ps %}{% assign _ps = site.data.web.people.collaborators | where: "name", m.name | first %}{% endunless %}{% unless _ps %}{% assign _ps = site.data.web.people.alumni | where: "name", m.name | first %}{% endunless %}{% if m.name == site.name %}{% assign _href = site.data.web.people.pi.website %}{% elsif _ps.website and _ps.website != "" %}{% assign _href = _ps.website %}{% elsif m.url and m.url != "" %}{% assign _href = m.url %}{% else %}{% assign _href = "" %}{% endif %}{% if _href != "" %}<a href="{{ _href }}" target="_blank">{{ m.name }}</a>{% else %}{{ m.name }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endif %}{% endfor %}</span>
 {% endif %}
 {% if item.start_date %}<span><i class="fa-regular fa-calendar"></i> {{ item.start_date }}{% if item.end_date %} &ndash; {{ item.end_date }}{% else %} &ndash; Present{% endif %}</span>{% endif %}
 </div>

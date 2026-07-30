@@ -8,6 +8,8 @@ college: "College of Engineering"
 institution: "Lamar University"
 institution_location: "4400 MLK Blvd., PO Box 10009, Beaumont, Texas 77710"
 email: wenhao.yang@lamar.edu
+phone: "+1-409-880-1981"  # used on the generated CV header; leave blank to omit
+office: "Cherry Building, Room 1608, Beaumont, TX 77705"  # used on the generated CV header; leave blank to fall back to institution_location
 photo: VinkoYang-1-1.jpg  # place your photo in images/ -- used for the on-page avatar (About/Team/sidebar)
 share_image: avatartion_yang_01.png  # place your photo in images/ -- used only for social-share preview (og:image)
 
@@ -21,7 +23,7 @@ links:
   orcid: "https://orcid.org/0009-0004-4977-2914"
   twitter: ""
   linkedin: "https://www.linkedin.com/in/wenhaoyang-vinko"
-  cv: "files/My_Academic_CV_2026-6-11.pdf"  # e.g., "papers/cv.pdf" — leave blank to hide the CV icon
+  cv: "files/cv.pdf"  # auto-generated at build time from cv/cv.md — leave blank to hide the CV icon
   youtube: "https://www.youtube.com/@vinkoyang"
 
 # ============================================================
@@ -50,6 +52,8 @@ nav_pages:
   - name: teaching
   - name: videos
   - name: blogs
+  - name: whatsnew
+    label: "what's new"
 
 # ============================================================
 # Advanced Settings (you probably don't need to change these)
@@ -110,6 +114,7 @@ exclude:
   - tags
   - Rakefile
   - node_modules
+  - cv          # CV markdown source; rendered to files/cv.pdf by CI
   - package.json
   - package-lock.json
   - docs

@@ -9,3 +9,7 @@ node_modules/
 .worktrees/
 .claude/
 .vs/
+
+# CV is generated from _data/profile/*.yml + assets/ref.bib at build time
+cv/cv.generated.html
+files/cv.pdf

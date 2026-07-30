@@ -1,0 +1,50 @@
+# Public-facing release notes, shown on /whatsnew/.
+# Newest entry first. Added when dev merges into source (a release).
+# Keep entries user-facing (what changed for a visitor), not technical
+# (that detail belongs in CHANGELOG.md at repo root).
+#
+# - version: "1.0.0"
+#   date: 2026-07-30
+#   changes:
+#     - "Short, visitor-facing description of the change."
+
+- version: "1.6.0"
+  date: 2026-07-29
+  changes:
+    - "Launched the blog: guides on LLM skills, Unity version control, and literature search for new researchers."
+    - "Refreshed avatar and favicon (SVG), improved table-of-contents styling on posts."
+
+- version: "1.5.0"
+  date: 2026-07-11
+  changes:
+    - "Polished the Lab page and updated alumni listings."
+    - "Added analytics tracking and accessibility/contrast improvements site-wide."
+
+- version: "1.4.0"
+  date: 2026-06-21
+  changes:
+    - "Added a visitor map and a dedicated Videos page."
+    - "Improved research project layout and links."
+
+- version: "1.3.0"
+  date: 2026-06-18
+  changes:
+    - "Added a full-width banner to the Lab page and expanded the PI bio."
+    - "Consolidated team/people info and compressed images for faster loading."
+
+- version: "1.2.0"
+  date: 2026-06-15
+  changes:
+    - "Moved to custom domain, refreshed homepage."
+    - "Added publication search/filter and citation improvements."
+
+- version: "1.1.0"
+  date: 2026-06-13
+  changes:
+    - "Added the Lab page (equipment, alumni table)."
+    - "Expanded research projects: AR, telerobotics, cybersecurity."
+
+- version: "1.0.0"
+  date: 2026-06-11
+  changes:
+    - "Site launched with personal content: publications, academic services, education."
