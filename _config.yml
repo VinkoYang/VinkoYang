@@ -57,8 +57,6 @@ nav_pages:
   - name: teaching
   - name: videos
   - name: blogs
-  - name: whatsnew
-    label: "what's new"
 
 # ============================================================
 # Advanced Settings (you probably don't need to change these)
