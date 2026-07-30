@@ -1,31 +1,41 @@
 // =============================================================
-// Typography — Source Serif + DM Sans
+// Typography — Cinzel / Quattrocento / Quattrocento Sans / Stoke
 // =============================================================
-// Fonts loaded via <link> in head.html.
-// Source Serif 4: elegant variable-weight serif for headings
-// DM Sans: clean geometric sans for body with personality
+// Fonts loaded via <link> in head.html; families in base/_variables.
+// Cinzel            — engraved capitals, display + overlines only
+// Quattrocento      — old-style serif for headings
+// Quattrocento Sans — humanist sans for body and UI
+// Stoke             — display serif for taglines and pull quotes
 
 body {
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, sans-serif;
-  font-size: 1rem;
-  line-height: 1.75;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
   font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Source Serif 4', 'Georgia', 'Times New Roman', serif;
+  font-family: var(--font-heading);
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
   color: var(--text-primary);
   margin-top: var(--space-10);
   margin-bottom: var(--space-4);
   line-height: 1.3;
 }
 
-h1 { font-size: 2.5rem; font-weight: 800; }
+// Page title — engraved capitals, the site's strongest typographic voice
+h1 {
+  font-family: var(--font-display);
+  font-size: 2.125rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+}
+
 h2 {
-  font-size: 1.875rem;
+  font-size: 1.75rem;
   &::after {
     content: '';
     display: block;
@@ -36,8 +46,33 @@ h2 {
     border-radius: 1px;
   }
 }
-h3 { font-size: 1.375rem; }
-h4 { font-size: 1.125rem; }
+h3 { font-size: 1.3125rem; }
+h4 { font-size: 1.0625rem; }
+
+// Overline / eyebrow label — small engraved capitals
+.overline,
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+}
+
+blockquote {
+  font-family: var(--font-accent);
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--text-primary);
+  border-left: 2px solid var(--accent);
+  padding-left: var(--space-6);
+  margin: var(--space-8) 0;
+  max-width: 60ch;
+
+  p { font-family: inherit; font-size: inherit; color: inherit; }
+}
 
 p {
   color: var(--text-secondary);
@@ -58,7 +93,7 @@ em, i {
 }
 
 code, pre {
-  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-family: var(--font-mono);
   font-size: 0.875em;
 }
 

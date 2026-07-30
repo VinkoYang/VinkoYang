@@ -3,6 +3,17 @@
 // =============================================================
 
 :root {
+  // Type stack
+  // Cinzel      — engraved Roman capitals: brand, hero name, uppercase overlines
+  // Quattrocento — old-style serif: headings, card titles
+  // Quattrocento Sans — humanist sans companion: body copy, UI
+  // Stoke       — high-contrast display serif: taglines, pull quotes, venues
+  --font-display: 'Cinzel', 'Trajan Pro', Georgia, serif;
+  --font-heading: 'Quattrocento', Georgia, 'Times New Roman', serif;
+  --font-body: 'Quattrocento Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-accent: 'Stoke', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
   // Accent — a warm scholarly teal
   --accent: #1a7a6d;
   --accent-hover: #15655a;

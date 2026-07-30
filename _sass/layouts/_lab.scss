@@ -278,9 +278,11 @@
   }
 
   .equipment-category {
+    font-family: var(--font-display);
+    font-weight: 600;
     font-size: 0.72rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
     color: var(--text-tertiary);
     margin: 0;
   }
