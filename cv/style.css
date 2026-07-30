@@ -6,7 +6,7 @@
    from build-cv.js (classes: cv-header, cv-section, cv-entry, cv-bullets, …).
    =========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Quattrocento:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;600;700&family=Stoke:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;600;700&display=swap');
 
 :root {
   --accent: #2196f3;
@@ -18,7 +18,8 @@
 
   --font-body: 'Quattrocento', Georgia, 'Times New Roman', serif;
   --font-section: 'Cinzel', 'Quattrocento', serif;
-  --font-name: 'Stoke', 'Cinzel', serif;
+  /* Matches the site's home-page hero name (--font-display on the website). */
+  --font-name: 'Cinzel', 'Trajan Pro', Georgia, serif;
 
   --size-body: 9.6pt;
   --size-small: 8.6pt;
@@ -58,9 +59,9 @@ body {
 .cv-header h1 {
   font-family: var(--font-name);
   font-size: 23pt;
-  font-weight: 400;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1.6px;
+  letter-spacing: 0.025em;
   line-height: 1.15;
   color: var(--accent);
   margin: 0 0 5px;

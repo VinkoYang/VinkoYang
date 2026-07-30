@@ -38,6 +38,7 @@ git push origin source --tags
 
 ## [待发布]
 
+- CV 页眉姓名字体与网站首页 hero 姓名统一：`cv/style.css` 的 `--font-name` 从 Stoke 换成 Cinzel（对应网站的 `--font-display`），字重 400 → 700、字距 1.6px → 0.025em，与 `.home-hero` 对齐。Stoke 在 CV 里已无其他用途，从 Google Fonts `@import` 中移除。
 - 「What's New」从顶部导航移到页脚 Links 栏：`_config.yml` 的 `nav_pages` 去掉 `whatsnew` 条目，`_includes/footer.html` 的 Links 列加一条链接。页面本身和 `/whatsnew/` 固定链接不变。
 - 修复页面标题与顶部导航之间的多余空隙（除首页外的所有页面）：`main.site-container` 自带 `padding-top: 2rem`，而全局 `h1~h6` 又带 `margin-top: 2.5rem`，padding 阻止了外边距合并，两者叠加成 4.5rem。`_sass/layouts/_grid.scss` 里把容器前两层的首个子元素 `margin-top` 归零。首页不受影响（首个子元素是 `.home-grid` 而非标题）。
 - 修复每次刷新整页下滑：所有 layout 都把整页内容包在同一个 `.fade-in-section` 里，所以它实际是加载时的一次性淡入，不是滚动渐显。其中的 `transform: translateY(16px)` 会让整页起始位置低 16px 再滑上去。已去掉 transform，只保留透明度淡入。
