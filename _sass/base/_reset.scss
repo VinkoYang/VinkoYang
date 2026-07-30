@@ -57,7 +57,9 @@ img {
 a {
   color: var(--accent);
   text-decoration: none;
-  background-image: linear-gradient(var(--accent), var(--accent));
+  // currentColor so the underline follows the link into its hover tone
+  // (--accent -> --accent-deep) instead of staying the base blue.
+  background-image: linear-gradient(currentColor, currentColor);
   background-size: 0% 1px;
   background-position: left bottom;
   background-repeat: no-repeat;

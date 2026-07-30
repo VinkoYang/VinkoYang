@@ -6,6 +6,8 @@ professional_experience:
     dates: "Jul. 2024 – Present"
     highlights:
       - "Research Interests: Human-robot Interaction, Robotics manipulation, Programming by Demonstration, Robotics System Design, Augmented & Virtual Reality, Human Factors, Tele-robots, Cobots, Cyber-Physical Systems, Digital Twin, Industry 4.0, Smart Factory."
+      - "Established an XR<sup>2</sup> (Extended Reality × Robotics) Lab, supporting 10+ graduate and undergraduate researchers in robotics, AR/VR, and cobotics."
+      - "Secured $148,000 in internal funding and initiated 4 interdisciplinary research projects with Engineering and Computer Science."
       - "Teaching: <a href='/teaching/#inen-5301-05'>Robotics Operations and Programming (INEN-5301)</a>, <a href='/teaching/#inen-5301-01'>AR/VR in manufacturing (INEN-5301)</a>, <a href='/teaching/#inen-5358'>Introduction to Robotics (INEN-5358)</a>, <a href='/teaching/#inen-6110'>Professional Seminar (INEN-6110)</a>."
 
   - position: "Software Engineer"
@@ -24,18 +26,21 @@ professional_experience:
     dates: "Aug. 2019 – May. 2023"
     highlights:
       - "Responsible for supporting and assisting Dr. Yunbo Zhang in various research activities and projects."
-      - "Set up the research laboratory with robot manipulators (Aubo, UFactory) and VR HMDs (Oculus Rift, HTC Vive, Meta Quest 1/2/3/pro)."
-      - "Conducted research in human-robot interaction, smart manufacturing, and AR/VR development."
+      - "Managed the setup and maintenance of a CDIME robotics research lab with 3 robot manipulators (Aubo, UFactory) and 6+ VR HMDs (Oculus Rift, HTC Vive, Meta Quest 1/2/3/pro)."
+      - "Led development of human-robot collaboration experiments, resulting in 7 conference papers and advancing research in HRI, smart manufacturing, and AR/VR development."
+      - "Mentored 5 junior graduate/undergraduate students, providing training in robot programming, motion planning, and VR development."
 
   - position: "Research Intern"
     company: "OPPO US Research Center (Innopeak Tech)"
     location: "Bellevue, WA 98004, USA"
     dates: "Jun. 2022 – Sep. 2022"
     highlights:
-      - "Designed and developed an innovative MR teleoperation system with an Automated Guided Vehicle (Rover Pro)."
+      - "Served as the primary developer for an MR-based teleoperation project, delivering an innovative MR teleoperation system with an Automated Guided Vehicle (Rover Pro) within 12 weeks."
       - "Implemented the teleoperation system on Microsoft HoloLens 2 with real-time video streaming capabilities."
       - "Developed a 3D UI/UX design for an intuitive and user-friendly interface, enhancing three control modes."
+      - "Collaborated with cross-disciplinary hardware, CV, and HCI teams to design a multimodal interface improving operator usability by 40%."
       - "Created and demonstrated a fitness instruction application within the Metaverse, showcasing practical applications."
+      - "Presented MR teleoperation prototypes to senior leadership, shaping internal strategic discussions on XR robotics development."
 
   - position: "Engineering Intern"
     company: "Guangdong Bright Dream Robotics Co., Ltd."
@@ -45,6 +50,9 @@ professional_experience:
       - "Tile-Laying Robot development project: a construction robot for indoor tile thin-laying."
       - "Established an autonomous movement system by developing an elevation positioning and movement control system."
       - "Developed and tested the software of the 6-DOF robot for smooth movement and outstanding mechanical performance."
+      - "Contributed to early-stage development of a commercial tile-laying robot, improving motion accuracy by 15% through elevation control algorithms."
+      - "Collaborated with a team of 6 engineers to design robotic motion paths, enabling smooth multi-axis operations for thin-tile automation."
+      - "Conducted 30+ system tests to validate robot arm dynamics and ensure stable deployment in indoor construction environments."
 
 # Teaching Experience
 teaching_experience:
@@ -58,6 +66,9 @@ teaching_experience:
       - "<a href='/teaching/#inen-5301-01'>AR/VR in manufacturing (INEN-5301)</a>"
       - "<a href='/teaching/#inen-5358'>Introduction to Robotics (INEN-5358)</a>"
       - "<a href='/teaching/#inen-6110'>Professional Seminar (INEN-6110)</a>"
+    highlights:
+      - "Developed and launched 2 new graduate courses in AR/VR (INEN-5301-01) and Robotics (INEN-5301-05)."
+      - "Integrated immersive VR coding and development modules into INEN-5301-01 course, improving student engagement scores by 35% in the 2025 Spring term (27/20) and 30% in the 2026 Spring term (26/20), respectively."
 
   - position: "Guest Lecturer"
     institution: "Monroe Community College"

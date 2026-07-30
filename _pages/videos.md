@@ -8,7 +8,7 @@ permalink: /videos/
 ## Research Videos
 
 <div class="video-list" markdown="0">
-{% assign _v_sorted = site.data.research | sort: "end_date" | reverse %}
+{% assign _v_sorted = site.data.web.research | sort: "end_date" | reverse %}
 {% for _v_item in _v_sorted %}
 {% if _v_item.links.video and _v_item.links.video != "" %}
 {% if _v_item.links.video contains "youtu" %}

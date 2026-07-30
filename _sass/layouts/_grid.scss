@@ -12,4 +12,11 @@
   max-width: var(--container-max);
   margin: 0 auto;
   padding: var(--space-8) var(--container-padding) 0;
+
+  // The page title carries the global heading margin-top, which stacks on top
+  // of the container's own padding. Zero it so every page starts flush.
+  > :first-child,
+  > :first-child > :first-child {
+    margin-top: 0;
+  }
 }

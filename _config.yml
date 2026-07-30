@@ -8,6 +8,8 @@ college: "College of Engineering"
 institution: "Lamar University"
 institution_location: "4400 MLK Blvd., PO Box 10009, Beaumont, Texas 77710"
 email: wenhao.yang@lamar.edu
+phone: "+1-409-880-1981"  # used on the generated CV header; leave blank to omit
+office: "Cherry Building, Room 1608, Beaumont, TX 77705"  # used on the generated CV header; leave blank to fall back to institution_location
 photo: VinkoYang-1-1.jpg  # place your photo in images/ -- used for the on-page avatar (About/Team/sidebar)
 share_image: avatartion_yang_01.png  # place your photo in images/ -- used only for social-share preview (og:image)
 
@@ -21,13 +23,18 @@ links:
   orcid: "https://orcid.org/0009-0004-4977-2914"
   twitter: ""
   linkedin: "https://www.linkedin.com/in/wenhaoyang-vinko"
-  cv: "files/My_Academic_CV_2026-6-11.pdf"  # e.g., "papers/cv.pdf" — leave blank to hide the CV icon
+  cv: "files/cv.pdf"  # auto-generated at build time from cv/cv.md — leave blank to hide the CV icon
   youtube: "https://www.youtube.com/@vinkoyang"
 
 # ============================================================
 # STEP 3: Site Settings
 # ============================================================
-accent_color: "#1591DC" #"#1a7a6d"      # theme color for links and buttons
+# Brand color for non-CSS assets only (favicon.svg), which can't read CSS
+# variables. The site's actual accent colors are a four-rung scale
+# (wash/soft/base/deep) with separate light and dark values — too much for one
+# key — and live in _sass/base/_variables.scss. Keep this in sync with the
+# --accent rung there.
+accent_color: "#2196F3"
 dark_mode: true              # show dark mode toggle in navbar
 description: "Academic webpage of Dr. Wenhao Yang"
 baseurl: ""
@@ -110,6 +117,7 @@ exclude:
   - tags
   - Rakefile
   - node_modules
+  - cv          # CV markdown source; rendered to files/cv.pdf by CI
   - package.json
   - package-lock.json
   - docs

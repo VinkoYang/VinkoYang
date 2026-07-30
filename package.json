@@ -2,12 +2,15 @@
   "private": true,
   "scripts": {
     "build:js": "esbuild assets/js/site.js --bundle --minify --outfile=assets/js/site.min.js",
-    "build": "npm run build:js"
+    "build": "npm run build:js",
+    "cv": "node cv/build-cv.js"
   },
   "dependencies": {
     "bootstrap": "5.3.3"
   },
   "devDependencies": {
-    "esbuild": "^0.25.0"
+    "esbuild": "^0.25.0",
+    "js-yaml": "^5.2.2",
+    "puppeteer": "^25.4.0"
   }
 }

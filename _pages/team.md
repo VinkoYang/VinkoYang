@@ -35,7 +35,7 @@ permalink: /team/
 </div>
 </div>
 
-{% assign visible_students = site.data.people.students | where_exp: "s", "s.show_team == true" %}
+{% assign visible_students = site.data.web.people.students | where_exp: "s", "s.show_team == true" %}
 {% if visible_students.size > 0 %}
 ## Current Students
 
@@ -56,7 +56,7 @@ permalink: /team/
 </div>
 {% endif %}
 
-{% if site.data.people.alumni.size > 0 %}
+{% if site.data.web.people.alumni.size > 0 %}
 ## Alumni
 
 <div class="section-card">
@@ -65,7 +65,7 @@ permalink: /team/
 <tr><th>Name</th><th>Degree</th><th>Duration</th><th>Thesis</th><th>Current Position</th></tr>
 </thead>
 <tbody>
-{% assign sorted_alumni = site.data.people.alumni | sort: "year_end" | reverse %}
+{% assign sorted_alumni = site.data.web.people.alumni | sort: "year_end" | reverse %}
 {% for member in sorted_alumni %}
 <tr>
 <td data-label="Name">{% if member.website and member.website != "" %}<a href="{{ member.website }}" target="_blank">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}</td>
@@ -80,7 +80,7 @@ permalink: /team/
 </div>
 {% endif %}
 
-{% assign collab_list = site.data.people.collaborators | where_exp: "c", "c.show_collaborator == true" | sort: "last_name" %}
+{% assign collab_list = site.data.web.people.collaborators | where_exp: "c", "c.show_collaborator == true" | sort: "last_name" %}
 {% if collab_list.size > 0 %}
 ## Collaborators
 
