@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v1.6.0**（`source` 分支，已发布，2026-07-29）。
+**当前版本：v2.0.0**（`source` 分支，已发布，2026-07-30）。
 
 ## 两份日志，别混
 
@@ -37,6 +37,8 @@ git push origin source --tags
 ---
 
 ## [待发布]
+
+## [2.0.0] - 2026-07-30
 
 - 「What's New」从顶部导航移到页脚 Links 栏：`_config.yml` 的 `nav_pages` 去掉 `whatsnew` 条目，`_includes/footer.html` 的 Links 列加一条链接。页面本身和 `/whatsnew/` 固定链接不变。
 - 修复页面标题与顶部导航之间的多余空隙（除首页外的所有页面）：`main.site-container` 自带 `padding-top: 2rem`，而全局 `h1~h6` 又带 `margin-top: 2.5rem`，padding 阻止了外边距合并，两者叠加成 4.5rem。`_sass/layouts/_grid.scss` 里把容器前两层的首个子元素 `margin-top` 归零。首页不受影响（首个子元素是 `.home-grid` 而非标题）。
@@ -68,6 +70,7 @@ git push origin source --tags
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版：
 
+- v2.0.0 - 2026-07-30 — 排版/配色系统重做(Material Blue)、`_data` 拆分 profile/web(数据模型迁移)、CV 自动生成流水线、What's New 移到页脚、若干布局 bug 修复
 - v1.6.0 - 2026-07-29 — 上线 blog 板块(LLM skills / Unity VC / 文献检索指南)、avatar+favicon 换 SVG、post 目录样式
 - v1.5.0 - 2026-07-11 — Lab 页打磨、alumni 更新、加 Google Analytics、可访问性/对比度修正
 - v1.4.0 - 2026-06-21 — 加访客地图、独立 Videos 页、research 项目排版改进

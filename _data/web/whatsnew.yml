@@ -8,6 +8,15 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "2.0.0"
+  date: 2026-07-30
+  changes:
+    - "Refreshed site-wide typography (new heading and name fonts) and switched the accent color to Material Blue, including on the CV."
+    - "Redesigned the About page's PI info card."
+    - "The CV now auto-generates from the same data as the site, so it's always in sync — also fixed CV page margins and pagination."
+    - "Moved the 'What's New' link from the top navigation to the footer."
+    - "Fixed a layout glitch where page titles had extra empty space below the navigation bar, and a flicker on page refresh."
+
 - version: "1.6.0"
   date: 2026-07-29
   changes:
