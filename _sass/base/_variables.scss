@@ -14,10 +14,21 @@
   --font-accent: 'Stoke', Georgia, serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
-  // Accent — a warm scholarly teal
-  --accent: #1a7a6d;
-  --accent-hover: #15655a;
-  --accent-light: rgba(26, 122, 109, 0.08);
+  // Accent scale — Material Blue: #E3F2FD / #90CAF9 / #2196F3 / #0D47A1.
+  // Four rungs instead of one flat accent, each with a fixed job so the
+  // blues layer against each other rather than repeating one tone:
+  //   wash — tinted fills: chips, hover backgrounds, callouts
+  //   soft — borders, rules, dividers, decorative marks
+  //   base — primary interactive: links, buttons, active nav
+  //   deep — emphasis + hover: hovered links, headings, strong marks
+  --accent-wash: #e3f2fd;
+  --accent-soft: #90caf9;
+  --accent: #2196f3;
+  --accent-deep: #0d47a1;
+
+  // Back-compat aliases for existing rules.
+  --accent-hover: var(--accent-deep);
+  --accent-light: rgba(33, 150, 243, 0.09);
 
   // Light mode — warm parchment tones
   --bg-primary: #f8f6f1;
@@ -61,10 +72,17 @@
 }
 
 // Dark mode — rich warm dark
+// The accent scale flips: on a dark ground the *lighter* blues carry weight,
+// so #90CAF9 becomes the interactive base and #E3F2FD the emphasis rung,
+// while #2196F3 drops back to borders. Backgrounds stay warm and unchanged.
 [data-bs-theme="dark"] {
-  --accent: #3dbaa8;
-  --accent-hover: #5dd4c2;
-  --accent-light: rgba(61, 186, 168, 0.1);
+  --accent-wash: rgba(144, 202, 249, 0.12);
+  --accent-soft: #2196f3;
+  --accent: #90caf9;
+  --accent-deep: #e3f2fd;
+
+  --accent-hover: var(--accent-deep);
+  --accent-light: rgba(144, 202, 249, 0.12);
 
   --bg-primary: #1c1b18;
   --bg-secondary: #262520;

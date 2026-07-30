@@ -29,7 +29,12 @@ links:
 # ============================================================
 # STEP 3: Site Settings
 # ============================================================
-accent_color: "#1591DC" #"#1a7a6d"      # theme color for links and buttons
+# Brand color for non-CSS assets only (favicon.svg), which can't read CSS
+# variables. The site's actual accent colors are a four-rung scale
+# (wash/soft/base/deep) with separate light and dark values — too much for one
+# key — and live in _sass/base/_variables.scss. Keep this in sync with the
+# --accent rung there.
+accent_color: "#2196F3"
 dark_mode: true              # show dark mode toggle in navbar
 description: "Academic webpage of Dr. Wenhao Yang"
 baseurl: ""

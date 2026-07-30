@@ -18,9 +18,11 @@
   font-weight: 600;
   letter-spacing: 0.02em;
   border-radius: var(--radius-full);
-  background-color: var(--accent-light);
-  color: var(--accent);
-  border: 1px solid var(--accent);
+  // Three rungs in one component: wash fill, soft border, deep text.
+  // A solid --accent border made a wall of saturated outlines at list sizes.
+  background-color: var(--accent-wash);
+  color: var(--accent-deep);
+  border: 1px solid var(--accent-soft);
   transition: all var(--transition-fast);
   text-decoration: none;
   background-image: none !important;
@@ -28,6 +30,7 @@
 
   &:hover {
     background-color: var(--accent);
+    border-color: var(--accent);
     color: #fff;
   }
 
@@ -47,7 +50,7 @@
 // Highlight callout — eye-catching announcement box
 .callout {
   border-left: 4px solid var(--accent);
-  background: linear-gradient(135deg, var(--accent-light), transparent);
+  background: linear-gradient(135deg, var(--accent-wash), transparent);
   border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
   padding: var(--space-6);
   margin: var(--space-6) 0;

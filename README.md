@@ -499,7 +499,7 @@ All pages are in `_pages/`. Edit the Markdown content directly. Pages use the `g
 
 ### Accent Color & Dark Mode
 
-Set `accent_color` in `_config.yml` to change the theme color across the entire site (links, buttons, highlights, favicon). Set `dark_mode: false` to disable the dark mode toggle entirely.
+Theme colors are a four-rung accent scale (`--accent-wash` / `--accent-soft` / `--accent` / `--accent-deep`) defined per theme in `_sass/base/_variables.scss` — edit them there to recolor links, buttons and highlights. `accent_color` in `_config.yml` only colors the generated `favicon.svg`, which can't read CSS variables; keep it in sync with the `--accent` rung. Set `dark_mode: false` to disable the dark mode toggle entirely.
 
 ### CSS & JS Customization
 

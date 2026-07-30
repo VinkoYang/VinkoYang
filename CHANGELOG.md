@@ -38,6 +38,12 @@ git push origin source --tags
 
 ## [待发布]
 
+- 网站 About 页 PI 信息卡改版 + 全站配色换成 Material Blue 四档 accent scale：
+  - `.pi-name` 从 `--font-heading`(Quattrocento) 换成 `--font-display`(Cinzel)，跟自家注释里写的"hero name用Cinzel"对齐；职称/院系/地址拆成 `.pi-title`/`.pi-dept`/`.pi-address` 三级字号层级（原来三行同字号，只靠斜体区分）。顺手修了 `--text-tertiary` 变量根本没定义、地址行样式一直没生效的问题。
+  - `_sass/base/_variables.scss` 的 accent 从单一色值改成四档 scale：`--accent-wash`(#E3F2FD 填充) / `--accent-soft`(#90CAF9 描边) / `--accent`(#2196F3 主交互) / `--accent-deep`(#0D47A1 强调/hover)，浅色深色模式各自定义（深色模式刻度反转：暗底上浅蓝承重）。背景色不变（浅色暖米、深色暖黑维持原值）。
+  - 修复 `head.html` 里内联的 `:root{--accent:X;--accent-hover:X}` 覆盖 SCSS：该规则排在 main.css 之后，把深色模式 accent 顶掉、且强制 hover 和 base 同色，导致全站 hover 状态一直没变化。已删除，accent 统一由 SCSS 管理。
+  - `accent_color` 保留在 `_config.yml`，但收窄成只给 `favicon.svg` 用（SVG 读不了 CSS 变量），需与 `--accent` 手动同步。
+  - `.chip` 从纯色边框改成 wash 底/soft 边/deep 字三档叠加，列表里不再是一排饱和色边框。
 - CV 排版与字体改版（`cv/style.css`、`cv/build-cv.js`）：
   - 字体换成 Stoke（姓名，大写）+ Cinzel（section 标题）+ Quattrocento（正文/subhead），与网站字体体系统一。
   - 修复页边距失效：`cv/style.css` 里的 `@page { margin: 0 }` 会覆盖 puppeteer `pdf()` 的 margin 选项，正文占满整页而 footer 仍按 margin 留白，导致页脚与正文重叠。移除后由 puppeteer 单独控制，边距调为上 18mm / 下 20mm / 左右 19mm。

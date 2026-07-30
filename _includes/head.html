@@ -31,12 +31,12 @@
   <link rel="icon" href="{{ site.url }}{{ site.baseurl }}/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="{{ site.name | escape }}" href="{{ site.url }}{{ site.baseurl }}/feed.xml">
 
-  <!-- Accent color from config -->
-  {% if site.accent_color %}
-  <style>
-    :root { --accent: {{ site.accent_color }}; --accent-hover: {{ site.accent_color }}; }
-  </style>
-  {% endif %}
+  <!-- Accent colors live in _sass/base/_variables.scss (a four-rung scale:
+       --accent-wash / -soft / --accent / -deep, with per-theme values).
+       The old single-color inline override used to sit here, but being a
+       `:root` rule emitted after main.css it outranked the dark-mode block
+       and forced --accent-hover to equal --accent, flattening every hover
+       state. Change the scale in the stylesheet instead. -->
 
   <!-- Dark mode: apply saved theme before paint to prevent flash -->
   <script>

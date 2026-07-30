@@ -91,11 +91,39 @@
     }
   }
 
+  // Engraved capitals — same voice as h1, since a name is a hero title too.
   .pi-name {
-    font-family: var(--font-heading);
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0.015em;
     margin-top: 0;
-    font-size: 1.5rem;
+    margin-bottom: var(--space-2);
+    font-size: 1.75rem;
     &::after { display: none; }
+  }
+
+  // Three-tier meta stack: role (loudest, accent-colored) → affiliation
+  // (plain body text) → mailing address (smallest, most muted). Previously
+  // these three shared one font-size with only italics telling them apart.
+  .pi-title {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.0625rem;
+    color: var(--accent);
+    margin: 0;
+  }
+
+  .pi-dept {
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+    margin: 0.125rem 0 0;
+  }
+
+  .pi-address {
+    color: var(--text-muted);
+    font-size: 0.8125rem;
+    margin: var(--space-2) 0 0;
   }
 
   .pi-links {
