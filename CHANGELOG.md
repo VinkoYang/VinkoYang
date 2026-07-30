@@ -38,6 +38,10 @@ git push origin source --tags
 
 ## [待发布]
 
+- 「What's New」从顶部导航移到页脚 Links 栏：`_config.yml` 的 `nav_pages` 去掉 `whatsnew` 条目，`_includes/footer.html` 的 Links 列加一条链接。页面本身和 `/whatsnew/` 固定链接不变。
+- 修复页面标题与顶部导航之间的多余空隙（除首页外的所有页面）：`main.site-container` 自带 `padding-top: 2rem`，而全局 `h1~h6` 又带 `margin-top: 2.5rem`，padding 阻止了外边距合并，两者叠加成 4.5rem。`_sass/layouts/_grid.scss` 里把容器前两层的首个子元素 `margin-top` 归零。首页不受影响（首个子元素是 `.home-grid` 而非标题）。
+- 修复每次刷新整页下滑：所有 layout 都把整页内容包在同一个 `.fade-in-section` 里，所以它实际是加载时的一次性淡入，不是滚动渐显。其中的 `transform: translateY(16px)` 会让整页起始位置低 16px 再滑上去。已去掉 transform，只保留透明度淡入。
+- 修正 `assets/ref.bib` 中 `liu2026all` 的词条类型：改回 `@inproceedings`（NeurIPS 为会议论文集），撤销下方那条把它改成 `@article` 的记录。
 - CV 配色改成 Material Blue（`cv/style.css`）：姓名/section 标题/条目符号（▸、–）统一用 `--accent`(#2196F3)，section 标题下划线单独用 `--accent-soft`(#90CAF9) 弱化层级；去掉 header 联系方式下面的黑色分割线。
 - 网站 About 页 PI 信息卡改版 + 全站配色换成 Material Blue 四档 accent scale：
   - `.pi-name` 从 `--font-heading`(Quattrocento) 换成 `--font-display`(Cinzel)，跟自家注释里写的"hero name用Cinzel"对齐；职称/院系/地址拆成 `.pi-title`/`.pi-dept`/`.pi-address` 三级字号层级（原来三行同字号，只靠斜体区分）。顺手修了 `--text-tertiary` 变量根本没定义、地址行样式一直没生效的问题。
