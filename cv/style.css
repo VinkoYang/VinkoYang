@@ -9,7 +9,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Quattrocento:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;600;700&family=Stoke:wght@400&display=swap');
 
 :root {
-  --accent: #1591dc;
+  --accent: #2196f3;
+  --accent-soft: #90caf9;
   --ink: #1a1a1a;
   --ink-soft: #333;
   --ink-muted: #666;
@@ -50,7 +51,6 @@ body {
 
 .cv-header {
   text-align: center;
-  border-bottom: 1.2px solid var(--ink);
   padding-bottom: 8px;
   margin-bottom: 12px;
 }
@@ -179,7 +179,7 @@ body {
   letter-spacing: 1.4px;
   text-transform: uppercase;
   color: var(--accent);
-  border-bottom: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent-soft);
   padding-bottom: 2.5px;
   margin: 0 0 6px;
   page-break-after: avoid;

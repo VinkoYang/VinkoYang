@@ -38,6 +38,7 @@ git push origin source --tags
 
 ## [待发布]
 
+- CV 配色改成 Material Blue（`cv/style.css`）：姓名/section 标题/条目符号（▸、–）统一用 `--accent`(#2196F3)，section 标题下划线单独用 `--accent-soft`(#90CAF9) 弱化层级；去掉 header 联系方式下面的黑色分割线。
 - 网站 About 页 PI 信息卡改版 + 全站配色换成 Material Blue 四档 accent scale：
   - `.pi-name` 从 `--font-heading`(Quattrocento) 换成 `--font-display`(Cinzel)，跟自家注释里写的"hero name用Cinzel"对齐；职称/院系/地址拆成 `.pi-title`/`.pi-dept`/`.pi-address` 三级字号层级（原来三行同字号，只靠斜体区分）。顺手修了 `--text-tertiary` 变量根本没定义、地址行样式一直没生效的问题。
   - `_sass/base/_variables.scss` 的 accent 从单一色值改成四档 scale：`--accent-wash`(#E3F2FD 填充) / `--accent-soft`(#90CAF9 描边) / `--accent`(#2196F3 主交互) / `--accent-deep`(#0D47A1 强调/hover)，浅色深色模式各自定义（深色模式刻度反转：暗底上浅蓝承重）。背景色不变（浅色暖米、深色暖黑维持原值）。
