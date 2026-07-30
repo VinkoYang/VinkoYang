@@ -38,6 +38,12 @@ git push origin source --tags
 
 ## [待发布]
 
+- CV 排版与字体改版（`cv/style.css`、`cv/build-cv.js`）：
+  - 字体换成 Stoke（姓名，大写）+ Cinzel（section 标题）+ Quattrocento（正文/subhead），与网站字体体系统一。
+  - 修复页边距失效：`cv/style.css` 里的 `@page { margin: 0 }` 会覆盖 puppeteer `pdf()` 的 margin 选项，正文占满整页而 footer 仍按 margin 留白，导致页脚与正文重叠。移除后由 puppeteer 单独控制，边距调为上 18mm / 下 20mm / 左右 19mm。
+  - `.cv-entry` 去掉 `break-inside: avoid`（原本任何放不下的条目整块推到次页，页底留大片空白），改用 `break-after: avoid` + `orphans/widows: 2`，页面填充正常，总页数 6 → 5。
+  - `entryHead()` 把 meta 拆成机构/课程/地点三段分别着色（机构蓝色加粗、地点斜体灰），日期字号与职位对齐。
+  - 页眉联系方式拆成两行：电话/邮箱/个人网站一行，LinkedIn/Scholar/ResearchGate/ORCiD/GitHub 一行，图标放大到 10.5px。
 - 数据模型迁移：`_data/` 拆成 `_data/profile/`（简历相关，网页与 CV 共用）和 `_data/web/`（纯网站展示数据），所有 `site.data.*` 引用同步更新（about/team/research/lab/teaching/videos/home/feed/sidebar 等）。
 - 新增 CV 自动生成流水线：`cv/build-cv.js` 直接从 `_data/profile/*.yml` + `_data/web/people.yml` + `assets/ref.bib` + `_config.yml` 生成 HTML，puppeteer 打印为 `files/cv.pdf`（CI 每次 push 重新构建，PDF 不入库）。改简历数据 = 网页和 CV 一起更新。
 - `cv/style.css` 全新排版：语义化 class、CSS 变量、SVG mask 图标、日期/年份右对齐、防跨页断行。

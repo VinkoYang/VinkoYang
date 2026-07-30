@@ -60,12 +60,22 @@ const bullets = (items, cls = 'cv-bullets') =>
 const subhead = (t) => `<h3 class="cv-subhead">${html(t)}</h3>`;
 
 // Entry header: role on the left, dates right-aligned on the same line.
-function entryHead(title, meta, dates) {
+// metaParts: string, or array of strings rendered as "org · course · location"
+// with the first part styled as the org (accent) and the last as location (italic).
+function entryHead(title, metaParts, dates) {
+  const parts = (Array.isArray(metaParts) ? metaParts : [metaParts]).filter(Boolean);
+  const metaHtml = parts
+    .map((m, i) => {
+      let cls = 'cv-meta-mid';
+      if (parts.length === 1) cls = 'cv-loc';
+      else if (i === 0) cls = 'cv-org';
+      else if (i === parts.length - 1) cls = 'cv-loc';
+      return `<span class="${cls}">${html(m)}</span>`;
+    })
+    .join('<span class="cv-sep"> &middot; </span>');
   return (
     `<div class="cv-entry-head">` +
-    `<div class="cv-entry-title"><span class="cv-role">${html(title)}</span>` +
-    (meta ? `<span class="cv-meta">${html(meta)}</span>` : '') +
-    `</div>` +
+    `<div class="cv-entry-title"><span class="cv-role">${html(title)}</span>${metaHtml}</div>` +
     (dates ? `<span class="cv-dates">${html(dates)}</span>` : '') +
     `</div>`
   );
@@ -213,16 +223,29 @@ const guidanceList = (list) =>
 // Header
 // ---------------------------------------------------------------------------
 
+// Contacts render as two rows: how to reach him, then where to find his work.
+// Splitting them keeps each row short enough to breathe at a readable size.
 const links = config.links || {};
-const contacts = [];
-if (config.phone) contacts.push(['phone', `tel:${config.phone.replace(/[^\d+]/g, '')}`, config.phone]);
-if (config.email) contacts.push(['email', `mailto:${config.email}`, config.email]);
-if (config.url) contacts.push(['website', config.url, config.url.replace(/^https?:\/\//, '')]);
-if (links.linkedin) contacts.push(['linkedin', links.linkedin, 'LinkedIn']);
-if (links.google_scholar) contacts.push(['scholar', links.google_scholar, 'Google Scholar']);
-if (links.researchgate) contacts.push(['researchgate', links.researchgate, 'ResearchGate']);
-if (links.orcid) contacts.push(['orcid', links.orcid, 'ORCiD']);
-if (links.github) contacts.push(['github', links.github, 'GitHub']);
+const reachContacts = [];
+if (config.phone) reachContacts.push(['phone', `tel:${config.phone.replace(/[^\d+]/g, '')}`, config.phone]);
+if (config.email) reachContacts.push(['email', `mailto:${config.email}`, config.email]);
+if (config.url) reachContacts.push(['website', config.url, config.url.replace(/^https?:\/\//, '')]);
+
+const profileContacts = [];
+if (links.linkedin) profileContacts.push(['linkedin', links.linkedin, 'LinkedIn']);
+if (links.google_scholar) profileContacts.push(['scholar', links.google_scholar, 'Google Scholar']);
+if (links.researchgate) profileContacts.push(['researchgate', links.researchgate, 'ResearchGate']);
+if (links.orcid) profileContacts.push(['orcid', links.orcid, 'ORCiD']);
+if (links.github) profileContacts.push(['github', links.github, 'GitHub']);
+
+const contactRow = (items, cls) =>
+  items.length
+    ? `<nav class="cv-contact ${cls}">` +
+      items
+        .map(([icon, href, label]) => `<a class="cv-contact-link" data-icon="${icon}" href="${href}">${label}</a>`)
+        .join('') +
+      `</nav>`
+    : '';
 
 const affiliation = [config.title, config.department, config.institution].filter(Boolean).join(', ');
 const officeLine = config.office || config.institution_location || '';
@@ -238,11 +261,8 @@ parts.push(
     `<h1>${html(config.name)}</h1>` +
     `<p class="cv-affiliation">${html(affiliation)}</p>` +
     (officeLine ? `<p class="cv-office">${html(officeLine)}</p>` : '') +
-    `<nav class="cv-contact">` +
-    contacts
-      .map(([icon, href, label]) => `<a class="cv-contact-link" data-icon="${icon}" href="${href}">${label}</a>`)
-      .join('') +
-    `</nav>` +
+    contactRow(reachContacts, 'cv-contact-reach') +
+    contactRow(profileContacts, 'cv-contact-profiles') +
     `</header>`
 );
 
@@ -255,7 +275,7 @@ parts.push(
       .map(
         (job) =>
           `<article class="cv-entry">` +
-          entryHead(job.position, [job.company, job.location].filter(Boolean).join(' · '), job.dates) +
+          entryHead(job.position, [job.company, job.location], job.dates) +
           bullets((job.highlights || []).map(html)) +
           `</article>`
       )
@@ -268,10 +288,9 @@ parts.push(
     'Teaching Experience',
     (experience.teaching_experience || [])
       .map((job) => {
-        const meta = [job.institution, job.course, job.location].filter(Boolean).join(' · ');
         return (
           `<article class="cv-entry">` +
-          entryHead(job.position, meta, job.dates) +
+          entryHead(job.position, [job.institution, job.course, job.location], job.dates) +
           (job.description ? `<p class="cv-entry-desc">${html(job.description)}</p>` : '') +
           bullets([...(job.courses || []), ...(job.highlights || [])].map(html)) +
           `</article>`
@@ -288,7 +307,7 @@ parts.push(
       .map(
         (edu) =>
           `<article class="cv-entry">` +
-          entryHead(`${edu.degree}, ${edu.institution}`, edu.location, edu.dates) +
+          entryHead(`${edu.degree}, ${edu.institution}`, [edu.location], edu.dates) +
           bullets((edu.details || []).map(html)) +
           `</article>`
       )
@@ -398,7 +417,7 @@ const today = new Date().toLocaleDateString('en-US', {
 
 const footerTemplate = `
   <div style="width:100%; font-family:'Source Serif 4',Georgia,serif; font-size:7.5pt; color:#888;
-              padding:0 15mm; display:flex; justify-content:space-between;">
+              padding:0 19mm; display:flex; justify-content:space-between;">
     <span>Last updated ${today}</span>
     <span>Page <span class="pageNumber"></span> of <span class="totalPages"></span></span>
   </div>`;
@@ -416,7 +435,7 @@ const footerTemplate = `
       path: path.join(outDir, 'cv.pdf'),
       format: 'Letter',
       printBackground: true,
-      margin: { top: '16mm', bottom: '16mm', left: '15mm', right: '15mm' },
+      margin: { top: '18mm', bottom: '20mm', left: '19mm', right: '19mm' },
       displayHeaderFooter: true,
       headerTemplate: '<span></span>',
       footerTemplate,

@@ -6,7 +6,7 @@
    from build-cv.js (classes: cv-header, cv-section, cv-entry, cv-bullets, …).
    =========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;600;700&family=Stoke:wght@400&display=swap');
 
 :root {
   --accent: #1591dc;
@@ -15,8 +15,9 @@
   --ink-muted: #666;
   --rule: #ccc;
 
-  --font-body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
-  --font-head: 'Source Sans 3', 'Segoe UI', sans-serif;
+  --font-body: 'Quattrocento', Georgia, 'Times New Roman', serif;
+  --font-section: 'Cinzel', 'Quattrocento', serif;
+  --font-name: 'Stoke', 'Cinzel', serif;
 
   --size-body: 9.6pt;
   --size-small: 8.6pt;
@@ -28,7 +29,10 @@
 
 @page {
   size: Letter;
-  margin: 0; /* real margins come from puppeteer's pdf() options */
+  /* No margin here: an explicit @page margin (even 0) overrides puppeteer's
+     pdf() margin option for the content box, while footerTemplate still
+     renders inside puppeteer's margin band — causing overlap. Leave margin
+     unset so puppeteer's margin option is the single source of truth. */
 }
 
 body {
@@ -46,21 +50,24 @@ body {
 
 .cv-header {
   text-align: center;
-  border-bottom: 1.5px solid var(--ink);
-  padding-bottom: 9px;
-  margin-bottom: 13px;
+  border-bottom: 1.2px solid var(--ink);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .cv-header h1 {
-  font-family: var(--font-head);
-  font-size: 22pt;
-  font-weight: 700;
-  letter-spacing: 0.4px;
-  margin: 0 0 3px;
+  font-family: var(--font-name);
+  font-size: 23pt;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  line-height: 1.15;
+  color: var(--accent);
+  margin: 0 0 5px;
 }
 
 .cv-affiliation {
-  font-size: 9.4pt;
+  font-size: 9.2pt;
   color: var(--ink-soft);
   margin: 0 0 1px;
 }
@@ -68,22 +75,29 @@ body {
 .cv-office {
   font-size: var(--size-small);
   color: var(--ink-muted);
-  margin: 0 0 7px;
+  margin: 0 0 6px;
 }
 
+/* Two rows — reachable-at (phone/email/site), then scholarly profiles. Each
+   row is short enough to sit at a comfortable size without crowding. */
 .cv-contact {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 3px 11px;
-  font-size: 8.2pt;
+  gap: 3px 14px;
+  font-size: 8.4pt;
+}
+
+.cv-contact-profiles {
+  margin-top: 3px;
+  font-size: 8pt;
 }
 
 .cv-contact-link {
   color: var(--ink);
   font-weight: 600;
   text-decoration: none;
-  padding-left: 14px;
+  padding-left: 13px;
   position: relative;
   white-space: nowrap;
 }
@@ -94,8 +108,8 @@ body {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 10px;
-  height: 10px;
+  width: 10.5px;
+  height: 10.5px;
   background-color: var(--accent);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
@@ -155,31 +169,42 @@ body {
 /* --------------------------------------------------------------- Sections */
 
 .cv-section {
-  margin-bottom: 12px;
+  margin-bottom: 9px;
 }
 
 .cv-section h2 {
-  font-family: var(--font-head);
-  font-size: 10.5pt;
-  font-weight: 700;
+  font-family: var(--font-section);
+  font-weight: 600;
+  font-size: 11.5pt;
+  letter-spacing: 1.4px;
   text-transform: uppercase;
-  letter-spacing: 1.2px;
   color: var(--accent);
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: 2px;
-  margin: 0 0 7px;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2.5px;
+  margin: 0 0 6px;
   page-break-after: avoid;
   break-after: avoid;
 }
 
+.cv-section + .cv-section {
+  margin-top: 4px;
+}
+
 .cv-subhead {
-  font-family: var(--font-head);
-  font-size: 9.6pt;
+  font-family: var(--font-body);
   font-weight: 700;
+  font-style: italic;
+  font-size: 9.8pt;
+  letter-spacing: 0.2px;
   color: var(--ink-soft);
-  margin: 8px 0 4px;
+  margin: 7px 0 3px;
   page-break-after: avoid;
   break-after: avoid;
+}
+
+/* A subhead directly under a section rule doesn't need the extra lead-in. */
+.cv-section h2 + .cv-subhead {
+  margin-top: 0;
 }
 
 .cv-summary {
@@ -189,10 +214,16 @@ body {
 
 /* ---------------------------------------------------------------- Entries */
 
+/* Entries are deliberately breakable: a blanket break-inside:avoid pushes any
+   entry that doesn't fit entirely onto the next page, leaving inches of dead
+   space. The head still can't be stranded (break-after:avoid below), and
+   orphans/widows keep at least two bullet lines on each side of a break. */
 .cv-entry {
-  margin-bottom: 8px;
-  page-break-inside: avoid;
-  break-inside: avoid;
+  position: relative;
+  padding-left: 13px;
+  margin-bottom: 7px;
+  orphans: 2;
+  widows: 2;
 }
 
 .cv-entry-head {
@@ -202,6 +233,14 @@ body {
   gap: 12px;
   page-break-after: avoid;
   break-after: avoid;
+}
+
+.cv-entry-head::before {
+  content: '\25B8';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
 }
 
 .cv-entry-title {
@@ -218,14 +257,29 @@ body {
   color: var(--ink-muted);
 }
 
-.cv-meta {
+.cv-org {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.cv-loc {
+  font-style: italic;
+  color: var(--ink-muted);
+}
+
+.cv-meta-mid {
   color: var(--ink-soft);
+}
+
+.cv-sep {
+  color: var(--ink-muted);
 }
 
 .cv-dates {
   flex: none;
-  font-size: var(--size-small);
-  color: var(--ink-muted);
+  font-size: var(--size-body);
+  font-weight: 700;
+  color: var(--ink);
   white-space: nowrap;
 }
 
@@ -360,7 +414,7 @@ sup {
 /* Small qualifier chip (e.g. "Peer-reviewed") appended to publications. */
 .cv-tag {
   display: none; /* set to inline-block to show */
-  font-family: var(--font-head);
+  font-family: var(--font-section);
   font-size: 6.8pt;
   letter-spacing: 0.4px;
   text-transform: uppercase;
