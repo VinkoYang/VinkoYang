@@ -38,6 +38,9 @@ git push origin source --tags
 
 ## [待发布]
 
+- 新增 4 篇关键词速查博文（`_posts/2026-08-04-*`）：AI/LLM、Robotics、XR (AR/VR/MR)、HRI & HRC，每篇 100 条术语分 6-7 类。categories 统一 `Research & Scholarship`，tags 按主题各自给。
+- 修正草稿遗留问题：文件名 `20226-08-04`→`2026-08-04`、`Keywors`→`Keywords`、XR 文件名多余空格；XR 篇标题去掉 "Blog 3:" 前缀；正文 `**术语** **:**` 错乱粗体统一成 `**术语**:`；HRC 篇 `Prosemics`→`Proxemics`、`nervous nervous`→`nervous system`；AI/LLM 篇末尾 5 条挤在一行的条目拆开。
+
 ## [2.0.0] - 2026-07-30
 
 - 「What's New」从顶部导航移到页脚 Links 栏：`_config.yml` 的 `nav_pages` 去掉 `whatsnew` 条目，`_includes/footer.html` 的 Links 列加一条链接。页面本身和 `/whatsnew/` 固定链接不变。
