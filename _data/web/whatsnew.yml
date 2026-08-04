@@ -8,6 +8,11 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "2.0.1"
+  date: 2026-08-04
+  changes:
+    - "Added four new blog posts: quick-reference keyword glossaries for AI/LLM, Robotics, XR (AR/VR/MR), and Human-Robot Interaction."
+
 - version: "2.0.0"
   date: 2026-07-30
   changes:

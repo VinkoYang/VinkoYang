@@ -1,0 +1,148 @@
+---
+layout: post
+title: "Top 100 XR (AR/VR/MR) Keywords"
+date: 2026-08-04
+categories: ["Research & Scholarship"]
+tags: ["XR", "AR", "VR", "glossary"]
+---
+# Top 100 XR (AR/VR/MR) Keywords
+
+---
+
+### 🕶️ 1. Hardware, Optics & Displays
+
+* **XR (Extended Reality)**: An umbrella term encompassing Virtual, Augmented, and Mixed Reality technologies.
+* **AR (Augmented Reality)**: Overlaying digital information graphics directly on top of the real physical world.
+* **VR (Virtual Reality)**: Plunging users into fully enclosed, simulated digital computer environments.
+* **MR (Mixed Reality)**: Blending physical and virtual spaces where digital and real objects co-exist and interact.
+* **HMD (Head-Mounted Display)**: A wearable headset device containing display lenses positioned before a user's eyes.
+* **FOV (Field of View)**: The total angular extent of the visible world viewable through an optics display.
+* **PPD (Pixels Per Degree)**: A metric measuring display sharpness by counting pixels available per degree of view.
+* **Waveguide**: Optical components guiding micro-projected light paths directly into wearer eye regions.
+* **Video See-Through (VST)**: Digitally capturing the real world via external cameras and showing it on internal VR screens.
+* **Optical See-Through (OST)**: Viewing the real world directly through transparent glass while projecting digital holograms onto it.
+* **IPD (Interpupillary Distance)**: The distance between the centers of a user's pupils, vital for proper lens calibration.
+* **Refresh Rate**: The number of times per second a display updates its image frames, measured in Hertz (Hz).
+* **MTP Latency (Motion-to-Photon)**: The delay time between a user moving their head and the display updating its pixels.
+* **Foveated Rendering**: Dropping rendering resolution in peripheral view zones to save GPU compute power.
+* **Micro-OLED**: High-density miniature displays offering rich contrast and deep black levels for modern headsets.
+
+---
+
+### 🛰️ 2. Tracking, Localization & Sensing
+
+* **6DoF (Six Degrees of Freedom)**: Tracking both rotational movements (pitch, yaw, roll) and translational movements (X, Y, Z coordinates).
+* **3DoF (Three Degrees of Freedom)**: Tracking orientation transformations (pitch, yaw, roll) without tracking spatial positional changes.
+* **Inside-Out Tracking**: Utilizing headset-mounted cameras to track spatial movement without external base stations.
+* **Outside-In Tracking**: Tracking user movements using static external sensors placed around a physical room.
+* **Inside-Out Eyetracking**: Micro-cameras tracking pupil positions to evaluate user focus and drive foveated rendering.
+* **SLAM (Spatial Mapping)**: Real-time mapping algorithms plotting physical rooms so headsets can lock digital objects to floor planes.
+* **Passthrough**: Streaming external camera video feeds onto screens so users can see their real rooms without removing headsets.
+* **Hand Tracking**: Articulated tracking of fingers and palms using computer vision, removing the need for physical controllers.
+* **Immersive Spatial Audio**: Audio rendering that dynamically shifts directional sound cues based on user head turns.
+* **HRTF (Head-Related Transfer Function)**: Algorithms modeling how individual ear shapes filter sound to create true 3D audio.
+* **ToF Depth Sensor**: Sensors measuring light reflection flight times to map furniture topologies instantly.
+* **Occlusion Tracking**: Resolving visual layers so real-world pillars can hide digital objects sitting behind them.
+* **Controller Tracking**: High-frequency infrared or optical monitoring of hand controllers to capture exact user button actions.
+* **Anomalous Drift**: Positional errors caused by sensor noise making virtual assets float away from real anchor spots.
+* **IMU Fusion**: Merging gyroscope and accelerometer data to predict instant head position adjustments between camera updates.
+
+---
+
+### 🎨 3. Graphics, Rendering & Spatial Assets
+
+* **Spatial Anchor**: A digital coordinate marker locking a virtual asset to an exact spot in a physical room permanently.
+* **Volumetric Video**: Capturing real human performances using multi-camera arrays to turn them into viewable 3D holograms.
+* **NeRF (Neural Radiance Fields)**: AI models synthesizing complex 3D scenes from sparse sets of 2D photographs.
+* **3D Gaussian Splatting**: A real-time radiance field technique modeling complex spaces using millions of point clouds.
+* **Occlusion Culling**: Disabling the rendering of 3D objects currently hidden behind closer assets to save memory.
+* **Draw Calls**: The commands sent by CPUs instructing GPUs to render specific object meshes.
+* **LOD (Level of Detail)**: Dynamically reducing a 3D asset's polygon count as it moves further away from the user.
+* **Skybox**: A panoramic background image wrapped around a virtual scene to simulate distant skies and horizons.
+* **Spatial Mapping Mesh**: The triangular wireframe structure generated by headsets to represent real-world physical surfaces.
+* **Baked Lighting**: Pre-calculating light and shadows onto object textures to avoid expensive real-time lighting calculations.
+* **PBR (Physically Based Rendering)**: Shading methods simulating how light behaves realistically with metal, plastic, or matte surfaces.
+* **Avatar**: The digital 3D representation chosen by a user to project their identity inside virtual environments.
+* **Glance-Based Activation**: Interactive UI items that trigger actions simply by a user looking at them for a set duration.
+* **Polygon Budget**: The maximum number of 3D triangles a scene can contain while maintaining smooth frame rates.
+* **Passthrough Tinting**: Adjusting the color and opacity blends of real-world video layers to match digital lighting themes.
+
+---
+
+### 🕹️ 4. Interaction, UX & Locomotion
+
+* **Teleportation Locomotion**: Moving through vast virtual spaces by pointing an arc ray and blinking to destination spots instantly.
+* **Smooth Locomotion**: Walking through VR spaces continuously using thumbsticks, which can sometimes trigger motion sickness.
+* **Gaze-and-Pinch**: Selecting a virtual menu item by looking at it and pinching your index finger and thumb together.
+* **Raycasting**: Projecting a virtual laser pointer line out from a hand controller to select distant 3D UI targets.
+* **Diegetic UI**: User interfaces integrated naturally into the fictional world (e.g., an in-game wrist watch showing health).
+* **Non-Diegetic UI**: Traditional 2D menu overlays floating statically over a user's vision space.
+* **Haptic Actuator**: Vibration motors inside controllers providing physical click, bump, or texture sensations to fingers.
+* **Passive Haptics**: Aligning real physical objects (like a real desk) with virtual prop counterparts to give physical texture feel.
+* **Active Haptics**: Using advanced mechanical gloves that physically stop fingers from closing to simulate a virtual wall.
+* **Spatial Menu**: Interactive UI layouts wrapped in arcs or panels around a user's physical body reach zone.
+* **Direct Manipulation**: Reaching out and grabbing a virtual asset directly using hand models, skipping raycast lines.
+* **Object Affordance**: Visual design indicators on virtual objects hinting at how they should be grabbed or twisted.
+* **Vection**: The false psychological illusion of self-motion triggered when visual backgrounds move while you sit still.
+* **Virtual Hand Illusion**: The psychological sensation of adopting an artificial digital hand model as your own flesh limb.
+* **Air Gestures**: Specific hand movements (like swiping or waving in mid-air) mapped to system commands.
+
+---
+
+### 🧠 5. Human Factors & Perception
+
+* **Immersive Presence**: The deep psychological state of feeling genuinely located inside a virtual environment.
+* **Cybersickness**: Motion sickness triggered by visual-vestibular conflicts inside virtual reality headsets.
+* **Vergence-Accommodation Conflict (VAC)**: Eye strain caused when screens sit close to eyes while digital content focuses far away.
+* **Vestibular System**: Internal ear mechanisms tracking balance and acceleration, easily upset by artificial visual motion.
+* **Simulator Sickness Questionnaire (SSQ)**: A standard academic diagnostic survey measuring nausea, oculomotor, and disorientation scores.
+* **Visual Fatigue**: Eye tiredness and dryness caused by prolonged focus on near-eye stereoscopic displays.
+* **Perceptual Realism**: How closely a digital scene matches human expectations of real-world physical properties.
+* **Stereoscopic Depth**: Recreating 3D depth perception by feeding slightly offset images to each individual eye lens.
+* **Self-Localization**: A user's cognitive understanding of where their body stands relative to ambient spatial landmarks.
+* **Break in Presence (BIP)**: Sudden glitches or real-world interruptions that instantly pull users out of an immersive illusion.
+* **Spatial Orientation**: The mental mapping ability required to navigate through complex virtual scenes without getting lost.
+* **Latency Jitter**: Irregular timing shifts between rendering frame outputs, a prime trigger for user headaches.
+* **Cognitive Tunneling**: A state of hyper-focus where users overlook critical environmental cues due to intense XR prompts.
+* **Flicker Vertigo**: Dizziness triggered by display panels updating at low frame rates or pulsating light patterns.
+* **Proteus Effect**: The behavioral phenomenon where users change their actions to match the traits of their active digital avatars.
+
+---
+
+### 🌐 6. Software Development, Engines & Web
+
+* **Unity Engine**: A highly popular cross-platform game engine widely used to construct XR interactive experiences.
+* **Unreal Engine**: A high-end rendering engine utilized for photorealistic graphics and enterprise virtual productions.
+* **OpenXR**: An open royalty-free standard cross-platform API unifying development across diverse headset vendor hardwares.
+* **WebXR**: A web API enabling browsers to serve immersive VR and AR experiences directly without installing apps.
+* **MRTK (Mixed Reality Toolkit)**: A component collection providing foundational spatial interaction scripts for developers.
+* **ARKit**: Apple's native software development framework for deploying AR capabilities onto iOS mobile devices.
+* **ARCore**: Google's native software development framework for deploying AR capabilities onto Android mobile devices.
+* **Spatial Anchors API**: Cloud databases letting separate headsets download and view identical shared spatial coordinate maps.
+* **Prefabs**: Reusable, pre-configured 3D object assets that developers can easily duplicate across scenes.
+* **Vertex Shader**: Graphics code calculating coordinate transformations for object mesh corner points.
+* **Fragment Shader**: Graphics code calculating final color values for individual screen pixels.
+* **Universal Render Pipeline (URP)**: An optimized rendering pipeline built for maintaining high framerates on mobile chip headsets.
+* **Spatial Audio SDK**: Software kits managing sound propagation, room wall reflections, and real-time audio panning.
+* **Headset Passthrough API**: Developer tools allowing access to background camera image masks for blending custom graphics.
+* **Asset Bundle**: External archive files containing meshes and textures loaded at runtime to minimize initial app sizes.
+
+---
+
+### 🏢 7. Platforms, Paradigms & Industrial Applications
+
+* **Metaverse**: A theoretical network of persistent, interconnected 3D virtual worlds where communities interact.
+* **Digital Twin**: A photorealistic, real-time data-linked virtual copy of a physical factory or asset.
+* **Spatial Computing**: A computing paradigm shifting inputs from flat screens into 3D physical spaces.
+* **Enterprise XR**: Immersive systems tailored for high-stakes medical, aerospace, or automotive manufacturing workflows.
+* **Remote Assistance**: AR workflows where expert technicians annotate live video feeds to guide local field workers.
+* **Virtual Production**: Utilizing LED wall backdrops tracked with cameras to shoot real actors inside digital film sets.
+* **Co-Location Multi-player**: Systems allowing multiple local users wearing headsets to see the same digital assets in one room.
+* **Spatial Collaboration**: Distributed digital rooms where global teams meet as 3D avatars to share data slide decks.
+* **Virtual Showroom**: Interactive shopping portals letting consumers view true-scale 3D products inside their homes before buying.
+* **Cloud XR Rendering**: Offloading heavy 3D rendering tasks to remote server farms and streaming video back to lightweight headsets.
+* **Immersive Architecture**: Reviewing full-scale 3D structural building mockups virtually before starting real construction.
+* **Surgical Simulation Training**: High-fidelity medical modules letting residents practice intricate operations within risk-free VR views.
+* **Telepresence**: The technology of manifesting a user's presence vividly at a remote physical location via proxy hardware.
+* **Walled Garden Platform**: Closed headset ecosystems restricting app distributions strictly to proprietary market storefronts.
+* **Asymmetric XR Play**: Cooperative games or apps where one player wears an HMD while others interact via normal flat screens.
