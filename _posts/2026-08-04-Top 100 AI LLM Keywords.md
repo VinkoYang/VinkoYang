@@ -137,4 +137,8 @@ tags: ["AI", "LLM", "machine-learning", "glossary"]
 * **Proprietary Model**: Closed-source AI software owned exclusively by a specific company.
 * **Foundational Model**: Large-scale models trained on broad data capable of adapting to many tasks.
 * **SaaS (Software as a Service)**: Delivering cloud-based AI applications directly to users via browsers.
-* MaaS (Model as a Service): Providing cloud-hosted AI models via APIs for developers.AGI (Artificial General Intelligence): Theoretical AI possessing human-level intelligence across all domains.Fine-tuning as a Service: Cloud platforms offering automated customization of models for clients.GPU Scarcity: The global shortage of specialized compute hardware limiting AI progress.Vertical LLM: Models trained specifically for single industries like healthcare, finance, or law.
+* **MaaS (Model as a Service)**: Providing cloud-hosted AI models via APIs for developers.
+* **AGI (Artificial General Intelligence)**: Theoretical AI possessing human-level intelligence across all domains.
+* **Fine-tuning as a Service**: Cloud platforms offering automated customization of models for clients.
+* **GPU Scarcity**: The global shortage of specialized compute hardware limiting AI progress.
+* **Vertical LLM**: Models trained specifically for single industries like healthcare, finance, or law.
