@@ -179,7 +179,7 @@ students:
   - name: "This could be you!"
     show_team: true
     show_about: false
-    photo: rock.jpg
+    photo: team/rock.jpg
     info: See openings for more info
 
 

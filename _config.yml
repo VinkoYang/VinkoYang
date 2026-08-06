@@ -10,8 +10,8 @@ institution_location: "4400 MLK Blvd., PO Box 10009, Beaumont, Texas 77710"
 email: wenhao.yang@lamar.edu
 phone: "+1-409-880-1981"  # used on the generated CV header; leave blank to omit
 office: "Cherry Building, Room 1608, Beaumont, TX 77705"  # used on the generated CV header; leave blank to fall back to institution_location
-photo: VinkoYang-1-1.jpg  # place your photo in images/ -- used for the on-page avatar (About/Team/sidebar)
-share_image: avatartion_yang_01.png  # place your photo in images/ -- used only for social-share preview (og:image)
+photo: profile/VinkoYang-1-1.jpg  # place your photo in images/ -- used for the on-page avatar (About/Team/sidebar)
+share_image: profile/avatartion_yang_01.png  # place your photo in images/ -- used only for social-share preview (og:image)
 
 # ============================================================
 # STEP 2: Your Links (optional -- delete any you don't use)
@@ -52,6 +52,7 @@ nav_pages:
   - name: publications
   - name: talks
   - name: research
+  - name: projects
   - name: lab
   - name: team
   - name: teaching

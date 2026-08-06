@@ -1,18 +1,18 @@
 # Funding agency logos, shown on the About page.
-# Each entry needs: image (filename in images/), url
+# Each entry needs: image (path under images/, logos live in images/logos/), url
 # Recommended logo size: max-height 80px
 
 # EXAMPLE -- replace or delete
-# - image: NSF.png
+# - image: logos/NSF.png
 #   url: https://www.nsf.gov/
-# - image: doe_logo.png
+# - image: logos/doe_logo.png
 #   url: https://www.energy.gov/
-# - image: onr_logo.png
+# - image: logos/onr_logo.png
 #   url: https://www.onr.navy.mil/
-# - image: NIH-logo.png
+# - image: logos/NIH-logo.png
 #   url: https://www.nih.gov/
 
-- image: Lamar_cfr.jpg
+- image: logos/Lamar_cfr.jpg
   url: https://www.lamar.edu/center-for-resiliency/
-- image: logotxhazardouswasteresearchcntr.png
+- image: logos/logotxhazardouswasteresearchcntr.png
   url: https://www.lamar.edu/texas-hazardous-waste-research-center/

@@ -23,8 +23,8 @@
 #     paper     — filename in /papers/ (e.g. "yang2024can.pdf"), OR a full external URL
 #     webpage   — full external URL
 #     video     — full external URL (YouTube, etc.)
-#     poster    — path relative to site root, e.g. "papers/myposter.pdf"
-#     slide     — path relative to site root, must include "files/" prefix, e.g. "files/2026_myslide.pdf"
+#     poster    — path relative to site root, must include "files/posters/" prefix, e.g. "files/posters/2026_myposter.pdf"
+#     slide     — path relative to site root, must include "files/slides/" prefix, e.g. "files/slides/2026_myslide.pdf"
 #     bib       — full external URL to BibTeX / citation page
 #     github    — full external URL to GitHub repository
 
@@ -239,7 +239,7 @@
     webpage: ""
     video: ""
     bib: ""
-    poster: "papers/Motion_Spring_Conference_Poster.pdf"
+    poster: "files/posters/Motion_Spring_Conference_Poster.pdf"
 
 - title: "Advanced Mixed Reality Training for First Responders in Hurricane Scenarios"
   image: "research/2026_mrtraining.gif"
@@ -265,7 +265,7 @@
     video: ""
     bib: ""
     poster: ""
-    slide: "files/2026_mrtraining_slide.pdf"
+    slide: "files/slides/2026_mrtraining_slide.pdf"
 
 - title: "Development of an Interactive AR-Based Educational Application for Demonstrating Newton's Cradle Motion"
   image: "research/2026_NewtonsCradle.gif"
@@ -289,7 +289,7 @@
     video: "https://www.linkedin.com/posts/john-gust-86b94280_hello-all-i-know-it-has-been-some-time-ugcPost-7447084083580522496-cDdI/?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAABE5glMBvocFmmUUFAEkMIdirSQbWkg136I"
     bib: ""
     poster: ""
-    slide: "files/2026_NewtonsCradle_slide.pdf"
+    slide: "files/slides/2026_NewtonsCradle_slide.pdf"
 
 - title: "An Immersive Virtual Reality Learning System with an LLM-Integrated Conversational Avatar for Real-Time Educational Assistance"
   image: "research/2026_llmavatar.gif"
@@ -316,7 +316,7 @@
     video: "https://youtu.be/vNtLc10wYJM"
     bib: ""
     poster: ""
-    slide: "files/2026_llmavatar_slide.pdf"
+    slide: "files/slides/2026_llmavatar_slide.pdf"
 
 - title: "AI Identification and Mapping of Invasive Aquatic Plants"
   image: "research/2026_plantIdentifier.jpg"
@@ -344,8 +344,8 @@
     webpage: "https://invasive-plant-identifier-xgcth8imhbdwbkcw6m3qcr.streamlit.app/"
     video: ""
     bib: ""
-    poster: "files/2026_MechGenius_Poster.pdf"
-    slide: "files/2026_MechGenius_Slide.pdf"
+    poster: "files/posters/2026_MechGenius_Poster.pdf"
+    slide: "files/slides/2026_MechGenius_Slide.pdf"
     github: "https://github.com/lparker25/Invasive-Plant-Identifier"
 
 

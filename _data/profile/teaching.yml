@@ -4,7 +4,7 @@
 #     - "Fall 2024"
 #   description: >             # 课程简介
 #     ...
-#   syllabus: "files/xxx.pdf"  # 留空则不显示链接
+#   syllabus: "files/teaching/xxx.pdf"  # 必须含 files/teaching/ 前缀；留空则不显示链接
 #   textbooks:                 # 可多个，留空列表则不显示
 #     - title: "书名"
 #       url: "https://..."     # 留空则不显示
@@ -28,7 +28,7 @@
     students earn the "Educational Robotics Training - Core" certification. See the
     [UR Academy Brochure](https://academy.universal-robots.com/media/g52jayc3/ur-academy-brochure-training-eng-may-2026.pdf)
     for certification details.
-  syllabus: "files/ST_Collab._Robot_Ops_and_Pro_INEN_5301_Fall_2025.pdf"
+  syllabus: "files/teaching/ST_Collab._Robot_Ops_and_Pro_INEN_5301_Fall_2025.pdf"
   textbooks:
     - title: "Robotics: Modelling, Planning and Control by Siciliano, Bruno"
       url: "https://people.disim.univaq.it/~costanzo.manes/EDU_stuff/Robotics_Modelling,%20Planning%20and%20Control_Sciavicco_extract.pdf"
@@ -53,7 +53,7 @@
     in modern manufacturing systems. Topics include AR/VR hardware platforms,
     spatial computing, human-machine interaction, and industrial use cases such as
     remote assistance, digital twins, and operator training.
-  syllabus: "files/files files/ST_AR_VR_in_Manufacturing_INEN_5301_Spring_2026.pdf"
+  syllabus: "files/teaching/ST_AR_VR_in_Manufacturing_INEN_5301_Spring_2026.pdf"
   textbooks: []
   projects: 
     - title: "Development of an Interactive AR-Based Educational Application for Demonstrating Newton's Cradle Motion"
@@ -67,7 +67,7 @@
     An introductory course on robotics covering robot anatomy, coordinate frames,
     forward and inverse kinematics, trajectory planning, and basic control. Designed
     for graduate students with an engineering or computer science background.
-  syllabus: "Intro_Robotics_INEN_5358_Spring_2025.pdf"
+  syllabus: "files/teaching/Intro_Robotics_INEN_5358_Spring_2025.pdf"
   textbooks: 
     - title: "Introduction to Robotics: Mechanics and Control"
       url: "https://www.changjiangcai.com/files/text-books/Introduction-to-Robotics-3rd-edition.pdf"
