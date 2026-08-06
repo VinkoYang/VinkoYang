@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v2.0.1**（`source` 分支，已发布，2026-08-04）。
+**当前版本：v2.1.0**（`source` 分支，已发布，2026-08-06）。
 
 ## 两份日志，别混
 
@@ -38,23 +38,15 @@ git push origin source --tags
 
 ## [待发布]
 
-- 新增 Projects 板块（个人软件项目，与学术 research 分开）：`_pages/projects.md`（permalink `/projects/`，复用 research 页的 `research-card-h` / `research-dropdown` 样式，筛选改为 Tech + Year）、数据源 `_data/web/projects.yml`（字段：title/image/start_date/end_date/role/status/stack/abstract/links{webpage,github,demo,docs,blog}；`blog` 支持站内相对路径或外链，站内路径自动补 `site.url`+`baseurl`，渲染成「Blog post」按钮）、`_config.yml` 的 `nav_pages` 在 research 后插入 projects。首条内容为 Wherefold（https://wherefold.com），配图 `images/projects/wherefold.png`（由 TripCompass 仓库 logo 缩放到 600×600）。仓库当前为私有，暂不放 github 链接。
-- `_data/web/news.yml` 顶部加一条 2026-08-06 的 Wherefold 上线消息（含站点外链）。
-- 首页 `_pages/home.md`：About me 末尾加一句 software/Wherefold 介绍并链到 `/projects`；原「Recent Projects」小标题改名「Recent Research」（避免与新 Projects 板块混淆）；其后新增「Software I've Built」横向长卡片区（读 `_data/web/projects.yml`，取最近 2 条，卡片直链项目官网，底部 "See all projects" 指向 `/projects`）。样式为 `_sass/layouts/_home.scss` 新增的 `.home-software-list` / `.home-software-card` 系列：200px 图 + 内容两栏 grid（≤600px 转竖排），含 status 药丸、role/日期 meta 行、技术栈 chip（超 6 个折叠成 "+N more"）、箭头 CTA；hover/focus-visible 用 `--accent` 描边与 250ms 位移，并带 `prefers-reduced-motion` 降级。刻意与 research 的方卡不同形，让两类工作在视觉上分开。
-- 新增博文 `_posts/2026-08-06-building-wherefold.md`（category: Industry Insights）与 `_data/web/projects.yml` 摘要重写，强调本人贡献分两块：① 结构化数据库整理（5110 景点 × 20+ 字段：坐标/分类/营业时间/价格档位/联系方式/双语简介/建议时长/最佳时间/交通/拍照建议，城市侧另有别称/气候/机场/铁路/税率/都市圈分组等字段）② 在此之上做的可视化平台（交互地图/筛选/搜索/社区纠错）。博文加了「如何使用」分步指南和 v0.1.0→v0.13.0-alpha（2026-06-26～2026-07-29）开发里程碑时间线。
-- 清理仓库结构：删除无引用的 `_sass/bootstrap_bak.scss`；5 篇带空格/大写文件名的 `_posts` 统一改为 kebab-case（`target-journals-and-conferences`、`top-100-ai-llm-keywords`、`top-100-hri-hrc-research-keywords`、`top-100-robotics-research-keywords`、`top-100-xr-ar-vr-mr-keywords`）。
-- 静态资源目录分层。原则：`assets/` = 构建资源（不动）、`papers/` = 仅自己发表的论文 PDF（**URL 保持不变**，避免破坏 Google Scholar / 外部直链）、`images/` = 图片、`files/` = 其他可下载文件。
-  - `images/` 根目录 14 个散文件归位：`images/logos/`（NSF / NIH / DOE / ONR / Lamar CFR / TX Hazardous Waste 六个资助方 logo）、`images/profile/`（`VinkoYang-1-1.jpg`、`avatartion_yang_01.png`、`headshot.jpg`）、团队占位图 `rock.jpg` 并入 `images/team/`。
-  - `files/` 由平铺杂物袋改为分层：`files/slides/`、`files/posters/`、`files/teaching/`、`files/templates/`；`files/cv.pdf` 保持原位（`cv/build-cv.js` 的产出路径 + 外链稳定）。
-  - 消除 poster 分裂：`papers/Motion_Spring_Conference_Poster.pdf` 移入 `files/posters/`，`papers/` 此后只放论文。
-  - 同步更新引用：`_config.yml`（`photo` / `share_image`）、`_data/web/funders.yml`、`_data/web/people.yml`、`_data/web/research.yml`（poster / slide 共 6 处）、`_data/profile/teaching.yml`、`_posts/2026-06-26-academic-reading-training.md`；各数据文件顶部的路径注释示例一并改成新前缀，避免以后再写错。
-  - 修两处失效的 syllabus 链接：`teaching.yml` 中 `ST_AR_VR_in_Manufacturing` 路径误写成 `files/files files/...`（多余前缀）、`Intro_Robotics_INEN_5358` 缺 `files/` 前缀导致解析到站点根目录 404。
-  - 删除零引用文件：`images/nnsa_logo.png`、`images/banner.jpg`、`images/avatartion_yang_01.svg`、`images/yang_notion_avatar_c-1.png`、空目录 `images/banner/`，以及被自动生成的 `files/cv.pdf` 取代的手工旧版 `files/My_Academic_CV_2026-6-11.pdf`。
-  - 验证：`bundle exec jekyll build` 通过，构建产物中 59 个站内资源链接逐个校验，无死链。
-
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [2.1.0] - 2026-08-06
+
+新增 Projects 板块（个人软件项目，与学术 research 分开）：`/projects/` 页面 + 数据源 `_data/web/projects.yml`（含 webpage/github/demo/docs/blog 多链接类型），`nav_pages` 加入 projects；首条内容 Wherefold，强调「自建结构化景点数据库 + 在此之上做的可视化平台」两层贡献。首页新增「Software I've Built」横向长卡片区（`_sass/layouts/_home.scss` 新样式，含 status 药丸/技术栈 chip/CTA，独立于 research 卡片形状），About 段落加一句引导；「Recent Projects」标题改名「Recent Research」避免混淆。新增建站博文《Building Wherefold》（数据库字段清单、使用指南、v0.1.0→v0.13.0-alpha 开发里程碑）。News 加一条 Wherefold 上线消息。
+
+配套仓库整理：删除无引用的 `_sass/bootstrap_bak.scss`，5 篇 `_posts` 文件名统一 kebab-case；静态资源目录分层（`images/logos`、`images/profile`、`files/slides`、`files/posters`、`files/teaching`、`files/templates` 等），修正 `teaching.yml` 中两处失效的 syllabus 链接，清理若干零引用文件。构建产物 59 个站内资源链接逐一校验无死链。
 
 ### [2.0.1] - 2026-08-04
 
