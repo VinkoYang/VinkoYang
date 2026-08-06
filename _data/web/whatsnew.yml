@@ -8,6 +8,14 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "2.1.0"
+  date: 2026-08-06
+  changes:
+    - "Launched a new Projects page showcasing software I've built outside academic research, starting with Wherefold — a bilingual US travel-guide platform."
+    - "Added a 'Software I've Built' section to the homepage."
+    - "New blog post: 'Building Wherefold: Curating a US Travel Database and Turning It Into a Map.'"
+    - "Fixed two broken syllabus links on the Teaching page."
+
 - version: "2.0.1"
   date: 2026-08-04
   changes:

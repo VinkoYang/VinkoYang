@@ -102,6 +102,7 @@
 .research-card-h {
   display: flex;
   gap: var(--space-6);
+  scroll-margin-top: calc(var(--space-6) + 70px);
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);

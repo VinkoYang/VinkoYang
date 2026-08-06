@@ -1,6 +1,9 @@
 # News items shown on the home page sidebar.
 # The 3 most recent are shown; all appear on /allnews.
 # Each entry needs: date, headline
+- date: August 6, 2026
+  headline: "Launched <a href='https://wherefold.com' target='_blank'>Wherefold</a>, a bilingual interactive travel guide for the US covering 1,274 cities, 5,110 attractions, and 36 national parks — built solo with React, Mapbox GL, and a Prisma/PostgreSQL backend."
+
 - date: May 18, 2026
   headline: "'A Human-Centered AI Task Management System for Cognitive Load Reduction and Decision Support in Industrial Plant Management' accepted in the AHFE International Open Access" 
 

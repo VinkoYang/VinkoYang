@@ -186,3 +186,174 @@
     }
   }
 }
+
+// -------------------------------------------------------------
+// Software / side projects — wide horizontal cards on the homepage.
+// Deliberately a different shape from .home-project-card above so
+// research and software read as two distinct kinds of work.
+// -------------------------------------------------------------
+.home-software-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.home-software-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-base), transform var(--transition-base),
+    border-color var(--transition-base);
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+    border-color: var(--accent-soft);
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home-software-card-media {
+  position: relative;
+  background-color: var(--bg-secondary);
+
+  img {
+    width: 100%;
+    height: 100%;
+    min-height: 160px;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+  }
+
+  @media (max-width: 600px) {
+    img {
+      aspect-ratio: 16 / 9;
+      height: auto;
+      min-height: 0;
+    }
+  }
+}
+
+.home-software-card-body {
+  padding: var(--space-4) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+
+  h4 {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.35;
+    color: var(--text-primary);
+
+    &::after {
+      display: none;
+    }
+  }
+
+  p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+    max-width: none;
+  }
+
+  @media (max-width: 600px) {
+    padding: var(--space-4);
+  }
+}
+
+// Role · status · dates line
+.home-software-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-3);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+
+  .home-software-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    padding: 0.1rem 0.5rem;
+    border-radius: var(--radius-full);
+    background-color: var(--accent-wash);
+    color: var(--accent-deep);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+}
+
+// Tech stack chips — capped so a long stack doesn't unbalance the card
+.home-software-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-2);
+
+  span {
+    font-size: 0.68rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+}
+
+.home-software-cta {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: auto;
+  padding-top: var(--space-1);
+
+  i {
+    transition: transform var(--transition-fast);
+  }
+
+  .home-software-card:hover & i {
+    transform: translateX(3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-software-card,
+  .home-software-cta i {
+    transition: none;
+  }
+
+  .home-software-card:hover {
+    transform: none;
+  }
+
+  .home-software-card:hover .home-software-cta i {
+    transform: none;
+  }
+}

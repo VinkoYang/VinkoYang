@@ -100,7 +100,7 @@ A paper that cannot be connected to your own work is a paper you have not truly 
 
 You can download the template here:
 
-[Academic Reading Training Template (Word)]({{ site.baseurl }}/files/Academic_Reading_Training_Template_v2.docx)
+[Academic Reading Training Template (Word)]({{ site.baseurl }}/files/templates/Academic_Reading_Training_Template_v2.docx)
 
 ---
 

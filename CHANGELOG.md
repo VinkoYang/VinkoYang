@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v2.0.1**（`source` 分支，已发布，2026-08-04）。
+**当前版本：v2.1.0**（`source` 分支，已发布，2026-08-06）。
 
 ## 两份日志，别混
 
@@ -41,6 +41,12 @@ git push origin source --tags
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [2.1.0] - 2026-08-06
+
+新增 Projects 板块（个人软件项目，与学术 research 分开）：`/projects/` 页面 + 数据源 `_data/web/projects.yml`（含 webpage/github/demo/docs/blog 多链接类型），`nav_pages` 加入 projects；首条内容 Wherefold，强调「自建结构化景点数据库 + 在此之上做的可视化平台」两层贡献。首页新增「Software I've Built」横向长卡片区（`_sass/layouts/_home.scss` 新样式，含 status 药丸/技术栈 chip/CTA，独立于 research 卡片形状），About 段落加一句引导；「Recent Projects」标题改名「Recent Research」避免混淆。新增建站博文《Building Wherefold》（数据库字段清单、使用指南、v0.1.0→v0.13.0-alpha 开发里程碑）。News 加一条 Wherefold 上线消息。
+
+配套仓库整理：删除无引用的 `_sass/bootstrap_bak.scss`，5 篇 `_posts` 文件名统一 kebab-case；静态资源目录分层（`images/logos`、`images/profile`、`files/slides`、`files/posters`、`files/teaching`、`files/templates` 等），修正 `teaching.yml` 中两处失效的 syllabus 链接，清理若干零引用文件。构建产物 59 个站内资源链接逐一校验无死链。
 
 ### [2.0.1] - 2026-08-04
 
