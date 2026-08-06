@@ -30,6 +30,10 @@ He directs the [XRAI Lab]({{ site.url }}{{ site.baseurl }}/lab), where his [team
 explores innovative approaches at the intersection of robotics, XR technologies, and industrial applications.
 Dr. Yang welcomes motivated students to join his group and contribute to cutting-edge research in these areas.
 
+Outside the lab, he builds and ships [software]({{ site.url }}{{ site.baseurl }}/projects) — most recently
+[Wherefold](https://wherefold.com), a bilingual travel platform built on a structured database of 5,110 curated
+US attractions that he assembled and now visualizes through an interactive map.
+
 <div class="chip-container" markdown="0">
 <a href="{{ site.url }}{{ site.baseurl }}/research" class="chip">Augmented Reality</a>
 <a href="{{ site.url }}{{ site.baseurl }}/research" class="chip">Mixed Reality</a>
@@ -39,12 +43,13 @@ Dr. Yang welcomes motivated students to join his group and contribute to cutting
 <a href="{{ site.url }}{{ site.baseurl }}/research" class="chip">Spatial Computing</a>
 </div>
 
-### Recent Projects
+### Recent Research
 
 {% assign sorted_research = site.data.web.research | sort: "end_date" | reverse %}
 <div class="home-projects-grid" markdown="0">
 {% for item in sorted_research limit:3 %}
-<a href="{{ site.url }}{{ site.baseurl }}/research" class="home-project-card">
+{% assign card_id = item.title | slugify %}
+<a href="{{ site.url }}{{ site.baseurl }}/research#{{ card_id }}" class="home-project-card">
 {% if item.image and item.image != "" %}
 <img src="{{ site.url }}{{ site.baseurl }}/images/{{ item.image }}" alt="{{ item.title }}" loading="lazy">
 {% endif %}
@@ -55,3 +60,40 @@ Dr. Yang welcomes motivated students to join his group and contribute to cutting
 </a>
 {% endfor %}
 </div>
+
+{% if site.data.web.projects and site.data.web.projects.size > 0 %}
+### Software I've Built
+
+{% assign sorted_projects = site.data.web.projects | sort: "end_date" | reverse %}
+<div class="home-software-list" markdown="0">
+{% for item in sorted_projects limit:2 %}
+{% assign card_id = item.title | slugify %}
+<a href="{{ site.url }}{{ site.baseurl }}/projects#{{ card_id }}" class="home-software-card">
+{% if item.image and item.image != "" %}
+<div class="home-software-card-media">
+<img src="{{ site.url }}{{ site.baseurl }}/images/{{ item.image }}" alt="{{ item.title }}" loading="lazy">
+</div>
+{% endif %}
+<div class="home-software-card-body">
+<h4>{{ item.title }}</h4>
+{% if item.status or item.role or item.start_date %}
+<div class="home-software-meta">
+{% if item.status and item.status != "" %}<span class="home-software-status">{{ item.status }}</span>{% endif %}
+{% if item.role and item.role != "" %}<span>{{ item.role }}</span>{% endif %}
+{% if item.start_date %}<span>{{ item.start_date }}{% if item.end_date %}&ndash;{{ item.end_date }}{% else %}&ndash;Present{% endif %}</span>{% endif %}
+</div>
+{% endif %}
+<p>{{ item.abstract | truncatewords: 42 }}</p>
+{% if item.stack %}
+<div class="home-software-stack">
+{% for tech in item.stack limit:6 %}<span>{{ tech }}</span>{% endfor %}{% if item.stack.size > 6 %}<span>+{{ item.stack.size | minus: 6 }} more</span>{% endif %}
+</div>
+{% endif %}
+<div class="home-software-cta">View project <i class="fa-solid fa-arrow-right"></i></div>
+</div>
+</a>
+{% endfor %}
+</div>
+
+<p style="margin-top: var(--space-4);"><a href="{{ site.url }}{{ site.baseurl }}/projects">See all projects &rarr;</a></p>
+{% endif %}

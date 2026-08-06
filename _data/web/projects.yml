@@ -1,0 +1,47 @@
+# Software / side projects — shown on the Projects page (/projects/).
+# Separate from _data/web/research.yml on purpose: this file is for built and
+# shipped software, not academic research projects.
+# Entries are sorted in reverse chronological order by end_date.
+#
+# Required fields:
+#   title       — project name (also used to generate the anchor ID on the page)
+#   end_date    — YYYY-MM, used for sorting (use an estimated date for ongoing work)
+#   abstract    — one-paragraph summary
+#
+# Optional fields:
+#   image       — path relative to /images/, e.g. "projects/wherefold.png"
+#   start_date  — YYYY-MM
+#   role        — your role on the project, e.g. "Solo developer"
+#   status      — free text shown as a badge, e.g. "Live", "Beta", "Archived"
+#   stack       — list of technologies; also used by the Tech filter
+#   links:
+#     webpage   — full external URL to the live site
+#     github    — full external URL to the repository
+#     demo      — full external URL to a demo video
+#     docs      — full external URL to documentation
+#     blog      — write-up about this project: a site-relative path
+#                 (e.g. "/blogs/building-wherefold/") or a full external URL
+
+- title: "Wherefold — Interactive US Travel Guide"
+  image: "projects/wherefold.png"
+  start_date: "2026-06"
+  end_date: "2026-08"
+  role: "Solo developer — data curation, backend, frontend, deployment"
+  status: "Live"
+  stack:
+    - "React"
+    - "TypeScript"
+    - "Vite"
+    - "Tailwind CSS"
+    - "Mapbox GL JS"
+    - "Zustand"
+    - "Node.js"
+    - "Express"
+    - "Prisma"
+    - "PostgreSQL"
+    - "Vercel"
+    - "Railway"
+  abstract: "A structured travel-attraction database of my own construction — 5,110 attractions across 1,274 US cities and 36 national parks, each curated across 20+ fields (coordinates, category, opening hours, pricing tier, contact info, bilingual descriptions, suggested visit duration, best time to visit, transportation, photo tips) — surfaced through an interactive bilingual (English/Chinese) data-visualization platform I designed and built end to end. The database was assembled through a scraping-plus-curation pipeline against Google Places and Wikipedia, with every field reviewed and normalized before publication; the platform layer turns that dataset into a single explorable Mapbox map with filtering, full-text search, and a community feedback loop (tips, ratings, and error reports) that keeps the data current after launch. Full stack: React/TypeScript frontend rendering the dataset as a Mapbox GeoJSON layer, an Express/Prisma API over PostgreSQL, deployed on Vercel and Railway."
+  links:
+    webpage: "https://wherefold.com"
+    blog: "/blogs/building-wherefold/"
