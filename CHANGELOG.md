@@ -38,6 +38,8 @@ git push origin source --tags
 
 ## [待发布]
 
+- 清理仓库结构：删除无引用的 `_sass/bootstrap_bak.scss`；5 篇带空格/大写文件名的 `_posts` 统一改为 kebab-case（`target-journals-and-conferences`、`top-100-ai-llm-keywords`、`top-100-hri-hrc-research-keywords`、`top-100-robotics-research-keywords`、`top-100-xr-ar-vr-mr-keywords`）。
+
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
