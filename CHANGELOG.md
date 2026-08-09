@@ -38,6 +38,8 @@ git push origin source --tags
 
 ## [待发布]
 
+- `_config.yml` 的 `office` 办公室房间号由 Cherry Building Room 1608 改为 Room 2628（影响自动生成的 CV header）。
+
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
