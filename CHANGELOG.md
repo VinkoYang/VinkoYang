@@ -38,12 +38,13 @@ git push origin source --tags
 
 ## [待发布]
 
-- `_config.yml` 的 `office` 办公室房间号由 Cherry Building Room 1608 改为 Room 2628（影响自动生成的 CV header）。
-- 新增两篇博文：《Graduate Research Presentation Expectations》（研究生做 research PPT 的要求/常见问题）与《How to Build a Good Research Presentation》（通用 research talk 结构/大纲/格式指南，含外部资源链接）。
-
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [2.1.1] - 2026-08-14
+
+新增两篇教学向博文：《Graduate Research Presentation Expectations》讲研究生做 research PPT 的标准与常见问题；《How to Build a Good Research Presentation》讲通用 research talk 结构/大纲/时间分配/格式规范，附外部资源链接（Princeton PCUR、PLOS Ten Simple Rules、UCSB Grad Slam、UNC poster tips 等）。另将 office 房间号改为 Cherry Building Room 2628。
 
 ### [2.1.0] - 2026-08-06
 

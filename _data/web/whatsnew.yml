@@ -8,6 +8,12 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "2.1.1"
+  date: 2026-08-14
+  changes:
+    - "New blog post: 'Graduate Research Presentation Expectations' — what I look for in a research PPT and common mistakes to avoid."
+    - "New blog post: 'How to Build a Good Research Presentation' — a general guide to structuring, timing, and formatting a research talk."
+
 - version: "2.1.0"
   date: 2026-08-06
   changes:
