@@ -39,6 +39,7 @@ git push origin source --tags
 ## [待发布]
 
 - `_config.yml` 的 `office` 办公室房间号由 Cherry Building Room 1608 改为 Room 2628（影响自动生成的 CV header）。
+- 新增两篇博文：《Graduate Research Presentation Expectations》（研究生做 research PPT 的要求/常见问题）与《How to Build a Good Research Presentation》（通用 research talk 结构/大纲/格式指南，含外部资源链接）。
 
 ## 历史版本
 
