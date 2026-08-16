@@ -42,6 +42,10 @@ git push origin source --tags
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
 
+### [2.1.1] - 2026-08-14
+
+新增两篇教学向博文：《Graduate Research Presentation Expectations》讲研究生做 research PPT 的标准与常见问题；《How to Build a Good Research Presentation》讲通用 research talk 结构/大纲/时间分配/格式规范，附外部资源链接（Princeton PCUR、PLOS Ten Simple Rules、UCSB Grad Slam、UNC poster tips 等）。另将 office 房间号改为 Cherry Building Room 2628。
+
 ### [2.1.0] - 2026-08-06
 
 新增 Projects 板块（个人软件项目，与学术 research 分开）：`/projects/` 页面 + 数据源 `_data/web/projects.yml`（含 webpage/github/demo/docs/blog 多链接类型），`nav_pages` 加入 projects；首条内容 Wherefold，强调「自建结构化景点数据库 + 在此之上做的可视化平台」两层贡献。首页新增「Software I've Built」横向长卡片区（`_sass/layouts/_home.scss` 新样式，含 status 药丸/技术栈 chip/CTA，独立于 research 卡片形状），About 段落加一句引导；「Recent Projects」标题改名「Recent Research」避免混淆。新增建站博文《Building Wherefold》（数据库字段清单、使用指南、v0.1.0→v0.13.0-alpha 开发里程碑）。News 加一条 Wherefold 上线消息。
