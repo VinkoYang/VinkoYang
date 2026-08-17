@@ -47,7 +47,7 @@ US attractions that he assembled and now visualizes through an interactive map.
 
 {% assign sorted_research = site.data.web.research | sort: "end_date" | reverse %}
 <div class="home-projects-grid" markdown="0">
-{% for item in sorted_research limit:3 %}
+{% for item in sorted_research limit:4 %}
 {% assign card_id = item.title | slugify %}
 <a href="{{ site.url }}{{ site.baseurl }}/research#{{ card_id }}" class="home-project-card">
 {% if item.image and item.image != "" %}

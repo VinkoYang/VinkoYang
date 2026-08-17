@@ -40,6 +40,7 @@ git push origin source --tags
 
 - `mentoring_role` 新增 `undergraduate_advisor` / `high_school_advisor` 两档，支持本科生/高中生导师关系：`about.md` 分类列表、`cv/build-cv.js` 简历 Student Guidance 小节同步识别新角色；`_data/web/people.yml` 注释补充字段用法与示例（含 `info`、`lamar_id` 说明）。`team.md` 学生卡片新增渲染 `lamar_id`（有值才显示）。清理注释中两个未实际渲染的字段（`researchgate`、`cv`）。
 - 补充学生 Abdul Aziz Rashid Hamed Al Badi 的卡片照片 `images/team/aziz.jpg`。
+- 首页 Recent Research 卡片从 3 张（1 行）改为 4 张（2x2）：`_pages/home.md` 循环 `limit` 改 4；`_home.scss` `.home-projects-grid` 列数从 `repeat(3, 1fr)` 改 `repeat(2, 1fr)`，移除多余的 900px 断点。
 
 ## 历史版本
 
