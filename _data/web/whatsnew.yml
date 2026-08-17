@@ -8,6 +8,12 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "2.2.0"
+  date: 2026-08-17
+  changes:
+    - "Team page update: new mentoring categories and a student photo added."
+    - "Homepage now shows 4 recent research projects in a 2x2 grid, instead of 3 in a single row."
+
 - version: "2.1.1"
   date: 2026-08-14
   changes:

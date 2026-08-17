@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v2.1.0**（`source` 分支，已发布，2026-08-06）。
+**当前版本：v2.2.0**（`source` 分支，已发布，2026-08-17）。
 
 ## 两份日志，别混
 
@@ -38,13 +38,13 @@ git push origin source --tags
 
 ## [待发布]
 
-- `mentoring_role` 新增 `undergraduate_advisor` / `high_school_advisor` 两档，支持本科生/高中生导师关系：`about.md` 分类列表、`cv/build-cv.js` 简历 Student Guidance 小节同步识别新角色；`_data/web/people.yml` 注释补充字段用法与示例（含 `info`、`lamar_id` 说明）。`team.md` 学生卡片新增渲染 `lamar_id`（有值才显示）。清理注释中两个未实际渲染的字段（`researchgate`、`cv`）。
-- 补充学生 Abdul Aziz Rashid Hamed Al Badi 的卡片照片 `images/team/aziz.jpg`。
-- 首页 Recent Research 卡片从 3 张（1 行）改为 4 张（2x2）：`_pages/home.md` 循环 `limit` 改 4；`_home.scss` `.home-projects-grid` 列数从 `repeat(3, 1fr)` 改 `repeat(2, 1fr)`，移除多余的 900px 断点。
-
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [2.2.0] - 2026-08-17
+
+Team 页支持新的导师分类（本科生/高中生导师），学生卡片新增 Lamar ID 展示，补充一张学生照片。首页 Recent Research 模块从 3 卡单行改为 4 卡 2x2 网格。
 
 ### [2.1.1] - 2026-08-14
 
