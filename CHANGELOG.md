@@ -38,6 +38,8 @@ git push origin source --tags
 
 ## [待发布]
 
+- `mentoring_role` 新增 `undergraduate_advisor` / `high_school_advisor` 两档，支持本科生/高中生导师关系：`about.md` 分类列表、`cv/build-cv.js` 简历 Student Guidance 小节同步识别新角色；`_data/web/people.yml` 注释补充字段用法与示例（含 `info`、`lamar_id` 说明）。`team.md` 学生卡片新增渲染 `lamar_id`（有值才显示）。清理注释中两个未实际渲染的字段（`researchgate`、`cv`）。
+
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。

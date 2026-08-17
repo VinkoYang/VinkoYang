@@ -1,6 +1,7 @@
 # Doctoral Dissertation Committee — CV only ("Student Guidance" section).
-# Doctoral/Master advisees are pulled automatically from _data/web/people.yml
-# (students + alumni entries with mentoring_role: doctoral_advisor / master_advisor).
+# Doctoral/Master/Undergraduate/High School advisees are pulled automatically from
+# _data/web/people.yml (students + alumni entries with mentoring_role:
+# doctoral_advisor / master_advisor / undergraduate_advisor / high_school_advisor).
 doctoral_dissertation_committee:
   - name: "Denise Zepeda"
     degree: "PhD in Chemical Engineering"
