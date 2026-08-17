@@ -146,8 +146,8 @@ permalink: /about/
 {% if all_mentored.size > 0 %}
 <div class="section-card">
 <h3>Students and Mentoring</h3>
-{% assign mentoring_categories = "doctoral_advisor,master_advisor,doctoral_committee,master_committee" | split: "," %}
-{% assign mentoring_labels = "Doctoral Dissertation Advisor,Master Thesis Advisor,Doctoral Dissertation Committee,Master Thesis Committee" | split: "," %}
+{% assign mentoring_categories = "doctoral_advisor,master_advisor,undergraduate_advisor,high_school_advisor,doctoral_committee,master_committee" | split: "," %}
+{% assign mentoring_labels = "Doctoral Dissertation Advisor,Master Thesis Advisor,Undergraduate Research Advisor,High School Research Advisor,Doctoral Dissertation Committee,Master Thesis Committee" | split: "," %}
 {% for cat in mentoring_categories %}
   {% assign cat_students = all_mentored | where: "mentoring_role", cat %}
   {% if cat_students.size > 0 %}

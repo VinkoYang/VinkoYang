@@ -206,7 +206,7 @@ const conferenceTalks = talks.filter((e) => (e.fields.keywords || '').includes('
 // Student guidance — advisees derived from _data/web/people.yml
 // ---------------------------------------------------------------------------
 
-const byRole = { doctoral_advisor: [], master_advisor: [] };
+const byRole = { doctoral_advisor: [], master_advisor: [], undergraduate_advisor: [], high_school_advisor: [] };
 [...(people.students || []), ...(people.alumni || [])].forEach((p) => {
   if (byRole[p.mentoring_role]) byRole[p.mentoring_role].push(p);
 });
@@ -375,6 +375,12 @@ parts.push(
     'Student Guidance',
     (byRole.doctoral_advisor.length ? subhead('Doctoral Dissertation Advisor') + guidanceList(byRole.doctoral_advisor) : '') +
       (byRole.master_advisor.length ? subhead('Master Thesis Advisor') + guidanceList(byRole.master_advisor) : '') +
+      (byRole.undergraduate_advisor.length
+        ? subhead('Undergraduate Research Advisor') + guidanceList(byRole.undergraduate_advisor)
+        : '') +
+      (byRole.high_school_advisor.length
+        ? subhead('High School Research Advisor') + guidanceList(byRole.high_school_advisor)
+        : '') +
       ((studentGuidance.doctoral_dissertation_committee || []).length
         ? subhead('Doctoral Dissertation Committee') + guidanceList(studentGuidance.doctoral_dissertation_committee)
         : '')
