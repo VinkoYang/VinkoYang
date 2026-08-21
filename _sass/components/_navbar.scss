@@ -89,6 +89,22 @@
   }
 }
 
+@media (min-width: 992px) {
+  .navbar-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .nav-link {
+    white-space: nowrap;
+  }
+}
+
 // Mobile menu
 .navbar-toggler {
   border: 1px solid var(--border-color);

@@ -2,6 +2,7 @@
 layout: post
 title: "Useful Links & Resources"
 date: 2026-06-18
+last_modified_at: 2026-08-21
 categories: ["Research & Scholarship"]
 tags: ["resources", "tools", "productivity", "research"]
 ---
@@ -14,6 +15,7 @@ tags: ["resources", "tools", "productivity", "research"]
 - [Technology Support](https://www.lamar.edu/lu-online/technology-support/index.html)
 - [Blackboard](https://luonline.blackboard.com/)
 - [Banner Self-Serv](https://ssbprod.lamar.edu/btdb/twbkwbis.P_WWWLogin)
+- [Cardinal Connect Laptop Loaner Program](https://www.lamar.edu/_files/documents/it-services-and-support/laptoploaner_page.pdf) — free laptop checkout for students; email itlabprinting@lamar.edu or visit Mary and John Gray Library room 403 or 409.
 
 
 ---
