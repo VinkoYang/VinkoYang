@@ -189,21 +189,6 @@ students:
     website: "https://www.linkedin.com/in/john-gust-86b94280/"
     info: Student
 
-  - name: Abdul Aziz Rashid Hamed Al Badi
-    show_team: true
-    show_about: true
-    lamar_id: L20701411
-    mentoring_role: master_advisor
-    photo: team/aziz.jpg
-    info: M.S. Thesis Student
-    email: aalbadi@lamar.edu
-    location: Lamar University
-    degree: Master of Engineering in Industrial Engineering
-    year_start: 2026 
-    year_end: now
-    website: "https://www.linkedin.com/in/abdulazizalbadi/"
-
-
   - name: "This could be you!"
     show_team: true
     show_about: false
