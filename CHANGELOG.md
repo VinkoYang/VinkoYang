@@ -41,6 +41,7 @@ git push origin source --tags
 - fix: 顶部导航在竖屏/平板宽度（768–992px）下 tab 显示不全 —— navbar 展开断点从 md（768px）改为 lg（992px），未达 lg 时收进汉堡菜单；同时给展开态 navbar-nav 加 overflow-x 兜底，防止极端窄屏再截断。
 - feat: post 支持 `last_modified_at` front matter，详情页（`_layouts/post.html`）和列表页（`_pages/blogs.md`）在 date 后面加 "Updated" 标注（仅当值存在且与 date 不同才显示）；`links-resources` post 补充 Cardinal Connect Laptop Loaner Program 信息并加上 last_modified_at 示例。
 - chore: 移除 Abdul Aziz Rashid Hamed Al Badi（退出 program），删掉 `_data/web/people.yml` 里对应条目和 `images/team/aziz.jpg` 照片。
+- content: `links-resources` post 补充 Remove Equipment from Campus 的 FAQ 与线上表单链接（无纸质表单，离校携带 LU 财产需自行提交），更新 last_modified_at。
 
 ## 历史版本
 
