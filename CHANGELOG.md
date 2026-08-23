@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v2.2.0**（`source` 分支，已发布，2026-08-17）。
+**当前版本：v2.3.0**（`source` 分支，已发布，2026-08-22）。
 
 ## 两份日志，别混
 
@@ -41,6 +41,10 @@ git push origin source --tags
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [2.3.0] - 2026-08-22
+
+新增 research 条目《Path Planning Using Industrial Robotics for Automation of Route-Based Vibration Data Collection》（Avinash 主导，TurtleBot 4 / ROS 2 路线式振动巡检，mentor 以 Wenhao Yang 领衔），含配图与 YouTube 演示（最终 `YtjXZ8cdC8E`），经 `_pages/videos.md` 的 `links.video` 自动同步到 /videos/，News 加一条。post 支持 `last_modified_at` front matter，详情页与列表页在 date 后显示 "Updated"；`links-resources` post 补充 Cardinal Connect 笔电借用与 Remove Equipment from Campus 信息。修复顶部导航在 768–992px 宽度下 tab 显示不全（展开断点 md 改 lg，加 overflow-x 兜底）。移除退出 program 的 Abdul Aziz Rashid Hamed Al Badi（people.yml 条目 + 照片）。
 
 ### [2.2.0] - 2026-08-17
 

@@ -22,6 +22,7 @@ permalink: /blogs/
 {% for post in site.posts %}
 <div class="news-item" data-category="{{ post.categories | join: ',' }}" style="padding: 1rem 0; border-bottom: 1px solid var(--border-color);">
 <span class="news-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+{% if post.last_modified_at and post.last_modified_at != post.date %}&nbsp;&middot;&nbsp;<span class="text-muted" style="font-size:0.78rem;">Updated {{ post.last_modified_at | date: "%b %-d, %Y" }}</span>{% endif %}
 {% if post.categories %}&nbsp;&middot;&nbsp;<span class="chip chip-muted" style="font-size:0.7rem; padding:0.15rem 0.6rem;">{{ post.categories | join: ", " }}</span>{% endif %}
 <br>
 <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" style="font-weight: 600;">{{ post.title }}</a>

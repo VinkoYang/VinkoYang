@@ -8,6 +8,14 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "2.3.0"
+  date: 2026-08-22
+  changes:
+    - "New research project: 'Path Planning Using Industrial Robotics for Automation of Route-Based Vibration Data Collection' — an autonomous TurtleBot 4 / ROS 2 robot that runs route-based vibration inspection, with a video demo on the Videos page."
+    - "Blog posts now show an 'Updated' date when a post has been revised after publication."
+    - "The Links & Resources post now covers the Cardinal Connect laptop loaner program and how to take LU equipment off campus."
+    - "Fixed the top navigation menu getting cut off on tablet and portrait-width screens."
+
 - version: "2.2.0"
   date: 2026-08-17
   changes:
