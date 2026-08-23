@@ -38,6 +38,7 @@ git push origin source --tags
 
 ## [待发布]
 
+- feat: 首页侧栏 news 从 3 条改为 5 条（`_includes/sidebar.html` limit:3 → limit:5），`_data/web/news.yml` 顶部注释同步。
 - content: news 加一条 ASME IDETC-CIE 2026 参会消息（2026-08-23）—— chair 两个 VARE UX / Human-Machine Interaction session（CIE-31-01、CIE-31-02，附 session gallery 链接），本人 presentation《Seeing Isn’t Believing: the Vertical–Horizontal Illusion Across Screens and XR Headsets》，学生 Rezwanul Ashraf Ruddro presentation《An LLM-Integrated VR Framework for Avatar-Driven Oral Assessment of Student Learning Outcomes》。
 ## 历史版本
 
