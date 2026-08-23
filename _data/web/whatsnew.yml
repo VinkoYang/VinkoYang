@@ -8,6 +8,12 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "2.3.1"
+  date: 2026-08-23
+  changes:
+    - "Attending ASME IDETC-CIE 2026 — chairing the two VARE User Experience and Human-Machine Interaction sessions, with talks from me and from Rezwanul Ashraf Ruddro. See the news feed for links."
+    - "The homepage news feed now shows the 5 most recent items instead of 3."
+
 - version: "2.3.0"
   date: 2026-08-22
   changes:

@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v2.3.0**（`source` 分支，已发布，2026-08-22）。
+**当前版本：v2.3.1**（`source` 分支，已发布，2026-08-23）。
 
 ## 两份日志，别混
 
@@ -41,6 +41,10 @@ git push origin source --tags
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [2.3.1] - 2026-08-23
+
+News 加一条 ASME IDETC-CIE 2026 参会消息：chair 两个 VARE UX / Human-Machine Interaction session（CIE-31-01、CIE-31-02，附 session gallery 链接），本人 presentation《Seeing Isn’t Believing: the Vertical–Horizontal Illusion Across Screens and XR Headsets》，学生 Rezwanul Ashraf Ruddro presentation《An LLM-Integrated VR Framework for Avatar-Driven Oral Assessment of Student Learning Outcomes》。首页侧栏 news 显示条数从 3 条改为 5 条（`_includes/sidebar.html`）。
 
 ### [2.3.0] - 2026-08-22
 
