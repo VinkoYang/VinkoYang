@@ -384,3 +384,37 @@
     github: "https://vlaattacker.github.io/"
     arxiv: "https://arxiv.org/abs/2411.13587"
     supplementary: "https://openaccess.thecvf.com/content/ICCV2025/supplemental/Wang_Exploring_the_Adversarial_ICCV_2025_supplemental.pdf"
+
+
+- title: "Path Planning Using Industrial Robotics for Automation of Route-Based Vibration Data Collection"
+  image: "research/2026_RouteVibrationRobot.png"
+  focus: [3, 4]
+  start_date: "2025-08"
+  end_date: "2026-08"
+  authors:
+    - name: "Lakshmana Ayyalasomayajula (Avinash)"
+      url: ""
+  mentors:
+    - name: "James Curry"
+      url: ""
+    - name: "Wenhao Yang"
+      url: ""
+    - name: "Sushil Doranga"
+      url: ""
+    - name: "Xinyu Liu"
+      url: ""
+  keywords:
+    - Autonomous Mobile Robots
+    - Route-Based Inspection
+    - Vibration Data Collection
+    - Predictive Maintenance
+    - ROS 2 / Nav2
+    - SLAM & Path Planning
+    - TurtleBot 4
+  abstract: >
+    Route-based vibration data collection remains a manual task in industrial condition monitoring: technicians walk predefined equipment routes with portable collectors on weekly to quarterly schedules, which is labor-intensive and introduces operator-to-operator variability. This project develops an autonomous mobile robot platform that replicates the route definition and execution logic of commercial vibration analysis software. A TurtleBot 4 running ROS 2 is driven by a custom browser-based control panel (connected over rosbridge) that supports manual teleoperation, live SLAM mapping, waypoint capture, and grouping of waypoints into named, color-coded inspection routes with per-point wait, skip, and arrival-error parameters. Route order is optimized as a Traveling Salesman Problem using exact permutation search for small waypoint sets and a nearest-neighbor with 2-opt heuristic for larger ones, while navigation is executed through the Nav2 stack (Dijkstra-based global planning on an inflated costmap, DWB local control, and behavior-tree recovery). The system logs arrival error at every measurement point, captures a camera snapshot on arrival, and exports per-route results to Excel. Validation in a controlled indoor environment demonstrates repeatable multi-route execution and provides the navigation foundation for mounting a vibration sensing payload.
+  links:
+    paper: ""
+    webpage: ""
+    video: "https://youtu.be/cIzeQJLS_80"
+    bib: ""
