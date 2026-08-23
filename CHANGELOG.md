@@ -42,7 +42,7 @@ git push origin source --tags
 - feat: post 支持 `last_modified_at` front matter，详情页（`_layouts/post.html`）和列表页（`_pages/blogs.md`）在 date 后面加 "Updated" 标注（仅当值存在且与 date 不同才显示）；`links-resources` post 补充 Cardinal Connect Laptop Loaner Program 信息并加上 last_modified_at 示例。
 - chore: 移除 Abdul Aziz Rashid Hamed Al Badi（退出 program），删掉 `_data/web/people.yml` 里对应条目和 `images/team/aziz.jpg` 照片。
 - content: `links-resources` post 补充 Remove Equipment from Campus 的 FAQ 与线上表单链接（无纸质表单，离校携带 LU 财产需自行提交），更新 last_modified_at。
-- content: 新增 research 条目《Path Planning Using Industrial Robotics for Automation of Route-Based Vibration Data Collection》（`_data/web/research.yml`，Avinash 主导，TurtleBot 4 / ROS 2 路线式振动巡检），含 YouTube 演示链接（omf4_SEMVvM，替换早期版本 cIzeQJLS_80）与配图 `images/research/2026_RouteVibrationRobot.png`；该条目经由 `_pages/videos.md` 的 links.video 自动渲染，同步出现在 /videos/。News 加一条对应消息。
+- content: 新增 research 条目《Path Planning Using Industrial Robotics for Automation of Route-Based Vibration Data Collection》（`_data/web/research.yml`，Avinash 主导，TurtleBot 4 / ROS 2 路线式振动巡检），含 YouTube 演示链接（YtjXZ8cdC8E；前两次上传 cIzeQJLS_80、omf4_SEMVvM 失败作废）与配图 `images/research/2026_RouteVibrationRobot.png`；该条目经由 `_pages/videos.md` 的 links.video 自动渲染，同步出现在 /videos/。News 加一条对应消息。
 
 ## 历史版本
 
