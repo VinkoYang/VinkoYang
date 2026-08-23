@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v2.2.0**（`source` 分支，已发布，2026-08-17）。
+**当前版本：v2.3.0**（`source` 分支，已发布，2026-08-22）。
 
 ## 两份日志，别混
 
@@ -38,15 +38,13 @@ git push origin source --tags
 
 ## [待发布]
 
-- fix: 顶部导航在竖屏/平板宽度（768–992px）下 tab 显示不全 —— navbar 展开断点从 md（768px）改为 lg（992px），未达 lg 时收进汉堡菜单；同时给展开态 navbar-nav 加 overflow-x 兜底，防止极端窄屏再截断。
-- feat: post 支持 `last_modified_at` front matter，详情页（`_layouts/post.html`）和列表页（`_pages/blogs.md`）在 date 后面加 "Updated" 标注（仅当值存在且与 date 不同才显示）；`links-resources` post 补充 Cardinal Connect Laptop Loaner Program 信息并加上 last_modified_at 示例。
-- chore: 移除 Abdul Aziz Rashid Hamed Al Badi（退出 program），删掉 `_data/web/people.yml` 里对应条目和 `images/team/aziz.jpg` 照片。
-- content: `links-resources` post 补充 Remove Equipment from Campus 的 FAQ 与线上表单链接（无纸质表单，离校携带 LU 财产需自行提交），更新 last_modified_at。
-- content: 新增 research 条目《Path Planning Using Industrial Robotics for Automation of Route-Based Vibration Data Collection》（`_data/web/research.yml`，Avinash 主导，TurtleBot 4 / ROS 2 路线式振动巡检），含 YouTube 演示链接（YtjXZ8cdC8E；前两次上传 cIzeQJLS_80、omf4_SEMVvM 失败作废）与配图 `images/research/2026_RouteVibrationRobot.png`；该条目经由 `_pages/videos.md` 的 links.video 自动渲染，同步出现在 /videos/。News 加一条对应消息。
-
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [2.3.0] - 2026-08-22
+
+新增 research 条目《Path Planning Using Industrial Robotics for Automation of Route-Based Vibration Data Collection》（Avinash 主导，TurtleBot 4 / ROS 2 路线式振动巡检，mentor 以 Wenhao Yang 领衔），含配图与 YouTube 演示（最终 `YtjXZ8cdC8E`），经 `_pages/videos.md` 的 `links.video` 自动同步到 /videos/，News 加一条。post 支持 `last_modified_at` front matter，详情页与列表页在 date 后显示 "Updated"；`links-resources` post 补充 Cardinal Connect 笔电借用与 Remove Equipment from Campus 信息。修复顶部导航在 768–992px 宽度下 tab 显示不全（展开断点 md 改 lg，加 overflow-x 兜底）。移除退出 program 的 Abdul Aziz Rashid Hamed Al Badi（people.yml 条目 + 照片）。
 
 ### [2.2.0] - 2026-08-17
 

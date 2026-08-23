@@ -395,9 +395,9 @@
     - name: "Lakshmana Ayyalasomayajula (Avinash)"
       url: ""
   mentors:
-    - name: "James Curry"
-      url: ""
     - name: "Wenhao Yang"
+      url: ""
+    - name: "James Curry"
       url: ""
     - name: "Sushil Doranga"
       url: ""
