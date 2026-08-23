@@ -2,7 +2,7 @@
 # The 3 most recent are shown; all appear on /allnews.
 # Each entry needs: date, headline
 - date: August 22, 2026
-  headline: "New project video: an autonomous TurtleBot 4 / ROS 2 robot that runs route-based vibration inspection routes — <a href='https://youtu.be/cIzeQJLS_80' target='_blank'>watch the UI demo</a>."
+  headline: "New project video: an autonomous TurtleBot 4 / ROS 2 robot that runs route-based vibration inspection routes — <a href='https://youtu.be/omf4_SEMVvM' target='_blank'>watch the UI demo</a>."
 
 - date: August 6, 2026
   headline: "Launched <a href='https://wherefold.com' target='_blank'>Wherefold</a>, a bilingual interactive travel guide for the US covering 1,274 cities, 5,110 attractions, and 36 national parks — built solo with React, Mapbox GL, and a Prisma/PostgreSQL backend."
