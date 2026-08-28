@@ -38,6 +38,14 @@ git push origin source --tags
 
 ## [待发布]
 
+新增 lab news 模块（XRAI Lab 图文动态，与首页个人 news 短条目、blog 长文三者分开）：新建 collection `lab_news`（`_config.yml` 加 `collections` + `defaults` 段），条目文件放 `_lab_news/`，**不带日期前缀** —— 非 `_posts` 的 collection，Jekyll 不会从文件名剥离日期，带前缀会漏进 URL，排序统一走 front matter 的 `date:`。front matter 含 `cover`（封面，单独字段，不取 gallery 第一张）、`gallery`（`{src, caption}` 列表）、`summary`、`tags`，图片路径相对 `images/`，与 `research.yml`、`equipment.yml` 一致。
+
+三个渲染面：`_includes/lab_news_carousel.html` 轮播（lab 页 About 卡片下方、Research Focus 上方，最新 5 条，无 cover 的条目由 `where_exp` 过滤掉，0 条时整段不输出）、`_pages/lab_news.md` 归档页 `/lab/news/`（封面卡片网格，全部条目倒序）、`_layouts/lab_news.html` 详情页（未复用 `post.html`，后者硬编码 `/blogs/` 面包屑、TOC 侧栏与 `BlogPosting` schema；本 layout 用 `NewsArticle`，无 TOC）。轮播用原生 CSS scroll-snap + `assets/js/site.js` 末尾新增独立 IIFE（6s 自动切换，hover/focus/切标签页暂停，`prefers-reduced-motion` 下不自动播，圆点与手动滑动双向同步），未引入 Bootstrap JS bundle。样式集中在新建的 `_sass/components/_lab-news.scss`，全部走现有 CSS 变量，暗色模式无需额外规则。
+
+lab news 天然不进 `/blogs/` 列表与 `feed.xml` —— 两者都只遍历 `site.posts`，无需额外过滤。
+
+首条内容：2026-08-28 Simon Saurbier（KIT / IPEK）human–machine symbiosis seminar，配三张 Cherry 2629 现场照（长边压到 1600px、quality 82）。News 加一条短条目指向该详情页。
+
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。

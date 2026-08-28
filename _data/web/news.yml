@@ -1,6 +1,9 @@
 # News items shown on the home page sidebar.
 # The 5 most recent are shown; all appear on /allnews.
 # Each entry needs: date, headline
+- date: August 28, 2026
+  headline: "Hosted <b>Simon Saurbier</b> (Karlsruhe Institute of Technology) for an ISE seminar on human–machine symbiosis — <a href='/lab/news/hms-seminar-saurbier/'>read about the talk and the discussion</a>."
+
 - date: August 23, 2026
   headline: "Heading to <b>ASME IDETC-CIE 2026</b>, chairing both VARE User Experience (UX) and Human-Machine Interaction sessions — <a href='https://idetc.secure-platform.com/a/solicitations/280/sessiongallery/schedule/items/24209' target='_blank'>CIE-31-01</a> and <a href='https://idetc.secure-platform.com/a/solicitations/280/sessiongallery/schedule/items/24210' target='_blank'>CIE-31-02</a>. I'm presenting <a href='https://idetc.secure-platform.com/a/solicitations/280/sessiongallery/24209/application/194261' target='_blank'>‘Seeing Isn’t Believing: the Vertical–Horizontal Illusion Across Screens and XR Headsets’</a>, and Rezwanul Ashraf Ruddro is presenting ‘An LLM-Integrated VR Framework for Avatar-Driven Oral Assessment of Student Learning Outcomes.’"
 
