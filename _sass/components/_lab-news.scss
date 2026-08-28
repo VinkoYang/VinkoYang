@@ -1,0 +1,251 @@
+// =============================================================
+// Lab news — carousel (lab page), card grid (/lab/news/),
+//            and article page (/lab/news/<slug>/)
+// =============================================================
+
+// ------ Carousel ----------------------------------------------
+
+.labnews-carousel {
+  margin: var(--space-8) 0;
+}
+
+.labnews-carousel-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.labnews-carousel-title {
+  margin: 0;
+}
+
+.labnews-carousel-all {
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+
+  i {
+    font-size: 0.75rem;
+    margin-left: var(--space-1);
+  }
+}
+
+.labnews-track {
+  display: flex;
+  gap: var(--space-4);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  border-radius: var(--radius-lg);
+
+  &::-webkit-scrollbar { display: none; }
+}
+
+.labnews-slide {
+  position: relative;
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: block;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  &:hover img,
+  &:focus-visible img {
+    transform: scale(1.02);
+  }
+}
+
+.labnews-slide-caption {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: var(--space-8) var(--space-6) var(--space-4);
+  color: #fff;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.55) 45%, rgba(0, 0, 0, 0) 100%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.labnews-slide-date {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.labnews-slide-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.labnews-slide-summary {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  opacity: 0.9;
+
+  @media (max-width: 640px) { display: none; }
+}
+
+.labnews-dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.labnews-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--border-color);
+  cursor: pointer;
+  transition: background 0.2s ease, width 0.2s ease;
+
+  &.is-active {
+    width: 22px;
+    background: var(--accent);
+  }
+}
+
+// ------ Archive card grid -------------------------------------
+
+.labnews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+}
+
+.labnews-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+  }
+}
+
+.labnews-card-media {
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+}
+
+.labnews-card-media-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  background: var(--bg-secondary);
+  color: var(--text-muted);
+  font-size: 1.8rem;
+}
+
+.labnews-card-body {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.labnews-card-date {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.labnews-card-title {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.4;
+}
+
+.labnews-card-summary {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+// ------ Article page ------------------------------------------
+
+.labnews-cover {
+  margin: var(--space-6) 0;
+
+  img {
+    display: block;
+    width: 100%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+.labnews-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-6);
+  margin: var(--space-8) 0;
+}
+
+.labnews-gallery-item {
+  margin: 0;
+
+  img {
+    display: block;
+    width: 100%;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+  }
+
+  figcaption {
+    margin-top: var(--space-2);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+  }
+}
+
+.labnews-tags {
+  margin-top: var(--space-6);
+
+  .chip { font-size: 0.75rem; }
+}
+
+.labnews-back {
+  margin-top: var(--space-8);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+
+  i { margin-right: var(--space-1); }
+}
