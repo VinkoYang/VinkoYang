@@ -171,13 +171,21 @@ Source photos: `IMG_3417.jpeg`, `IMG_3421.jpeg`, `IMG_3422.jpeg` from
 
 ## 8. Site conventions
 
-Per existing repo practice, the change also updates:
+`CHANGELOG.md` documents the repo's release process at the top of the file: work on
+`dev` appends a technical record to the `## [待发布]` section; `_data/web/whatsnew.yml`,
+the version number, the `### [X.Y.Z]` history entry, and the git tag are all written
+later, when `dev` is merged into `source`.
 
-- `_data/web/whatsnew.yml` — new entry, version 2.4.0 (new feature, minor bump from
-  2.3.1), dated 2026-08-28, visitor-facing wording.
-- `CHANGELOG.md` — technical detail of the same change.
+This change therefore updates, on `dev`:
+
+- `CHANGELOG.md` — technical detail appended under `## [待发布]`, in Chinese, matching
+  the style of the existing entries.
 - `_data/web/news.yml` — one short personal-news line about hosting the seminar, linking
   to the lab news item. This deliberately exercises the split between the two streams.
+
+No version is bumped and `whatsnew.yml` is not touched. When this work is released it
+will be a minor bump (2.3.1 to 2.4.0), since it adds a module without changing site
+structure — but that number is written at merge time, not now.
 
 ## Out of scope
 
