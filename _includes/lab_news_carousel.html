@@ -10,7 +10,7 @@ binds to [data-labnews-carousel]. Renders nothing when there are no items.
 {% assign shown_count = labnews.size %}
 {% if shown_count > 5 %}{% assign shown_count = 5 %}{% endif %}
 
-<div class="labnews-carousel" data-labnews-carousel role="group" aria-roledescription="carousel" aria-label="Recent lab news">
+<div class="labnews-carousel" data-labnews-carousel role="group" aria-roledescription="carousel" aria-label="Recent lab news" markdown="0">
 
   <div class="labnews-carousel-head">
     <h3 class="labnews-carousel-title">Lab News</h3>

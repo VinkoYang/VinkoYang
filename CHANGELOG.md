@@ -48,6 +48,8 @@ lab news 天然不进 `/blogs/` 列表与 `feed.xml` 的条目 —— 前者遍�
 
 针对上述模块的整轮 review 收尾修复：`assets/search.json` 补一段遍历 `site.lab_news` 的记录（此前只索引 `site.pages`，详情页作为 collection 文档从未被收录，条目一多归档页摘要就会把老条目挤出索引）；轮播 `.labnews-carousel-head` 里新增一个真正的暂停/播放按钮（`data-labnews-pause`，Font Awesome `fa-pause`/`fa-play` 图标），并入既有的 `pauseReasons` 组合状态模型作第四个理由 `pauseReasons.user`，不改动原有 hover/focus/hidden 逻辑；`prefers-reduced-motion` 时该按钮直接 `hidden`，退出 tab 顺序。圆点 `.labnews-dot` 保留 8px 视觉尺寸，用 `padding: 8px` + `box-sizing: content-box` + `background-clip: content-box` 撑出 24px 点击热区，并补 `:focus-visible` 描边；`.labnews-dots` 的 gap 相应收紧。归档页与轮播的排序统一改成 `sort: "title" | sort: "date" | reverse`，同日期条目不再因 Liquid 不稳定排序而在两处顺序不一致或跨构建反复横跳。卡片封面图与详情页封面图的 `alt` 改成空字符串，避免屏幕阅读器把标题连读两遍（沿用轮播早已采用的做法，画廊图片的 caption/alt 不动）。详情页日期格式 `%B` 改 `%b`，与轮播、归档卡片、`post.html` 保持一致。轮播 JS 的 `goTo()` 与滚动同步都改用 `slides[i].offsetLeft - slides[0].offsetLeft`，不再依赖 `.labnews-track` 处于默认定位，日后加前进/后退箭头给 track 设 `position: relative` 不会再暗中破坏这两处。设计文档里 `scroll-snap-align: center` 的描述改成实现实际使用的 `start`。
 
+补一个严重问题：上述修复验证时发现轮播在 `/lab/` 上一直是坏的——`.labnews-carousel-head`、`.labnews-track`、`.labnews-dots` 三段的内容整体被 kramdown 当成代码块转义输出（`&lt;h3...&gt;` 字面文本包在 `highlighter-rouge` 里），不是真实 DOM，从有轮播的第一天起就没渲染对过，与本轮改动无关。根因是 `_config.yml` 的 `kramdown: parse_block_html: true` 会把块级 HTML 内部的内容重新按 Markdown 解析，而这三段在 include 里相对列首缩进了 4 个空格，正好撞上 Markdown 的缩进代码块规则；`_pages/lab_news.md` 的网格是靠 `<div ... markdown="0">` 才躲过这个坑的。修复：给 `_includes/lab_news_carousel.html` 最外层的 `<div class="labnews-carousel" ...>` 补上 `markdown="0">`——嵌套的 head/track/dots 三段都跟着按原生 HTML 处理，不用逐个补属性。以后在 include 里新增带缩进的块级 HTML 时留意这个 `parse_block_html` 陷阱。
+
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
