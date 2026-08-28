@@ -36,7 +36,7 @@ collections:
 ```
 
 The site-wide `permalink: /blogs/:title/` applies only to `_posts`; a collection needs
-its own. `:name` is the filename with the date prefix stripped.
+its own. `:name` is the document's base filename, without the extension.
 
 Also add a `lab_news` default so items need not repeat `layout:`:
 
@@ -77,8 +77,11 @@ Field rules:
   `research_areas.yml`.
 - `tags` is optional, stored but not rendered as a filter UI.
 
-`feed.xml` iterates `site.posts` only, and `/blogs/` iterates `site.posts` only, so no
-extra filtering is needed to keep lab news out of either.
+`/blogs/` iterates `site.posts`, and `feed.xml` iterates `site.posts` plus
+`site.data.web.news`. Neither touches `site.lab_news`, so no lab news document is ever
+emitted as a blog entry or a feed item, and no extra filtering is needed. A lab news URL
+can still appear inside the feed when a personal news headline links to it — that is the
+news stream behaving normally, not a leak.
 
 ## 2. Carousel on the lab page
 
