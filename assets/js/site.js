@@ -307,6 +307,16 @@
   var current = 0;
   var timer = null;
 
+  // Combined pause-reason state: autoplay may only resume once none of these
+  // are true. Hover, focus-within, and tab-hidden are tracked independently
+  // so that e.g. moving the mouse off the widget while a dot still has
+  // keyboard focus does not resume autoplay out from under the focused item.
+  var pauseReasons = { hover: false, focus: false, hidden: false };
+
+  function anyPauseActive() {
+    return pauseReasons.hover || pauseReasons.focus || pauseReasons.hidden;
+  }
+
   function setActiveDot() {
     dots.forEach(function (dot, i) {
       if (i === current) {
@@ -329,7 +339,7 @@
   }
 
   function start() {
-    if (reduceMotion || timer) return;
+    if (reduceMotion || timer || anyPauseActive()) return;
     timer = setInterval(function () { goTo(current + 1); }, INTERVAL);
   }
 
@@ -362,12 +372,25 @@
     }, 100);
   });
 
-  root.addEventListener('mouseenter', stop);
-  root.addEventListener('mouseleave', start);
-  root.addEventListener('focusin', stop);
-  root.addEventListener('focusout', start);
+  root.addEventListener('mouseenter', function () {
+    pauseReasons.hover = true;
+    stop();
+  });
+  root.addEventListener('mouseleave', function () {
+    pauseReasons.hover = false;
+    start();
+  });
+  root.addEventListener('focusin', function () {
+    pauseReasons.focus = true;
+    stop();
+  });
+  root.addEventListener('focusout', function () {
+    pauseReasons.focus = false;
+    start();
+  });
 
   document.addEventListener('visibilitychange', function () {
+    pauseReasons.hidden = document.hidden;
     if (document.hidden) { stop(); } else { start(); }
   });
 
