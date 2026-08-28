@@ -66,6 +66,22 @@ include:
   - .htaccess
   - _pages
 
+# Lab news — image-first posts about lab activity, shown on /lab/ and /lab/news/.
+# Files live in _lab_news/ with NO date prefix (unlike _posts): outside of
+# _posts, Jekyll does not strip a date from the filename, so a prefix would
+# leak into the URL. Ordering comes from the `date:` field in front matter.
+collections:
+  lab_news:
+    output: true
+    permalink: /lab/news/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "lab_news"
+    values:
+      layout: "lab_news"
+
 sass:
   quiet_deps: true
   style: compressed

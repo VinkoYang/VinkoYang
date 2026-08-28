@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+<div class="post-wrapper">
+
+  <nav class="post-breadcrumb" aria-label="breadcrumb">
+    <a href="{{ site.url }}{{ site.baseurl }}/">{{ site.name }}</a>
+    <span class="bc-sep">&rsaquo;</span>
+    <a href="{{ site.url }}{{ site.baseurl }}/lab/">Lab</a>
+    <span class="bc-sep">&rsaquo;</span>
+    <a href="{{ site.url }}{{ site.baseurl }}/lab/news/">Lab News</a>
+    <span class="bc-sep">&rsaquo;</span>
+    <span class="bc-current">{{ page.title | truncate: 50 }}</span>
+  </nav>
+
+  <article class="labnews-article" itemscope itemtype="http://schema.org/NewsArticle">
+
+    <h1 itemprop="headline">{{ page.title | escape }}</h1>
+
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>
+    </p>
+
+    {% if page.cover and page.cover != "" %}
+    <figure class="labnews-cover">
+      <img src="{{ site.url }}{{ site.baseurl }}/images/{{ page.cover }}" alt="{{ page.title | escape }}" itemprop="image" loading="eager">
+    </figure>
+    {% endif %}
+
+    <div class="post-body" itemprop="articleBody">
+      {{ content }}
+    </div>
+
+    {% if page.gallery and page.gallery.size > 0 %}
+    <div class="labnews-gallery">
+      {% for shot in page.gallery %}
+      <figure class="labnews-gallery-item">
+        <a href="{{ site.url }}{{ site.baseurl }}/images/{{ shot.src }}">
+          <img src="{{ site.url }}{{ site.baseurl }}/images/{{ shot.src }}" alt="{% if shot.caption %}{{ shot.caption | escape }}{% else %}{{ page.title | escape }}{% endif %}" loading="lazy">
+        </a>
+        {% if shot.caption %}<figcaption>{{ shot.caption }}</figcaption>{% endif %}
+      </figure>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if page.tags and page.tags.size > 0 %}
+    <div class="chip-container labnews-tags">
+      {% for tag in page.tags %}<span class="chip chip-muted">#{{ tag }}</span>{% endfor %}
+    </div>
+    {% endif %}
+
+    <p class="labnews-back">
+      <a href="{{ site.url }}{{ site.baseurl }}/lab/news/"><i class="fa-solid fa-arrow-left"></i> All lab news</a>
+    </p>
+
+  </article>
+
+</div>

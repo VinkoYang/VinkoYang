@@ -46,7 +46,9 @@ defaults:
     values: {layout: "lab_news"}
 ```
 
-One file per item in `_lab_news/`, named `YYYY-MM-DD-<slug>.md`:
+One file per item in `_lab_news/`, named `<slug>.md` — no date prefix. Outside of
+`_posts`, Jekyll does not strip a date from the filename, so a prefix would appear
+in the URL. Ordering everywhere comes from the front matter `date:` field.
 
 ```yaml
 ---
@@ -158,7 +160,7 @@ mode works without extra rules.
 
 ## 7. First content item
 
-`_lab_news/2026-08-28-hms-seminar-saurbier.md` — the Human–Machine Symbiosis seminar by
+`_lab_news/hms-seminar-saurbier.md` — the Human–Machine Symbiosis seminar by
 Simon Saurbier (Head, Human–Machine Systems Research Group, IPEK, Karlsruhe Institute of
 Technology), hosted by the XRAI Lab in Cherry 2629 on Friday, August 28, 2026.
 
