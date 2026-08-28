@@ -4,7 +4,7 @@ Behavior lives in the lab news IIFE at the end of assets/js/site.js, which
 binds to [data-labnews-carousel]. Renders nothing when there are no items.
 {%- endcomment -%}
 
-{% assign labnews = site.lab_news | where_exp: "item", "item.cover and item.cover != ''" | sort: "date" | reverse %}
+{% assign labnews = site.lab_news | where_exp: "item", "item.cover and item.cover != ''" | sort: "title" | sort: "date" | reverse %}
 
 {% if labnews.size > 0 %}
 {% assign shown_count = labnews.size %}
@@ -14,6 +14,11 @@ binds to [data-labnews-carousel]. Renders nothing when there are no items.
 
   <div class="labnews-carousel-head">
     <h3 class="labnews-carousel-title">Lab News</h3>
+    {% if shown_count > 1 %}
+    <button type="button" class="labnews-pause" data-labnews-pause aria-pressed="false" aria-label="Pause">
+      <i class="fa-solid fa-pause" aria-hidden="true"></i>
+    </button>
+    {% endif %}
     <a class="labnews-carousel-all" href="{{ site.url }}{{ site.baseurl }}/lab/news/">All lab news <i class="fa-solid fa-arrow-right"></i></a>
   </div>
 

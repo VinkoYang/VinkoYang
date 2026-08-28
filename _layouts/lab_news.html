@@ -19,12 +19,12 @@ layout: default
     <h1 itemprop="headline">{{ page.title | escape }}</h1>
 
     <p class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
     </p>
 
     {% if page.cover and page.cover != "" %}
     <figure class="labnews-cover">
-      <img src="{{ site.url }}{{ site.baseurl }}/images/{{ page.cover }}" alt="{{ page.title | escape }}" itemprop="image" loading="eager">
+      <img src="{{ site.url }}{{ site.baseurl }}/images/{{ page.cover }}" alt="" itemprop="image" loading="eager">
     </figure>
     {% endif %}
 

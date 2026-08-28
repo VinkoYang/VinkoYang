@@ -97,7 +97,7 @@ whole slide is a single `<a>` to the item URL. A header row above the track hold
 `Lab News` heading on the left and an `All lab news` link to `/lab/news/` on the right.
 
 Mechanism: native CSS `scroll-snap-type: x mandatory` on the track with
-`scroll-snap-align: center` on slides, driven by about 40 lines added to
+`scroll-snap-align: start` on slides, driven by about 40 lines added to
 `assets/js/site.js`. Bootstrap's carousel SCSS is vendored but the site loads no
 Bootstrap JS bundle, so pulling one in for a single component is not worth it.
 
