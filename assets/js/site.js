@@ -286,3 +286,91 @@
   }
 
 })();
+
+// =============================================================
+// Lab news carousel — scroll-snap track, dot indicators, autoplay
+// =============================================================
+
+(function () {
+  'use strict';
+
+  var root = document.querySelector('[data-labnews-carousel]');
+  if (!root) return;
+
+  var track = root.querySelector('.labnews-track');
+  var slides = root.querySelectorAll('.labnews-slide');
+  var dots = root.querySelectorAll('.labnews-dot');
+  if (!track || slides.length < 2) return;
+
+  var INTERVAL = 6000;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var current = 0;
+  var timer = null;
+
+  function setActiveDot() {
+    dots.forEach(function (dot, i) {
+      if (i === current) {
+        dot.classList.add('is-active');
+        dot.setAttribute('aria-current', 'true');
+      } else {
+        dot.classList.remove('is-active');
+        dot.removeAttribute('aria-current');
+      }
+    });
+  }
+
+  function goTo(index) {
+    current = (index + slides.length) % slides.length;
+    track.scrollTo({
+      left: slides[current].offsetLeft - track.offsetLeft,
+      behavior: reduceMotion ? 'auto' : 'smooth'
+    });
+    setActiveDot();
+  }
+
+  function start() {
+    if (reduceMotion || timer) return;
+    timer = setInterval(function () { goTo(current + 1); }, INTERVAL);
+  }
+
+  function stop() {
+    clearInterval(timer);
+    timer = null;
+  }
+
+  dots.forEach(function (dot, i) {
+    dot.addEventListener('click', function () {
+      stop();
+      goTo(i);
+      start();
+    });
+  });
+
+  // Keep the dots honest when the visitor swipes or scrolls the track directly.
+  var scrollTimer;
+  track.addEventListener('scroll', function () {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(function () {
+      var nearest = 0;
+      var smallest = Infinity;
+      slides.forEach(function (slide, i) {
+        var distance = Math.abs(slide.offsetLeft - track.offsetLeft - track.scrollLeft);
+        if (distance < smallest) { smallest = distance; nearest = i; }
+      });
+      current = nearest;
+      setActiveDot();
+    }, 100);
+  });
+
+  root.addEventListener('mouseenter', stop);
+  root.addEventListener('mouseleave', start);
+  root.addEventListener('focusin', stop);
+  root.addEventListener('focusout', start);
+
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) { stop(); } else { start(); }
+  });
+
+  setActiveDot();
+  start();
+})();

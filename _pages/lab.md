@@ -18,6 +18,8 @@ Through interdisciplinary innovation, the XRAI Lab redefines how intelligent sys
 </p>
 </div>
 
+{% include lab_news_carousel.html %}
+
 ## Research Focus
 
 <div class="rf-grid" markdown="0">

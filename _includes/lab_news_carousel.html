@@ -1,0 +1,42 @@
+{%- comment -%}
+Lab news carousel. Shows the 5 most recent items that have a cover image.
+Behavior lives in the lab news IIFE at the end of assets/js/site.js, which
+binds to [data-labnews-carousel]. Renders nothing when there are no items.
+{%- endcomment -%}
+
+{% assign labnews = site.lab_news | where_exp: "item", "item.cover and item.cover != ''" | sort: "date" | reverse %}
+
+{% if labnews.size > 0 %}
+{% assign shown_count = labnews.size %}
+{% if shown_count > 5 %}{% assign shown_count = 5 %}{% endif %}
+
+<div class="labnews-carousel" data-labnews-carousel role="group" aria-roledescription="carousel" aria-label="Recent lab news">
+
+  <div class="labnews-carousel-head">
+    <h3 class="labnews-carousel-title">Lab News</h3>
+    <a class="labnews-carousel-all" href="{{ site.url }}{{ site.baseurl }}/lab/news/">All lab news <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+
+  <div class="labnews-track">
+    {% for item in labnews limit: 5 %}
+    <a class="labnews-slide" href="{{ site.url }}{{ site.baseurl }}{{ item.url }}" aria-label="Slide {{ forloop.index }} of {{ shown_count }}: {{ item.title | escape }}">
+      <img src="{{ site.url }}{{ site.baseurl }}/images/{{ item.cover }}" alt="" loading="lazy">
+      <div class="labnews-slide-caption">
+        <span class="labnews-slide-date">{{ item.date | date: "%b %-d, %Y" }}</span>
+        <span class="labnews-slide-title">{{ item.title }}</span>
+        {% if item.summary %}<span class="labnews-slide-summary">{{ item.summary }}</span>{% endif %}
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+
+  {% if shown_count > 1 %}
+  <div class="labnews-dots">
+    {% for item in labnews limit: 5 %}
+    <button type="button" class="labnews-dot{% if forloop.first %} is-active{% endif %}"{% if forloop.first %} aria-current="true"{% endif %} aria-label="Go to slide {{ forloop.index }}"></button>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+</div>
+{% endif %}
