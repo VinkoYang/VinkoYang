@@ -68,6 +68,18 @@
     color: #fff;
     &:hover { background-color: #1e4d72; color: #fff; }
   }
+
+  &.btn-slides {
+    background-color: #c2571a;
+    color: #fff;
+    &:hover { background-color: #9c4514; color: #fff; }
+  }
+
+  &.btn-video {
+    background-color: #c4302b;
+    color: #fff;
+    &:hover { background-color: #9d2622; color: #fff; }
+  }
 }
 
 .icon-link {
