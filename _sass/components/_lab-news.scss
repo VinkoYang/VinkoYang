@@ -256,3 +256,13 @@
 
   i { margin-right: var(--space-1); }
 }
+
+// Article page has no TOC sidebar, so the 1100px container leaves the 68ch text
+// column stranded on the left. Constrain the whole page to a reading measure.
+.labnews-wrapper {
+  max-width: 46rem;
+
+  .post-body {
+    p, li { max-width: none; }
+  }
+}
