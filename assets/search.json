@@ -5,4 +5,8 @@ layout: null
   "title": {{ page.title | jsonify }},
   "url": {{ page.url | prepend: site.baseurl | jsonify }},
   "content": {{ page.content | strip_html | truncatewords: 200 | jsonify }}
+}{% endcapture %}{% assign entries = entries | push: entry %}{% endif %}{% endfor %}{% for item in site.lab_news %}{% if item.title %}{% capture entry %}{
+  "title": {{ item.title | jsonify }},
+  "url": {{ item.url | prepend: site.baseurl | jsonify }},
+  "content": {{ item.content | strip_html | truncatewords: 200 | jsonify }}
 }{% endcapture %}{% assign entries = entries | push: entry %}{% endif %}{% endfor %}{% for entry in entries %}{{ entry }}{% unless forloop.last %},{% endunless %}{% endfor %}]

@@ -8,6 +8,13 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "2.4.0"
+  date: 2026-08-29
+  changes:
+    - "New Lab News section — photo-and-text updates from the XRAI Lab, with a carousel on the Lab page and a full archive at /lab/news/. Separate from the homepage news feed and the blog."
+    - "First lab news item: Simon Saurbier (KIT / IPEK) visited for an ISE seminar on human-machine symbiosis."
+    - "The IDETC/CIE 2026 VHI paper now has its talk slides and presentation video — available from the Research, Publications, Talks, and Videos pages."
+
 - version: "2.3.1"
   date: 2026-08-23
   changes:

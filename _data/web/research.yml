@@ -211,12 +211,14 @@
     - Human Computer Interaction 
     - Spatial Perception
   abstract: >
-    The Vertical-Horizontal Illusion (VHI) biases perceived geometric proportions across visual displays. This study introduces the Square Recognition Test (SRT), a unified method to measure perceived squareness across devices. A within-subject study (N = 24) on PC, mobile, and AR HMDs shows a consistent bias toward slightly wider-than-tall rectangles (PSE ≈ 1.02-1.04), indicating device-invariant VHI effects. 
+    The Vertical-Horizontal Illusion (VHI) biases perceived geometric proportions across visual displays. This study introduces the Square Recognition Test (SRT), a unified method to measure perceived squareness across devices. A within-subject study (N = 24) on PC, mobile, and AR HMDs shows a consistent bias toward slightly wider-than-tall rectangles (PSE ≈ 1.02-1.04), indicating device-invariant VHI effects. Two AR variants were compared, and curved-canvas rendering produced lower bias and higher accuracy than flat-canvas AR, pointing to rendering geometry as an actionable lever for perceptual calibration in XR interface design. Accepted to ASME IDETC/CIE 2026 (Houston, TX).
   links:
-    paper: ""
+    paper: "yang2026seeing.pdf"
     webpage: ""
-    video: ""
-    bib: ""
+    video: "https://youtu.be/njVBP0nEefs"
+    bib: "/publications/#yang2026seeing"
+    poster: ""
+    slide: "files/slides/idetc2026-mr-vhi-talk_20260824.pdf"
 
 - title: "MOTION: AI-Driven Biomechanical Motion Capture for Augmented Reality Rehabilitation"
   image: "research/2026-4_Motion.jpg"

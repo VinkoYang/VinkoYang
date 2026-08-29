@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v2.3.1**（`source` 分支，已发布，2026-08-23）。
+**当前版本：v2.4.0**（`source` 分支，已发布，2026-08-29）。
 
 ## 两份日志，别混
 
@@ -38,9 +38,25 @@ git push origin source --tags
 
 ## [待发布]
 
+（空）
+
+---
+
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [2.4.0] - 2026-08-29
+
+新增 lab news 模块（XRAI Lab 图文动态，与首页个人 news 短条目、blog 长文三者分开）。新建 collection `lab_news`（`_config.yml` 加 `collections` + `defaults`），条目放 `_lab_news/` 且**不带日期前缀** —— 非 `_posts` 的 collection，Jekyll 不剥离文件名日期，排序统一走 front matter 的 `date:`。front matter 含 `cover`（封面，与 gallery 分开）、`gallery`（`{src, caption}`）、`summary`、`tags`，图片路径相对 `images/`，与 `research.yml`、`equipment.yml` 一致。
+
+三个渲染面：`_includes/lab_news_carousel.html` 轮播（lab 页 About 卡片下方，最新 5 条）、`_pages/lab_news.md` 归档页 `/lab/news/`、`_layouts/lab_news.html` 详情页（未复用 `post.html` —— 后者硬编码 `/blogs/` 面包屑、TOC 侧栏与 `BlogPosting` schema，本 layout 用 `NewsArticle` 且无 TOC）。轮播走原生 CSS scroll-snap + `assets/js/site.js` 里一个独立 IIFE，未引入 Bootstrap JS bundle；样式集中在新建的 `_sass/components/_lab-news.scss`，全部用现有 CSS 变量，暗色模式无需额外规则。lab news 天然不进 `/blogs/` 与 `feed.xml`（两者分别遍历 `site.posts` / `site.posts` + `site.data.web.news`，都不碰 `site.lab_news`）；`assets/search.json` 则补了一段遍历 `site.lab_news`，否则详情页永不进站内搜索索引。
+
+轮播最终定为纯手动：初版的自动播放 + 暂停/播放按钮全部拿掉 —— 按钮本是为 WCAG 2.2.2（自动移动内容需可暂停）而加，内容不再自动移动后按钮连同 `pauseReasons` 状态模型一起失去存在理由。期间还修掉一个致命问题：kramdown 会转义 `.labnews-carousel-head` 等三处标记，导致轮播在 `/lab/` 上一直是坏的。归档页与轮播统一改成先对完整 `site.lab_news` 按 `date` 倒序、再做 `where_exp` 过滤（Liquid 的 `where` 之后再 sort 顺序不稳，两处会不一致甚至跨构建横跳）。可访问性收尾：圆点保留 8px 视觉尺寸但用 `padding` + `background-clip: content-box` 撑出 24px 热区并补 `:focus-visible`；封面图 `alt` 置空避免屏幕阅读器把标题读两遍；日期格式统一 `%b`。详情页排版另修一处：wrapper 加 `labnews-wrapper` 收到 `46rem` 并解除 `.post-body p, li` 的 `max-width: 68ch` —— 那个 68ch 是给 `post.html` 的「正文 + 220px TOC」两栏设计的，本页无侧栏时文字被压在 1100px 容器左侧、右边空一大块，而封面图和标题却满宽。
+
+首条内容：2026-08-28 Simon Saurbier（KIT / IPEK）human–machine symbiosis seminar，配三张现场照（长边 1600px、quality 82），首页 news 加一条短条目指向详情页。
+
+VHI（IDETC/CIE 2026）成果补齐 slides 与 talk 视频：`research.yml` 对应条目补 `video` 与 `slide`，Research 页与 Videos 页自动生效（后者遍历 `research.yml` 中带 youtu 链接的条目）。`assets/ref.bib` 的 `yang2026seeing` 与 `talk2026idetc_vhi` 补 `slides={}` / `video={}`；`_layouts/bibtemplate.html` 原不认这两个字段，新增 Slides / Video 两个 `btn-pill`，`_sass/components/_buttons.scss` 补对应配色。Publications 与 Talks 共用该 template，两页同时生效。
 
 ### [2.3.1] - 2026-08-23
 
