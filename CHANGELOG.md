@@ -38,6 +38,10 @@ git push origin source --tags
 
 ## [待发布]
 
+lab news 详情页排版修正：`_layouts/lab_news.html` 的外层 wrapper 加 `labnews-wrapper` 类，`_sass/components/_lab-news.scss` 里把该页宽度收到 `46rem` 并解除 `.post-body p, li` 的 `max-width: 68ch` 限制。原因是 `_post.scss` 的 68ch 文本宽度是为 `post.html` 的「正文 + 220px TOC 侧栏」两栏布局设计的，lab news 详情页没有侧栏，文字被压在 1100px 容器左侧、右边空出一大块，而封面图/标题却是满宽，视觉上两条右边界对不齐。收窄整个 wrapper（而非只收窄 `article`）是为了让面包屑跟正文共用同一条左边界。
+
+VHI（IDETC/CIE 2026）成果补齐 slides 与 talk 视频：`_data/web/research.yml` 对应条目 `links` 补 `video`（https://youtu.be/njVBP0nEefs）与 `slide`（`files/slides/idetc2026-mr-vhi-talk_20260824.pdf`），Research 页自动出 Video/Slide 按钮，Videos 页（遍历 `research.yml` 中带 youtu 链接的条目）自动新增一张嵌入卡片。`assets/ref.bib` 的 `yang2026seeing` 与 `talk2026idetc_vhi` 两条各补 `slides={}` / `video={}` 字段；`_layouts/bibtemplate.html` 原先不认这两个字段，新增 Slides / Video 两个 `btn-pill`（slides 走 `site.baseurl` 拼站内路径，video 直接用外链），`_sass/components/_buttons.scss` 补 `.btn-slides`（#c2571a）与 `.btn-video`（#c4302b）配色。Publications 与 Talks 两页共用该 template，两处同时生效。
+
 新增 lab news 模块（XRAI Lab 图文动态，与首页个人 news 短条目、blog 长文三者分开）：新建 collection `lab_news`（`_config.yml` 加 `collections` + `defaults` 段），条目文件放 `_lab_news/`，**不带日期前缀** —— 非 `_posts` 的 collection，Jekyll 不会从文件名剥离日期，带前缀会漏进 URL，排序统一走 front matter 的 `date:`。front matter 含 `cover`（封面，单独字段，不取 gallery 第一张）、`gallery`（`{src, caption}` 列表）、`summary`、`tags`，图片路径相对 `images/`，与 `research.yml`、`equipment.yml` 一致。
 
 三个渲染面：`_includes/lab_news_carousel.html` 轮播（lab 页 About 卡片下方、Research Focus 上方，最新 5 条，无 cover 的条目由 `where_exp` 过滤掉，0 条时整段不输出）、`_pages/lab_news.md` 归档页 `/lab/news/`（封面卡片网格，全部条目倒序）、`_layouts/lab_news.html` 详情页（未复用 `post.html`，后者硬编码 `/blogs/` 面包屑、TOC 侧栏与 `BlogPosting` schema；本 layout 用 `NewsArticle`，无 TOC）。轮播用原生 CSS scroll-snap + `assets/js/site.js` 末尾新增独立 IIFE（6s 自动切换，hover/focus/切标签页暂停，`prefers-reduced-motion` 下不自动播，圆点与手动滑动双向同步），未引入 Bootstrap JS bundle。样式集中在新建的 `_sass/components/_lab-news.scss`，全部走现有 CSS 变量，暗色模式无需额外规则。

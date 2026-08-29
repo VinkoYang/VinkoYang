@@ -11,7 +11,7 @@ gallery:
 tags: [seminar, visitor, human-machine-systems]
 ---
 
-On Friday, August 28, 2026, the XRAI Lab hosted **Simon Saurbier** for an ISE
+On Friday, August 28, 2026, the XRAI Lab hosted [Simon Saurbier](https://www.linkedin.com/in/simon-saurbier-874241286/) for an ISE
 seminar on human–machine symbiosis. Simon heads the Human–Machine Systems
 Research Group at IPEK – Institute of Product Engineering at the
 [Karlsruhe Institute of Technology](https://www.kit.edu/english/) in Germany,
