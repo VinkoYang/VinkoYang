@@ -50,6 +50,9 @@ lab news 天然不进 `/blogs/` 列表与 `feed.xml` 的条目 —— 前者遍�
 
 补一个严重问题：上述修复验证时发现轮播在 `/lab/` 上一直是坏的——`.labnews-carousel-head`、`.labnews-track`、`.labnews-dots` 三段的内容整体被 kramdown 当成代码块转义输出（`&lt;h3...&gt;` 字面文本包在 `highlighter-rouge` 里），不是真实 DOM，从有轮播的第一天起就没渲染对过，与本轮改动无关。根因是 `_config.yml` 的 `kramdown: parse_block_html: true` 会把块级 HTML 内部的内容重新按 Markdown 解析，而这三段在 include 里相对列首缩进了 4 个空格，正好撞上 Markdown 的缩进代码块规则；`_pages/lab_news.md` 的网格是靠 `<div ... markdown="0">` 才躲过这个坑的。修复：给 `_includes/lab_news_carousel.html` 最外层的 `<div class="labnews-carousel" ...>` 补上 `markdown="0">`——嵌套的 head/track/dots 三段都跟着按原生 HTML 处理，不用逐个补属性。以后在 include 里新增带缩进的块级 HTML 时留意这个 `parse_block_html` 陷阱。
 
+轮播改为纯手动：拿掉自动播放和暂停/播放按钮——按钮是为 WCAG 2.2.2（自动移动内容需要可暂停机制）加的，内容不再自动移动，该条款不再适用，按钮连带此前挂在它身上的几个可访问性问题一并消失。现在轮播只剩滑动/圆点/键盘三种手动交互，`assets/js/site.js` 里 `INTERVAL`、`timer`、`start()`/`stop()`、整个 `pauseReasons` 状态对象、`mouseenter`/`mouseleave`/`focusin`/`focusout`/`visibilitychange` 监听器和暂停按钮的点击处理全部删除，`goTo()`/`setActiveDot()`/圆点点击/滚动同步照常保留，`reduceMotion` 因 `goTo()` 里仍要用（决定 `scrollTo` 用 `smooth` 还是 `auto`）而保留。同时把上一轮「先过滤 cover 再排序」的思路倒过来：
+两个页面统一改成先对完整的 `site.lab_news` 按 `date` 倒序排好，轮播再对这个已排序数组做 `where_exp` 过滤——Liquid 的 `where_exp` 保序，轮播的顺序天然是归档页顺序的子序列，两处不可能互相矛盾。之前 `sort: "title" | sort: "date"` 的两段式写法被去掉，因为 Liquid 的 `sort` 不稳定，第二次排序会把第一次排序的效果冲掉，并不真的起作用；同日期条目现在就是老实地跟着 `sort: "date"` 的不确定顺序走，但两个页面完全一致，作者在意两条同日事件的先后时可以给 `date:` 加时间（如 `date: 2026-08-28 14:00:00 -0500`）。
+
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。

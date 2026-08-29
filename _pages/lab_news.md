@@ -10,7 +10,7 @@ permalink: /lab/news/
 News, visits, and events from the [XRAI Lab]({{ site.url }}{{ site.baseurl }}/lab/).
 For short one-line updates, see [News]({{ site.url }}{{ site.baseurl }}/allnews.html).
 
-{% assign labnews = site.lab_news | sort: "title" | sort: "date" | reverse %}
+{% assign labnews = site.lab_news | sort: "date" | reverse %}
 {% if labnews.size > 0 %}
 <div class="labnews-grid" markdown="0">
 {% for item in labnews %}

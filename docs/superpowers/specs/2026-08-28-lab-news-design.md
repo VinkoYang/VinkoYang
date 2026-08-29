@@ -76,6 +76,7 @@ Field rules:
   matching the convention already used by `research.yml`, `equipment.yml`, and
   `research_areas.yml`.
 - `tags` is optional, stored but not rendered as a filter UI.
+- Both the carousel and the archive sort `site.lab_news` by `date` (reverse) from the same unfiltered array, so two items sharing a `date` sort arbitrarily but identically on both surfaces; an author who cares about the order of two same-day items should give one a time, e.g. `date: 2026-08-28 14:00:00 -0500`.
 
 `/blogs/` iterates `site.posts`, and `feed.xml` iterates `site.posts` plus
 `site.data.web.news`. Neither touches `site.lab_news`, so no lab news document is ever

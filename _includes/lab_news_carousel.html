@@ -2,9 +2,18 @@
 Lab news carousel. Shows the 5 most recent items that have a cover image.
 Behavior lives in the lab news IIFE at the end of assets/js/site.js, which
 binds to [data-labnews-carousel]. Renders nothing when there are no items.
+
+Sort the full collection first, then filter to items with a cover — Liquid's
+where_exp preserves input order, so this carousel's slide order is always a
+subsequence of the archive page's order (_pages/lab_news.md sorts the same
+unfiltered site.lab_news the same way). Two items sharing a date sort
+arbitrarily but identically on both surfaces; an author who cares about the
+order of two same-day items should give one a time, e.g.
+date: 2026-08-28 14:00:00 -0500.
 {%- endcomment -%}
 
-{% assign labnews = site.lab_news | where_exp: "item", "item.cover and item.cover != ''" | sort: "title" | sort: "date" | reverse %}
+{% assign labnews_all = site.lab_news | sort: "date" | reverse %}
+{% assign labnews = labnews_all | where_exp: "item", "item.cover and item.cover != ''" %}
 
 {% if labnews.size > 0 %}
 {% assign shown_count = labnews.size %}
@@ -14,11 +23,6 @@ binds to [data-labnews-carousel]. Renders nothing when there are no items.
 
   <div class="labnews-carousel-head">
     <h3 class="labnews-carousel-title">Lab News</h3>
-    {% if shown_count > 1 %}
-    <button type="button" class="labnews-pause" data-labnews-pause aria-pressed="false" aria-label="Pause">
-      <i class="fa-solid fa-pause" aria-hidden="true"></i>
-    </button>
-    {% endif %}
     <a class="labnews-carousel-all" href="{{ site.url }}{{ site.baseurl }}/lab/news/">All lab news <i class="fa-solid fa-arrow-right"></i></a>
   </div>
 

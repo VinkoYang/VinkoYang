@@ -287,8 +287,11 @@
 
 })();
 
+
 // =============================================================
-// Lab news carousel — scroll-snap track, dot indicators, autoplay
+// Lab news carousel — scroll-snap track with dot indicators.
+// Manually driven (swipe / dots / keyboard) — no autoplay, so
+// WCAG 2.2.2 (pause for automatically-moving content) does not apply.
 // =============================================================
 
 (function () {
@@ -300,24 +303,10 @@
   var track = root.querySelector('.labnews-track');
   var slides = root.querySelectorAll('.labnews-slide');
   var dots = root.querySelectorAll('.labnews-dot');
-  var pauseBtn = root.querySelector('[data-labnews-pause]');
   if (!track || slides.length < 2) return;
 
-  var INTERVAL = 6000;
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var current = 0;
-  var timer = null;
-
-  // Combined pause-reason state: autoplay may only resume once none of these
-  // are true. Hover, focus-within, tab-hidden, and the user's own pause
-  // toggle are tracked independently so that e.g. moving the mouse off the
-  // widget while a dot still has keyboard focus (or while the user has
-  // explicitly paused) does not resume autoplay out from under it.
-  var pauseReasons = { hover: false, focus: false, hidden: false, user: false };
-
-  function anyPauseActive() {
-    return pauseReasons.hover || pauseReasons.focus || pauseReasons.hidden || pauseReasons.user;
-  }
 
   function setActiveDot() {
     dots.forEach(function (dot, i) {
@@ -340,21 +329,9 @@
     setActiveDot();
   }
 
-  function start() {
-    if (reduceMotion || timer || anyPauseActive()) return;
-    timer = setInterval(function () { goTo(current + 1); }, INTERVAL);
-  }
-
-  function stop() {
-    clearInterval(timer);
-    timer = null;
-  }
-
   dots.forEach(function (dot, i) {
     dot.addEventListener('click', function () {
-      stop();
       goTo(i);
-      start();
     });
   });
 
@@ -374,54 +351,5 @@
     }, 100);
   });
 
-  root.addEventListener('mouseenter', function () {
-    pauseReasons.hover = true;
-    stop();
-  });
-  root.addEventListener('mouseleave', function () {
-    pauseReasons.hover = false;
-    start();
-  });
-  root.addEventListener('focusin', function () {
-    pauseReasons.focus = true;
-    stop();
-  });
-  root.addEventListener('focusout', function () {
-    pauseReasons.focus = false;
-    start();
-  });
-
-  document.addEventListener('visibilitychange', function () {
-    pauseReasons.hidden = document.hidden;
-    if (document.hidden) { stop(); } else { start(); }
-  });
-
-  // Reduced motion already disables autoplay, so a pause/play control has
-  // nothing to do — hide it and take it out of the tab order rather than
-  // leaving a dead button. Otherwise wire it as a fourth pause reason so a
-  // touch or mouse user has a discoverable way to stop the motion (WCAG 2.2.2).
-  if (pauseBtn) {
-    if (reduceMotion) {
-      pauseBtn.hidden = true;
-    } else {
-      pauseBtn.addEventListener('click', function () {
-        pauseReasons.user = !pauseReasons.user;
-        var icon = pauseBtn.querySelector('i');
-        if (pauseReasons.user) {
-          stop();
-          pauseBtn.setAttribute('aria-pressed', 'true');
-          pauseBtn.setAttribute('aria-label', 'Play');
-          if (icon) { icon.classList.remove('fa-pause'); icon.classList.add('fa-play'); }
-        } else {
-          pauseBtn.setAttribute('aria-pressed', 'false');
-          pauseBtn.setAttribute('aria-label', 'Pause');
-          if (icon) { icon.classList.remove('fa-play'); icon.classList.add('fa-pause'); }
-          start();
-        }
-      });
-    }
-  }
-
   setActiveDot();
-  start();
 })();
