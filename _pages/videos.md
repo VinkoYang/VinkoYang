@@ -27,3 +27,24 @@ permalink: /videos/
 {% endif %}
 {% endfor %}
 </div>
+
+## Teaching & Student Project Videos
+
+<div class="video-list" markdown="0">
+{% for _t_course in site.data.profile.teaching %}
+{% for _t_proj in _t_course.projects %}
+{% if _t_proj.url contains "youtu" %}
+{% if _t_proj.url contains "youtu.be/" %}{% assign _t_id = _t_proj.url | split: "youtu.be/" | last | split: "?" | first %}{% elsif _t_proj.url contains "youtube.com/watch?v=" %}{% assign _t_id = _t_proj.url | split: "v=" | last | split: "&" | first %}{% else %}{% assign _t_id = "" %}{% endif %}
+{% if _t_id != "" %}
+<div class="video-card-v">
+<h3 class="video-card-v-title">{{ _t_proj.title }}</h3>
+<div class="video-card-v-embed">
+<iframe src="https://www.youtube.com/embed/{{ _t_id }}" title="{{ _t_proj.title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<p class="video-card-v-abstract">{{ _t_course.name }} ({{ _t_course.code }})</p>
+</div>
+{% endif %}
+{% endif %}
+{% endfor %}
+{% endfor %}
+</div>

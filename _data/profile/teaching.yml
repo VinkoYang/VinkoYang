@@ -38,7 +38,11 @@
       url: "https://link.springer.com/book/10.1007/978-1-4842-8989-1"
     - title: "Robotics and Automation Handbook"
       url: "https://dl.icdst.org/pdfs/files/5bc4ddc0b1b8f7e5738d8440fe191904.pdf"
-  projects: []
+  projects:
+    - title: "Student demo — Task 1: UR10 Pick & Place operation"
+      url: "https://youtu.be/owRrbLbY2q0"
+    - title: "Student demo — Task 2: Writing Task with L-ID"
+      url: "https://youtu.be/22OX8TqLNnA"
   links:
     - title: "Universal Robots Academy Free e-Learning Courses"
       url: "https://academy.universal-robots.com/free-e-learning/"
