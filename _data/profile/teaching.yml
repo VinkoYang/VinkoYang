@@ -18,6 +18,7 @@
   semesters:
     - "Fall 2024"
     - "Fall 2025"
+    - "Fall 2026"
   description: >
     This hands-on course covers fundamental concepts of industrial robotics, including
     kinematics, programming, and collaborative robot operations. Students gain practical

@@ -38,7 +38,7 @@ git push origin source --tags
 
 ## [待发布]
 
-（空）
+- `_data/profile/teaching.yml`：INEN 5301-05 Collaborative Robot Operations and Programming 的 `semesters` 加 "Fall 2026"。
 
 ---
 
