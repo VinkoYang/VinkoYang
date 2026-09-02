@@ -77,6 +77,28 @@
       url: "https://www.changjiangcai.com/files/text-books/Introduction-to-Robotics-3rd-edition.pdf"
   projects: []
 
+- code: "INEN 6301"
+  name: "Advanced Robotics"
+  semesters:
+    - "Fall 2026"
+  description: >
+    A doctoral-level special topics course that extends the collaborative robotics
+    curriculum of INEN 5301 to analytical and research depth. Building on hands-on
+    UR10e operation, the course develops homogeneous transformations and DH forward
+    kinematics, analytical inverse kinematics and the Jacobian, robot dynamics with
+    impedance and force control, closed-loop control derivation and PID tuning,
+    hand-eye calibration for vision-guided manipulation, and optimization-based robot
+    cell design. Students also survey current research in human-robot collaboration,
+    complete a literature review, and carry out an original UR10-based research project
+    written and presented in conference-paper format.
+  syllabus: ""
+  textbooks:
+    - title: "Robotics: Modelling, Planning and Control by Siciliano, Bruno"
+      url: "https://people.disim.univaq.it/~costanzo.manes/EDU_stuff/Robotics_Modelling,%20Planning%20and%20Control_Sciavicco_extract.pdf"
+    - title: "User manual - UR10e e-Series"
+      url: "https://www.universal-robots.com/download/manuals-e-seriesur20ur30/user/ur10e/512/user-manual-ur10e-e-series-sw-512-english-international-en/"
+  projects: []
+
 - code: "INEN 6110"
   name: "Professional Seminar"
   semesters:
@@ -87,4 +109,23 @@
     progress and engage with invited industry and academic speakers.
   syllabus: ""
   textbooks: []
+  projects: []
+
+- code: "INEN 4375"
+  name: "Simulation of Industrial Engineering Systems"
+  semesters:
+    - "Fall 2026"
+  description: >
+    An introduction to discrete-event simulation as a modeling and decision-support
+    tool for industrial engineering systems that are too complex for closed-form
+    analytical methods. The course covers the nine-step simulation study methodology,
+    queueing theory fundamentals (Kendall notation, Little's Law, M/M/1, M/M/c, M/G/1),
+    pseudo-random number generation and random variate generation by inverse transform,
+    hand-computed spreadsheet simulation of a queue, and model building, verification,
+    validation, and statistical output analysis in Arena. Students complete an original
+    simulation project as a capstone deliverable.
+  syllabus: ""
+  textbooks:
+    - title: "Simulation with Arena by Kelton, Sadowski & Zupick"
+      url: "https://www.mheducation.com/highered/product/simulation-with-arena-kelton.html?viewOption=student"
   projects: []

@@ -8,6 +8,11 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "2.4.2"
+  date: 2026-09-02
+  changes:
+    - "Two new courses on the Teaching page: INEN 6301 Advanced Robotics and INEN 4375 Simulation of Industrial Engineering Systems, both running Fall 2026."
+
 - version: "2.4.1"
   date: 2026-09-02
   changes:
