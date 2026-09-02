@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v2.4.0**（`source` 分支，已发布，2026-08-29）。
+**当前版本：v2.4.1**（`source` 分支，已发布，2026-09-02）。
 
 ## 两份日志，别混
 
@@ -38,14 +38,19 @@ git push origin source --tags
 
 ## [待发布]
 
-- 新增 lab news 条目 `_lab_news/inen5301-fall2025-cohort.md`（date 2025-12-07）：INEN-5301 Collaborative Robot Operations and Programming 第二次开课（首次 fall 2024，本次 2025 fall，10 人注册 / 7 个 A），学生个人项目 Task-1 Pick & Place、Task-2 Writing Task with L-ID，配课程内容与 UR10 cobot 描述。封面图 `images/lab/news/2025-12-07-collab-robotics/presentation-day.jpg`（1600×900，quality 82，原图已是 16:9 无需裁剪）。无 gallery。按约定未在首页 news feed 加短条目（本条仅 lab news）。
-- 两个学生项目 demo 视频（Task 1 Pick & Place `owRrbLbY2q0`、Task 2 Writing Task with L-ID `22OX8TqLNnA`）加到三处：lab news 正文内嵌播放器（`.labnews-videos` 网格 + `.labnews-video` 响应式 iframe，新样式加在 `_sass/components/_lab-news.scss`，raw HTML 块加 `markdown="0"`）；`_data/profile/teaching.yml` 里 INEN 5301-05 Cobot 课的 `projects:`（原为空）；`_pages/videos.md` 新增 "Teaching & Student Project Videos" 段，遍历 `site.data.profile.teaching` 各 `projects` 中带 youtu 链接的条目并嵌入播放器（复用 research videos 段的 youtu.be / watch?v= ID 解析逻辑）。
+（空）
 
 ---
 
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [2.4.1] - 2026-09-02
+
+新增 lab news 条目 `_lab_news/inen5301-fall2025-cohort.md`（date 2025-12-07）：INEN-5301 Collaborative Robot Operations and Programming 第二次开课（首次 fall 2024，本次 2025 fall，10 人注册 / 7 个 A），涵盖课程内容、UR10 cobot 两个学生个人项目（Task-1 Pick & Place、Task-2 Writing Task with L-ID）与期末展示合影（Md Al Amin Khan、Arafat Bin Fazle，instructor Wenhao Yang 居中）。封面图 `images/lab/news/2025-12-07-collab-robotics/presentation-day.jpg`（1600×900，原图即 16:9，quality 82）。无 gallery，未加首页 news 短条目。
+
+两个学生 demo 视频（Task 1 `owRrbLbY2q0`、Task 2 `22OX8TqLNnA`）落三处：lab news 正文内嵌播放器（新增 `.labnews-videos` 网格 + `.labnews-video` 响应式 iframe，样式在 `_sass/components/_lab-news.scss`，raw HTML 块带 `markdown="0"`，iframe `loading="lazy"`）；`_data/profile/teaching.yml` 中 INEN 5301-05 课的 `projects:`（原空）加两条，teaching 页自动渲染成链接；`_pages/videos.md` 新增 "Teaching & Student Project Videos" 段，遍历 `site.data.profile.teaching` 各 `projects` 中带 youtu 链接的条目并嵌入播放器，复用 research videos 段的 youtu.be / watch?v= ID 解析逻辑。
 
 ### [2.4.0] - 2026-08-29
 

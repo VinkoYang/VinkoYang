@@ -8,6 +8,13 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "2.4.1"
+  date: 2026-09-02
+  changes:
+    - "New Lab News item: the Fall 2025 cohort of INEN-5301 Collaborative Robot Operations and Programming presented their final UR10 cobot projects (pick-and-place, robot writing task) — 10 students enrolled, 7 earned an A. The two student demo videos are embedded in the story."
+    - "The Videos page has a new Teaching & Student Project Videos section, alongside the research videos."
+    - "The Teaching page now links the two student project demos under the Collaborative Robot Operations and Programming course."
+
 - version: "2.4.0"
   date: 2026-08-29
   changes:
