@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v2.4.1**（`source` 分支，已发布，2026-09-02）。
+**当前版本：v2.4.2**（`source` 分支，已发布，2026-09-02）。
 
 ## 两份日志，别混
 
@@ -38,13 +38,17 @@ git push origin source --tags
 
 ## [待发布]
 
-- `_data/profile/teaching.yml` 新增两门 Fall 2026 课程：INEN 6301 Advanced Robotics（博士级 special topics，延伸 5301 到运动学/动力学/控制/标定/优化 + 研究项目）、INEN 4375 Simulation of Industrial Engineering Systems（离散事件仿真 + Arena）。teaching 页自动渲染。
+（空）
 
 ---
 
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [2.4.2] - 2026-09-02
+
+`_data/profile/teaching.yml` 新增两门 Fall 2026 课程：INEN 6301 Advanced Robotics（博士级 special topics，在 INEN 5301 hands-on UR10e 基础上延伸到 homogeneous transform / DH 正运动学、解析逆运动学与 Jacobian、阻抗与力控、闭环控制推导与 PID、hand-eye calibration、优化式 robot cell 设计，含文献综述与 UR10 原创研究项目、会议论文格式撰写与展示）；INEN 4375 Simulation of Industrial Engineering Systems（离散事件仿真：九步方法论、排队论 Kendall/Little's Law/M-M-1/M-M-c/M-G-1、随机数与逆变换随机变量生成、spreadsheet 手算排队、Arena 建模 + verification/validation + 统计输出分析、capstone 项目）。teaching 页 `site.data.profile.teaching` 循环自动渲染，无模板改动。
 
 ### [2.4.1] - 2026-09-02
 
