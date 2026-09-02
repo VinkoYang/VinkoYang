@@ -38,7 +38,7 @@ git push origin source --tags
 
 ## [待发布]
 
-（空）
+- `_data/profile/teaching.yml` 新增两门 Fall 2026 课程：INEN 6301 Advanced Robotics（博士级 special topics，延伸 5301 到运动学/动力学/控制/标定/优化 + 研究项目）、INEN 4375 Simulation of Industrial Engineering Systems（离散事件仿真 + Arena）。teaching 页自动渲染。
 
 ---
 
