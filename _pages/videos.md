@@ -46,5 +46,15 @@ permalink: /videos/
 {% endif %}
 {% endif %}
 {% endfor %}
+{% if _t_course.video_playlist and _t_course.video_playlist contains "list=" %}
+{% assign _t_pl = _t_course.video_playlist | split: "list=" | last | split: "&" | first %}
+<div class="video-card-v">
+<h3 class="video-card-v-title">{{ _t_course.name }} — course video playlist</h3>
+<div class="video-card-v-embed">
+<iframe src="https://www.youtube.com/embed/videoseries?list={{ _t_pl }}" title="{{ _t_course.name }} course video playlist" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<p class="video-card-v-abstract">{{ _t_course.name }} ({{ _t_course.code }})</p>
+</div>
+{% endif %}
 {% endfor %}
 </div>

@@ -39,6 +39,7 @@ git push origin source --tags
 ## [待发布]
 
 - `_data/profile/teaching.yml`：INEN 5301-05 Collaborative Robot Operations and Programming 的 `semesters` 加 "Fall 2026"。
+- INEN 4375 Simulation 加课程视频 playlist：teaching.yml 该课新增 `video_playlist` 字段 + `links` 里一条 playlist 链接；`_pages/videos.md` 的 Teaching 段扩展，course 带 `video_playlist`（URL 含 `list=`）时嵌入 `embed/videoseries?list=<id>` 播放器。
 
 ---
 
