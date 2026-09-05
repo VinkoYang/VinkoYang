@@ -44,7 +44,10 @@
       url: "https://youtu.be/owRrbLbY2q0"
     - title: "Student demo — Task 2: Writing Task with L-ID"
       url: "https://youtu.be/22OX8TqLNnA"
+  video_playlist: "https://www.youtube.com/watch?v=dMoTswBlRJc&list=PLB6iRphjkIHI"
   links:
+    - title: "Course video playlist (YouTube)"
+      url: "https://www.youtube.com/playlist?list=PLB6iRphjkIHI"
     - title: "Universal Robots Academy Free e-Learning Courses"
       url: "https://academy.universal-robots.com/free-e-learning/"
 
