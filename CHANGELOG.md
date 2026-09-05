@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v2.4.2**（`source` 分支，已发布，2026-09-02）。
+**当前版本：v2.4.3**（`source` 分支，已发布，2026-09-05）。
 
 ## 两份日志，别混
 
@@ -38,15 +38,19 @@ git push origin source --tags
 
 ## [待发布]
 
-- `_data/profile/teaching.yml`：INEN 5301-05 Collaborative Robot Operations and Programming 的 `semesters` 加 "Fall 2026"。
-- INEN 4375 Simulation 加课程视频 playlist：teaching.yml 该课新增 `video_playlist` 字段 + `links` 里一条 playlist 链接；`_pages/videos.md` 的 Teaching 段扩展，course 带 `video_playlist`（URL 含 `list=`）时嵌入 `embed/videoseries?list=<id>` 播放器。
-- INEN 5301-05 Cobot 课同样加 `video_playlist`（`PLB6iRphjkIHI`）+ playlist 链接。
+（空）
 
 ---
 
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [2.4.3] - 2026-09-05
+
+`_data/profile/teaching.yml`：INEN 5301-05 Collaborative Robot Operations and Programming 的 `semesters` 加 "Fall 2026"。
+
+INEN 5301-05 与 INEN 4375 两门课加课程视频 playlist：teaching.yml 各自新增 `video_playlist` 字段（YouTube watch+list URL）+ `links` 里一条 `playlist?list=` 链接。`_pages/videos.md` 的 "Teaching & Student Project Videos" 段扩展：course 带 `video_playlist` 且 URL 含 `list=` 时，取出 list id 嵌入 `youtube.com/embed/videoseries?list=<id>` 播放器。teaching 页 links 块本就渲染，无模板改动。
 
 ### [2.4.2] - 2026-09-02
 
