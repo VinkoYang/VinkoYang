@@ -18,6 +18,7 @@
   semesters:
     - "Fall 2024"
     - "Fall 2025"
+    - "Fall 2026"
   description: >
     This hands-on course covers fundamental concepts of industrial robotics, including
     kinematics, programming, and collaborative robot operations. Students gain practical
@@ -43,7 +44,10 @@
       url: "https://youtu.be/owRrbLbY2q0"
     - title: "Student demo — Task 2: Writing Task with L-ID"
       url: "https://youtu.be/22OX8TqLNnA"
+  video_playlist: "https://www.youtube.com/watch?v=dMoTswBlRJc&list=PLB6iRphjkIHI"
   links:
+    - title: "Course video playlist (YouTube)"
+      url: "https://www.youtube.com/playlist?list=PLB6iRphjkIHI"
     - title: "Universal Robots Academy Free e-Learning Courses"
       url: "https://academy.universal-robots.com/free-e-learning/"
 
@@ -129,3 +133,7 @@
     - title: "Simulation with Arena by Kelton, Sadowski & Zupick"
       url: "https://www.mheducation.com/highered/product/simulation-with-arena-kelton.html?viewOption=student"
   projects: []
+  video_playlist: "https://www.youtube.com/watch?v=ghp2jB7uc5g&list=PLBoQYIahOu3w"
+  links:
+    - title: "Course video playlist (YouTube)"
+      url: "https://www.youtube.com/playlist?list=PLBoQYIahOu3w"

@@ -8,6 +8,12 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "2.4.3"
+  date: 2026-09-05
+  changes:
+    - "The Collaborative Robot Operations and Programming course (INEN 5301) is also being taught in Fall 2026."
+    - "Course video playlists added for INEN 5301 Collaborative Robotics and INEN 4375 Simulation of Industrial Engineering Systems — embedded on the Videos page and linked from the Teaching page."
+
 - version: "2.4.2"
   date: 2026-09-02
   changes:
