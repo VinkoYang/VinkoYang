@@ -38,7 +38,9 @@ git push origin source --tags
 
 ## [待发布]
 
-（空）
+- `_data/web/people.yml`：新增 collaborator `Baisravan HomChaudhuri`（Lamar University，website/email 待补）；新增 student `Justin Barrera`（`mentoring_role: undergraduate_advisor`，2026，show_team: false 因无照片），会出现在 about 页 "Undergraduate Research Advisor" 及 CV 的 Student Guidance。
+- `_data/web/research.yml`：新增项目 "Predictive and Safe Human-Aware Mobile Robot Navigation"（2026-05 – 2026-12，focus 3，author: Justin Barrera，mentors: HomChaudhuri / Yang）。`image` 暂空，research 页会显示 flask 占位图。
+- `_data/web/news.yml`：新增 2026-05-27 条目，记录 Lamar 2026 SRUF 共同指导。
 
 ---
 

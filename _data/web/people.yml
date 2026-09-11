@@ -106,6 +106,13 @@ collaborators:
     website: "https://www.cs.rochester.edu/people/faculty/luo_jiebo/index.html"
     email: "jluo@cs.rochester.edu"
 
+  - name: "Baisravan HomChaudhuri"
+    last_name: "HomChaudhuri"
+    show_collaborator: true
+    affiliation: "Lamar University"
+    website: ""
+    email: ""
+
   - name: "Ruixiang Tang"
     last_name: "Tang"
     show_collaborator: true
@@ -182,6 +189,16 @@ students:
     year_start: 2026 
     year_end: now
     website: "https://www.linkedin.com/in/rezwanul-ashraf-ruddro-28772b199/"
+
+  - name: Justin Barrera
+    show_team: false
+    show_about: true
+    mentoring_role: undergraduate_advisor
+    info: Undergraduate Research Assistant (SRUF)
+    location: Lamar University
+    degree: B.S. Mechanical Engineering
+    year_start: 2026
+    year_end: 2026
 
   - name: John Gust
     show_team: false

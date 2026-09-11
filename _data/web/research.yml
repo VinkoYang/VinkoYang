@@ -220,6 +220,32 @@
     poster: ""
     slide: "files/slides/idetc2026-mr-vhi-talk_20260824.pdf"
 
+- title: "Predictive and Safe Human-Aware Mobile Robot Navigation"
+  image: ""
+  focus: [3]
+  start_date: "2026-05"
+  end_date: "2026-12"
+  authors:
+    - name: "Justin Barrera"
+  mentors:
+    - name: "Baisravan HomChaudhuri"
+    - name: "Wenhao Yang"
+  keywords:
+    - Mobile Robot Navigation
+    - Human Motion Prediction
+    - Safe Autonomy
+    - Human-Robot Interaction
+    - Undergraduate Research
+  abstract: >
+    Supported by the Lamar University 2026 STEM Research Undergraduate Fellowship (SRUF) in the Department of Mechanical Engineering, this project develops navigation strategies that let a mobile robot move safely and efficiently through spaces shared with people. The work combines prediction of nearby human motion with safety-aware planning, so the robot anticipates where people are heading instead of reacting only to their current positions, and keeps a comfortable margin while still reaching its goal.
+  links:
+    paper: ""
+    webpage: ""
+    video: ""
+    bib: ""
+    poster: ""
+    slide: ""
+
 - title: "MOTION: AI-Driven Biomechanical Motion Capture for Augmented Reality Rehabilitation"
   image: "research/2026-4_Motion.jpg"
   focus: [5]
