@@ -40,6 +40,7 @@ git push origin source --tags
 
 - `_data/web/people.yml`：新增 collaborator `Baisravan HomChaudhuri`（Lamar University，website/email 待补）；新增 student `Justin Barrera`（`mentoring_role: undergraduate_advisor`，2026，show_team: false 因无照片），会出现在 about 页 "Undergraduate Research Advisor" 及 CV 的 Student Guidance。
 - `_data/web/research.yml`：新增项目 "Predictive and Safe Human-Aware Mobile Robot Navigation"（2026-05 – 2026-12，focus 3，author: Justin Barrera，mentors: HomChaudhuri / Yang），配图 `images/research/2026_SafeNavigation.png`（临时生成的示意图，待换真实项目图）。
+- `_posts/2026-09-15-presentation-strategy-by-venue.md`：新增博客「Presentation Strategy by Venue」，presentation 系列第三篇，讲不同场合（seminar / full paper / extended abstract）该展示什么、该保留什么。内链前两篇（`/blogs/graduate-research-presentation-expectations/`、`/blogs/how-to-build-a-good-research-presentation/`）。
 
 ---
 
