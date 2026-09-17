@@ -8,6 +8,15 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "2.5.0"
+  date: 2026-09-17
+  changes:
+    - "New research project: Predictive and Safe Human-Aware Mobile Robot Navigation — a Lamar University 2026 STEM Research Undergraduate Fellowship project led by Justin Barrera, on mobile robots that anticipate where nearby people are heading."
+    - "The Advanced Mixed Reality Training for First Responders in Hurricane Scenarios project now has a demo video, on both the Research and Videos pages."
+    - "Videos are now ordered by when each video came out, rather than by when its project wrapped up — and a project can show more than one video."
+    - "Long project descriptions on the Research, Projects and Videos pages now show the first three lines with a Show more link, so the cards stay skimmable."
+    - "New blog post: Presentation Strategy by Venue — what to show and what to hold back for a seminar, a full paper talk, or an extended abstract. The three presentation posts now link to each other."
+
 - version: "2.4.3"
   date: 2026-09-05
   changes:
