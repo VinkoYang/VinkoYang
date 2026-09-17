@@ -83,7 +83,10 @@ Software I have designed and built outside of my academic research.
 {% for tech in item.stack %}<span class="research-kw">{{ tech }}</span>{% endfor %}
 </div>
 {% endif %}
-<p class="research-card-h-abstract">{{ item.abstract }}</p>
+<div class="research-card-h-desc" data-clamp>
+<p class="research-card-h-abstract js-clamp-text" id="{{ card_id }}-abstract">{{ item.abstract }}</p>
+<button type="button" class="js-clamp-toggle" aria-expanded="false" aria-controls="{{ card_id }}-abstract" hidden><span class="js-clamp-label">Show more</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+</div>
 {% assign has_link = false %}
 {% if item.links.webpage and item.links.webpage != "" %}{% assign has_link = true %}{% endif %}
 {% if item.links.github and item.links.github != "" %}{% assign has_link = true %}{% endif %}

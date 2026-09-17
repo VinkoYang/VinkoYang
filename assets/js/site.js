@@ -353,3 +353,62 @@
 
   setActiveDot();
 })();
+
+// ----- Clamped descriptions: 3 lines + a Show more toggle -----
+// Used by the Videos, Research and Projects cards. Markup contract and the
+// clamp styles live in _sass/components/_clamp.scss.
+
+(function () {
+  'use strict';
+
+  var blocks = document.querySelectorAll('[data-clamp]');
+  if (!blocks.length) return;
+
+  var items = [];
+
+  blocks.forEach(function (block) {
+    var text = block.querySelector('.js-clamp-text');
+    var btn = block.querySelector('.js-clamp-toggle');
+    var label = block.querySelector('.js-clamp-label');
+    if (!text || !btn || !label) return;
+
+    items.push({ text: text, btn: btn, label: label });
+
+    btn.addEventListener('click', function () {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      text.classList.toggle('is-expanded', !expanded);
+      label.textContent = expanded ? 'Show more' : 'Show less';
+    });
+  });
+
+  // The button only earns its place when the clamp actually hides something,
+  // and that depends on the column width — so re-check after resize too.
+  // A -webkit-line-clamp element reports scrollHeight == clientHeight in Chromium,
+  // so the usual overflow test is useless here: drop the clamp, measure, put it back.
+  function syncToggles() {
+    items.forEach(function (item) {
+      if (item.btn.getAttribute('aria-expanded') === 'true') return;
+      // A card hidden by a filter measures 0 — leave its button alone until it is
+      // laid out again, rather than deciding it has nothing to show.
+      if (!item.text.clientHeight) return;
+      var clampedHeight = item.text.clientHeight;
+      item.text.classList.add('is-expanded');
+      var fullHeight = item.text.scrollHeight;
+      item.text.classList.remove('is-expanded');
+      item.btn.hidden = fullHeight <= clampedHeight + 1;
+    });
+  }
+
+  var resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(syncToggles, 150);
+  });
+
+  syncToggles();
+  // Web fonts can land after first layout and change how much text fits.
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(syncToggles);
+  }
+})();

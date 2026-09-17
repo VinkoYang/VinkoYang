@@ -41,6 +41,7 @@ $baseurl: "{{ site.url }}{{ site.baseurl }}";
 @import "components/search";
 @import "components/chips";
 @import "components/lab-news";
+@import "components/clamp";
 
 // Layouts
 @import "layouts/grid";

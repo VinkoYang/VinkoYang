@@ -41,6 +41,10 @@
   <!-- Dark mode: apply saved theme before paint to prevent flash -->
   <script>
     (function() {
+      // Marks JS as available before paint, so progressive enhancements that hide
+      // content (e.g. the clamped video descriptions) never apply without their toggle.
+      document.documentElement.classList.add('js');
+
       var darkMode = {{ site.dark_mode | default: true }};
       if (!darkMode) return;
       var saved = localStorage.getItem('theme');
