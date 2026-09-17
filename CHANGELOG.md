@@ -42,6 +42,8 @@ git push origin source --tags
 - `_data/web/research.yml`：新增项目 "Predictive and Safe Human-Aware Mobile Robot Navigation"（2026-05 – 2026-12，focus 3，author: Justin Barrera，mentors: HomChaudhuri / Yang），配图 `images/research/2026_SafeNavigation.png`（临时生成的示意图，待换真实项目图）。
 - `_posts/2026-08-14-graduate-research-presentation-expectations.md`、`_posts/2026-08-14-how-to-build-a-good-research-presentation.md`：结尾各加一段，链到系列后续两篇，三篇 presentation 博客互相串起来。
 - `_posts/2026-09-15-presentation-strategy-by-venue.md`：新增博客「Presentation Strategy by Venue」，presentation 系列第三篇，讲不同场合（seminar / full paper / extended abstract）该展示什么、该保留什么。内链前两篇（`/blogs/graduate-research-presentation-expectations/`、`/blogs/how-to-build-a-good-research-presentation/`）。
+- `_data/web/research.yml`：项目 "Advanced Mixed Reality Training for First Responders in Hurricane Scenarios" 补上 `links.video`（YouTube: `PVQMivtSj3w`），会同步出现在 `/videos/` 的 Research Videos 及项目卡片的 video 按钮。
+- `_sass/layouts/_post.scss`：给 `.post-body table` 加三线表样式（booktabs 风格：顶线/表头线/底线，无竖线无行线），之前博客里的 markdown 表格完全没有样式。窄屏（≤640px）表格改为自身横向滚动，不撑破页面。
 
 ---
 
