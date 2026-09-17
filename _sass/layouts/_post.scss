@@ -106,6 +106,55 @@
     border-radius: var(--radius-sm);
     font-size: 0.86em;
   }
+
+  // Booktabs-style three-line table: top rule, header rule, bottom rule.
+  // No vertical rules, no row shading — matches the convention used in papers.
+  table {
+    width: 100%;
+    margin: var(--space-6) 0;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    border-top: 2px solid var(--text-secondary);
+    border-bottom: 2px solid var(--text-secondary);
+
+    thead th {
+      border-bottom: 1px solid var(--text-muted);
+      font-family: var(--font-display);
+      font-weight: 600;
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
+
+    th,
+    td {
+      padding: var(--space-3) var(--space-4);
+      text-align: left;
+      vertical-align: top;
+      border: 0;
+
+      &:first-child { padding-left: 0; }
+      &:last-child  { padding-right: 0; }
+    }
+
+    td { color: var(--text-secondary); }
+
+    // Leading column of a comparison table reads as a row label.
+    tbody th,
+    tbody td strong { color: var(--text-primary); }
+
+    p { max-width: none; margin: 0; }
+  }
+
+  // Narrow screens: let a wide table scroll on its own instead of
+  // forcing the page body sideways.
+  @media (max-width: 640px) {
+    table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  }
 }
 
 // TOC sidebar

@@ -53,20 +53,18 @@ Through interdisciplinary innovation, the XRAI Lab redefines how intelligent sys
 
 ## Recent Research
 
-{% assign _rr_sorted = site.data.web.research | sort: "end_date" | reverse %}
-{% assign _rr_found = 0 %}
-{% for _rr_item in _rr_sorted %}{% if _rr_found == 0 %}{% if _rr_item.links.video and _rr_item.links.video != "" %}{% if _rr_item.links.video contains "youtu" %}{% assign _rr_project = _rr_item %}{% assign _rr_found = 1 %}{% endif %}{% endif %}{% endif %}{% endfor %}
-{% if _rr_found == 1 %}
-{% if _rr_project.links.video contains "youtu.be/" %}{% assign _rr_vid = _rr_project.links.video | split: "youtu.be/" | last | split: "?" | first %}{% else %}{% assign _rr_vid = _rr_project.links.video | split: "v=" | last | split: "&" | first %}{% endif %}
+{% assign _rr_video = nil %}
+{% for v in site.data.videos %}{% if v.section == "research" and _rr_video == nil %}{% assign _rr_video = v %}{% endif %}{% endfor %}
+{% if _rr_video %}
 
 <div class="section-card rr-card" markdown="0">
 <div class="rr-header">
-<h3 class="rr-title">{{ _rr_project.title }}</h3>
+<h3 class="rr-title">{{ _rr_video.title }}</h3>
 </div>
 <div class="rr-video-wrap">
-<iframe src="https://www.youtube.com/embed/{{ _rr_vid }}" title="{{ _rr_project.title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe src="{{ _rr_video.embed_src }}" title="{{ _rr_video.title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-<p class="rr-abstract">{{ _rr_project.abstract | strip_newlines | strip }}</p>
+<p class="rr-abstract">{{ _rr_video.abstract | strip_newlines | strip }}</p>
 <div class="rr-actions">
 <a href="{{ site.url }}{{ site.baseurl }}/videos/" class="rr-more-btn">Watch More »</a>
 <a href="{{ site.url }}{{ site.baseurl }}/research/" class="rr-more-btn">Find More Projects »</a>

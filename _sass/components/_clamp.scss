@@ -1,0 +1,60 @@
+// =============================================================
+// Clamped descriptions — collapse long text to 3 lines + a toggle
+//
+// Markup contract (behavior lives in the clamp IIFE at the end of
+// assets/js/site.js):
+//   <div data-clamp>
+//     <p class="js-clamp-text" id="…">long text</p>
+//     <button class="js-clamp-toggle" aria-expanded="false" aria-controls="…" hidden>…</button>
+//   </div>
+//
+// The clamp is scoped to `.js` (set pre-paint in _includes/head.html) so a
+// visitor without JS gets the full text rather than a truncation they can
+// never open. The button stays hidden until site.js measures that the clamp
+// is actually cutting something off.
+// =============================================================
+
+[data-clamp] {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.js [data-clamp] .js-clamp-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+
+  &.is-expanded {
+    display: block;
+    -webkit-line-clamp: none;
+    line-clamp: none;
+    overflow: visible;
+  }
+}
+
+.js-clamp-toggle {
+  background: none;
+  border: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+
+  &:hover { color: var(--accent-hover); }
+
+  i {
+    font-size: 0.75em;
+    transition: transform var(--transition-base);
+  }
+
+  &[aria-expanded="true"] i { transform: rotate(180deg); }
+}

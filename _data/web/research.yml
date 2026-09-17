@@ -22,7 +22,11 @@
 #   links:
 #     paper     — filename in /papers/ (e.g. "yang2024can.pdf"), OR a full external URL
 #     webpage   — full external URL
-#     video     — full external URL (YouTube, etc.)
+#     video     — list of {url, date}, e.g.:
+#                   video:
+#                     - url: "https://youtu.be/xxxx"
+#                       date: "2026-09"   # YYYY-MM, own date (not tied to end_date), used to sort /videos/
+#                 A project can have multiple videos, each with its own date. Empty list [] if none.
 #     poster    — path relative to site root, must include "files/posters/" prefix, e.g. "files/posters/2026_myposter.pdf"
 #     slide     — path relative to site root, must include "files/slides/" prefix, e.g. "files/slides/2026_myslide.pdf"
 #     bib       — full external URL to BibTeX / citation page
@@ -49,7 +53,9 @@
   links:
     paper: ""
     webpage: ""
-    video: "https://youtu.be/PO4EoN_ix-Y"
+    video:
+      - url: "https://youtu.be/PO4EoN_ix-Y"
+        date: "2020-11"
     bib: ""
 
 
@@ -69,7 +75,9 @@
   links:
     paper: ""
     webpage: ""
-    video: "https://youtu.be/JPeubcl6sQs"
+    video:
+      - url: "https://youtu.be/JPeubcl6sQs"
+        date: "2021-10"
     bib: ""
 
 
@@ -85,7 +93,7 @@
   links:
     paper: ""
     webpage: ""
-    video: ""
+    video: []
     bib: ""
 
 
@@ -101,7 +109,7 @@
   links:
     paper: ""
     webpage: ""
-    video: ""
+    video: []
     bib: ""
 
 
@@ -117,7 +125,9 @@
   links:
     paper: ""
     webpage: ""
-    video: "https://youtu.be/NfVmJfu_26A"
+    video:
+      - url: "https://youtu.be/NfVmJfu_26A"
+        date: "2022-02"
     bib: ""
 
 - title: "Augmented reality assisted smart factory management system development"
@@ -134,7 +144,9 @@
   links:
     paper: ""
     webpage: ""
-    video: "https://youtu.be/p6v-WwOH-og"
+    video:
+      - url: "https://youtu.be/p6v-WwOH-og"
+        date: "2022-02"
     bib: ""
 
 - title: "A global calibration to solve the misregistration problems in VST AR system"
@@ -152,7 +164,7 @@
   links:
     paper: ""
     webpage: "https://asmedigitalcollection.asme.org/computingengineering/article/24/3/031003/1166670/A-Global-Correction-Framework-for-Camera"
-    video: ""
+    video: []
     bib: ""
 
 - title: "A Tele-robot System with Mixed-Reality Interaction"
@@ -170,7 +182,7 @@
   links:
     paper: ""
     webpage: ""
-    video: ""
+    video: []
     bib: ""
 
 
@@ -192,7 +204,9 @@
   links:
     paper: ""
     webpage: "https://github.com/VinkoYang/ObjectDetectionMetaQuest3S_Demo"
-    video: "https://youtu.be/P87vekD4n84"
+    video:
+      - url: "https://youtu.be/P87vekD4n84"
+        date: "2026-04"
     bib: ""
 
 
@@ -215,10 +229,38 @@
   links:
     paper: "yang2026seeing.pdf"
     webpage: ""
-    video: "https://youtu.be/njVBP0nEefs"
+    video:
+      - url: "https://youtu.be/njVBP0nEefs"
+        date: "2026-03"
     bib: "/publications/#yang2026seeing"
     poster: ""
     slide: "files/slides/idetc2026-mr-vhi-talk_20260824.pdf"
+
+- title: "Predictive and Safe Human-Aware Mobile Robot Navigation"
+  image: "research/2026_SafeNavigation.png"
+  focus: [3]
+  start_date: "2026-05"
+  end_date: "2026-12"
+  authors:
+    - name: "Justin Barrera"
+  mentors:
+    - name: "Baisravan HomChaudhuri"
+    - name: "Wenhao Yang"
+  keywords:
+    - Mobile Robot Navigation
+    - Human Motion Prediction
+    - Safe Autonomy
+    - Human-Robot Interaction
+    - Undergraduate Research
+  abstract: >
+    Supported by the Lamar University 2026 STEM Research Undergraduate Fellowship (SRUF) in the Department of Mechanical Engineering, this project develops navigation strategies that let a mobile robot move safely and efficiently through spaces shared with people. The work combines prediction of nearby human motion with safety-aware planning, so the robot anticipates where people are heading instead of reacting only to their current positions, and keeps a comfortable margin while still reaching its goal.
+  links:
+    paper: ""
+    webpage: ""
+    video: []
+    bib: ""
+    poster: ""
+    slide: ""
 
 - title: "MOTION: AI-Driven Biomechanical Motion Capture for Augmented Reality Rehabilitation"
   image: "research/2026-4_Motion.jpg"
@@ -239,7 +281,7 @@
   links:
     paper: ""
     webpage: ""
-    video: ""
+    video: []
     bib: ""
     poster: "files/posters/Motion_Spring_Conference_Poster.pdf"
 
@@ -264,7 +306,9 @@
   links:
     paper: "mubarik2026mrtraining.pdf"
     webpage: ""
-    video: ""
+    video:
+      - url: "https://youtu.be/PVQMivtSj3w"
+        date: "2026-04"
     bib: ""
     poster: ""
     slide: "files/slides/2026_mrtraining_slide.pdf"
@@ -288,7 +332,9 @@
   links:
     paper: ""
     webpage: ""
-    video: "https://www.linkedin.com/posts/john-gust-86b94280_hello-all-i-know-it-has-been-some-time-ugcPost-7447084083580522496-cDdI/?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAABE5glMBvocFmmUUFAEkMIdirSQbWkg136I"
+    video:
+      - url: "https://www.linkedin.com/posts/john-gust-86b94280_hello-all-i-know-it-has-been-some-time-ugcPost-7447084083580522496-cDdI/?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAABE5glMBvocFmmUUFAEkMIdirSQbWkg136I"
+        date: "2026-05"
     bib: ""
     poster: ""
     slide: "files/slides/2026_NewtonsCradle_slide.pdf"
@@ -315,7 +361,9 @@
   links:
     paper: ""
     webpage: "https://www.proquest.com/openview/3a91da983e9b038992ccc20282733db7/1?pq-origsite=gscholar&cbl=18750&diss=y"
-    video: "https://youtu.be/vNtLc10wYJM"
+    video:
+      - url: "https://youtu.be/vNtLc10wYJM"
+        date: "2026-05"
     bib: ""
     poster: ""
     slide: "files/slides/2026_llmavatar_slide.pdf"
@@ -344,7 +392,7 @@
   links:
     paper: ""
     webpage: "https://invasive-plant-identifier-xgcth8imhbdwbkcw6m3qcr.streamlit.app/"
-    video: ""
+    video: []
     bib: ""
     poster: "files/posters/2026_MechGenius_Poster.pdf"
     slide: "files/slides/2026_MechGenius_Slide.pdf"
@@ -379,7 +427,7 @@
   links:
     paper: "https://openaccess.thecvf.com/content/ICCV2025/papers/Wang_Exploring_the_Adversarial_Vulnerabilities_of_Vision-Language-Action_Models_in_Robotics_ICCV_2025_paper.pdf"
     webpage: "https://openaccess.thecvf.com/content/ICCV2025/html/Wang_Exploring_the_Adversarial_Vulnerabilities_of_Vision-Language-Action_Models_in_Robotics_ICCV_2025_paper.html"
-    video: ""
+    video: []
     bib: "/publications/#wang2025exploring"
     poster: ""
     slide: ""
@@ -418,5 +466,7 @@
   links:
     paper: ""
     webpage: ""
-    video: "https://youtu.be/YtjXZ8cdC8E"
+    video:
+      - url: "https://youtu.be/YtjXZ8cdC8E"
+        date: "2026-08"
     bib: ""

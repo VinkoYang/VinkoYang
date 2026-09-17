@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v2.4.3**（`source` 分支，已发布，2026-09-05）。
+**当前版本：v2.5.0**（`source` 分支，已发布，2026-09-17）。
 
 ## 两份日志，别混
 
@@ -38,13 +38,19 @@ git push origin source --tags
 
 ## [待发布]
 
-（空）
-
 ---
 
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [2.5.0] - 2026-09-17
+
+视频数据模型重做。原来 `/videos/` 按项目 `end_date` 排序、一个项目只能挂一条视频，两个假设都不成立（视频发布时间常和项目结束时间对不上，一个项目也可能出多条）。现在 `research.yml` 的 `links.video` 是列表 `[{url, date}]`、`teaching.yml` 的 project 视频与 `video_playlist` 各自带 `date`；新增 Jekyll generator `_plugins/videos.rb`，构建时把 research 与 teaching 的视频拍平成 `site.data.videos` 按各自日期全局倒序，YouTube / playlist ID 解析也从 Liquid 挪进 Ruby。`videos.md` 只负责按 `section` 过滤渲染，research 卡片的 Video 按钮支持多条（"Video 1" / "Video 2"），lab 页 "Recent Research" 改取最新一条研究视频。旧数据按原 `end_date` 回填 date，排序不变。同时补上 hurricane MR training 项目的演示视频。
+
+卡片长简介收进 3 行 + "Show more"。抽成通用组件 `_sass/components/_clamp.scss`（`[data-clamp]` / `.js-clamp-text` / `.js-clamp-toggle`）加 site.js 里一个 IIFE，Videos / Research / Projects 三个页面共用。按钮只在文字真被截断时出现——判断不能用 `scrollHeight > clientHeight`，`-webkit-line-clamp` 元素在 Chromium 里两者恒等，改成临时解除 clamp 量完整高度再还原；被筛选隐藏（高度 0）的卡片跳过不误判。clamp 规则挂在 `.js` 下（`head.html` pre-paint 脚本加该 class），无 JS 时显示完整全文而不是展不开的截断。另修 `footer.html`：`site.min.js` 一直没有 `?v=` 缓存参数（`main.css` 早有），导致改了 JS 回访用户仍跑旧脚本。
+
+内容与排版：新增研究项目 "Predictive and Safe Human-Aware Mobile Robot Navigation"（Lamar 2026 SRUF 本科生 fellowship，Justin Barrera 主导，mentors HomChaudhuri / Yang），people.yml 相应新增该 collaborator 与 student；新增博客「Presentation Strategy by Venue」并把 presentation 系列三篇互相内链；博客里的 markdown 表格补上三线表（booktabs）样式，窄屏改为表格自身横向滚动。
 
 ### [2.4.3] - 2026-09-05
 
