@@ -38,6 +38,8 @@ git push origin source --tags
 
 ## [待发布]
 
+- 新增博文 `_posts/2026-09-17-unity-xr-learning-path.md`（"A Learning Path for Unity and XR Development"）：整合 Unity / VR / AR / 建模资源为分阶段学习路径，补齐 AR Foundation、XR Interaction Toolkit、OpenXR、性能优化、素材授权、无障碍等原始清单缺失的环节；内链到已有的 Unity 版本控制、XR 关键词、目标期刊三篇。分类 `Teaching & Learning`。
+
 ---
 
 ## 历史版本
