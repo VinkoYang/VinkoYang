@@ -8,6 +8,11 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "2.5.1"
+  date: 2026-09-17
+  changes:
+    - "New blog post: A Learning Path for Unity and XR Development — a staged, curated route through Unity, VR and AR development, 3D assets, XR interaction design, and headset performance, with an eight-week ramp for students starting from zero."
+
 - version: "2.5.0"
   date: 2026-09-17
   changes:

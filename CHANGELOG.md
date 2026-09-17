@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v2.5.0**（`source` 分支，已发布，2026-09-17）。
+**当前版本：v2.5.1**（`source` 分支，已发布，2026-09-17）。
 
 ## 两份日志，别混
 
@@ -43,6 +43,12 @@ git push origin source --tags
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [2.5.1] - 2026-09-17
+
+新增博文《A Learning Path for Unity and XR Development》(`_posts/2026-09-17-unity-xr-learning-path.md`，分类 `Teaching & Learning`)：把零散的 Unity / VR / AR / 建模资源整合成分阶段学习路径。相对原始清单补齐几处关键缺口 —— Unity 下做 AR 的入口是 AR Foundation 而非直接写 ARCore / ARKit，VR 侧是 XR Interaction Toolkit + OpenXR 而非厂商 SDK；另加 Unity 基础与 C#、独立头显性能优化（on-device profiling、foveated rendering）、素材授权记录习惯、XR 无障碍，以及八周上手计划表。内链到已有的 Unity 版本控制、XR 关键词、目标期刊三篇。`forum.unity.com` 更新为 `discussions.unity.com`。
+
+`docs/2026-09-17-research-project-pages-design.md`：per-project research writeup 页面的设计文档，仅内部记录，站点无改动。
 
 ### [2.5.0] - 2026-09-17
 
