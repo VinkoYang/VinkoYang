@@ -12,7 +12,7 @@ permalink: /videos/
 {% if v.section == "research" %}
 <div class="video-card-v">
 <h3 class="video-card-v-title">{{ v.title }}</h3>
-<div class="video-card-v-embed">
+<div class="embed-16x9">
 <iframe src="{{ v.embed_src }}" title="{{ v.title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 {% if v.keywords %}<div class="video-card-v-keywords">{% for kw in v.keywords %}<span class="research-kw">{{ kw }}</span>{% endfor %}</div>{% endif %}
@@ -32,7 +32,7 @@ permalink: /videos/
 {% if v.section == "teaching" %}
 <div class="video-card-v">
 <h3 class="video-card-v-title">{{ v.title }}</h3>
-<div class="video-card-v-embed">
+<div class="embed-16x9">
 <iframe src="{{ v.embed_src }}" title="{{ v.title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 <p class="video-card-v-abstract">{{ v.course_label }}</p>

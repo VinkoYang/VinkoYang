@@ -39,6 +39,7 @@ git push origin source --tags
 ## [待发布]
 
 - `_includes/research_people.html`、`_includes/research_links.html`：把 research 卡片里那段「作者名 → people.yml 链接」的长表达式和 links 按钮行抽成 include，`_pages/research.md` 改为引用。纯提取，`/research/` 产出逐字节不变；目的是即将新增的项目详情页 layout 能复用同一套逻辑，不留两份要同步的副本。
+- `_sass/components/_embed.scss`：新增 `.embed-16x9` 通用 16:9 内嵌播放器容器，原来这段比例规则嵌在 `_videos.scss` 的 `.video-card-v` 里没法复用；`_pages/videos.md` 改用新 class。为项目详情页复用同一套播放器样式做准备。
 
 ---
 
