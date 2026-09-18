@@ -38,6 +38,8 @@ git push origin source --tags
 
 ## [待发布]
 
+- `_includes/research_people.html`、`_includes/research_links.html`：把 research 卡片里那段「作者名 → people.yml 链接」的长表达式和 links 按钮行抽成 include，`_pages/research.md` 改为引用。纯提取，`/research/` 产出逐字节不变；目的是即将新增的项目详情页 layout 能复用同一套逻辑，不留两份要同步的副本。
+
 ---
 
 ## 历史版本
