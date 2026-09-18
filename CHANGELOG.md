@@ -42,6 +42,7 @@ git push origin source --tags
 - `_sass/components/_embed.scss`：新增 `.embed-16x9` 通用 16:9 内嵌播放器容器，原来这段比例规则嵌在 `_videos.scss` 的 `.video-card-v` 里没法复用；`_pages/videos.md` 改用新 class。为项目详情页复用同一套播放器样式做准备。
 - 新增 `_layouts/research_post.html`：research 项目的长文写作页。文章 front matter 只写 `project_id`（research.yml 标题的 slug），作者 / mentors / 起止时间 / 关键词 / paper·slide·video 按钮全部由 layout 反查 research.yml 渲染，视频取 `site.data.videos`，正文只写内容，元数据不会两边打架。`_plugins/videos.rb` 每条 research 视频补 `project_id`（用 `Jekyll::Utils.slugify`，与 Liquid 的 slugify 同源）。首个占位文章（hurricane MR training）已建，`published: false`。
 - `_pages/research.md`：卡片标题在存在对应已发布文章时变成链接（按 `project_id` 反查 `site.posts`，未发布的占位文章不在 `site.posts` 里，所以标题保持纯文本）；`_pages/blogs.md` 新增 "Research Projects" 分类 chip，沿用现成的 `data-category` 筛选逻辑。
+- `_posts/` 新增 17 篇 research 项目写作占位文章（全部 `published: false`），front matter 由 research.yml 生成：标题、日期取项目 `end_date`（无则 `start_date`）、`project_id`、keywords 转成 tags，正文是一份骨架（问题 / 做法 / 结果 / 配图 / 下一步）。占位文章不构建，站上无任何痕迹；逐篇写完并审核后把 `published` 改成 `true`，research 卡片标题即自动变成链接。
 
 ---
 
