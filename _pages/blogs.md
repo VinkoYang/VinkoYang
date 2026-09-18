@@ -10,6 +10,7 @@ permalink: /blogs/
 {% if site.posts.size > 0 %}
 <div class="chip-container" id="blogFilter" markdown="0">
   <a href="#" class="chip" data-filter="all">All</a>
+  <a href="#" class="chip chip-muted" data-filter="Research Projects">Research Projects</a>
   <a href="#" class="chip chip-muted" data-filter="Teaching & Learning">Teaching & Learning</a>
   <a href="#" class="chip chip-muted" data-filter="Research & Scholarship">Research & Scholarship</a>
   <a href="#" class="chip chip-muted" data-filter="Industry Insights">Industry Insights</a>

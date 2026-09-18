@@ -80,7 +80,8 @@ permalink: /research/
 {% endif %}
 </div>
 <div class="research-card-h-body">
-<h3 class="research-card-h-title">{{ item.title }}</h3>
+{% assign project_post = site.posts | where: "project_id", card_id | first %}
+<h3 class="research-card-h-title">{% if project_post %}<a href="{{ site.url }}{{ site.baseurl }}{{ project_post.url }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</h3>
 {% if item.authors or item.mentors or item.start_date %}
 <div class="research-meta">
 {% include research_people.html people=item.authors icon="fa-solid fa-user" %}
