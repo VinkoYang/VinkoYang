@@ -1,7 +1,7 @@
 ---
 layout: research_post
 title: "Predictive and Safe Human-Aware Mobile Robot Navigation"
-date: 2026-12-01
+date: 2026-09-18
 categories: ["Research Projects"]
 tags: ["mobile-robot-navigation", "human-motion-prediction", "safe-autonomy", "human-robot-interaction", "undergraduate-research"]
 project_id: predictive-and-safe-human-aware-mobile-robot-navigation

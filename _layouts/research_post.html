@@ -29,6 +29,10 @@ renders its title and body.
 
     <h1 itemprop="headline">{{ page.title | escape }}</h1>
 
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+    </p>
+
     {% if project %}
     <div class="research-meta">{% include research_people.html people=project.authors icon="fa-solid fa-user" %}{% include research_people.html people=project.mentors icon="fa-solid fa-graduation-cap" %}{% if project.start_date %}<span><i class="fa-regular fa-calendar"></i> {{ project.start_date }}{% if project.end_date %} &ndash; {{ project.end_date }}{% else %} &ndash; Present{% endif %}</span>{% endif %}</div>
 

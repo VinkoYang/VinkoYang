@@ -7,10 +7,13 @@ permalink: /blogs/
 
 ## Blog
 
+{% assign research_project_posts = site.posts | where_exp: "p", "p.categories contains 'Research Projects'" %}
 {% if site.posts.size > 0 %}
 <div class="chip-container" id="blogFilter" markdown="0">
   <a href="#" class="chip" data-filter="all">All</a>
+  {% if research_project_posts.size > 0 %}
   <a href="#" class="chip chip-muted" data-filter="Research Projects">Research Projects</a>
+  {% endif %}
   <a href="#" class="chip chip-muted" data-filter="Teaching & Learning">Teaching & Learning</a>
   <a href="#" class="chip chip-muted" data-filter="Research & Scholarship">Research & Scholarship</a>
   <a href="#" class="chip chip-muted" data-filter="Industry Insights">Industry Insights</a>
