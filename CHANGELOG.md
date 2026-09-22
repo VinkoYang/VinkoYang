@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v2.5.1**（`source` 分支，已发布，2026-09-17）。
+**当前版本：v2.5.2**（`source` 分支，已发布，2026-09-22）。
 
 ## 两份日志，别混
 
@@ -38,24 +38,19 @@ git push origin source --tags
 
 ## [待发布]
 
-- `_includes/research_people.html`、`_includes/research_links.html`：把 research 卡片里那段「作者名 → people.yml 链接」的长表达式和 links 按钮行抽成 include，`_pages/research.md` 改为引用。纯提取，`/research/` 产出逐字节不变；目的是即将新增的项目详情页 layout 能复用同一套逻辑，不留两份要同步的副本。
-- `_sass/components/_embed.scss`：新增 `.embed-16x9` 通用 16:9 内嵌播放器容器，原来这段比例规则嵌在 `_videos.scss` 的 `.video-card-v` 里没法复用；`_pages/videos.md` 改用新 class。为项目详情页复用同一套播放器样式做准备。
-- 新增 `_layouts/research_post.html`：research 项目的长文写作页。文章 front matter 只写 `project_id`（research.yml 标题的 slug），作者 / mentors / 起止时间 / 关键词 / paper·slide·video 按钮全部由 layout 反查 research.yml 渲染，视频取 `site.data.videos`，正文只写内容，元数据不会两边打架。`_plugins/videos.rb` 每条 research 视频补 `project_id`（用 `Jekyll::Utils.slugify`，与 Liquid 的 slugify 同源）。首个占位文章（hurricane MR training）已建，`published: false`。
-- `_pages/research.md`：卡片标题在存在对应已发布文章时变成链接（按 `project_id` 反查 `site.posts`，未发布的占位文章不在 `site.posts` 里，所以标题保持纯文本）；`_pages/blogs.md` 新增 "Research Projects" 分类 chip，沿用现成的 `data-category` 筛选逻辑。
-- `_posts/` 新增 17 篇 research 项目写作占位文章（全部 `published: false`），front matter 由 research.yml 生成：标题、日期取项目 `end_date`（无则 `start_date`）、`project_id`、keywords 转成 tags，正文是一份骨架（问题 / 做法 / 结果 / 配图 / 下一步）。占位文章不构建，站上无任何痕迹；逐篇写完并审核后把 `published` 改成 `true`，research 卡片标题即自动变成链接。
-- 整期 review 修复五处问题：① `predictive-and-safe-human-aware-mobile-robot-navigation` 占位文章的日期是从 `end_date: "2026-12"` 直接抄的，落在未来——`_config.yml` 没开 `future: true`，Jekyll 会悄悄跳过这篇文章，哪怕 `published: true` 构建也不报错、页面永远出不来；`date` 改为代表"写作发布时间"而非"项目结束时间"，文件改名到 `2026-09-18`（今天）。② `_sass/layouts/_research.scss` 里 `.research-meta`、`.research-card-h-keywords`、`.research-card-h-links` 三条规则原来嵌在 `.research-card-h { }` 里，只有卡片能用到；写作页复用同一批 class 时布局全丢。规则原样提到顶层，卡片页编译结果逐字节不变（仅 `?v=` 缓存戳变化），写作页现在能拿到该有的 flex/gap。③ 新增 `_plugins/research_post_check.rb`：对每篇 `layout: research_post` 且已发布的文章，用 `Jekyll::Utils.slugify` 核对其 `project_id` 是否命中 research.yml 里某条标题，不命中直接抛错并报出文件名和 `project_id`——research.yml 标题改名或 `project_id` 手滑打错字时，以前是元数据静默消失、构建照样绿，现在构建直接红。未发布占位文章不进 `site.posts`，不受影响。④ `_pages/blogs.md` 的 "Research Projects" chip 原来写死渲染，眼下全部文章未发布，点了是空列表；改成先用 `where_exp` 算一次已发布的 Research Projects 文章数，chip 只在数量大于零时渲染。⑤ `_layouts/research_post.html` 的 `<article>` 标了 `schema.org/ScholarlyArticle` 却不出日期，`_layouts/post.html`、`_layouts/lab_news.html` 都有 `<time itemprop="datePublished">`；照 `lab_news.html` 的写法在 `<h1>` 正下方补上同样的 `post-meta` 日期块。
-- `_data/web/people.yml`：students 段新增三名成员——Amrit Silwal（M.S. Mechanical Engineering，`master_advisor`）、Ayden J Hicks（Undergraduate Research Assistant，`undergraduate_advisor`，专业未定所以不写 `degree`，about.md 的渲染对缺 `degree` 是兼容的）、Paniz Bioucki（DE Student，`doctoral_advisor`）。三人照片均已放进 `images/team/`，`show_team: true` 全部进卡片网格；Amrit 和 Ayden 带 LinkedIn `website`，`year_start` 均为 2026。
-- `_pages/team.md`：`lamar_id` 那行渲染注释掉，学号暂不公开。数据仍留在 `people.yml`（内部记录），`people.yml` 的字段说明同步改成「目前不渲染」。这是站上唯一一处引用 `lamar_id` 的地方。
-- `_data/profile/student_guidance.yml`：新增博士委员会成员 Arif Ibrahim Uyanik（Doctor of Engineering in Industrial and Systems Engineering，Lamar University，2024 – now，advisor: Berna E. Tokgoz）。委员会成员按现有惯例只进这个 CV 专用文件，不进 `people.yml`，所以只出现在 CV 的 Student Guidance / Doctoral Dissertation Committee 小节，不上 about.md。`email` / `advisor` / `qualifying_exam` / `qualifying_exam_passed` 四个字段 `build-cv.js` 的 `guidanceLine()` 不渲染，纯数据留档。
-- `images/team/ayden.jpg` 换成 `images/team/ayden.png`（Ayden J Hicks 本人提供的新头像），`_data/web/people.yml` 的 `photo` 同步改扩展名。原文件按 `images/team/` 里 `firstname.ext` 的现有命名惯例重命名（原名 `Ayden-Hicks.png`）。
-- `_pages/team.md`：Current Students 从一个大网格拆成按学位层级分组——Doctoral Students / Master's Students / Undergraduate Researchers / High School Researchers，每组一个 `.team-grid`，组名用新的 `.team-group-title`。分组依据是 people.yml 里已有的 `mentoring_role`，和 about.md「Students and Mentoring」用的是同一套 category 列表，所以一个成员改一次角色两处同时归位，不会出现两边分类打架。没有 `mentoring_role` 的条目（目前只有 "This could be you!" 占位卡）落进最后一个无标题网格 `.team-grid-ungrouped`，不会凭空消失。卡片 markup 抽成 `_includes/team_card.html`，否则四个分组要抄四份。`_sass/layouts/_team.scss` 新增 `.team-group-title`（沿用 alumni 表头那套全大写 + 字距 + muted 的微标题语气，避免和页面 h2 抢层级）和 `.team-grid-ungrouped` 的上边距。
-
+（无）
 
 ---
 
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [2.5.2] - 2026-09-22
+
+**Research 项目写作页的地基（本次发布对访客还不可见）。** 新增 `_layouts/research_post.html`：每个 research 项目一篇长文，front matter 只写 `project_id`（research.yml 标题的 slug），作者 / mentors / 起止时间 / 关键词 / paper·slide·video 按钮全部由 layout 反查 research.yml 渲染，视频取 `site.data.videos`（`_plugins/videos.rb` 给每条 research 视频补 `project_id`，用 `Jekyll::Utils.slugify` 与 Liquid 同源），正文只写内容，元数据不会两边打架。配套把 `_pages/research.md` 里的作者链接和 links 按钮抽成 `_includes/research_people.html`、`_includes/research_links.html`，16:9 播放器容器从 `_videos.scss` 提成通用 `.embed-16x9`，`.research-meta` 等三条规则从 `.research-card-h` 里提到顶层——都是为了写作页和卡片页共用一套实现，不留要同步的副本。`_posts/` 下 17 篇项目写作占位文章全部 `published: false`，逐篇写完审核后改 `true`，research 卡片标题即自动变成链接；`_pages/blogs.md` 的 "Research Projects" chip 只在已发布数量大于零时渲染。新增 `_plugins/research_post_check.rb`，已发布的写作页若 `project_id` 对不上 research.yml 任何标题就直接构建失败——以前是元数据静默消失、构建照样绿。
+
+**团队名单。** `_data/web/people.yml` 新增三名学生：Amrit Silwal（`master_advisor`）、Ayden J Hicks（`undergraduate_advisor`，专业未定故不写 `degree`）、Paniz Bioucki（`doctoral_advisor`）。`_pages/team.md` 的 Current Students 从一个大网格拆成按学位层级分组，分组依据就是上面这个 `mentoring_role`，和 about.md「Students and Mentoring」共用同一套 category 列表，一处改角色两处同时归位；无 `mentoring_role` 的条目落进末尾的无标题网格，不会消失。卡片 markup 抽成 `_includes/team_card.html`，组名样式 `.team-group-title` 沿用 alumni 表头那套全大写微标题语气。学号那行渲染注释掉（数据仍留在 `people.yml` 作内部记录）。`_data/profile/student_guidance.yml` 新增博士委员会成员 Arif Ibrahim Uyanik——委员会成员按惯例只进这个 CV 专用文件，所以只出现在 CV 的 Student Guidance 小节。
 
 ### [2.5.1] - 2026-09-17
 

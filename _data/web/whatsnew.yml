@@ -8,6 +8,12 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "2.5.2"
+  date: 2026-09-22
+  changes:
+    - "Three new members on the Team and About pages: Amrit Silwal (M.S. Mechanical Engineering), Ayden J Hicks (Undergraduate Research Assistant) and Paniz Bioucki (Doctoral of Industrial Engineering)."
+    - "Current Students on the Team page is now grouped by degree level — Doctoral, Master's and Undergraduate — instead of one undivided grid."
+
 - version: "2.5.1"
   date: 2026-09-17
   changes:
