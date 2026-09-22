@@ -64,6 +64,33 @@
   }
 }
 
+// Degree-level label above each Current Students grid. Borrows the alumni
+// table's micro-header voice (uppercase, tracked, muted) so it reads as a
+// column label rather than a second page heading competing with h2.
+.team-group-title {
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: var(--space-8) 0 var(--space-4);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--border-color);
+
+  &::after { display: none; }
+
+  &:first-of-type {
+    margin-top: var(--space-4);
+  }
+}
+
+// Placeholder / unclassified cards trail the labelled groups with the same
+// rhythm, minus a heading of their own.
+.team-grid-ungrouped {
+  margin-top: var(--space-8);
+}
+
 // PI card — horizontal, prominent
 .pi-card {
   display: grid;

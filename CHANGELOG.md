@@ -48,6 +48,8 @@ git push origin source --tags
 - `_pages/team.md`：`lamar_id` 那行渲染注释掉，学号暂不公开。数据仍留在 `people.yml`（内部记录），`people.yml` 的字段说明同步改成「目前不渲染」。这是站上唯一一处引用 `lamar_id` 的地方。
 - `_data/profile/student_guidance.yml`：新增博士委员会成员 Arif Ibrahim Uyanik（Doctor of Engineering in Industrial and Systems Engineering，Lamar University，2024 – now，advisor: Berna E. Tokgoz）。委员会成员按现有惯例只进这个 CV 专用文件，不进 `people.yml`，所以只出现在 CV 的 Student Guidance / Doctoral Dissertation Committee 小节，不上 about.md。`email` / `advisor` / `qualifying_exam` / `qualifying_exam_passed` 四个字段 `build-cv.js` 的 `guidanceLine()` 不渲染，纯数据留档。
 - `images/team/ayden.jpg` 换成 `images/team/ayden.png`（Ayden J Hicks 本人提供的新头像），`_data/web/people.yml` 的 `photo` 同步改扩展名。原文件按 `images/team/` 里 `firstname.ext` 的现有命名惯例重命名（原名 `Ayden-Hicks.png`）。
+- `_pages/team.md`：Current Students 从一个大网格拆成按学位层级分组——Doctoral Students / Master's Students / Undergraduate Researchers / High School Researchers，每组一个 `.team-grid`，组名用新的 `.team-group-title`。分组依据是 people.yml 里已有的 `mentoring_role`，和 about.md「Students and Mentoring」用的是同一套 category 列表，所以一个成员改一次角色两处同时归位，不会出现两边分类打架。没有 `mentoring_role` 的条目（目前只有 "This could be you!" 占位卡）落进最后一个无标题网格 `.team-grid-ungrouped`，不会凭空消失。卡片 markup 抽成 `_includes/team_card.html`，否则四个分组要抄四份。`_sass/layouts/_team.scss` 新增 `.team-group-title`（沿用 alumni 表头那套全大写 + 字距 + muted 的微标题语气，避免和页面 h2 抢层级）和 `.team-grid-ungrouped` 的上边距。
+
 
 ---
 

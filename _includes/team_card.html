@@ -1,0 +1,20 @@
+{% comment %}
+One card in the Current Students grid. Extracted from _pages/team.md when the
+grid was split into per-degree groups, so the card markup lives in one place
+instead of once per group.
+
+Parameter: member – an entry from _data/web/people.yml `students`.
+{% endcomment %}
+<div class="team-card">
+<img src="{{ site.url }}{{ site.baseurl }}/images/{{ include.member.photo }}" class="team-photo" alt="{{ include.member.name }}" loading="lazy">
+<h4 class="team-name">{{ include.member.name }}</h4>
+<p class="team-info">{{ include.member.info }}</p>
+{% comment %} lamar_id 暂不公开显示；数据仍保留在 people.yml 里，要恢复就取消下面这行的注释。 {% endcomment %}
+{%- comment -%}<p class="team-info">{{ include.member.lamar_id }}</p>{%- endcomment -%}
+<div class="team-links">
+{% if include.member.email %}<a href="mailto:{{ include.member.email }}" class="icon-link" title="Email"><i class="fa-solid fa-envelope"></i></a>{% endif %}
+{% if include.member.website %}<a href="{{ include.member.website }}" class="icon-link" title="Website"><i class="fa-solid fa-house"></i></a>{% endif %}
+{% if include.member.scholar %}<a href="{{ include.member.scholar }}" class="icon-link" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>{% endif %}
+{% if include.member.github %}<a href="{{ include.member.github }}" class="icon-link" title="GitHub"><i class="fa-brands fa-github"></i></a>{% endif %}
+</div>
+</div>

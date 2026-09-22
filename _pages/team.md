@@ -39,23 +39,38 @@ permalink: /team/
 {% if visible_students.size > 0 %}
 ## Current Students
 
+{% comment %}
+Same category/label vocabulary as about.md's "Students and Mentoring" list, so a
+member's mentoring_role decides both places at once. Anyone without a
+mentoring_role (e.g. the "This could be you!" placeholder) falls through to the
+unlabelled grid rendered last.
+{% endcomment %}
+{% assign student_groups = "doctoral_advisor,master_advisor,undergraduate_advisor,high_school_advisor" | split: "," %}
+{% assign student_group_labels = "Doctoral Students,Master's Students,Undergraduate Researchers,High School Researchers" | split: "," %}
+{% assign grouped_count = 0 %}
+{% for group in student_groups %}
+{% assign group_students = visible_students | where: "mentoring_role", group %}
+{% if group_students.size > 0 %}
+{% assign grouped_count = grouped_count | plus: group_students.size %}
+<h3 class="team-group-title">{{ student_group_labels[forloop.index0] }}</h3>
+
 <div class="team-grid">
-{% for member in visible_students %}
-<div class="team-card">
-<img src="{{ site.url }}{{ site.baseurl }}/images/{{ member.photo }}" class="team-photo" alt="{{ member.name }}" loading="lazy">
-<h4 class="team-name">{{ member.name }}</h4>
-<p class="team-info">{{ member.info }}</p>
-{% comment %} lamar_id 暂不公开显示；数据仍保留在 people.yml 里，要恢复就取消下面这行的注释。 {% endcomment %}
-{%- comment -%}<p class="team-info">{{ member.lamar_id }}</p>{%- endcomment -%}
-<div class="team-links">
-{% if member.email %}<a href="mailto:{{ member.email }}" class="icon-link" title="Email"><i class="fa-solid fa-envelope"></i></a>{% endif %}
-{% if member.website %}<a href="{{ member.website }}" class="icon-link" title="Website"><i class="fa-solid fa-house"></i></a>{% endif %}
-{% if member.scholar %}<a href="{{ member.scholar }}" class="icon-link" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>{% endif %}
-{% if member.github %}<a href="{{ member.github }}" class="icon-link" title="GitHub"><i class="fa-brands fa-github"></i></a>{% endif %}
-</div>
-</div>
+{% for member in group_students %}
+{% include team_card.html member=member %}
 {% endfor %}
 </div>
+{% endif %}
+{% endfor %}
+
+{% if grouped_count < visible_students.size %}
+<div class="team-grid team-grid-ungrouped">
+{% for member in visible_students %}
+{% unless student_groups contains member.mentoring_role %}
+{% include team_card.html member=member %}
+{% endunless %}
+{% endfor %}
+</div>
+{% endif %}
 {% endif %}
 
 {% if site.data.web.people.alumni.size > 0 %}
