@@ -47,6 +47,7 @@ git push origin source --tags
 - `_data/web/people.yml`：students 段新增三名成员——Amrit Silwal（M.S. Mechanical Engineering，`master_advisor`）、Ayden J Hicks（Undergraduate Research Assistant，`undergraduate_advisor`，专业未定所以不写 `degree`，about.md 的渲染对缺 `degree` 是兼容的）、Paniz Bioucki（DE Student，`doctoral_advisor`）。三人照片均已放进 `images/team/`，`show_team: true` 全部进卡片网格；Amrit 和 Ayden 带 LinkedIn `website`，`year_start` 均为 2026。
 - `_pages/team.md`：`lamar_id` 那行渲染注释掉，学号暂不公开。数据仍留在 `people.yml`（内部记录），`people.yml` 的字段说明同步改成「目前不渲染」。这是站上唯一一处引用 `lamar_id` 的地方。
 - `_data/profile/student_guidance.yml`：新增博士委员会成员 Arif Ibrahim Uyanik（Doctor of Engineering in Industrial and Systems Engineering，Lamar University，2024 – now，advisor: Berna E. Tokgoz）。委员会成员按现有惯例只进这个 CV 专用文件，不进 `people.yml`，所以只出现在 CV 的 Student Guidance / Doctoral Dissertation Committee 小节，不上 about.md。`email` / `advisor` / `qualifying_exam` / `qualifying_exam_passed` 四个字段 `build-cv.js` 的 `guidanceLine()` 不渲染，纯数据留档。
+- `images/team/ayden.jpg` 换成 `images/team/ayden.png`（Ayden J Hicks 本人提供的新头像），`_data/web/people.yml` 的 `photo` 同步改扩展名。原文件按 `images/team/` 里 `firstname.ext` 的现有命名惯例重命名（原名 `Ayden-Hicks.png`）。
 
 ---
 
