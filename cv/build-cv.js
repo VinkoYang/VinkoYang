@@ -319,8 +319,20 @@ parts.push(
   section('Patents and Publications', `<ol class="cv-numbered">${publications.map(formatPublication).join('')}</ol>`)
 );
 
+// Grant entries are pre-formatted author strings ("Yang, W., Li, Y., ..."),
+// not bib records, so formatAuthors() does not reach them. Bold the CV owner's
+// own "Last, F." form so grants read like the publication list, where the owner
+// is already picked out of the author run.
+const ownerCitationName = (() => {
+  const words = config.name.trim().split(/\s+/);
+  return words.length < 2 ? '' : `${words[words.length - 1]}, ${words[0][0]}.`;
+})();
+
+const boldOwner = (text) =>
+  ownerCitationName ? text.split(ownerCitationName).join(`<strong>${ownerCitationName}</strong>`) : text;
+
 parts.push(
-  section('Grants', `<ol class="cv-numbered">${(grants || []).map((g) => `<li>${html(g.name)}</li>`).join('')}</ol>`)
+  section('Grants', `<ol class="cv-numbered">${(grants || []).map((g) => `<li>${boldOwner(html(g.name))}</li>`).join('')}</ol>`)
 );
 
 const serviceGroups = (groups) =>

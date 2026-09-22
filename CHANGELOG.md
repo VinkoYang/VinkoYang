@@ -38,7 +38,11 @@ git push origin source --tags
 
 ## [待发布]
 
-（无）
+- `cv/style.css`：`.cv-numbered` 的 `padding-left` 从 16px 加到 24px。`<ol>` 的序号是排在这条 padding 槽里、右对齐到槽内边缘的，槽宽不够时序号往左溢出——Patents and Publications 到第 10 条时两位数的 "10." 在 9.6pt 下正好比 16px 宽，PDF 里被页边距裁掉半个字。24px 在正文字号下能放下三位数。同时给 `::marker` 加 `font-variant-numeric: tabular-nums`，一位数和两位数的句点落在同一条竖线上。
+- `_data/profile/experience.yml`：Assistant Professor 条目下，实验室名字从 `XR<sup>2</sup> (Extended Reality × Robotics) Lab` 改为 `XRAI (Extended Reality, Artificial Intelligence, and Robotics) Lab`，与 lab.md、home.md 现用的名称一致；Teaching 那行补上 Advanced Robotics (INEN-6301) 和 Simulation of Industrial Systems (INEN-4375)，锚点按 teaching.yml 的 `code` 生成规则写成 `#inen-6301`、`#inen-4375`。这个文件同时驱动 About 页和 CV，两处一起更新。
+- `cv/build-cv.js`：Grants 列表里把 CV 主人自己的名字加粗。grants.yml 存的是已经排好的作者串（`Yang, W., Li, Y., ...`），不是 bib 记录，`formatAuthors()` 够不着；新增 `boldOwner()`，从 `config.name` 推出 `姓, 名首字母.` 的引用式写法再整串替换，和 Publications 里把本人从作者串中挑出来的做法一致。只作用于 CV，About 页的 grants 不受影响。
+- `_data/profile/committee_memberships.yml`：ASME CIE VES 的 Secretary 任期收尾，改成 `2025 – 2026`；上面新增 `Vice Chair`，`2026 – Present`。列表按时间倒序排，新职位排在最前。
+
 
 ---
 
