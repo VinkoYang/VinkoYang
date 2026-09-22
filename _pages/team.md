@@ -45,7 +45,8 @@ permalink: /team/
 <img src="{{ site.url }}{{ site.baseurl }}/images/{{ member.photo }}" class="team-photo" alt="{{ member.name }}" loading="lazy">
 <h4 class="team-name">{{ member.name }}</h4>
 <p class="team-info">{{ member.info }}</p>
-{% if member.lamar_id and member.lamar_id != "" %}<p class="team-info">{{ member.lamar_id }}</p>{% endif %}
+{% comment %} lamar_id 暂不公开显示；数据仍保留在 people.yml 里，要恢复就取消下面这行的注释。 {% endcomment %}
+{%- comment -%}<p class="team-info">{{ member.lamar_id }}</p>{%- endcomment -%}
 <div class="team-links">
 {% if member.email %}<a href="mailto:{{ member.email }}" class="icon-link" title="Email"><i class="fa-solid fa-envelope"></i></a>{% endif %}
 {% if member.website %}<a href="{{ member.website }}" class="icon-link" title="Website"><i class="fa-solid fa-house"></i></a>{% endif %}

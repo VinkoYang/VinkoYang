@@ -133,7 +133,8 @@ collaborators:
 #   info     – short role label shown on the card, e.g. "Ph.D. Student",
 #              "M.S. Student", "DE Student", "Undergraduate Research Assistant",
 #              "High School Research Intern"
-#   lamar_id – Lamar University student ID, shown on the card below info (e.g. L20701411)
+#   lamar_id – Lamar University student ID (e.g. L20701411). 目前不在网站上渲染
+#              （team.md 里那行已注释掉），只作内部记录保留。
 #   email, website, scholar, github
 # Mentoring list fields (about.md):
 #   location – institution
@@ -205,6 +206,46 @@ students:
     show_about: false
     website: "https://www.linkedin.com/in/john-gust-86b94280/"
     info: Student
+
+  - name: Amrit Silwal
+    show_team: true
+    show_about: true
+    mentoring_role: master_advisor
+    photo: team/amrit.jpg
+    info: M.S. Student
+    lamar_id: L20661227
+    email: asilwal2@lamar.edu
+    location: Lamar University
+    degree: M.S. Mechanical Engineering
+    year_start: 2026
+    year_end: now
+    website: "https://www.linkedin.com/in/amrit-silwal-5a7368439/"
+
+  - name: Ayden J Hicks
+    show_team: true
+    show_about: true
+    mentoring_role: undergraduate_advisor
+    photo: team/ayden.jpg
+    info: Undergraduate Research Assistant
+    lamar_id: L20645136
+    email: ahicks25@lamar.edu
+    location: Lamar University
+    year_start: 2026
+    year_end: now
+    website: "https://www.linkedin.com/in/ayden-hicks/"
+
+  - name: Paniz Bioucki
+    show_team: true
+    show_about: true
+    mentoring_role: doctoral_advisor
+    photo: team/paniz.jpg
+    info: DE Student
+    lamar_id: L20616039
+    email: pbioucki@lamar.edu
+    location: Lamar University
+    degree: Doctoral of Industrial Engineering
+    year_start: 2026
+    year_end: now
 
   - name: "This could be you!"
     show_team: true
