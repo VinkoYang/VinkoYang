@@ -36,6 +36,7 @@ module Jekyll
           entries << {
             'section'  => 'research',
             'title'    => project['title'],
+            'project_id' => Jekyll::Utils.slugify(project['title']),
             'date'     => v['date'].to_s,
             'embed_src' => "https://www.youtube.com/embed/#{vid}",
             'abstract' => project['abstract'],

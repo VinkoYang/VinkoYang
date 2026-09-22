@@ -1,0 +1,10 @@
+{%- comment -%}
+Renders a list of people as comma-separated linked names.
+Params:
+  include.people — list of {name, url} from research.yml
+  include.icon   — Font Awesome classes for the leading icon
+A name is linked to, in order: the PI website if it is the site owner, that
+person's website from people.yml (students, then collaborators, then alumni),
+then the url given on the entry itself. Unmatched names render as plain text.
+{%- endcomment -%}
+{% if include.people and include.people.size > 0 %}<span><i class="{{ include.icon }}"></i> {% for p in include.people %}{% if p.name and p.name != "" %}{% assign _ps = site.data.web.people.students | where: "name", p.name | first %}{% unless _ps %}{% assign _ps = site.data.web.people.collaborators | where: "name", p.name | first %}{% endunless %}{% unless _ps %}{% assign _ps = site.data.web.people.alumni | where: "name", p.name | first %}{% endunless %}{% if p.name == site.name %}{% assign _href = site.data.web.people.pi.website %}{% elsif _ps.website and _ps.website != "" %}{% assign _href = _ps.website %}{% elsif p.url and p.url != "" %}{% assign _href = p.url %}{% else %}{% assign _href = "" %}{% endif %}{% if _href != "" %}<a href="{{ _href }}" target="_blank">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endif %}{% endfor %}</span>{% endif %}

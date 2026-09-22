@@ -1,0 +1,61 @@
+---
+layout: default
+---
+
+{%- comment -%}
+A long-form writeup for one research project.
+
+The post declares `project_id` (the slugified research.yml title); everything
+above the body — authors, mentors, dates, keywords, link buttons, videos — is
+read back out of research.yml and site.data.videos, so a writeup never restates
+metadata that already has a home. A post whose project_id matches nothing still
+renders its title and body.
+{%- endcomment -%}
+
+{% assign project = nil %}
+{% for _item in site.data.web.research %}{% assign _slug = _item.title | slugify %}{% if _slug == page.project_id %}{% assign project = _item %}{% endif %}{% endfor %}
+
+<div class="post-wrapper labnews-wrapper">
+
+  <nav class="post-breadcrumb" aria-label="breadcrumb">
+    <a href="{{ site.url }}{{ site.baseurl }}/">{{ site.name }}</a>
+    <span class="bc-sep">&rsaquo;</span>
+    <a href="{{ site.url }}{{ site.baseurl }}/research/">Research</a>
+    <span class="bc-sep">&rsaquo;</span>
+    <span class="bc-current">{{ page.title | truncate: 50 }}</span>
+  </nav>
+
+  <article class="research-article" itemscope itemtype="http://schema.org/ScholarlyArticle">
+
+    <h1 itemprop="headline">{{ page.title | escape }}</h1>
+
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+    </p>
+
+    {% if project %}
+    <div class="research-meta">{% include research_people.html people=project.authors icon="fa-solid fa-user" %}{% include research_people.html people=project.mentors icon="fa-solid fa-graduation-cap" %}{% if project.start_date %}<span><i class="fa-regular fa-calendar"></i> {{ project.start_date }}{% if project.end_date %} &ndash; {{ project.end_date }}{% else %} &ndash; Present{% endif %}</span>{% endif %}</div>
+
+    {% if project.keywords %}
+    <div class="research-card-h-keywords">{% for kw in project.keywords %}<span class="research-kw">{{ kw }}</span>{% endfor %}</div>
+    {% endif %}
+
+    <div class="research-card-h-links">{% include research_links.html links=project.links %}
+    </div>
+
+    {% assign project_videos = site.data.videos | where: "project_id", page.project_id %}
+    {% for v in project_videos %}
+    <div class="embed-16x9">
+      <iframe src="{{ v.embed_src }}" title="{{ v.title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <div class="post-body" itemprop="articleBody">
+      {{ content }}
+    </div>
+
+    <p class="research-article-back"><a href="{{ site.url }}{{ site.baseurl }}/research/#{{ page.project_id }}">&laquo; Back to all research</a></p>
+
+  </article>
+</div>

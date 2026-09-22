@@ -80,15 +80,12 @@ permalink: /research/
 {% endif %}
 </div>
 <div class="research-card-h-body">
-<h3 class="research-card-h-title">{{ item.title }}</h3>
+{% assign project_post = site.posts | where: "project_id", card_id | first %}
+<h3 class="research-card-h-title">{% if project_post %}<a href="{{ site.url }}{{ site.baseurl }}{{ project_post.url }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</h3>
 {% if item.authors or item.mentors or item.start_date %}
 <div class="research-meta">
-{% if item.authors and item.authors.size > 0 %}
-<span><i class="fa-solid fa-user"></i> {% for a in item.authors %}{% if a.name and a.name != "" %}{% assign _ps = site.data.web.people.students | where: "name", a.name | first %}{% unless _ps %}{% assign _ps = site.data.web.people.collaborators | where: "name", a.name | first %}{% endunless %}{% unless _ps %}{% assign _ps = site.data.web.people.alumni | where: "name", a.name | first %}{% endunless %}{% if a.name == site.name %}{% assign _href = site.data.web.people.pi.website %}{% elsif _ps.website and _ps.website != "" %}{% assign _href = _ps.website %}{% elsif a.url and a.url != "" %}{% assign _href = a.url %}{% else %}{% assign _href = "" %}{% endif %}{% if _href != "" %}<a href="{{ _href }}" target="_blank">{{ a.name }}</a>{% else %}{{ a.name }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endif %}{% endfor %}</span>
-{% endif %}
-{% if item.mentors and item.mentors.size > 0 %}
-<span><i class="fa-solid fa-graduation-cap"></i> {% for m in item.mentors %}{% if m.name and m.name != "" %}{% assign _ps = site.data.web.people.students | where: "name", m.name | first %}{% unless _ps %}{% assign _ps = site.data.web.people.collaborators | where: "name", m.name | first %}{% endunless %}{% unless _ps %}{% assign _ps = site.data.web.people.alumni | where: "name", m.name | first %}{% endunless %}{% if m.name == site.name %}{% assign _href = site.data.web.people.pi.website %}{% elsif _ps.website and _ps.website != "" %}{% assign _href = _ps.website %}{% elsif m.url and m.url != "" %}{% assign _href = m.url %}{% else %}{% assign _href = "" %}{% endif %}{% if _href != "" %}<a href="{{ _href }}" target="_blank">{{ m.name }}</a>{% else %}{{ m.name }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endif %}{% endfor %}</span>
-{% endif %}
+{% include research_people.html people=item.authors icon="fa-solid fa-user" %}
+{% include research_people.html people=item.mentors icon="fa-solid fa-graduation-cap" %}
 {% if item.start_date %}<span><i class="fa-regular fa-calendar"></i> {{ item.start_date }}{% if item.end_date %} &ndash; {{ item.end_date }}{% else %} &ndash; Present{% endif %}</span>{% endif %}
 </div>
 {% endif %}
@@ -112,7 +109,7 @@ permalink: /research/
 {% if item.links.arxiv and item.links.arxiv != "" %}{% assign has_link = true %}{% endif %}
 {% if item.links.supplementary and item.links.supplementary != "" %}{% assign has_link = true %}{% endif %}
 {% if has_link %}
-<div class="research-card-h-links">{% if item.links.paper and item.links.paper != "" %}{% if item.links.paper contains "://" %}<a href="{{ item.links.paper }}" target="_blank" class="research-link"><i class="fa-regular fa-file-pdf"></i> Paper</a>{% else %}<a href="{{ site.baseurl }}/papers/{{ item.links.paper }}" target="_blank" type="application/pdf" class="research-link"><i class="fa-regular fa-file-pdf"></i> Paper</a>{% endif %}{% endif %}{% if item.links.webpage and item.links.webpage != "" %}<a href="{{ item.links.webpage }}" target="_blank" class="research-link"><i class="fa-solid fa-globe"></i> Webpage</a>{% endif %}{% if item.links.video and item.links.video.size > 0 %}{% for v in item.links.video %}<a href="{{ v.url }}" target="_blank" class="research-link"><i class="fa-brands fa-youtube"></i> {% if item.links.video.size > 1 %}Video {{ forloop.index }}{% else %}Video{% endif %}</a>{% endfor %}{% endif %}{% if item.links.arxiv and item.links.arxiv != "" %}<a href="{{ item.links.arxiv }}" target="_blank" class="research-link"><i class="fa-solid fa-file-lines"></i> arXiv</a>{% endif %}{% if item.links.poster and item.links.poster != "" %}<a href="{{ site.baseurl }}/{{ item.links.poster }}" target="_blank" type="application/pdf" class="research-link"><i class="fa-regular fa-image"></i> Poster</a>{% endif %}{% if item.links.slide and item.links.slide != "" %}<a href="{{ site.baseurl }}/{{ item.links.slide }}" target="_blank" type="application/pdf" class="research-link"><i class="fa-regular fa-file-powerpoint"></i> Slide</a>{% endif %}{% if item.links.supplementary and item.links.supplementary != "" %}<a href="{{ item.links.supplementary }}" target="_blank" class="research-link"><i class="fa-regular fa-file-zipper"></i> Supplementary</a>{% endif %}{% if item.links.bib and item.links.bib != "" %}<a href="{{ item.links.bib }}" class="research-link"><i class="fa-solid fa-quote-right"></i> BibTeX</a>{% endif %}{% if item.links.github and item.links.github != "" %}<a href="{{ item.links.github }}" target="_blank" class="research-link"><i class="fa-brands fa-github"></i> GitHub</a>{% endif %}
+<div class="research-card-h-links">{% include research_links.html links=item.links %}
 </div>
 {% endif %}
 </div>

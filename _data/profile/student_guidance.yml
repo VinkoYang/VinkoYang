@@ -18,3 +18,13 @@ doctoral_dissertation_committee:
     institution: "Lamar University"
     year_start: 2024
     year_end: "now"
+  - name: "Arif Ibrahim Uyanik"
+    degree: "Doctor of Engineering in Industrial and Systems Engineering"
+    institution: "Lamar University"
+    year_start: 2024
+    year_end: "now"
+    # 以下字段 CV 不渲染，纯数据记录
+    email: "auyanik@lamar.edu"
+    advisor: "Berna E. Tokgoz"
+    qualifying_exam: "INTERVAL-BASED RESILIENCY MONITORING FOR MULTIPLE INFRASTRUCTURE"
+    qualifying_exam_passed: "2026-04"
