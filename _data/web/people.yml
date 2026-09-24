@@ -230,6 +230,7 @@ students:
     lamar_id: L20645136
     email: ahicks25@lamar.edu
     location: Lamar University
+    degree: B.S. Industrial Engineering
     year_start: 2026
     year_end: now
     website: "https://www.linkedin.com/in/ayden-hicks/"
@@ -242,6 +243,30 @@ students:
     info: DE Student
     lamar_id: L20616039
     email: pbioucki@lamar.edu
+    location: Lamar University
+    degree: Doctoral of Industrial Engineering
+    year_start: 2026
+    year_end: now
+
+  # 2024–2026 期间由本人指导，之后转到其他导师名下，尚未毕业。
+  # 因此不进 alumni 段（他没从本组毕业），也不在 team 页面显示；
+  # 只保留在 CV 的 Doctoral Dissertation Advisor 和 about.md 的 mentoring 履历里。
+  - name: Saleh Mohammad Mobin
+    show_team: false
+    show_about: true
+    mentoring_role: doctoral_advisor
+    info: DE Student
+    location: Lamar University
+    degree: Doctoral of Industrial Engineering
+    year_start: 2024
+    year_end: 2026
+
+  - name: Rohith Naini
+    show_team: false
+    show_about: true
+    mentoring_role: doctoral_advisor
+    info: DE Student
+    email: rnaini@lamar.edu
     location: Lamar University
     degree: Doctoral of Industrial Engineering
     year_start: 2026
@@ -273,7 +298,7 @@ alumni:
   - name: Muhammad Ilyas Mubarik
     year_start: 2024 
     year_end: 2026
-    degree: M.S.
+    degree: M.S. Industrial Engineering
     thesis: "<a href='https://www.proquest.com/openview/8c5aa49f0903d4c8a7c414659a57f401/1?pq-origsite=gscholar&cbl=18750&diss=y' target='_blank'>Advanced Mixed Reality Training for First Responders in Hurricane Scenarios</a>"
     website: "https://www.linkedin.com/in/ilyasmubarik/"
     current_position: "Operations Tech II @ Amazon Data Center Engineering Operations"
@@ -284,7 +309,7 @@ alumni:
   - name: Rezwanul Ashraf Ruddro
     year_start: 2025 
     year_end: 2026
-    degree: M.S.
+    degree: M.S. Industrial Engineering
     thesis: "<a href='https://www.proquest.com/openview/3a91da983e9b038992ccc20282733db7/1?pq-origsite=gscholar&cbl=18750&diss=y' target='_blank'>Development of an Immersive VR Learning System With LLM-Integrated Avatar for Educational Assistance</a>"
     website: "https://www.linkedin.com/in/rezwanul-ashraf-ruddro-28772b199/"
     current_position: "Continuing DE student at Lamar University"

@@ -219,6 +219,19 @@ const guidanceLine = (p) =>
 const guidanceList = (list) =>
   list.length ? `<ul class="cv-people">${list.map((p) => `<li>${guidanceLine(p)}</li>`).join('')}</ul>` : '';
 
+// Senior design teams carry a team name and a member roster instead of a single
+// advisee, so they get their own line shape on top of the same .cv-people markup.
+const seniorDesignLine = (t) =>
+  `<span class="cv-person">${html(t.team)}</span>` +
+  `<span class="cv-person-meta">${[t.project, t.course, t.institution, t.sponsor ? `Sponsor: ${t.sponsor}` : '', (t.members || []).length ? `Team: ${(t.members || []).join(', ')}` : '']
+    .filter(Boolean)
+    .map(html)
+    .join(', ')}</span>` +
+  `<span class="cv-person-years">${t.year_start} – ${t.year_end}</span>`;
+
+const seniorDesignList = (list) =>
+  list.length ? `<ul class="cv-people">${list.map((t) => `<li>${seniorDesignLine(t)}</li>`).join('')}</ul>` : '';
+
 // ---------------------------------------------------------------------------
 // Header
 // ---------------------------------------------------------------------------
@@ -395,6 +408,12 @@ parts.push(
         : '') +
       ((studentGuidance.doctoral_dissertation_committee || []).length
         ? subhead('Doctoral Dissertation Committee') + guidanceList(studentGuidance.doctoral_dissertation_committee)
+        : '') +
+      ((studentGuidance.master_thesis_committee || []).length
+        ? subhead('Master Thesis Committee') + guidanceList(studentGuidance.master_thesis_committee)
+        : '') +
+      ((studentGuidance.senior_design_teams || []).length
+        ? subhead('Senior Design Team Mentor') + seniorDesignList(studentGuidance.senior_design_teams)
         : '')
   )
 );

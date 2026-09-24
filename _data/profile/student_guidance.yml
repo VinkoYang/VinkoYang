@@ -1,4 +1,4 @@
-# Doctoral Dissertation Committee — CV only ("Student Guidance" section).
+# Doctoral / Master thesis committee service — CV only ("Student Guidance" section).
 # Doctoral/Master/Undergraduate/High School advisees are pulled automatically from
 # _data/web/people.yml (students + alumni entries with mentoring_role:
 # doctoral_advisor / master_advisor / undergraduate_advisor / high_school_advisor).
@@ -12,7 +12,7 @@ doctoral_dissertation_committee:
     degree: "Doctoral of Industrial Engineering"
     institution: "Lamar University"
     year_start: 2024
-    year_end: "now"
+    year_end: 2025
   - name: "Oyedele J Adewol"
     degree: "Doctoral of Industrial Engineering"
     institution: "Lamar University"
@@ -28,3 +28,44 @@ doctoral_dissertation_committee:
     advisor: "Berna E. Tokgoz"
     qualifying_exam: "INTERVAL-BASED RESILIENCY MONITORING FOR MULTIPLE INFRASTRUCTURE"
     qualifying_exam_passed: "2026-04"
+  - name: "Rafiul Azim Jowarder"
+    degree: "Doctoral of Industrial Engineering"
+    institution: "Lamar University"
+    year_start: 2025
+    year_end: "now"
+    # 以下字段 CV 不渲染，纯数据记录
+    email: "rjowarder@lamar.edu"
+    advisor: "James Curry"
+
+# Master Thesis Committee — CV only ("Student Guidance" section).
+master_thesis_committee:
+  - name: "Mohammad Mostafijur Rahman"
+    degree: "M.S. Industrial Engineering"
+    institution: "Lamar University"
+    year_start: 2026
+    year_end: "now"
+    # 以下字段 CV 不渲染，纯数据记录
+    email: "mrahman152@lamar.edu"
+    advisor: "Xinyu Liu"
+    note: "Robotics research on the TurtleBot and Dobot Magician platforms."
+
+# Senior Design (capstone) teams mentored as faculty mentor — CV only
+# ("Student Guidance" section). The instructor of record is a separate person;
+# `faculty_role` records which hat was worn.
+senior_design_teams:
+  - team: "MechGenius Creations"
+    project: "AI Identification and Mapping of Invasive Aquatic Plants"
+    course: "INEN 4385 IE Design"
+    institution: "Lamar University"
+    year_start: 2025
+    year_end: 2026
+    faculty_role: "Faculty Mentor"
+    instructor_of_record: "Kelley Bradley"
+    sponsor: "Lower Neches Valley Authority"
+    sponsor_contact: "Terry Corbett"
+    members:
+      - "Adolfo Lares Leon"
+      - "Cade Dotson"
+      - "Irving Granados"
+      - "Lucas Parker"
+      - "Quinn Shoemaker"
