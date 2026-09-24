@@ -81,7 +81,7 @@ A detail post declares which equipment it documents:
 ---
 layout: post
 title: "Getting Started with the UR10e Cobot"
-date: 2026-09-23
+date: 2026-09-24
 categories: ["Teaching & Learning"]
 tags: ["equipment", "ur10e", "cobot", "robotics", "tutorial"]
 equipment_id: universal-robots-ur10e
@@ -138,7 +138,7 @@ No new SCSS partial, no new design tokens.
 
 ## 5. First post: UR10e
 
-`_posts/2026-09-23-ur10e-onboarding-path.md`, following the shape of
+`_posts/2026-09-24-ur10e-onboarding-path.md`, following the shape of
 `_posts/2026-09-17-unity-xr-learning-path.md`: a short framing intro, then one
 section per step, each with a resource table (`Resource | What it is | Why bother`)
 and a paragraph on why that step sits where it does. A curated path, not a link dump.
@@ -168,7 +168,7 @@ Files touched:
 | `_data/web/equipment.yml` | add `manual` to the UR10e entry |
 | `_pages/lab.md` | post lookup, linked name, links row |
 | `_sass/layouts/_lab.scss` | `.equipment-links` + `.equipment-name a` rules |
-| `_posts/2026-09-23-ur10e-onboarding-path.md` | new |
+| `_posts/2026-09-24-ur10e-onboarding-path.md` | new |
 | `CHANGELOG.md` | one entry under 待发布 |
 
 No navigation change, no new page, no new data file, no change to `_config.yml`.
