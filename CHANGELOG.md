@@ -38,6 +38,12 @@ git push origin source --tags
 
 ## [待发布]
 
+**CV 的 Student Guidance 补全。** `cv/build-cv.js` 新增两个小节：`Master Thesis Committee`（渲染 `student_guidance.yml` 的 `master_thesis_committee`，这个键之前不存在）和 `Senior Design Team Mentor`（渲染 `senior_design_teams`，用 `seniorDesignLine()`，队名放人名栏、项目/课程/赞助方/成员名单逗号分隔放 meta 栏、年份放年份栏，复用现成的 `.cv-people` 样式）。`student_guidance.yml` 新增博士委员会 Rafiul Azim Jowarder、硕士委员会 Mohammad Mostafijur Rahman、senior design 团队 MechGenius Creations（INEN 4385，赞助方 Lower Neches Valley Authority，五名队员）。各条目的 `email` / `advisor` / `note` / `instructor_of_record` / `sponsor_contact` / `qualifying_exam` 等字段只作留档，`guidanceLine()` 和 `seniorDesignLine()` 都不渲染。
+
+**人员数据补全。** `_data/web/people.yml`：Ayden J Hicks 补 `degree: B.S. Industrial Engineering`；alumni 里 Mubarik 和 Ruddro 的 `degree` 从光秃秃的 `M.S.` 改成 `M.S. Industrial Engineering`（这个字段同时喂 CV 和 team 页 Alumni 表格的 Degree 列）；新增 Rohith Naini（`doctoral_advisor`，2026 – now）和 Saleh Mohammad Mobin（`doctoral_advisor`，2024 – 2026）。Mobin 已转投其他导师且尚未毕业，所以留在 students 段而不是 alumni，`show_team: false`，只出现在 CV 和 about.md 的 mentoring 履历里——YAML 里加了注释说明，免得以后看到 `year_end: 2026` 又把他挪进校友表。两人都没照片，`show_team` 均为 false。
+
+**注意**：`cv/cv.generated.html` 和 `files/cv.pdf` 在 `.gitignore` 里，改完上述数据必须跑一次 `npm run cv` 才会生效，本次已跑。
+
 
 ---
 
