@@ -332,6 +332,8 @@
     font-size: 0.78rem;
     line-height: 1.6;
     text-decoration: none;
+    max-width: 100%;
+    text-align: center;
     transition: color var(--transition-base), border-color var(--transition-base);
 
     &:hover {

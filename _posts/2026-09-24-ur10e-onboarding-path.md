@@ -13,8 +13,8 @@ The order below matters more than the volume. Work through it top to bottom. Ste
 
 ## How to use this
 
-- **Do step 1 before you touch the robot.** Not because of the paperwork, but because PolyScope makes very little sense until you have seen it explained once, and a confused operator next to a 12.5 kg-payload arm is the exact situation the safety training exists to prevent.
-- **You can practice on the physical robot while you work through the material.** If you need access for that, ask me and I will arrange it. Do not wait until you have "finished" the e-learning — that moment never arrives.
+- **Start step 1 before you touch the robot.** Not because of the paperwork, but because PolyScope makes very little sense until you have seen it explained once, and a confused operator next to a 12.5 kg-payload arm is the exact situation the safety training exists to prevent.
+- **You can practice on the physical robot while you work through the material.** If you need access for that, ask me and I will arrange it — hands-on time on the arm is arranged through me, not self-served. Do not wait until you have "finished" the e-learning — that moment never arrives.
 - **Read the manual sections you are about to use, not the whole thing.** The user manual is a reference, not a course. Operation, safety, and I/O are the sections that pay for themselves immediately.
 - **Everything below is free**, though the UR Academy requires a free account.
 
