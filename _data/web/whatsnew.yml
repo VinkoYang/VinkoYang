@@ -8,6 +8,13 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "2.5.4"
+  date: 2026-09-24
+  changes:
+    - "The CV's Student Guidance section now also records master's thesis committee service and senior design team mentoring, alongside the doctoral committee and advisee lists that were already there."
+    - "First senior design entry: MechGenius Creations (INEN 4385), an AI system for identifying and mapping invasive aquatic plants, sponsored by the Lower Neches Valley Authority."
+    - "Two more doctoral advisees added to the About page's mentoring record, and degree titles across the Team and Alumni listings now name the program rather than just the degree level."
+
 - version: "2.5.3"
   date: 2026-09-24
   changes:
