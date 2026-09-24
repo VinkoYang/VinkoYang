@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v2.5.2**（`source` 分支，已发布，2026-09-22）。
+**当前版本：v2.5.3**（`source` 分支，已发布，2026-09-24）。
 
 ## 两份日志，别混
 
@@ -38,22 +38,20 @@ git push origin source --tags
 
 ## [待发布]
 
-- `cv/style.css`：`.cv-numbered` 的 `padding-left` 从 16px 加到 24px。`<ol>` 的序号是排在这条 padding 槽里、右对齐到槽内边缘的，槽宽不够时序号往左溢出——Patents and Publications 到第 10 条时两位数的 "10." 在 9.6pt 下正好比 16px 宽，PDF 里被页边距裁掉半个字。24px 在正文字号下能放下三位数。同时给 `::marker` 加 `font-variant-numeric: tabular-nums`，一位数和两位数的句点落在同一条竖线上。
-- `_data/profile/experience.yml`：Assistant Professor 条目下，实验室名字从 `XR<sup>2</sup> (Extended Reality × Robotics) Lab` 改为 `XRAI (Extended Reality, Artificial Intelligence, and Robotics) Lab`，与 lab.md、home.md 现用的名称一致；Teaching 那行补上 Advanced Robotics (INEN-6301) 和 Simulation of Industrial Systems (INEN-4375)，锚点按 teaching.yml 的 `code` 生成规则写成 `#inen-6301`、`#inen-4375`。这个文件同时驱动 About 页和 CV，两处一起更新。同一份数据里 `teaching_experience` 的 Assistant Professor 条目是另一个列表（CV 的 Teaching Experience 小节），两门课也要补进去；INEN-4375 是本科课，该条的 `description` 从「in graduate levels」改成「at the graduate and undergraduate levels」。
-- `cv/build-cv.js`：Grants 列表里把 CV 主人自己的名字加粗。grants.yml 存的是已经排好的作者串（`Yang, W., Li, Y., ...`），不是 bib 记录，`formatAuthors()` 够不着；新增 `boldOwner()`，从 `config.name` 推出 `姓, 名首字母.` 的引用式写法再整串替换，和 Publications 里把本人从作者串中挑出来的做法一致。只作用于 CV，About 页的 grants 不受影响。
-- `_data/profile/committee_memberships.yml`：ASME CIE 这个分委会 2025 年改名，Virtual Environments Systems (VES) → Virtual and Augmented Reality Environments (VARE)。Secretary 任期收尾改成 `2025 – 2026`，上面新增 `Vice Chair`（`2026 – Present`），两条都用新名字；2023 – 2025 的 Member-at-Large 任期发生在改名之前，保留 VES 原名。列表按时间倒序排，新职位排在最前。
-
-- `assets/ref.bib`：新增 AHFE 2026 那篇合作论文 —— `@inproceedings{rahman2026human}`（A Human-Centered AI Task Management System for Cognitive Load Reduction and Decision Support in Industrial Plant Management，第六作者，PDF 已在 `papers/AHFE-Paper-0637.pdf`），以及对应的 `@incollection{talk2026ahfe_taskmanager}`（`keywords={talk}`，`data={2026-12-01}`，AHFE Hawaii International Conference，Dec 1–3 2026）。`volume`、`pages`、`url` 三项都暂缺：拿到的是预印版，刊头还印着 "Vol. XXX"，页码是预印稿的 1–9 不作数，DOI `10.54941/AHFE-Paper-0637` 目前也解析不到页面；正式出版后一并补上。注意 PDF 的 `/Title` 元数据是 AHFE InDesign 模板的残留（"Effects of Swarm Size Variability on Operator Workload", Hunt et al.），不是这篇，标题作者都取自正文。
-- `_pages/lab.md` / `_sass/layouts/_lab.scss` / `_data/web/equipment.yml`：设备卡片加资源链接行。`equipment.yml` 新增两个可选字段，`manual`（厂商手册 URL）和 `tutorials`（`{title, url}` 列表）；卡片在描述下方渲染一排 pill（`.equipment-links` / `.equipment-link`，`margin-top: auto` 贴底，卡片高度不一时链接行仍对齐）。同时卡片按 `item.name | slugify` 反查 `site.posts` 里 `equipment_id` 匹配的 post，命中则设备名变链接并多一个 Training Guide pill，未命中就保持纯文本——与 `_pages/research.md` 用 `project_id` 绑定项目 writeup 的写法一致，yml 里不存 URL。`tutorials` 只在没有 post 时渲染，有 post 时由 post 承载完整清单，避免两处重复维护。本次只给 UR10e 填了 `manual`，其余五台不变。注意：SN、资产标签、借用人这类内部资产信息不进这个仓库——站点由公开 repo 发布，提交进去的文件无论是否被页面渲染都可被读取且永久留在 git 历史里。偏离 brief：`.equipment-links` 这一行按 brief 给的写法逐字实现后，kramdown 把它当成紧跟在 `<p class="equipment-desc">` 段落后面的行内内容处理，`</div>` 被转义成 `&lt;/div&gt;`，并且这个解析状态错乱还连带影响了后面几张卡片的缩进（kramdown 的嵌套计数被带偏）。定位后发现问题只出在这一个 div 身上——`equipment-card`、`equipment-body` 等其余 div 都单独占一行，只有这个新 div 是"开合标签+内容"挤在一行且紧跟在段落后面。给它单独加 `markdown="0"` 后 kramdown 完全不碰这段内容，问题消失，其余五张无 `manual` 卡片的输出恢复成和基线逐字节一致；另外给两条恒定执行的 `{% assign %}`/`{% unless %}` 收尾标签加了 Liquid 的 `-%}` 裁剪空白，去掉了它们本会残留的空行。`_pages/lab.md` 里其余结构逐字照抄 brief 给的代码。
-- `_posts/2026-09-24-ur10e-onboarding-path.md`：新增 UR10e 上手路径 post，`equipment_id: universal-robots-ur10e` 与 lab 页设备卡片绑定，点设备名即进。内容是四步顺序路径而非链接堆：UR e-Series e-Learning（必做，需注册免费账号）→ UR10e 用户手册（重点 operation / safety / I/O）→ Robotiq 腕部相机课程与手册（做视觉才需要）→ LiDAR 安全方案与 HRC 论文（做共享工作空间才需要）。形态沿用 `2026-09-17-unity-xr-learning-path.md`：序言 + 每步一张资源表 + 一段说明这步为什么在这个位置。category 用现有的 `Teaching & Learning`，没有新开「Lab Equipment」类别——`_pages/blogs.md` 的筛选 chip 已经有八个，等设备 post 攒到四五篇再拆。
-- `_posts/2026-09-24-ur10e-onboarding-path.md` / `_sass/layouts/_lab.scss` / `_pages/lab.md`：整分支复审后的一轮修复。post 的「How to use this」里相邻两条 bullet 互相矛盾——第一条「Do step 1 before you touch the robot.」是绝对禁止先碰机械臂，第二条「You can practice on the physical robot while you work through the material.」又明确允许 step 1 期间上手，学生若先读到第二条会误以为第一天就能自己开机上手。改法：第一条的 "Do" 改成 "Start"（只改这半句的引导词，句子后半不动），第二条 "ask me and I will arrange it." 后面补一句 "— hands-on time on the arm is arranged through me, not self-served."，矛盾消掉即可，没有新增任何未核实的说法（没写"supervised"或任何监督安排——那是没验证过的政策声明，写了就是往公开页面上放一句可能不实的话）。`_sass/layouts/_lab.scss` 的 `.equipment-link` 加 `max-width: 100%` 和 `text-align: center`：`tutorials` 这条 pill 路径目前还没有任何设备用到、没实测过，它的 label 是作者自定义标题，不像 `.research-link` 那批固定短标签；设备网格最窄一列（`minmax(280px, 1fr)` 减 padding 约 216px 内容宽）里，"Wrist Camera Advanced Parameters" 这类标题会在 `border-radius: 9999px` 的胶囊形状里被撑成两行、变成异形。不加省略号截断——两行换行好过丢字，居中只是让换行后不那么歪。`_pages/lab.md` 在 `{% assign has_manual %}` 前加一条 `{%- comment -%}` 注释，说明这块 Liquid 空白控制是故意不对称的：开链接行的 `{% if %}` 故意不带 `-%}`（它后面留的换行是让 kramdown 把紧跟着的一行 div 当成新的 raw-HTML 块，这正是上条改动修的转义 `</div>` bug 的关键），而周围的 `{% assign %}` / `{% unless %}` / `{% endif %}` 都故意带 `-%}`；不写清楚，以后有人为了"风格统一"把任一边改成另一边的样子，就会把这个 bug 引回来。顺带核实了 post 里 Robotiq e-learning 链接（`elearning.robotiq.com/course/view.php?id=5`）：匿名访问走 guest access，能直接看到完整课程结构与课时内容，不需要注册账号，"Everything below is free" 那句不用改。
-
 
 ---
 
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [2.5.3] - 2026-09-24
+
+**实验室设备资源。** `_data/web/equipment.yml` 新增两个可选字段：`manual`（厂商手册 URL）和 `tutorials`（`{title, url}` 列表）。lab 页设备卡片在描述下方多一排 pill（`.equipment-links` / `.equipment-link`，`margin-top: auto` 贴底，卡片高度不一时链接行仍对齐）；同时按 `item.name | slugify` 反查 `site.posts` 里 `equipment_id` 匹配的 post，命中则设备名变链接并多一个 Training Guide pill，未命中保持纯文本——与 `_pages/research.md` 用 `project_id` 绑定项目 writeup 同一套写法，yml 里不存 URL，改名或写错 slug 只会静默退回纯文本而不是坏页面。`tutorials` 只在没有 post 时渲染，有 post 时由 post 承载完整清单，两处不重复维护。`_pages/lab.md` 里这个 div 必须带 `markdown="0"` 并给相邻 Liquid 标签加 `-%}` 裁空白：不加的话 kramdown 把这一行当成紧跟段落的行内内容，`</div>` 被转义、后面几张卡片的缩进跟着乱（同文件 `.rf-grid`、`.rr-card` 早有同样处理）。首篇内容是 `_posts/2026-09-24-ur10e-onboarding-path.md`，UR10e 四步上手路径——UR e-Series e-Learning（必做，需注册免费账号）、UR10e 用户手册（重点 operation / safety / I/O）、Robotiq 腕部相机课程与手册、LiDAR 安全方案与 HRC 论文，形态沿用 `2026-09-17-unity-xr-learning-path.md`，category 用现有的 `Teaching & Learning` 没另开类别。设计与实施记录在 `docs/superpowers/` 下的 spec 与 plan。注意：SN、资产标签、借用人这类内部资产信息不进这个仓库——站点由公开 repo 发布，提交进去的文件无论是否被页面渲染都可被读取且永久留在 git 历史里。
+
+**CV 与个人资料。** `cv/style.css` 的 `.cv-numbered` `padding-left` 从 16px 加到 24px——`<ol>` 序号右对齐在这条 padding 槽内边缘，槽宽不够时往左溢出，Patents and Publications 到第 10 条时两位数的 "10." 在 9.6pt 下被页边距裁掉半个字；同时给 `::marker` 加 `font-variant-numeric: tabular-nums`。`cv/build-cv.js` 新增 `boldOwner()`，把 Grants 作者串里 CV 主人自己的名字加粗——grants.yml 存的是排好的作者串不是 bib 记录，`formatAuthors()` 够不着；只作用于 CV，About 页不受影响。`_data/profile/experience.yml` 把实验室名统一成 `XRAI (Extended Reality, Artificial Intelligence, and Robotics) Lab`（与 lab.md、home.md 一致），并补上 Advanced Robotics (INEN-6301) 与 Simulation of Industrial Systems (INEN-4375) 两门课，`teaching_experience` 同步；INEN-4375 是本科课，相应条目改成 "at the graduate and undergraduate levels"。`_data/profile/committee_memberships.yml` 跟进 ASME CIE 分委会 2025 年更名 VES → VARE：Secretary 任期收尾为 `2025 – 2026`，新增 `Vice Chair`（`2026 – Present`），2023 – 2025 的 Member-at-Large 发生在改名前保留 VES 原名。
+
+**新论文。** `assets/ref.bib` 新增 AHFE 2026 合作论文 `@inproceedings{rahman2026human}`（A Human-Centered AI Task Management System for Cognitive Load Reduction and Decision Support in Industrial Plant Management，第六作者，PDF 在 `papers/AHFE-Paper-0637.pdf`）及对应的 `@incollection{talk2026ahfe_taskmanager}`（AHFE Hawaii International Conference，Dec 1–3 2026）。`volume`、`pages`、`url` 暂缺：手上是预印版，刊头仍印 "Vol. XXX"，页码不作数，DOI `10.54941/AHFE-Paper-0637` 目前解析不到页面，正式出版后补。PDF 的 `/Title` 元数据是 AHFE 模板残留（Hunt et al. 那篇），标题作者取自正文。
 
 ### [2.5.2] - 2026-09-22
 

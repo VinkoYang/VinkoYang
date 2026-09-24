@@ -8,6 +8,15 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "2.5.3"
+  date: 2026-09-24
+  changes:
+    - "Equipment on the Lab page now links out to what you need to actually use it: a Manual button on every card that has a vendor manual, and — for the Universal Robots UR10e — a Training Guide leading to a full onboarding writeup."
+    - "New blog post: Getting Started with the UR10e Cobot — a four-step path through the Universal Robots e-learning, the UR10e manual, the Robotiq wrist camera material, and LiDAR-based human-robot collaboration, in the order a new student should work through them."
+    - "New publication: A Human-Centered AI Task Management System for Cognitive Load Reduction and Decision Support in Industrial Plant Management (AHFE 2026), now on the Publications page, with the accompanying conference talk on the Talks page."
+    - "The lab's name is now written consistently across the site as the XRAI (Extended Reality, Artificial Intelligence, and Robotics) Lab."
+    - "Advanced Robotics (INEN-6301) and Simulation of Industrial Systems (INEN-4375) added to the teaching record, and the ASME CIE subcommittee role updated to Vice Chair of Virtual and Augmented Reality Environments (VARE)."
+
 - version: "2.5.2"
   date: 2026-09-22
   changes:
