@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v2.5.2**（`source` 分支，已发布，2026-09-22）。
+**当前版本：v2.5.3**（`source` 分支，已发布，2026-09-24）。
 
 ## 两份日志，别混
 
@@ -38,13 +38,20 @@ git push origin source --tags
 
 ## [待发布]
 
-（无）
 
 ---
 
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [2.5.3] - 2026-09-24
+
+**实验室设备资源。** `_data/web/equipment.yml` 新增两个可选字段：`manual`（厂商手册 URL）和 `tutorials`（`{title, url}` 列表）。lab 页设备卡片在描述下方多一排 pill（`.equipment-links` / `.equipment-link`，`margin-top: auto` 贴底，卡片高度不一时链接行仍对齐）；同时按 `item.name | slugify` 反查 `site.posts` 里 `equipment_id` 匹配的 post，命中则设备名变链接并多一个 Training Guide pill，未命中保持纯文本——与 `_pages/research.md` 用 `project_id` 绑定项目 writeup 同一套写法，yml 里不存 URL，改名或写错 slug 只会静默退回纯文本而不是坏页面。`tutorials` 只在没有 post 时渲染，有 post 时由 post 承载完整清单，两处不重复维护。`_pages/lab.md` 里这个 div 必须带 `markdown="0"` 并给相邻 Liquid 标签加 `-%}` 裁空白：不加的话 kramdown 把这一行当成紧跟段落的行内内容，`</div>` 被转义、后面几张卡片的缩进跟着乱（同文件 `.rf-grid`、`.rr-card` 早有同样处理）。首篇内容是 `_posts/2026-09-24-ur10e-onboarding-path.md`，UR10e 四步上手路径——UR e-Series e-Learning（必做，需注册免费账号）、UR10e 用户手册（重点 operation / safety / I/O）、Robotiq 腕部相机课程与手册、LiDAR 安全方案与 HRC 论文，形态沿用 `2026-09-17-unity-xr-learning-path.md`，category 用现有的 `Teaching & Learning` 没另开类别。设计与实施记录在 `docs/superpowers/` 下的 spec 与 plan。注意：SN、资产标签、借用人这类内部资产信息不进这个仓库——站点由公开 repo 发布，提交进去的文件无论是否被页面渲染都可被读取且永久留在 git 历史里。
+
+**CV 与个人资料。** `cv/style.css` 的 `.cv-numbered` `padding-left` 从 16px 加到 24px——`<ol>` 序号右对齐在这条 padding 槽内边缘，槽宽不够时往左溢出，Patents and Publications 到第 10 条时两位数的 "10." 在 9.6pt 下被页边距裁掉半个字；同时给 `::marker` 加 `font-variant-numeric: tabular-nums`。`cv/build-cv.js` 新增 `boldOwner()`，把 Grants 作者串里 CV 主人自己的名字加粗——grants.yml 存的是排好的作者串不是 bib 记录，`formatAuthors()` 够不着；只作用于 CV，About 页不受影响。`_data/profile/experience.yml` 把实验室名统一成 `XRAI (Extended Reality, Artificial Intelligence, and Robotics) Lab`（与 lab.md、home.md 一致），并补上 Advanced Robotics (INEN-6301) 与 Simulation of Industrial Systems (INEN-4375) 两门课，`teaching_experience` 同步；INEN-4375 是本科课，相应条目改成 "at the graduate and undergraduate levels"。`_data/profile/committee_memberships.yml` 跟进 ASME CIE 分委会 2025 年更名 VES → VARE：Secretary 任期收尾为 `2025 – 2026`，新增 `Vice Chair`（`2026 – Present`），2023 – 2025 的 Member-at-Large 发生在改名前保留 VES 原名。
+
+**新论文。** `assets/ref.bib` 新增 AHFE 2026 合作论文 `@inproceedings{rahman2026human}`（A Human-Centered AI Task Management System for Cognitive Load Reduction and Decision Support in Industrial Plant Management，第六作者，PDF 在 `papers/AHFE-Paper-0637.pdf`）及对应的 `@incollection{talk2026ahfe_taskmanager}`（AHFE Hawaii International Conference，Dec 1–3 2026）。`volume`、`pages`、`url` 暂缺：手上是预印版，刊头仍印 "Vol. XXX"，页码不作数，DOI `10.54941/AHFE-Paper-0637` 目前解析不到页面，正式出版后补。PDF 的 `/Title` 元数据是 AHFE 模板残留（Hunt et al. 那篇），标题作者取自正文。
 
 ### [2.5.2] - 2026-09-22
 

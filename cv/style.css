@@ -310,14 +310,25 @@ body {
   color: var(--accent);
 }
 
+/* The <ol> marker is laid out inside this gutter and right-aligned to its
+   inner edge, so the gutter has to be wide enough for the longest number in
+   the list. At 16px a two-digit "10." overflowed past the list's left edge and
+   got clipped at the page margin; 24px holds three digits at the body size. */
 .cv-numbered {
   margin: 0;
-  padding-left: 16px;
+  padding-left: 24px;
 }
 
 .cv-numbered > li {
   margin-bottom: 4.5px;
   text-align: justify;
+}
+
+/* Tabular figures keep the periods on one vertical line whether the number is
+   one digit or two, so the entries read as a single numbered column. */
+.cv-numbered > li::marker {
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-soft);
 }
 
 /* Service / committee rows: name left, years right */

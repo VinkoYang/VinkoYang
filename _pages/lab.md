@@ -76,6 +76,8 @@ Through interdisciplinary innovation, the XRAI Lab redefines how intelligent sys
 
 <div class="equipment-grid">
 {% for item in site.data.web.equipment %}
+{% assign equip_id = item.name | slugify %}
+{% assign equip_post = site.posts | where: "equipment_id", equip_id | first %}
 <div class="equipment-card">
 {% if item.image and item.image != "" %}
 <img src="{{ site.url }}{{ site.baseurl }}/images/{{ item.image }}" class="equipment-thumb" alt="{{ item.name }}" loading="lazy">
@@ -84,8 +86,14 @@ Through interdisciplinary innovation, the XRAI Lab redefines how intelligent sys
 {% endif %}
 <div class="equipment-body">
 <p class="equipment-category">{{ item.category }}</p>
-<h4 class="equipment-name">{{ item.name }}</h4>
+<h4 class="equipment-name">{% if equip_post %}<a href="{{ site.url }}{{ site.baseurl }}{{ equip_post.url }}">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}</h4>
 <p class="equipment-desc">{{ item.description }}</p>
+{%- comment -%}Whitespace trims and markdown="0" below are load-bearing: without them kramdown treats the one-line links div as inline content and escapes its closing tag.{%- endcomment -%}
+{% assign has_manual = false %}{% if item.manual and item.manual != "" %}{% assign has_manual = true %}{% endif -%}
+{% assign show_tutorials = false %}{% unless equip_post %}{% if item.tutorials and item.tutorials.size > 0 %}{% assign show_tutorials = true %}{% endif %}{% endunless -%}
+{% if has_manual or equip_post or show_tutorials %}
+<div class="equipment-links" markdown="0">{% if has_manual %}<a href="{{ item.manual }}" class="equipment-link"{% if item.manual contains "://" %} target="_blank" rel="noopener"{% endif %}><i class="fa-solid fa-book"></i> Manual</a>{% endif %}{% if equip_post %}<a href="{{ site.url }}{{ site.baseurl }}{{ equip_post.url }}" class="equipment-link"><i class="fa-solid fa-book-open-reader"></i> Training Guide</a>{% endif %}{% if show_tutorials %}{% for t in item.tutorials %}<a href="{{ t.url }}" class="equipment-link"{% if t.url contains "://" %} target="_blank" rel="noopener"{% endif %}><i class="fa-solid fa-circle-play"></i> {{ t.title }}</a>{% endfor %}{% endif %}</div>
+{% endif -%}
 </div>
 </div>
 {% endfor %}

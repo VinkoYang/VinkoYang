@@ -5,6 +5,7 @@
     A 6-DOF collaborative robot arm with 12.5 kg payload and 1300 mm reach.
     Equipped with a Robotiq Wrist Camera, a Robotiq 2F gripper, a Robotiq AirPick vacuum gripper, and a Robotiq Screwdriving Solution for automated fastening and assembly.
     A conveyor system is integrated to enable continuous material flow and support experiments in automated production and logistics.
+  manual: "https://www.universal-robots.com/manuals/EN/PDF/SW5_19/user-manual-UR10e-PDF_online/711-039-00_UR10e_User_Manual_en_Global.pdf"
 
 - name: "UFactory Xarm 6"
   category: "Collaborative Robot"

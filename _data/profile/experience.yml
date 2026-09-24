@@ -6,9 +6,9 @@ professional_experience:
     dates: "Jul. 2024 – Present"
     highlights:
       - "Research Interests: Human-robot Interaction, Robotics manipulation, Programming by Demonstration, Robotics System Design, Augmented & Virtual Reality, Human Factors, Tele-robots, Cobots, Cyber-Physical Systems, Digital Twin, Industry 4.0, Smart Factory."
-      - "Established an XR<sup>2</sup> (Extended Reality × Robotics) Lab, supporting 10+ graduate and undergraduate researchers in robotics, AR/VR, and cobotics."
+      - "Established the XRAI (Extended Reality + Artificial Intelligence, and Robotics) Lab, supporting 10+ graduate and undergraduate researchers in robotics, AR/VR, and cobotics."
       - "Secured $148,000 in internal funding and initiated 4 interdisciplinary research projects with Engineering and Computer Science."
-      - "Teaching: <a href='/teaching/#inen-5301-05'>Robotics Operations and Programming (INEN-5301)</a>, <a href='/teaching/#inen-5301-01'>AR/VR in manufacturing (INEN-5301)</a>, <a href='/teaching/#inen-5358'>Introduction to Robotics (INEN-5358)</a>, <a href='/teaching/#inen-6110'>Professional Seminar (INEN-6110)</a>."
+      - "Teaching: <a href='/teaching/#inen-5301-05'>Robotics Operations and Programming (INEN-5301)</a>, <a href='/teaching/#inen-5301-01'>AR/VR in manufacturing (INEN-5301)</a>, <a href='/teaching/#inen-5358'>Introduction to Robotics (INEN-5358)</a>, <a href='/teaching/#inen-6301'>Advanced Robotics (INEN-6301)</a>, <a href='/teaching/#inen-4375'>Simulation of Industrial Systems (INEN-4375)</a>, <a href='/teaching/#inen-6110'>Professional Seminar (INEN-6110)</a>."
 
   - position: "Software Engineer"
     company: "Meta Reality Labs"
@@ -60,11 +60,13 @@ teaching_experience:
     institution: "Lamar University"
     location: "Beaumont, TX 77705, USA"
     dates: "Jul. 2024 – Present"
-    description: "Department of Industrial and Systems Engineering, taking online and face-to-face classes in graduate levels:"
+    description: "Department of Industrial and Systems Engineering, taking online and face-to-face classes at the graduate and undergraduate levels:"
     courses:
       - "<a href='/teaching/#inen-5301-05'>Robotics Operations and Programming (INEN-5301)</a>"
       - "<a href='/teaching/#inen-5301-01'>AR/VR in manufacturing (INEN-5301)</a>"
       - "<a href='/teaching/#inen-5358'>Introduction to Robotics (INEN-5358)</a>"
+      - "<a href='/teaching/#inen-6301'>Advanced Robotics (INEN-6301)</a>"
+      - "<a href='/teaching/#inen-4375'>Simulation of Industrial Systems (INEN-4375)</a>"
       - "<a href='/teaching/#inen-6110'>Professional Seminar (INEN-6110)</a>"
     highlights:
       - "Developed and launched 2 new graduate courses in AR/VR (INEN-5301-01) and Robotics (INEN-5301-05)."
