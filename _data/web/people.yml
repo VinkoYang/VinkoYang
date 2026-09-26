@@ -177,6 +177,18 @@ students:
     year_start: 2025 
     year_end: now
 
+  - name: Mohammad Asifur R Rabby
+    show_team: true
+    show_about: true
+    mentoring_role: doctoral_advisor
+    photo: team/rabby.jpg
+    info: DE Student
+    email: mrabby@lamar.edu
+    location: Lamar University
+    degree: Doctoral of Industrial Engineering
+    year_start: 2025
+    year_end: now
+
   - name: Rezwanul Ashraf Ruddro
     show_team: true
     show_about: true
@@ -262,15 +274,17 @@ students:
     year_end: 2026
 
   - name: Rohith Naini
-    show_team: false
+    show_team: true
     show_about: true
     mentoring_role: doctoral_advisor
+    photo: team/naini.jpg
     info: DE Student
     email: rnaini@lamar.edu
     location: Lamar University
     degree: Doctoral of Industrial Engineering
     year_start: 2026
     year_end: now
+    website: "https://www.linkedin.com/in/rohithn10/"
 
   - name: "This could be you!"
     show_team: true

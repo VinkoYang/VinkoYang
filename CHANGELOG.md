@@ -38,6 +38,11 @@ git push origin source --tags
 
 ## [待发布]
 
+- 更换 Rezwanul Ashraf Ruddro 头像：`images/team/rezwanul.jpg` 换成新照片（原图 1086×1448 PNG 1.8 MB，裁成 600×600 JPEG，约 43 KB）。`_data/web/people.yml` 路径不变。
+- Rohith Naini 加头像 `images/team/naini.jpg`（400×400）和 LinkedIn（`website`），`people.yml` 加 `photo` 字段并把 `show_team` 改为 `true`，在 team 页面显示。
+- 新增 DE 学生 Mohammad Asifur R Rabby（2025–now，`mrabby@lamar.edu`，`doctoral_advisor`），头像 `images/team/rabby.jpg`（120×120），`people.yml` 放在 Avinash 之后。
+- 删除未被引用的 `images/team/mobin.jpg`（Mobin 的 `show_team` 为 `false`，条目也没有 `photo` 字段）。
+
 
 ---
 
