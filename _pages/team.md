@@ -20,6 +20,7 @@ permalink: /team/
 {% if site.department %}<p style="color: var(--text-secondary); margin: 0;">{{ site.department }}</p>{% endif %}
 {% if site.college %}<p style="color: var(--text-secondary); margin: 0;">{{ site.college }}</p>{% endif %}
 <p style="color: var(--text-tertiary); font-size: 0.9rem; margin: 0;">{{ site.institution }}{% if site.institution_location %}, {{ site.institution_location }}{% endif %}</p>
+{% if site.office or site.phone %}<p class="pi-office" style="color: var(--text-tertiary); font-size: 0.9rem; margin: 0;">{% if site.office %}Office: {{ site.office }}{% endif %}{% if site.office and site.phone %} · {% endif %}{% if site.phone %}Tel: <a href="tel:{{ site.phone | remove: '-' }}">{{ site.phone | remove_first: '+1-' }}</a>{% endif %}</p>{% endif %}
 <div class="pi-links">
 {% if site.email %}<a href="mailto:{{ site.email }}" class="icon-link" title="Email"><i class="fa-solid fa-envelope"></i></a>{% endif %}
 {% if site.links.cv and site.links.cv != "" %}<a href="{{ site.url }}{{ site.baseurl }}/{{ site.links.cv }}" class="icon-link" title="CV"><i class="ai ai-cv"></i></a>{% endif %}

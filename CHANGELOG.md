@@ -42,6 +42,7 @@ git push origin source --tags
 - Rohith Naini 加头像 `images/team/naini.jpg`（400×400）和 LinkedIn（`website`），`people.yml` 加 `photo` 字段并把 `show_team` 改为 `true`，在 team 页面显示。
 - 新增 DE 学生 Mohammad Asifur R Rabby（2025–now，`mrabby@lamar.edu`，`doctoral_advisor`），头像 `images/team/rabby.jpg`（120×120），`people.yml` 放在 Avinash 之后。
 - 删除未被引用的 `images/team/mobin.jpg`（Mobin 的 `show_team` 为 `false`，条目也没有 `photo` 字段）。
+- About 和 Team 页 PI 卡片在地址下加一行 office 和电话（`Office: Cherry Engineering Building, Room 2628 · Tel: 409-880-1891`，电话可点击拨号），样式 `.pi-office` 加在 `_sass/layouts/_team.scss`。`_config.yml`：电话从 1981 更正为 1891；`office` 改为 `Cherry Engineering Building, Room 2628`，城市邮编拆到新字段 `office_city`；`cv/build-cv.js` 的 CV 抬头改为拼接 `office` + `office_city`，楼名和电话跟着更正。
 
 
 ---

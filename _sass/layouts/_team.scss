@@ -153,6 +153,16 @@
     margin: var(--space-2) 0 0;
   }
 
+  .pi-office {
+    color: var(--text-muted);
+    font-size: 0.8125rem;
+    margin: 0.125rem 0 0;
+
+    a {
+      color: inherit;
+    }
+  }
+
   .pi-links {
     display: flex;
     gap: var(--space-1);
