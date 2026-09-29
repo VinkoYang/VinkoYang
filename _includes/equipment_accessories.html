@@ -14,7 +14,7 @@
 {%- if acc.maker %}<p class="accessory-maker">{{ acc.maker }}</p>{% endif %}
 <p class="accessory-desc">{{ acc.description | strip }}</p>
 {%- if acc.specs and acc.specs.size > 0 %}<ul class="accessory-specs">{% for s in acc.specs %}<li>{{ s }}</li>{% endfor %}</ul>{% endif %}
-{%- if acc.links and acc.links.size > 0 %}<div class="accessory-links">{% for l in acc.links %}{% case l.type %}{% when "manual" %}{% assign l_icon = "fa-book" %}{% when "elearning" %}{% assign l_icon = "fa-graduation-cap" %}{% when "video" %}{% assign l_icon = "fa-circle-play" %}{% else %}{% assign l_icon = "fa-arrow-up-right-from-square" %}{% endcase %}<a href="{{ l.url }}" class="equipment-link" target="_blank" rel="noopener"><i class="fa-solid {{ l_icon }}"></i> {{ l.label }}</a>{% endfor %}</div>{% endif %}
+{%- if acc.links and acc.links.size > 0 %}<table class="accessory-resources"><thead><tr><th>Resource</th><th>What it is</th></tr></thead><tbody>{% for l in acc.links %}<tr><td><a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a></td><td>{{ l.note }}</td></tr>{% endfor %}</tbody></table>{% endif %}
 </section>
 {%- endfor %}
 </div>

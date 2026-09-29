@@ -1,7 +1,7 @@
 # Equipment Accessories — Design
 
 Date: 2026-09-29
-Status: Approved (design), pending implementation
+Status: Implemented (ffb20cb); revised same day, see "Revision" at the end
 
 ## Problem
 
@@ -145,3 +145,18 @@ later), embedded videos, per-accessory pages.
   TOC lists them.
 - Every accessory URL returns a non-404 response (curl), or is noted as
   blocked-by-bot-protection and checked by hand.
+
+## Revision (2026-09-29, after first review)
+
+- Links on the post render as a two-column table ("Resource", "What it is"),
+  reusing the post's booktabs table style, instead of pill buttons.
+  Link fields are now `{label, url, note}`; `type` and the icon mapping are
+  dropped.
+- The training panel and the presence sensors are one entry, "Academy
+  Hardware Set" (Universal Robots), with the UR Marketplace page and two
+  conveyor tracking tutorials. The UR10e has 7 accessories.
+- Screwdriving Solution links expanded to the full Robotiq support set
+  (manual, two quick start guides, sleeve chart, product sheet, EC
+  declaration, two CAD files) plus the UR Marketplace page and e-learning.
+- The section intro points to https://robotiq.com/support for Robotiq
+  manuals, URCaps, and 3D models.

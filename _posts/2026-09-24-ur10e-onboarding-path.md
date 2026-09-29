@@ -66,7 +66,7 @@ Specs for our two scanners: [nanoScan3 Core Safety Laser Scanners](#accessory-na
 
 ## Accessories on our UR10e
 
-These are mounted on or wired to our arm. Each entry has the maker's product page, manual, and training material where they exist.
+These are mounted on or wired to our arm. Each entry lists the maker's product page, manuals, and training material where they exist. For the Robotiq accessories, manuals, software (URCaps), and 3D models are all also collected on the [Robotiq support site](https://robotiq.com/support).
 
 {% include equipment_accessories.html equipment_id=page.equipment_id %}
 
