@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v2.5.4**（`source` 分支，已发布，2026-09-24）。
+**当前版本：v2.6.0**（`source` 分支，已发布，2026-09-29）。
 
 ## 两份日志，别混
 
@@ -38,24 +38,20 @@ git push origin source --tags
 
 ## [待发布]
 
-- 更换 Rezwanul Ashraf Ruddro 头像：`images/team/rezwanul.jpg` 换成新照片（原图 1086×1448 PNG 1.8 MB，裁成 600×600 JPEG，约 43 KB）。`_data/web/people.yml` 路径不变。
-- Rohith Naini 加头像 `images/team/naini.jpg`（400×400）和 LinkedIn（`website`），`people.yml` 加 `photo` 字段并把 `show_team` 改为 `true`，在 team 页面显示。
-- 新增 DE 学生 Mohammad Asifur R Rabby（2025–now，`mrabby@lamar.edu`，`doctoral_advisor`），头像 `images/team/rabby.jpg`（120×120），`people.yml` 放在 Avinash 之后。
-- 删除未被引用的 `images/team/mobin.jpg`（Mobin 的 `show_team` 为 `false`，条目也没有 `photo` 字段）。
-- About 和 Team 页 PI 卡片在地址下加一行 office 和电话（`Office: Cherry Engineering Building, Room 2628 · Tel: 409-880-1891`，电话可点击拨号），样式 `.pi-office` 加在 `_sass/layouts/_team.scss`。`_config.yml`：电话从 1981 更正为 1891；`office` 改为 `Cherry Engineering Building, Room 2628`，城市邮编拆到新字段 `office_city`；`cv/build-cv.js` 的 CV 抬头改为拼接 `office` + `office_city`，楼名和电话跟着更正。
-- 新增 lab news《Advanced Robotics (INEN 6301): Cobot Lab Session and a Pick-and-Place Race》（`_lab_news/advanced-robotics-cobot-lab-session.md`）：2026-09-28 INEN 6301 实验课，UR10e Operations and Motion 模块 + pick-and-place 小组竞速（Group 1：Nhat Ton、Jyothi Supriya Chollangi、Ayesha Khatun、Paniz Bioucki，11.328 s、0 errors）；介绍课程与 UR Educational Robotics Training – Core 认证；介绍装修后的 XRAI Lab（30+ 人、多相机与灯光系统）和 UR10e 工作站配置（WINGMAN 换刀器、锁螺丝系统带送钉器、Robotiq EPick、Robotiq 二指夹爪、传送带、2 个 SICK nanoScan3 Core、多个 presence sensor）。封面图原图 3788×2841 1.7 MB，缩到 1600×1200、quality 82（370 KB），放在 `images/lab/news/2026-09-28-cobot-lab/`。`_data/web/news.yml` 加一条短新闻指向该页。
-- Equipment 配件：`_data/web/equipment.yml` 新增可选字段 `accessories`（`name` / `maker` / `description` / `specs` / `links[{type,label,url}]`，type 为 product|manual|elearning|video）。UR10e 录入 8 个配件：WINGMAN 换刀器、Robotiq Screwdriving Solution、EPick、2F-85、Wrist Camera、UR Academy 训练面板（传送带 + I/O simulator）、2 台 SICK nanoScan3 Core、presence sensors。UR10e 简介只描述机械臂本身，旧的 AirPick 错误一并去掉。Lab 页卡片在简介下列出配件名（`_pages/lab.md`，样式在 `_lab.scss`，`.equipment-link` 挪到顶层供复用）。新 include `_includes/equipment_accessories.html` 按 `equipment_id` 渲染完整配件条目（简介、参数、链接按钮），UR10e Training Guide 新增 “Accessories on our UR10e” 一节，样式在新文件 `_sass/layouts/_equipment_accessories.scss`；第 3、4 步各加一行跳到对应配件。修正 Training Guide 第 4 步失效的 UR Marketplace 链接（`NhmIAE` → `NhnIAE`，SICK sBot Stop）。设计与计划见 `docs/superpowers/specs/2026-09-29-equipment-accessories-design.md`、`docs/superpowers/plans/2026-09-29-equipment-accessories.md`。
-- Equipment 配件二改：Training Guide 里每个配件的链接从按钮改成 “Resource / What it is” 表格（沿用博文的三线表样式），`links` 字段改为 `{label, url, note}`，去掉 `type`。训练面板和 presence sensors 合并为一条 “Academy Hardware Set”（UR Marketplace 页面 + 两条 conveyor tracking 教程），配件共 7 个。Screwdriving Solution 链接扩成 10 条：新版说明书（2023-04-11）、螺丝刀和送钉器两份 quick start guide、真空套筒选型表、产品单页、EC declaration、两个 CAD 文件（ZIP / STEP）。配件一节开头加一句指向 Robotiq support 站（说明书、URCap、3D 模型）。
-- Equipment 配件补链接（Robotiq support 资料）：EPick 加 quick start guide、Robotiq User Interface 说明书、TCP 与质心表、接头组装指南、EC declaration（共 9 条）；2F-85 加 quick start guide、User Interface 说明书、TCP 与质心表、自适应夹爪产品单页、EC declaration（共 8 条）；Wrist Camera 加 quick start guide、UR5/UR10 标定板、TCP 与质心表、EU declaration、3D CAD（STEP）、2D 图纸（共 9 条）。新链接插在说明书之后、e-Learning 之前。
-- nanoScan3 Core 配件补链接（共 7 条）：SICK nanoScan3 I/O 操作手册、UR Marketplace 上的 sBot 操作说明 PDF、sBot Stop/Speed URCap 视频、UR Forum 上 nanoScan3 设置问题帖（编程时扫描仪不断触发 safeguard stop，用模式切换开关解决）。
-- Lab 页 equipment 卡片：图片改为 1:1（`aspect-ratio: 1 / 1`，placeholder 同步）；Description 和 Accessories 改成原生 `<details>` 折叠块，默认收起，点标题展开，右侧 Font Awesome chevron 展开时翻转；Accessories 标题带数量（如 “Accessories (7)”），原 `.equipment-accessories-title` 样式换成通用的 `.equipment-more`（`_pages/lab.md`、`_sass/layouts/_lab.scss`）。
-
 
 ---
 
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [2.6.0] - 2026-09-29
+
+**设备配件与卡片改版。** `_data/web/equipment.yml` 新增可选字段 `accessories`（`name` / `maker` / `description` / `specs` / `links[{label, url, note}]`）。UR10e 录入 7 个配件：WINGMAN 换刀器、Robotiq Screwdriving Solution、EPick、2F-85、Wrist Camera、UR Academy Hardware Set（传送带 + I/O simulator + presence sensors 合为一条）、2 台 SICK nanoScan3 Core；链接以 Robotiq support 站资料为主（说明书、quick start、TCP 与质心表、EC/EU declaration、CAD），外加 UR Marketplace、e-Learning、视频和一条 UR Forum 帖，全部逐条验证可打开（只有 TripleA 产品页对脚本返回 455，浏览器正常）。新 include `_includes/equipment_accessories.html` 按 `equipment_id` 渲染完整条目，链接用博文三线表（Resource / What it is）；标题 `h3` 只放配件名，因为 TOC 原样复制 `h3` 文字，厂商放下一行。UR10e Training Guide 加 “Accessories on our UR10e” 一节并指向 robotiq.com/support，第 3、4 步各加一行跳到对应配件，并修正第 4 步失效的 UR Marketplace 链接（`NhmIAE` → `NhnIAE`，SICK sBot Stop）。Lab 页卡片：图片 1:1，Description 和 Accessories 改成原生 `<details>` 折叠（默认收起，Accessories 标题带数量），UR10e 简介只写机械臂本身，去掉旧的 AirPick 错误；`.equipment-link` 挪到顶层复用。样式在 `_lab.scss` 和新文件 `_sass/layouts/_equipment_accessories.scss`；设计与计划在 `docs/superpowers/` 的 2026-09-29 spec/plan。
+
+**Lab news 与团队。** 新增 lab news《Advanced Robotics (INEN 6301): Cobot Lab Session and a Pick-and-Place Race》：2026-09-28 实验课，UR10e 小组竞速 Group 1 以 11.328 s、0 errors 夺冠，并介绍课程的 UR Educational Robotics Training – Core 认证和装修后的 XRAI Lab；封面图缩到 1600×1200，首页 news 加一条指向。`people.yml`：Rezwanul 换新头像（600×600 JPEG）；Rohith Naini 加头像和 LinkedIn 并在 team 页显示；新增 DE 学生 Mohammad Asifur R Rabby（2025–now）；删除未被引用的 `mobin.jpg`。
+
+**PI 联系方式。** About 和 Team 页 PI 卡片地址下加 `Office · Tel` 一行（电话可点击拨号，样式 `.pi-office`）。`_config.yml` 电话从 1981 更正为 1891，楼名改为 Cherry Engineering Building；城市邮编拆到新字段 `office_city`，只在 CV 抬头由 `build-cv.js` 拼回。
 
 ### [2.5.4] - 2026-09-24
 
