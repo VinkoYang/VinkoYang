@@ -1,6 +1,9 @@
 # News items shown on the home page sidebar.
 # The 5 most recent are shown; all appear on /allnews.
 # Each entry needs: date, headline
+- date: September 28, 2026
+  headline: "<b>INEN 6301 Advanced Robotics</b> lab session in the renovated XRAI Lab: students raced a UR10e pick-and-place task, and Group 1 won in 11.328 s with zero errors — <a href='/lab/news/advanced-robotics-cobot-lab-session/'>read about the session and the lab</a>."
+
 - date: August 28, 2026
   headline: "Hosted <b>Simon Saurbier</b> (Karlsruhe Institute of Technology) for an ISE seminar on human–machine symbiosis — <a href='/lab/news/hms-seminar-saurbier/'>read about the talk and the discussion</a>."
 

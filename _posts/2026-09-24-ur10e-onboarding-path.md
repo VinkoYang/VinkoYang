@@ -49,16 +49,26 @@ Relevant if your project involves the wrist camera — object detection, part lo
 
 Take the course first and the manual second. Most early vision failures are not algorithmic — they are lighting, exposure, or a teach-object step done under conditions that no longer hold.
 
+Specs and links for the camera itself: [Wrist Camera](#accessory-wrist-camera) under Accessories below.
+
 ## 4. LiDAR and human–robot collaboration
 
 Relevant if your project involves shared workspace, speed-and-separation monitoring, or any question about what the robot does when a person walks up to it.
 
 | Resource | What it is | Why bother |
 | --- | --- | --- |
-| [UR Marketplace: LiDAR safety solution](https://www.universal-robots.com/marketplace/products/01tP40000071NhmIAE/) | Product page for the LiDAR-based safety system | What the hardware actually provides, and where it sits in the safety chain |
+| [UR Marketplace: SICK sBot Stop](https://www.universal-robots.com/marketplace/products/01tP40000071NhnIAE/) | Product page for the nanoScan3 Core safety package on our cell | What the hardware actually provides, and where it sits in the safety chain |
 | [LiDAR-based safety in HRC](https://www.mdpi.com/1424-8220/23/9/4305) | Research paper, *Sensors* 23(9):4305 | The research framing: how zone monitoring translates into collaborative operation |
 
 Read the product page for the mechanism and the paper for the reasoning. The distinction that matters here is between a safety function that is *certified* and a perception feature that is merely *useful* — collaborative operation depends entirely on which one you are relying on.
+
+Specs for our two scanners: [nanoScan3 Core Safety Laser Scanners](#accessory-nanoscan3-core-safety-laser-scanners) under Accessories below.
+
+## Accessories on our UR10e
+
+These are mounted on or wired to our arm. Each entry lists the maker's product page, manuals, and training material where they exist. For the Robotiq accessories, manuals, software (URCaps), and 3D models are all also collected on the [Robotiq support site](https://robotiq.com/support).
+
+{% include equipment_accessories.html equipment_id=page.equipment_id %}
 
 ## What comes next
 

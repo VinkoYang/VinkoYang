@@ -261,7 +261,7 @@ const contactRow = (items, cls) =>
     : '';
 
 const affiliation = [config.title, config.department, config.institution].filter(Boolean).join(', ');
-const officeLine = config.office || config.institution_location || '';
+const officeLine = [config.office, config.office_city].filter(Boolean).join(', ') || config.institution_location || '';
 
 // ---------------------------------------------------------------------------
 // Assemble document body

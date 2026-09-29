@@ -1,0 +1,48 @@
+// ============================================================
+// Equipment accessories — full entries on a Training Guide post
+// (rendered by _includes/equipment_accessories.html)
+// ============================================================
+
+.accessory-list {
+  margin-top: var(--space-4);
+}
+
+.post-body .accessory-entry {
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--border-color);
+
+  &:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0.125rem;
+  }
+
+  .accessory-maker {
+    font-size: 0.8125rem;
+    color: var(--text-tertiary);
+    margin: 0 0 var(--space-2);
+  }
+
+  .accessory-desc {
+    margin: 0;
+  }
+
+  .accessory-specs {
+    font-size: 0.9rem;
+    margin: var(--space-2) 0 0;
+  }
+
+  // Resource table reuses the post's booktabs table; only spacing and
+  // the label column width change here.
+  .accessory-resources {
+    margin: var(--space-4) 0 0;
+
+    td:first-child {
+      width: 40%;
+    }
+  }
+}

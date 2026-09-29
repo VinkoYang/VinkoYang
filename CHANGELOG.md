@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v2.5.4**（`source` 分支，已发布，2026-09-24）。
+**当前版本：v2.6.0**（`source` 分支，已发布，2026-09-29）。
 
 ## 两份日志，别混
 
@@ -44,6 +44,14 @@ git push origin source --tags
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [2.6.0] - 2026-09-29
+
+**设备配件与卡片改版。** `_data/web/equipment.yml` 新增可选字段 `accessories`（`name` / `maker` / `description` / `specs` / `links[{label, url, note}]`）。UR10e 录入 7 个配件：WINGMAN 换刀器、Robotiq Screwdriving Solution、EPick、2F-85、Wrist Camera、UR Academy Hardware Set（传送带 + I/O simulator + presence sensors 合为一条）、2 台 SICK nanoScan3 Core；链接以 Robotiq support 站资料为主（说明书、quick start、TCP 与质心表、EC/EU declaration、CAD），外加 UR Marketplace、e-Learning、视频和一条 UR Forum 帖，全部逐条验证可打开（只有 TripleA 产品页对脚本返回 455，浏览器正常）。新 include `_includes/equipment_accessories.html` 按 `equipment_id` 渲染完整条目，链接用博文三线表（Resource / What it is）；标题 `h3` 只放配件名，因为 TOC 原样复制 `h3` 文字，厂商放下一行。UR10e Training Guide 加 “Accessories on our UR10e” 一节并指向 robotiq.com/support，第 3、4 步各加一行跳到对应配件，并修正第 4 步失效的 UR Marketplace 链接（`NhmIAE` → `NhnIAE`，SICK sBot Stop）。Lab 页卡片：图片 1:1，Description 和 Accessories 改成原生 `<details>` 折叠（默认收起，Accessories 标题带数量），UR10e 简介只写机械臂本身，去掉旧的 AirPick 错误；`.equipment-link` 挪到顶层复用。样式在 `_lab.scss` 和新文件 `_sass/layouts/_equipment_accessories.scss`；设计与计划在 `docs/superpowers/` 的 2026-09-29 spec/plan。
+
+**Lab news 与团队。** 新增 lab news《Advanced Robotics (INEN 6301): Cobot Lab Session and a Pick-and-Place Race》：2026-09-28 实验课，UR10e 小组竞速 Group 1 以 11.328 s、0 errors 夺冠，并介绍课程的 UR Educational Robotics Training – Core 认证和装修后的 XRAI Lab；封面图缩到 1600×1200，首页 news 加一条指向。`people.yml`：Rezwanul 换新头像（600×600 JPEG）；Rohith Naini 加头像和 LinkedIn 并在 team 页显示；新增 DE 学生 Mohammad Asifur R Rabby（2025–now）；删除未被引用的 `mobin.jpg`。
+
+**PI 联系方式。** About 和 Team 页 PI 卡片地址下加 `Office · Tel` 一行（电话可点击拨号，样式 `.pi-office`）。`_config.yml` 电话从 1981 更正为 1891，楼名改为 Cherry Engineering Building；城市邮编拆到新字段 `office_city`，只在 CV 抬头由 `build-cv.js` 拼回。
 
 ### [2.5.4] - 2026-09-24
 

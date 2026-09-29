@@ -2,10 +2,238 @@
   category: "Collaborative Robot"
   image: "lab/equip_ur10e.jpeg"
   description: >
-    A 6-DOF collaborative robot arm with 12.5 kg payload and 1300 mm reach.
-    Equipped with a Robotiq Wrist Camera, a Robotiq 2F gripper, a Robotiq AirPick vacuum gripper, and a Robotiq Screwdriving Solution for automated fastening and assembly.
-    A conveyor system is integrated to enable continuous material flow and support experiments in automated production and logistics.
+    A 6-DOF collaborative robot arm with a 12.5 kg payload, 1300 mm reach, and a force/torque sensor built into the tool flange.
+    It anchors our robot cell for teaching and research in collaborative automation.
   manual: "https://www.universal-robots.com/manuals/EN/PDF/SW5_19/user-manual-UR10e-PDF_online/711-039-00_UR10e_User_Manual_en_Global.pdf"
+  accessories:
+    - name: "WINGMAN Cobot Tool Changer"
+      maker: "TripleA Robotics"
+      description: >
+        A plug-and-play mechanical tool changer that lets the cobot switch end-effectors in seconds, automatically or by hand.
+        Automatic changes need no power or compressed air: the arm's own motion through the tool holder locks and releases each tool.
+        Optional pass-through modules carry electrical signals and air or vacuum to the mounted end-effector.
+      specs:
+        - "Manual or automatic tool change"
+        - "Mechanical locking; no power or air needed to change tools"
+        - "Tool holder supports end-effectors up to 5 kg"
+        - "Optional electrical (M8/M12) and pneumatic/vacuum pass-through"
+      links:
+        - label: "Product page"
+          url: "https://triplea-robotics.com/tool-changer/"
+          note: "TripleA's product overview, kits, and datasheets"
+        - label: "UR Marketplace"
+          url: "https://www.universal-robots.com/marketplace/products/01tP40000071NjMIAU/"
+          note: "UR+ listing with Universal Robots compatibility details"
+        - label: "User guide (PDF)"
+          url: "https://triplea-robotics.com/wp-content/uploads/TripleA-robotics_WINGMAN_User-Guide.pdf"
+          note: "Installation, manual and automatic tool changes, and safety requirements"
+        - label: "Overview video"
+          url: "https://www.youtube.com/watch?v=4ZSUEO-6LlA"
+          note: "The tool changer in use, shown on a Doosan arm"
+        - label: "Demo on UR"
+          url: "https://www.youtube.com/watch?v=3M4gb9KVHWo"
+          note: "Automatic tool changes on a Universal Robots arm"
+
+    - name: "Screwdriving Solution"
+      maker: "Robotiq"
+      description: >
+        A complete robotic screwdriving package. The SF-300 screw feeder presents screws one at a time, and the SD-100 screwdriver picks each one up by vacuum and drives it at a set torque.
+        Programming runs on the teach pendant through the Robotiq_Screwdriving URCap, which adds force sensing to the drive.
+      specs:
+        - "Torque: 0.5–4 Nm"
+        - "Screws: M2.5–M5, 4–25 mm long, any material"
+        - "Vacuum air supply: 100 psi"
+        - "URCap: Robotiq_Screwdriving (PolyScope 5.9.4 or later on e-Series)"
+      links:
+        - label: "UR Marketplace"
+          url: "https://www.universal-robots.com/marketplace/products/01tP40000071NgFIAU/"
+          note: "Product listing with specs and what is in the box"
+        - label: "Instruction manual (PDF)"
+          url: "https://blog.robotiq.com/hubfs/support-files/Robotiq_Screwdriving_Solution_Instruction_manual__20230411.pdf"
+          note: "Full reference: installation, URCap, operation, and calibration"
+        - label: "Quick start guide: screwdriver (PDF)"
+          url: "https://blog.robotiq.com/hubfs/support-files/Robotiq_Screwdriver_QSG_X-990113-A.pdf"
+          note: "Mounting and wiring the SD-100 screwdriver"
+        - label: "Quick start guide: screw feeder (PDF)"
+          url: "https://blog.robotiq.com/hubfs/support-files/Robotiq_Screw_Feeder_QSG_X-990112-A.pdf"
+          note: "Setting up the SF-300 screw feeder"
+        - label: "Vacuum sleeve selection chart (PDF)"
+          url: "https://blog.robotiq.com/hubfs/support-files/Screwdriver_vacuum_sleeve_selection_chart_X-990111-A.pdf"
+          note: "Which vacuum sleeve to use for each screw size"
+        - label: "Product sheet (PDF)"
+          url: "https://blog.robotiq.com/hubfs/support-files/Robotiq_Screwdriving_V2023-04_EN_WEB.pdf"
+          note: "Short summary of specs and features"
+        - label: "Declaration of incorporation (PDF)"
+          url: "https://blog.robotiq.com/hubfs/support-files/SD-100_20EC_20Declaration_20of_20Incorporation_20-_20Original_20210826.pdf"
+          note: "EC declaration for the SD-100: standards and certificates"
+        - label: "CAD: screwdriver (ZIP)"
+          url: "https://blog.robotiq.com/hubfs/support-files/Robotiq_Srewdriver_20220829.zip"
+          note: "3D model of the screwdriver for cell layout"
+        - label: "CAD: screw feeder (STEP)"
+          url: "https://blog.robotiq.com/hubfs/support-files/ROBOTIQ_SCREW_FEEDER_DEFEATURE_20210727.step"
+          note: "3D model of the screw feeder"
+        - label: "e-Learning course"
+          url: "https://elearning.robotiq.com/course/view.php?id=101"
+          note: "Robotiq's free step-by-step installation and programming course"
+
+    - name: "EPick Vacuum Gripper"
+      maker: "Robotiq"
+      description: >
+        An electric vacuum gripper with a built-in pump, so it runs without compressed air.
+        It handles flat or smooth parts that fingers grip poorly, such as sheet metal, glass, boxes, and plastic panels.
+      specs:
+        - "Built-in electric vacuum pump; no compressed air"
+        - "Single-, dual-, or quad-cup configurations"
+      links:
+        - label: "UR Marketplace"
+          url: "https://www.universal-robots.com/marketplace/products/01tP40000071NgGIAU/"
+          note: "Product listing and specs"
+        - label: "Instruction manual (PDF)"
+          url: "https://assets.robotiq.com/website-assets/support_documents/document/EPick_Instruction_Manual_e-Series_PDF_20210709.pdf"
+          note: "Installation, control, and maintenance on e-Series robots"
+        - label: "Quick start guide (PDF)"
+          url: "https://blog.robotiq.com/hubfs/support-files/Quick_start_EPick_eS_EN.pdf"
+          note: "Mounting and wiring the EPick on an e-Series UR arm"
+        - label: "Robotiq User Interface manual (PDF)"
+          url: "https://blog.robotiq.com/hubfs/support-files/User_Interface_PDF_20210813.pdf"
+          note: "Using the Robotiq user interface to test and control the gripper"
+        - label: "TCP and center of mass table (PDF)"
+          url: "https://blog.robotiq.com/hubfs/support-files/TCP_and_Center_of_Mass_of_Robotiq_Products_V1.1_20210709.pdf"
+          note: "TCP offset and mass values to enter in the robot payload setup"
+        - label: "Connector assembly guide (PDF)"
+          url: "https://blog.robotiq.com/hubfs/support-files/Connector_asm_guide_vacuum_X-990063-B.pdf"
+          note: "Assembling the vacuum gripper connectors"
+        - label: "Declaration of incorporation (PDF)"
+          url: "https://blog.robotiq.com/hubfs/support-files/EPick-EC_Declaration_of_Incorporation_EN_Original_20191111.pdf"
+          note: "EC declaration for the EPick: standards and certificates"
+        - label: "e-Learning course"
+          url: "https://elearning.robotiq.com/course/view.php?id=6"
+          note: "Robotiq's Vacuum Grippers course (EPick and AirPick)"
+        - label: "Installation video"
+          url: "https://www.youtube.com/watch?v=O0l86pJWuMM"
+          note: "Mounting and connecting the EPick on a UR arm"
+
+    - name: "2F-85 Adaptive Gripper"
+      maker: "Robotiq"
+      description: >
+        A two-finger electric gripper with an 85 mm stroke. The fingers can pinch a part in parallel or wrap around it, and the gripper reports object detection back to the robot program.
+        It is the gripper students use in the pick-and-place exercises.
+      specs:
+        - "Stroke: 85 mm"
+        - "Grip force: 20–235 N"
+        - "Parallel and encompassing grip; object detection"
+      links:
+        - label: "UR Marketplace"
+          url: "https://www.universal-robots.com/marketplace/products/01tP40000071NgHIAU/"
+          note: "Product listing and specs"
+        - label: "Instruction manual (PDF)"
+          url: "https://assets.robotiq.com/website-assets/support_documents/document/2F-85_2F-140_Instruction_Manual_e-Series_PDF_20190206.pdf"
+          note: "Installation, control, and specs on e-Series robots (covers 2F-85 and 2F-140)"
+        - label: "Quick start guide (PDF)"
+          url: "https://blog.robotiq.com/hubfs/support-files/Quick_start_2Finger_e-Series_nocropmarks_EN.pdf"
+          note: "Mounting and wiring the 2F-85 on an e-Series UR arm"
+        - label: "Robotiq User Interface manual (PDF)"
+          url: "https://blog.robotiq.com/hubfs/support-files/User_Interface_PDF_20210813.pdf"
+          note: "Using the Robotiq user interface to test and control the gripper"
+        - label: "TCP and center of mass table (PDF)"
+          url: "https://blog.robotiq.com/hubfs/support-files/TCP_20and_20Center_20of_20Mass_20of_20Robotiq_20Products_20V1.1_20210623.pdf"
+          note: "TCP offset and mass values to enter in the robot payload setup"
+        - label: "Product sheet (PDF)"
+          url: "https://blog.robotiq.com/hubfs/support-files/Product-sheet-Adaptive-Grippers-EN.pdf"
+          note: "Short summary of specs and features for the adaptive grippers"
+        - label: "Declaration of incorporation (PDF)"
+          url: "https://blog.robotiq.com/hubfs/support-files/2F_-_EC_Declaration_of_Incorporation_-_Original_20230328.pdf"
+          note: "EC declaration for the 2F grippers: standards and certificates"
+        - label: "e-Learning course"
+          url: "https://elearning.robotiq.com/course/view.php?id=3"
+          note: "Robotiq's Adaptive Grippers course: install, program, set payload and TCP"
+
+    - name: "Wrist Camera"
+      maker: "Robotiq"
+      description: >
+        A camera mounted between the robot's tool flange and the gripper.
+        From the teach pendant, students teach it a part, and it then locates that part on the work surface and passes the position to the robot program, with no separate vision PC.
+      links:
+        - label: "UR Marketplace"
+          url: "https://www.universal-robots.com/marketplace/products/01tP40000071NgJIAU/"
+          note: "Product listing and specs"
+        - label: "Instruction manual (PDF)"
+          url: "https://assets.robotiq.com/website-assets/support_documents/document/Wrist_20Camera_Instruction_20Manual_PDF_20210406.pdf"
+          note: "Mounting, calibration, and the camera locate node"
+        - label: "Quick start guide (PDF)"
+          url: "https://blog.robotiq.com/hubfs/support-files/Quick_start_Camera_e-Series_nocropmarks.pdf"
+          note: "Mounting and wiring the camera on an e-Series UR arm"
+        - label: "Calibration board, UR5 and UR10 (PDF)"
+          url: "https://blog.robotiq.com/hubfs/support-files/Vision-System-Calibration-Board-UR5-UR10-1.1_20171116.pdf"
+          note: "Printable board for calibrating the camera on the work surface"
+        - label: "TCP and center of mass table (PDF)"
+          url: "https://blog.robotiq.com/hubfs/support-files/TCP_20and_20Center_20of_20Mass_20of_20Robotiq_20Products_20V1.1_20210406.pdf"
+          note: "TCP offset and mass values to enter in the robot payload setup"
+        - label: "Declaration of conformity (PDF)"
+          url: "https://blog.robotiq.com/hubfs/support-files/Wrist_20Camera_20-_20EU_20Declaration_20of_20Conformity_20-_20Original_20210303.pdf"
+          note: "EU declaration for the camera: standards and certificates"
+        - label: "CAD: 3D model (STEP)"
+          url: "https://blog.robotiq.com/hubfs/support-files/WRIST_CAMERA_20171116-Sep-06-2024-02-41-22-7147-PM.step"
+          note: "3D model of the camera for cell layout"
+        - label: "2D drawing (PDF)"
+          url: "https://blog.robotiq.com/hubfs/support-files/WRIST_20CAMERA_20191031.pdf"
+          note: "Dimensioned drawing of the camera"
+        - label: "e-Learning course"
+          url: "https://elearning.robotiq.com/course/view.php?id=5"
+          note: "Robotiq's Wrist Camera course, including advanced detection parameters"
+
+    - name: "Academy Hardware Set"
+      maker: "Universal Robots"
+      description: >
+        UR's training kit for classrooms and labs, built to work with any UR cobot.
+        Ours is a beech multiplex panel with conveyor belts, an I/O simulator, and presence sensors that detect when a part is in position.
+        Students use it to practice pick and place, palletizing, dispensing, force control, and multi-end-effector tasks, and to wire and program the peripherals a real cell depends on.
+      specs:
+        - "Beech multiplex panel with conveyor belts and an I/O simulator"
+        - "Presence sensors wired to the robot's digital inputs"
+        - "Simulates pick and place, palletizing, dispensing, force control, and multi-end-effector work"
+      links:
+        - label: "UR Marketplace"
+          url: "https://www.universal-robots.com/marketplace/products/01tP400000ApevJIAR/"
+          note: "Overview and features of the set"
+        - label: "Conveyor tracking setup video"
+          url: "https://www.youtube.com/watch?v=JCcuciZi7ws"
+          note: "Setting up conveyor tracking on a UR10e"
+        - label: "Conveyor tracking guide"
+          url: "https://www.universal-robots.com/articles/ur/application-installation/conveyor-tracking-with-wizard/"
+          note: "UR's step-by-step article on the conveyor tracking wizard"
+
+    - name: "nanoScan3 Core Safety Laser Scanners"
+      maker: "SICK"
+      description: >
+        Two compact safety laser scanners watch the floor around the cell. Each monitors a protective field and a warning field, and the robot stops when a person steps into the protective field.
+        The fields are set up on the UR teach pendant with SICK's nanoScan3 Tool URCap.
+      specs:
+        - "Quantity: 2"
+        - "Protective field range: 3 m"
+        - "Scanning angle: 275°"
+      links:
+        - label: "Product page"
+          url: "https://www.sick.com/us/en/catalog/products/safety/safety-laser-scanners/nanoscan3/c/g507056"
+          note: "SICK's nanoScan3 family page with specs and variants"
+        - label: "UR Marketplace (sBot Stop)"
+          url: "https://www.universal-robots.com/marketplace/products/01tP40000071NhnIAE/"
+          note: "The SICK package on our cell: nanoScan3 Core plus the URCap"
+        - label: "Operating instructions (PDF)"
+          url: "https://www.sick.com/media/docs/7/37/137/operating_instructions_nanoscan3_i_o_en_im0087137.pdf"
+          note: "SICK's full scanner manual: mounting, protective fields, and safety functions"
+        - label: "sBot operating instructions (PDF)"
+          url: "https://www.universal-robots.com/marketplace/products/01tP40000071NhnIAE/SR-101179/files/?fileName=8025714_Operating_Instructions_%20sBot.pdf"
+          note: "Setting up the sBot Stop and sBot Speed packages on a UR robot"
+        - label: "URCap instructions (PDF)"
+          url: "https://www.sick.com/media/docs/4/24/624/operating_instructions_nanoscan3_tool_urcap_safety_system_en_im0094624.pdf"
+          note: "Configuring the scanner fields from the UR teach pendant"
+        - label: "sBot Stop/Speed video"
+          url: "https://www.youtube.com/watch?v=6RrE437wvDk"
+          note: "SICK's walkthrough of configuring the scanners from the URCap"
+        - label: "UR Forum: nanoScan3 setup"
+          url: "https://forum.universal-robots.com/t/sick-nanoscan-3-setup/40001"
+          note: "Why the scanner keeps triggering safeguard stops while you program, and the mode-switch fix"
 
 - name: "UFactory Xarm 6"
   category: "Collaborative Robot"

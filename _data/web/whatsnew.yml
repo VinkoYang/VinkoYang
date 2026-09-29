@@ -8,6 +8,15 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "2.6.0"
+  date: 2026-09-29
+  changes:
+    - "Equipment cards on the Lab page are tidier: square photos, with each item's description and accessory list tucked behind click-to-expand headings."
+    - "The UR10e Training Guide now covers the hardware around the arm: the WINGMAN tool changer, Robotiq screwdriving system, EPick and 2F-85 grippers, wrist camera, UR Academy Hardware Set, and SICK safety laser scanners. Each has a short description, key specs, and a table of manuals, quick start guides, CAD files, and training links."
+    - "New lab news: Advanced Robotics (INEN 6301) held its cobot lab session in the renovated XRAI Lab, and Group 1 won the UR10e pick-and-place race in 11.328 s with zero errors."
+    - "New and updated headshots on the Team page, which now also lists doctoral students Mohammad Asifur R Rabby and Rohith Naini."
+    - "The PI card on the About and Team pages now shows my office (Cherry Engineering Building, Room 2628) and phone number."
+
 - version: "2.5.4"
   date: 2026-09-24
   changes:
