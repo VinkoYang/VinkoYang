@@ -43,6 +43,7 @@ git push origin source --tags
 - 新增 DE 学生 Mohammad Asifur R Rabby（2025–now，`mrabby@lamar.edu`，`doctoral_advisor`），头像 `images/team/rabby.jpg`（120×120），`people.yml` 放在 Avinash 之后。
 - 删除未被引用的 `images/team/mobin.jpg`（Mobin 的 `show_team` 为 `false`，条目也没有 `photo` 字段）。
 - About 和 Team 页 PI 卡片在地址下加一行 office 和电话（`Office: Cherry Engineering Building, Room 2628 · Tel: 409-880-1891`，电话可点击拨号），样式 `.pi-office` 加在 `_sass/layouts/_team.scss`。`_config.yml`：电话从 1981 更正为 1891；`office` 改为 `Cherry Engineering Building, Room 2628`，城市邮编拆到新字段 `office_city`；`cv/build-cv.js` 的 CV 抬头改为拼接 `office` + `office_city`，楼名和电话跟着更正。
+- 新增 lab news《Advanced Robotics (INEN 6301): Cobot Lab Session and a Pick-and-Place Race》（`_lab_news/advanced-robotics-cobot-lab-session.md`）：2026-09-28 INEN 6301 实验课，UR10e Operations and Motion 模块 + pick-and-place 小组竞速（Group 1：Nhat Ton、Jyothi Supriya Chollangi、Ayesha Khatun、Paniz Bioucki，11.328 s、0 errors）；介绍课程与 UR Educational Robotics Training – Core 认证；介绍装修后的 XRAI Lab（30+ 人、多相机与灯光系统）和 UR10e 工作站配置（WINGMAN 换刀器、锁螺丝系统带送钉器、Robotiq EPick、Robotiq 二指夹爪、传送带、2 个 SICK nanoScan3 Core、多个 presence sensor）。封面图原图 3788×2841 1.7 MB，缩到 1600×1200、quality 82（370 KB），放在 `images/lab/news/2026-09-28-cobot-lab/`。`_data/web/news.yml` 加一条短新闻指向该页。
 
 
 ---
