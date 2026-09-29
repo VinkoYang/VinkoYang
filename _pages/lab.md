@@ -88,6 +88,9 @@ Through interdisciplinary innovation, the XRAI Lab redefines how intelligent sys
 <p class="equipment-category">{{ item.category }}</p>
 <h4 class="equipment-name">{% if equip_post %}<a href="{{ site.url }}{{ site.baseurl }}{{ equip_post.url }}">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}</h4>
 <p class="equipment-desc">{{ item.description }}</p>
+{% if item.accessories and item.accessories.size > 0 -%}
+<div class="equipment-accessories" markdown="0"><p class="equipment-accessories-title">Accessories</p><ul>{% for acc in item.accessories %}<li>{{ acc.name }}{% if acc.maker %} <span class="equipment-accessory-maker">· {{ acc.maker }}</span>{% endif %}</li>{% endfor %}</ul></div>
+{% endif -%}
 {%- comment -%}Whitespace trims and markdown="0" below are load-bearing: without them kramdown treats the one-line links div as inline content and escapes its closing tag.{%- endcomment -%}
 {% assign has_manual = false %}{% if item.manual and item.manual != "" %}{% assign has_manual = true %}{% endif -%}
 {% assign show_tutorials = false %}{% unless equip_post %}{% if item.tutorials and item.tutorials.size > 0 %}{% assign show_tutorials = true %}{% endif %}{% endunless -%}

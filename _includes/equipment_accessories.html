@@ -1,0 +1,21 @@
+{%- comment -%}
+  Full accessory entries for one equipment item.
+  Usage: {% include equipment_accessories.html equipment_id=page.equipment_id %}
+  equipment_id is the equipment name run through slugify (same key _pages/lab.md uses).
+  Output is one-line blocks inside markdown="0" so kramdown leaves it alone.
+{%- endcomment -%}
+{%- assign acc_equip = nil -%}
+{%- for e in site.data.web.equipment -%}{%- assign e_id = e.name | slugify -%}{%- if e_id == include.equipment_id -%}{%- assign acc_equip = e -%}{%- endif -%}{%- endfor -%}
+{%- if acc_equip and acc_equip.accessories and acc_equip.accessories.size > 0 %}
+<div class="accessory-list" markdown="0">
+{%- for acc in acc_equip.accessories %}
+<section class="accessory-entry">
+<h3 id="accessory-{{ acc.name | slugify }}">{{ acc.name }}</h3>
+{%- if acc.maker %}<p class="accessory-maker">{{ acc.maker }}</p>{% endif %}
+<p class="accessory-desc">{{ acc.description | strip }}</p>
+{%- if acc.specs and acc.specs.size > 0 %}<ul class="accessory-specs">{% for s in acc.specs %}<li>{{ s }}</li>{% endfor %}</ul>{% endif %}
+{%- if acc.links and acc.links.size > 0 %}<div class="accessory-links">{% for l in acc.links %}{% case l.type %}{% when "manual" %}{% assign l_icon = "fa-book" %}{% when "elearning" %}{% assign l_icon = "fa-graduation-cap" %}{% when "video" %}{% assign l_icon = "fa-circle-play" %}{% else %}{% assign l_icon = "fa-arrow-up-right-from-square" %}{% endcase %}<a href="{{ l.url }}" class="equipment-link" target="_blank" rel="noopener"><i class="fa-solid {{ l_icon }}"></i> {{ l.label }}</a>{% endfor %}</div>{% endif %}
+</section>
+{%- endfor %}
+</div>
+{%- endif -%}

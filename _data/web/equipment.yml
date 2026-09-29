@@ -2,10 +2,148 @@
   category: "Collaborative Robot"
   image: "lab/equip_ur10e.jpeg"
   description: >
-    A 6-DOF collaborative robot arm with 12.5 kg payload and 1300 mm reach.
-    Equipped with a Robotiq Wrist Camera, a Robotiq 2F gripper, a Robotiq AirPick vacuum gripper, and a Robotiq Screwdriving Solution for automated fastening and assembly.
-    A conveyor system is integrated to enable continuous material flow and support experiments in automated production and logistics.
+    A 6-DOF collaborative robot arm with a 12.5 kg payload, 1300 mm reach, and a force/torque sensor built into the tool flange.
+    It anchors our robot cell for teaching and research in collaborative automation.
   manual: "https://www.universal-robots.com/manuals/EN/PDF/SW5_19/user-manual-UR10e-PDF_online/711-039-00_UR10e_User_Manual_en_Global.pdf"
+  accessories:
+    - name: "WINGMAN Cobot Tool Changer"
+      maker: "TripleA Robotics"
+      description: >
+        A plug-and-play mechanical tool changer that lets the cobot switch end-effectors in seconds, automatically or by hand.
+        Automatic changes need no power or compressed air: the arm's own motion through the tool holder locks and releases each tool.
+        Optional pass-through modules carry electrical signals and air or vacuum to the mounted end-effector.
+      specs:
+        - "Manual or automatic tool change"
+        - "Mechanical locking; no power or air needed to change tools"
+        - "Tool holder supports end-effectors up to 5 kg"
+        - "Optional electrical (M8/M12) and pneumatic/vacuum pass-through"
+      links:
+        - type: product
+          label: "Product page"
+          url: "https://triplea-robotics.com/tool-changer/"
+        - type: product
+          label: "UR Marketplace"
+          url: "https://www.universal-robots.com/marketplace/products/01tP40000071NjMIAU/"
+        - type: manual
+          label: "User guide"
+          url: "https://triplea-robotics.com/wp-content/uploads/TripleA-robotics_WINGMAN_User-Guide.pdf"
+        - type: video
+          label: "Overview video"
+          url: "https://www.youtube.com/watch?v=4ZSUEO-6LlA"
+        - type: video
+          label: "Demo on UR"
+          url: "https://www.youtube.com/watch?v=3M4gb9KVHWo"
+
+    - name: "Screwdriving Solution"
+      maker: "Robotiq"
+      description: >
+        A complete robotic screwdriving package. The SF-300 screw feeder presents screws one at a time, and the SD-100 screwdriver picks each one up by vacuum and drives it at a set torque.
+        Programming runs on the teach pendant through the Robotiq_Screwdriving URCap, which adds force sensing to the drive.
+      specs:
+        - "Torque: 0.5–4 Nm"
+        - "Screws: M2.5–M5, 4–25 mm long, any material"
+        - "Vacuum air supply: 100 psi"
+        - "URCap: Robotiq_Screwdriving (PolyScope 5.9.4 or later on e-Series)"
+      links:
+        - type: product
+          label: "UR Marketplace"
+          url: "https://www.universal-robots.com/marketplace/products/01tP40000071NgFIAU/"
+        - type: manual
+          label: "Instruction manual"
+          url: "https://assets.robotiq.com/website-assets/support_documents/document/Robotiq_Screwdriving_Solution_Instruction_manual_20220209.pdf"
+        - type: elearning
+          label: "e-Learning course"
+          url: "https://elearning.robotiq.com/course/view.php?id=101"
+
+    - name: "EPick Vacuum Gripper"
+      maker: "Robotiq"
+      description: >
+        An electric vacuum gripper with a built-in pump, so it runs without compressed air.
+        It handles flat or smooth parts that fingers grip poorly, such as sheet metal, glass, boxes, and plastic panels.
+      specs:
+        - "Built-in electric vacuum pump; no compressed air"
+        - "Single-, dual-, or quad-cup configurations"
+      links:
+        - type: product
+          label: "UR Marketplace"
+          url: "https://www.universal-robots.com/marketplace/products/01tP40000071NgGIAU/"
+        - type: manual
+          label: "Instruction manual"
+          url: "https://assets.robotiq.com/website-assets/support_documents/document/EPick_Instruction_Manual_e-Series_PDF_20210709.pdf"
+        - type: elearning
+          label: "e-Learning course"
+          url: "https://elearning.robotiq.com/course/view.php?id=6"
+        - type: video
+          label: "Installation video"
+          url: "https://www.youtube.com/watch?v=O0l86pJWuMM"
+
+    - name: "2F-85 Adaptive Gripper"
+      maker: "Robotiq"
+      description: >
+        A two-finger electric gripper with an 85 mm stroke. The fingers can pinch a part in parallel or wrap around it, and the gripper reports object detection back to the robot program.
+        It is the gripper students use in the pick-and-place exercises.
+      specs:
+        - "Stroke: 85 mm"
+        - "Grip force: 20–235 N"
+        - "Parallel and encompassing grip; object detection"
+      links:
+        - type: product
+          label: "UR Marketplace"
+          url: "https://www.universal-robots.com/marketplace/products/01tP40000071NgHIAU/"
+        - type: manual
+          label: "Instruction manual"
+          url: "https://assets.robotiq.com/website-assets/support_documents/document/2F-85_2F-140_Instruction_Manual_e-Series_PDF_20190206.pdf"
+        - type: elearning
+          label: "e-Learning course"
+          url: "https://elearning.robotiq.com/course/view.php?id=3"
+
+    - name: "Wrist Camera"
+      maker: "Robotiq"
+      description: >
+        A camera mounted between the robot's tool flange and the gripper.
+        From the teach pendant, students teach it a part, and it then locates that part on the work surface and passes the position to the robot program, with no separate vision PC.
+      links:
+        - type: product
+          label: "UR Marketplace"
+          url: "https://www.universal-robots.com/marketplace/products/01tP40000071NgJIAU/"
+        - type: manual
+          label: "Instruction manual"
+          url: "https://assets.robotiq.com/website-assets/support_documents/document/Wrist_20Camera_Instruction_20Manual_PDF_20210406.pdf"
+        - type: elearning
+          label: "e-Learning course"
+          url: "https://elearning.robotiq.com/course/view.php?id=5"
+
+    - name: "Training Panel with Conveyor Belts and I/O Simulator"
+      maker: "Universal Robots Academy Hardware Set"
+      description: >
+        A beech multiplex panel carrying conveyor belts and an I/O simulator.
+        Students use it to wire and program the robot's digital inputs and outputs, start and stop the belts, and build pick-and-place cycles that react to parts arriving on a conveyor.
+
+    - name: "nanoScan3 Core Safety Laser Scanners"
+      maker: "SICK"
+      description: >
+        Two compact safety laser scanners watch the floor around the cell. Each monitors a protective field and a warning field, and the robot stops when a person steps into the protective field.
+        The fields are set up on the UR teach pendant with SICK's nanoScan3 Tool URCap.
+      specs:
+        - "Quantity: 2"
+        - "Protective field range: 3 m"
+        - "Scanning angle: 275°"
+      links:
+        - type: product
+          label: "Product page"
+          url: "https://www.sick.com/us/en/catalog/products/safety/safety-laser-scanners/nanoscan3/c/g507056"
+        - type: product
+          label: "UR Marketplace (sBot Stop)"
+          url: "https://www.universal-robots.com/marketplace/products/01tP40000071NhnIAE/"
+        - type: manual
+          label: "URCap instructions"
+          url: "https://www.sick.com/media/docs/4/24/624/operating_instructions_nanoscan3_tool_urcap_safety_system_en_im0094624.pdf"
+
+    - name: "Presence Sensors"
+      maker: "Universal Robots Academy Hardware Set"
+      description: >
+        Sensors on the training panel that detect when a part is in position, for example at the end of a conveyor.
+        They feed the robot's digital inputs, so students can write programs that wait for a part or react when one arrives.
 
 - name: "UFactory Xarm 6"
   category: "Collaborative Robot"
