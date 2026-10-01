@@ -39,6 +39,7 @@ git push origin source --tags
 ## [待发布]
 
 - 新增 `files/teaching/UR_Lab_Manual_v1_2026-10-01.pdf`（80 页，INEN 5301/6301 实验课手册，Modules 5–11 共 37 个 activity；原文件名含空格，改为下划线命名）。`teaching.yml` 新增可选字段 `lab_manual`，INEN 5301-05 和 INEN 6301 都挂上；`_pages/teaching.md` 把 Syllabus 和 Lab Manual 放进同一行 flex，任一存在即显示（INEN 6301 无 syllabus 也能显示手册）。UR10e Training Guide 第 1 步资源表加一行手册，并补一段说明它是 e-learning 的实操部分。
+- xArm 6 设备页，照 UR10e 的格式。`equipment.yml`：名称改为官方写法 `UFACTORY xArm 6`（slug 仍是 `ufactory-xarm-6`）；简介只写机械臂本身（5 kg / 700 mm / ±0.1 mm），夹爪和相机挪进新加的 `accessories`；`manual` 指向在线 hardware manual。配件三条：X-Arm Gripper（G1，照片标签 `AG1011…` 不是 G2 的 `AG1200`，规格取自 V1.11.0 说明书：0–84 mm、30 N、802 g、RS-485 Modbus RTU）、X-Arm Camera Stand（官方为 RealSense D435 设计，我们装的是 Gemini 335）、Orbbec Gemini 335（规格取自 Orbbec 产品页）；产品页统一用 ufactory.us，3D 文件指向 ufactory.us/downloads。新 post `_posts/2026-10-01-xarm6-onboarding-path.md`（`equipment_id: ufactory-xarm-6`，lab 卡片自动出 Training Guide 链接）：四步——上手视频（Generation Robots）+ xArm User Manual（Google Drive PDF，即 1305 型 hardware manual V2.6.0）+ 在线版 + downloads 页 → UFACTORY Studio 页与手册 → Python SDK / API 文档 / Developer Manual V2.0.1（ufactory.cc，比 ufactory.us 上的 V1.10.0 新） / xarm_ros2 / xarm_ros（ROS 1 仅限旧项目）→ Orbbec SDK v2 与 ROS 2 wrapper；注明 UFACTORY 官方视觉示例针对 RealSense，Gemini 335 需自行适配。GitHub 链接去掉 utm 参数。所有链接逐条 curl 验证 200。
 
 ---
 

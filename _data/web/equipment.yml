@@ -235,13 +235,85 @@
           url: "https://forum.universal-robots.com/t/sick-nanoscan-3-setup/40001"
           note: "Why the scanner keeps triggering safeguard stops while you program, and the mode-switch fix"
 
-- name: "UFactory Xarm 6"
+- name: "UFACTORY xArm 6"
   category: "Collaborative Robot"
   image: "lab/equip_xarm6.jpeg"
   description: >
-    A lightweight 6-DOF collaborative robot with a 5 kg payload and 700 mm reach. 
-    The system is equipped with an xArm two-finger gripper for adaptable and precise object handling and an Orbbec Gemini 335 depth camera for object detection, depth sensing, and vision-guided manipulation.
-    This platform supports research in human-centered robotics, perception-driven manipulation, and immersive human-robot interaction.
+    A lightweight 6-DOF collaborative robot arm with a 5 kg payload, 700 mm reach, and ±0.1 mm repeatability, fully open to programming from Python and ROS 2.
+    It is our platform for research in human-centered robotics, perception-driven manipulation, and immersive human-robot interaction.
+  manual: "https://docs.xarm.ufactory.cc/1.safety.html"
+  accessories:
+    - name: "X-Arm Gripper"
+      maker: "UFACTORY"
+      description: >
+        UFACTORY's electric two-finger gripper, the first-generation (G1) model that came before the Gripper G2.
+        It plugs into the arm's tool connector with a single cable that carries both 24 V power and RS-485 communication, so it needs no extra wiring or controller.
+        Opening position and speed are set from UFACTORY Studio, the Python SDK, or ROS 2, and the gripper reports its position back.
+      specs:
+        - "Working range: 0–84 mm"
+        - "Maximum clamping force: 30 N"
+        - "Weight: 802 g"
+        - "Control: Modbus RTU over RS-485 through the tool connector"
+      links:
+        - label: "Product page"
+          url: "https://www.ufactory.us/product/ufactory-xarm-gripper"
+          note: "UFACTORY USA's overview of the gripper"
+        - label: "User manual (PDF)"
+          url: "https://www.ufactory.cc/wp-content/uploads/2023/04/xArm-Gripper-User-Manual-V1.11.0.pdf"
+          note: "Installation, control from UFACTORY Studio and code, Modbus registers, and specs"
+        - label: "Downloads"
+          url: "https://www.ufactory.us/downloads"
+          note: "G1 and G2 manuals and 3D files of the gripper, with or without fingers"
+        - label: "xArm hardware manual"
+          url: "https://docs.xarm.ufactory.cc/1.safety.html"
+          note: "The arm's tool-end electrical interface the gripper plugs into"
+        - label: "Python SDK"
+          url: "https://github.com/xArm-Developer/xArm-Python-SDK"
+          note: "Gripper enable, position, and speed calls alongside the arm API"
+
+    - name: "X-Arm Camera Stand"
+      maker: "UFACTORY"
+      description: >
+        A mounting plate that holds a depth camera at the arm's tool flange, beside the gripper, so the camera moves with the tool.
+        UFACTORY designed it for the Intel RealSense D435; on our arm it carries the Orbbec Gemini 335 instead.
+      specs:
+        - "Mounting plate plus a 2 m USB Type-C cable"
+        - "Designed for the Intel RealSense D435; holds our Gemini 335"
+      links:
+        - label: "Product page"
+          url: "https://www.ufactory.us/product/ufactory-xarm-camera-stand"
+          note: "UFACTORY USA's listing: what is included and how it mounts"
+        - label: "Downloads"
+          url: "https://www.ufactory.us/downloads"
+          note: "3D file of the camera stand for cell layout and hand–eye setup"
+
+    - name: "Gemini 335 Depth Camera"
+      maker: "Orbbec"
+      description: >
+        A stereo depth camera held at the wrist by the X-Arm Camera Stand, so it moves with the gripper and sees the work surface from the tool's point of view.
+        It streams aligned depth and color images over a single USB-C cable and is used for object detection, depth sensing, and vision-guided grasping.
+        It is programmed from a PC through the Orbbec SDK or its ROS 2 wrapper, not from UFACTORY Studio.
+      specs:
+        - "Stereo depth, optimal range 0.26–3 m"
+        - "Depth up to 1280×800 at 30 fps; color up to 1920×1080 at 30 fps"
+        - "Depth field of view: 90° × 65°"
+        - "Built-in IMU; USB 3.0 Type-C for power and data"
+      links:
+        - label: "Product page"
+          url: "https://www.orbbec.com/products/stereo-vision-camera/gemini-335/"
+          note: "Orbbec's overview and full specs for the Gemini 335"
+        - label: "Datasheet"
+          url: "https://www.orbbec.com/docs/g330-orbbec-gemini-330-series-datasheet/"
+          note: "Specs for the whole Gemini 330 series, the 335 included"
+        - label: "Documentation"
+          url: "https://www.orbbec.com/docs/orbbec-gemini-330-series-documentation/"
+          note: "Setup, firmware, depth settings, and calibration for the 330 series"
+        - label: "Orbbec SDK v2"
+          url: "https://github.com/orbbec/OrbbecSDK_v2"
+          note: "The C/C++ and Python SDK to use for the Gemini 335"
+        - label: "ROS 2 wrapper"
+          url: "https://github.com/orbbec/OrbbecSDK_ROS2"
+          note: "Publishes the camera's depth, color, and point cloud as ROS 2 topics"
 
 - name: "Virtualis Motion VR Station"
   category: "XR station"
