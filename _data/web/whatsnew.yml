@@ -8,6 +8,14 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "2.6.1"
+  date: 2026-10-01
+  changes:
+    - "Every piece of equipment on the Lab page now has a Training Guide: step-by-step onboarding posts for the UFACTORY xArm 6, Dobot Magician, Clearpath Husky A300, Clearpath TurtleBot 4, Virtualis MotionVR, Varjo VR-3, HTC VIVE Pro, Meta Quest 3 & 3S, and the Orbbec depth cameras. Each one covers safety, setup, and programming in the order a new student should learn them."
+    - "New on the Lab page: the Clearpath TurtleBot 4, the HTC VIVE Pro with VIVE Tracker (3.0), Orbbec Astra+ and Gemini 335L depth cameras, and ten Dobot Magician desktop arms for class labs. Equipment cards are now grouped by type: arms, mobile robots, headsets, and cameras."
+    - "More equipment cards now list the hardware mounted on each robot, such as the Kinova Gen3 lite arm and RealSense camera on the Husky, and the gripper, camera stand, and depth camera on the xArm 6."
+    - "The Collaborative Robot Operations and Programming (INEN 5301) and Advanced Robotics (INEN 6301) courses on the Teaching page now link the UR Lab Manual, with 37 hands-on activities on the UR10e. The UR10e Training Guide links it too."
+
 - version: "2.6.0"
   date: 2026-09-29
   changes:
