@@ -315,32 +315,202 @@
           url: "https://github.com/orbbec/OrbbecSDK_ROS2"
           note: "Publishes the camera's depth, color, and point cloud as ROS 2 topics"
 
-- name: "Virtualis Motion VR Station"
-  category: "XR station"
-  image: "lab/equip_virtrualis.jpeg"
+- name: "Dobot Magician Robotic Arm"
+  category: "Desktop Robot Arm"
+  image: "lab/equip_dobot_magician.png"
   description: >
-   An advanced balance assessment and rehabilitation platform that integrates a 360-degree dynamic force plate with immersive virtual reality. 
-   The system enables precise evaluation of human balance and postural control through Computerized Dynamic Posturography (CDP), including standardized 
-   tests such as Sensory Organization Test (SOT), Limits of Stability (LoS), and Adaptation Tests.
+    A 4-axis desktop robot arm for teaching, with a 500 g payload, 320 mm reach, and ±0.2 mm repeatability. The lab has ten units, enough for a full class lab.
+    Students swap its tools to pick and place with suction or a gripper, write and draw, and 3D print, and program it in blocks or Python.
+  manual: "https://www.dobot-robots.com/products/education/magician.html"
+  accessories:
+    - name: "Standard Edition Tool Kit"
+      maker: "Dobot"
+      description: >
+        The end-effectors that come with the Standard Edition; each one mounts on the end of the arm in place of the others.
+        Together they cover pick and place, sorting, plotting, and small-scale additive manufacturing. The laser engraving kit is not part of this edition.
+      specs:
+        - "Suction cup: 20 mm diameter, −35 kPa"
+        - "Gripper: 27.5 mm range, 8 N grip force"
+        - "Pen holder: for pens up to 10 mm in diameter"
+        - "3D printing kit: 150 × 150 × 150 mm build volume, PLA, 0.1 mm resolution"
+      links:
+        - label: "Dobot Magician product page"
+          url: "https://www.dobot-robots.com/products/education/magician.html"
+          note: "Specs for every tool, plus the user guides, software, and 3D-printing slicing parameters under Downloads"
+        - label: "RobotLAB Standard Edition"
+          url: "https://www.robotlab.com/store/dobot-magician-v3-standard-edition/"
+          note: "What ships in the Standard Edition bundle we bought"
 
-- name: "Clearpath Husky with Robot Arm"
+- name: "Clearpath Husky A300 with Robot Arm"
   category: "Mobile Manipulator"
   image: "lab/equip_husky.jpeg"
   description: >
-    A rugged, all-terrain unmanned ground vehicle (UGV) designed for autonomous mobile robotics research. Integrated with a robotic arm, 
-    the platform enables mobile manipulation capabilities for tasks that combine navigation and object interaction in complex environments.
+    A rugged, all-terrain unmanned ground vehicle (UGV) for autonomous mobile robotics research: IP54-rated, up to 2 m/s, and able to climb 30° grades, running ROS 2 Jazzy.
+    With a robot arm on its top plate, the platform supports mobile manipulation tasks that combine navigation and object interaction in complex environments.
+  manual: "https://docs.clearpathrobotics.com/docs_robots/outdoor_robots/husky/a300/user_manual_husky/"
+  accessories:
+    - name: "Gen3 lite Robot Arm"
+      maker: "Kinova"
+      description: >
+        A lightweight 6-DOF arm with a built-in two-finger gripper, mounted on the Husky's top plate.
+        It sits on the robot's network, and Clearpath's configuration system brings it up in ROS 2, with MoveIt 2, alongside the base.
+        It can also be driven on its own from Kinova's Kortex Web App or the Kortex API.
+      specs:
+        - "6 DOF with a built-in two-finger gripper"
+        - "Reach: 760 mm; payload: 0.5 kg"
+        - "Maximum speed: 250 mm/s"
+        - "Mass: 5.4 kg"
+      links:
+        - label: "User guide (PDF)"
+          url: "https://docs.clearpathrobotics.com/assets/files/clearpath_robotics_022586-TDS2-e371286ff4ca19bcebd345a43380ef0f.pdf"
+          note: "Kinova's full guide: safety, powering on, gamepad control, the Web App, and the APIs"
+        - label: "Clearpath integration page"
+          url: "https://docs.clearpathrobotics.com/docs_robots/accessories/manipulators/kinova_gen3_lite"
+          note: "Specs, mounting kit, and the robot.yaml entry for the arm on a Clearpath robot"
+        - label: "ros2_kortex"
+          url: "https://github.com/Kinovarobotics/ros2_kortex"
+          note: "Kinova's official ROS 2 driver, with MoveIt 2 configurations"
+        - label: "Kortex API examples"
+          url: "https://github.com/Kinovarobotics/Kinova-kortex2_Gen3_G3L"
+          note: "Python and C++ examples for controlling the arm without ROS"
+
+    - name: "RealSense D435 Depth Camera"
+      maker: "Intel"
+      description: >
+        A stereo depth camera on an adjustable bracket at the front of the top plate, looking ahead of the robot.
+        It streams depth, color, and a point cloud into ROS 2 for obstacle detection, mapping, and locating objects for the arm.
+      specs:
+        - "Depth range: 0.2–3 m"
+        - "Field of view: 69° × 42° at 2 m"
+        - "USB 3.0 for power and data"
+      links:
+        - label: "Clearpath integration page"
+          url: "https://docs.clearpathrobotics.com/docs_robots/accessories/sensors/cameras/realsense_d435"
+          note: "Specs, and how the camera is declared in robot.yaml and launched"
+        - label: "realsense-ros"
+          url: "https://github.com/IntelRealSense/realsense-ros"
+          note: "Intel's ROS 2 driver, which Clearpath's software launches for the camera"
+        - label: "librealsense SDK"
+          url: "https://github.com/IntelRealSense/librealsense"
+          note: "The SDK underneath the driver, including the RealSense Viewer"
+
+- name: "Clearpath TurtleBot 4"
+  category: "Mobile Robot"
+  image: "lab/equip_turtlebot4.jpg"
+  description: >
+    A ROS 2 mobile robot for education and research, built on the iRobot Create 3 base with a Raspberry Pi 4B on board.
+    It maps its surroundings, navigates autonomously, and runs AI models on its camera, with a 9 kg payload and 2.5–4 hours of operation per charge.
+  manual: "https://turtlebot.github.io/turtlebot4-user-manual/"
+  accessories:
+    - name: "OAK-D Pro Camera"
+      maker: "Luxonis"
+      description: >
+        A stereo depth camera with a color camera between its two depth cameras, mounted under the top plate and facing forward.
+        Its IR dot projector adds texture to blank walls and floors so depth still works there, and an IR flood LED lets it see in low light.
+        It runs neural networks on the camera itself, so object detection does not load the Raspberry Pi.
+      specs:
+        - "Active stereo depth; ideal range about 0.8–12 m"
+        - "12 MP color camera (IMX378)"
+        - "On-camera AI processor: 4 TOPS, 1.4 TOPS for AI"
+        - "Built-in 9-axis IMU"
+      links:
+        - label: "Product documentation"
+          url: "https://docs.luxonis.com/hardware/products/OAK-D%20Pro"
+          note: "Luxonis's specs, depth ranges, and camera details"
+        - label: "DepthAI ROS"
+          url: "https://docs.luxonis.com/software/ros/depthai-ros/"
+          note: "The ROS 2 driver the TurtleBot 4 uses for the camera"
+        - label: "depthai-ros (GitHub)"
+          url: "https://github.com/luxonis/depthai-ros"
+          note: "Driver source and example launch files"
+
+    - name: "RPLIDAR A1M8"
+      maker: "Slamtec"
+      description: >
+        A 2D laser scanner that spins on top of the robot and measures distance all the way around it.
+        Its scans are what the TurtleBot 4 uses for mapping (SLAM), localization, and obstacle avoidance in Nav2.
+      specs:
+        - "360° scanning"
+        - "More than 8,000 distance samples per second"
+        - "Scan rate: 2–10 Hz"
+        - "Micro-USB connection"
+      links:
+        - label: "Product page"
+          url: "https://www.slamtec.com/en/Lidar/A1"
+          note: "Slamtec's overview and specs for the RPLIDAR A1"
+        - label: "rplidar_ros"
+          url: "https://github.com/allenh1/rplidar_ros"
+          note: "The ROS 2 driver installed on every TurtleBot 4"
+
+- name: "Virtualis MotionVR Station"
+  category: "XR station"
+  image: "lab/equip_virtrualis.jpeg"
+  description: >
+    An advanced balance assessment and rehabilitation platform that integrates a 360-degree dynamic force plate with immersive virtual reality.
+    The system enables precise evaluation of human balance and postural control through Computerized Dynamic Posturography (CDP), including standardized
+    tests such as the Sensory Organization Test (SOT), Limits of Stability (LoS), and the Adaptation Test (ADT).
+  manual: "https://www.interacoustics.com/images/files/manuals/en/User_Manual_MotionVR_V3.0_003.pdf"
 
 - name: "Varjo VR-3"
   category: "XR Headset"
   image: "lab/equip-Varjo-VR-3.png"
   description: >
-    High-fidelity VR headset designed for ultra-high-fidelity immersive experiences. 
-    Featuring human-eye resolution and precise integrated eye tracking, it enables highly realistic rendering and detailed user behavior analysis.
+    A tethered PC VR headset built for ultra-high-fidelity immersive experiences, with a 115° field of view and human-eye resolution at the center of view.
+    Its integrated 200 Hz eye tracking enables highly realistic rendering and detailed analysis of where users look.
+  manual: "https://support.varjo.com/hc/en-us/setting-up-xr-3-vr-3"
 
-- name: "Meta Quest 3 & 3s"
+- name: "HTC VIVE Pro"
+  category: "XR Headset"
+  image: "lab/equip_htc_vive_pro.jpg"
+  description: >
+    A tethered PC VR headset tracked by SteamVR base stations, with 1440 × 1600 pixels per eye, a 90 Hz refresh rate, and a 110° field of view.
+    Paired with VIVE Trackers, it brings real objects and body movement into VR for interaction and motion-tracking studies.
+  manual: "https://dl4.htc.com/Web_materials/Manual/Vive_Pro(Enterprise)/UserGuide/VIVE_Pro_User_Guide.pdf"
+  accessories:
+    - name: "VIVE Tracker (3.0)"
+      maker: "HTC"
+      description: >
+        A small puck that the base stations track just like the headset, so anything it is attached to appears in VR: a tool, a prop, a robot, or a person's hands, feet, or waist.
+        It screws onto any object with a standard 1/4-inch camera mount and sends its pose to the PC through a wireless dongle or a USB cable.
+      specs:
+        - "Weight: 75 g; 79.0 × 70.9 × 44.1 mm"
+        - "Sensor field of view: 240°"
+        - "1/4-inch camera mount, pogo-pin port, and USB-C"
+        - "Pairs with a wireless dongle or connects by USB"
+      links:
+        - label: "Product page"
+          url: "https://www.vive.com/us/accessory/tracker3/"
+          note: "HTC's overview of the tracker"
+        - label: "Support"
+          url: "https://www.vive.com/us/support/tracker3/"
+          note: "Pairing, charging, firmware, and troubleshooting"
+        - label: "Developer guidelines (PDF)"
+          url: "https://developer.vive.com/documents/850/HTC_Vive_Tracker_3.0_Developer_Guidelines_v1.1_06022021.pdf"
+          note: "Mounting, use cases, pogo-pin accessories, and Unity setup"
+        - label: "For developers"
+          url: "https://developer.vive.com/eu/hardware/tracker3/"
+          note: "HTC's developer page for the tracker"
+
+- name: "Meta Quest 3 & 3S"
   category: "XR Headset"
   image: "lab/equip-metaquest3.png"
   description: >
     The Meta Quest 3 and Quest 3S are standalone mixed reality headsets that support both fully immersive VR 
     and passthrough-based AR experiences. With inside-out tracking and wireless operation, they provide a flexible 
     and accessible platform for developing and deploying interactive XR applications.
+
+- name: "Orbbec Astra+ 3D Camera"
+  category: "Depth Camera"
+  image: "lab/equip_orbbec_astra_plus.jpg"
+  description: >
+    A structured-light RGB-D camera for indoor scenes, with stable depth from 0.6 to 8 m, precision within 0.3% at 1 m, and 1080p color. The lab has three units.
+    It suits fixed, indoor setups such as watching a workspace or a robot cell from a stand.
+  manual: "https://www.orbbec.com/products/structured-light-camera/astra-3/"
+
+- name: "Orbbec Gemini 335L"
+  category: "Depth Camera"
+  image: "lab/equip_orbbec_gemini_335l.webp"
+  description: >
+    An IP65-rated stereo depth camera with a 95 mm baseline, working indoors or outdoors with an optimal depth range of 0.25 to 6 m and a built-in IMU.
+    Its wide 90° depth field of view and rugged housing suit cameras mounted on mobile robots and arms.
+  manual: "https://www.orbbec.com/docs/orbbec-gemini-330-series-documentation/"
