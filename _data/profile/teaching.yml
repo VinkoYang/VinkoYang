@@ -5,6 +5,7 @@
 #   description: >             # 课程简介
 #     ...
 #   syllabus: "files/teaching/xxx.pdf"  # 必须含 files/teaching/ 前缀；留空则不显示链接
+#   lab_manual: "files/teaching/xxx.pdf"  # 可选，同上规则，显示在 Syllabus 旁
 #   textbooks:                 # 可多个，留空列表则不显示
 #     - title: "书名"
 #       url: "https://..."     # 留空则不显示
@@ -34,6 +35,7 @@
     [UR Academy Brochure](https://academy.universal-robots.com/media/g52jayc3/ur-academy-brochure-training-eng-may-2026.pdf)
     for certification details.
   syllabus: "files/teaching/ST_Collab._Robot_Ops_and_Pro_INEN_5301_Fall_2025.pdf"
+  lab_manual: "files/teaching/UR_Lab_Manual_v1_2026-10-01.pdf"
   textbooks:
     - title: "Robotics: Modelling, Planning and Control by Siciliano, Bruno"
       url: "https://people.disim.univaq.it/~costanzo.manes/EDU_stuff/Robotics_Modelling,%20Planning%20and%20Control_Sciavicco_extract.pdf"
@@ -104,6 +106,7 @@
     complete a literature review, and carry out an original UR10-based research project
     written and presented in conference-paper format.
   syllabus: ""
+  lab_manual: "files/teaching/UR_Lab_Manual_v1_2026-10-01.pdf"
   textbooks:
     - title: "Robotics: Modelling, Planning and Control by Siciliano, Bruno"
       url: "https://people.disim.univaq.it/~costanzo.manes/EDU_stuff/Robotics_Modelling,%20Planning%20and%20Control_Sciavicco_extract.pdf"

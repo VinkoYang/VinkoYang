@@ -25,8 +25,11 @@ Start here regardless of what your project is about. This is the required first 
 | Resource | What it is | Why bother |
 | --- | --- | --- |
 | [UR e-Series e-Learning](https://academy.universal-robots.com/free-e-learning/e-series-e-learning/) | Official module series from UR Academy | The baseline for everything else. Register a free account to unlock all modules. |
+| [UR Lab Manual (PDF)]({{ site.baseurl }}/files/teaching/UR_Lab_Manual_v1_2026-10-01.pdf) | Our lab session manual for INEN 5301 / 6301, 37 activities across Modules 5–11 | The same material done on our arm: getting started, motion, pick and place, programming, palletizing, features/planes, and safety settings |
 
 The modules cover the robot hardware, the PolyScope interface, basic program structure, and safety. By the end you should be able to jog the arm, build a simple waypoint program, and explain what a safety configuration limit is and why you cannot change it casually.
+
+The lab manual is the hands-on half of this step. Its activities are adapted from the UR Academy student modules 5–11, so work through each one at the robot after the matching e-learning module. A printed copy stays at the robot cell.
 
 ## 2. The UR10e user manual
 

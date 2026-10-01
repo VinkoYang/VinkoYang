@@ -38,6 +38,7 @@ git push origin source --tags
 
 ## [待发布]
 
+- 新增 `files/teaching/UR_Lab_Manual_v1_2026-10-01.pdf`（80 页，INEN 5301/6301 实验课手册，Modules 5–11 共 37 个 activity；原文件名含空格，改为下划线命名）。`teaching.yml` 新增可选字段 `lab_manual`，INEN 5301-05 和 INEN 6301 都挂上；`_pages/teaching.md` 把 Syllabus 和 Lab Manual 放进同一行 flex，任一存在即显示（INEN 6301 无 syllabus 也能显示手册）。UR10e Training Guide 第 1 步资源表加一行手册，并补一段说明它是 e-learning 的实操部分。
 
 ---
 
