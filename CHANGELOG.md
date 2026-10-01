@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v2.6.0**（`source` 分支，已发布，2026-09-29）。
+**当前版本：v2.6.1**（`source` 分支，已发布，2026-10-01）。
 
 ## 两份日志，别混
 
@@ -44,6 +44,12 @@ git push origin source --tags
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [2.6.1] - 2026-10-01
+
+**设备 Training Guide 全覆盖。** 照 UR10e 的格式，给其余设备各写一篇 onboarding post（`_posts/2026-10-01-*-onboarding-path.md`，`equipment_id` 绑定 lab 卡片）：xArm 6、Dobot Magician、Husky A300、TurtleBot 4、Virtualis MotionVR、Varjo VR-3、HTC VIVE Pro、Quest 3 & 3S，两台 Orbbec 相机共用一篇（`equipment_id` 写成列表，Jekyll `where` 对数组做包含匹配，`lab.md` 不用改）。每篇按“How to use this + 分步资源表 + What comes next”组织，资料取自厂商文档并逐条 curl 验证；各篇的头条约束分别是：VR-3 的 Varjo Base 不得升级过 4.14（2026-01-01 停止支持）、Astra+ 只受 Orbbec SDK v1 / ROS 2 `main` 分支支持、TurtleBot 4 在校园 Wi-Fi 上需 Discovery Server、Dobot 下载无直链故按文件原名指路；MotionVR / Varjo / Quest / VIVE 加了受试者需 IRB 的约束。`equipment.yml`：新增 TurtleBot 4、HTC VIVE Pro、Orbbec Astra+（3 台）、Gemini 335L、Dobot Magician（10 台）；补 `manual` 与 `accessories`（xArm 的 G1 夹爪 / 相机支架 / Gemini 335，Husky 的 Kinova Gen3 lite / RealSense D435，TurtleBot 的 OAK-D Pro / RPLIDAR A1M8，VIVE Tracker 3.0，Dobot 工具套件）；名称改为官方写法；条目按机械臂 / 移动机器人 / 头显 / 深度相机重排，桌面宽度下每类一行。新增 5 张设备图（`equip_*`，Dobot 图缩到 1600 宽）。
+
+**教学页 Lab Manual。** 新增 `files/teaching/UR_Lab_Manual_v1_2026-10-01.pdf`（Modules 5–11，37 个 activity）；`teaching.yml` 加可选字段 `lab_manual`，INEN 5301-05 与 INEN 6301 挂上，`teaching.md` 让 Syllabus 与 Lab Manual 任一存在即显示；UR10e Training Guide 第 1 步加手册一行。
 
 ### [2.6.0] - 2026-09-29
 

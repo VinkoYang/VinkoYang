@@ -26,11 +26,20 @@ permalink: /teaching/
 <p style="margin: var(--space-4) 0 var(--space-3) 0; font-size: 0.95rem; line-height: 1.6;">{{ course.description }}</p>
 {% endif %}
 
-{% if course.syllabus and course.syllabus != "" %}
-<div style="font-size: 0.9rem;">
+{% assign has_syllabus = false %}{% if course.syllabus and course.syllabus != "" %}{% assign has_syllabus = true %}{% endif %}
+{% assign has_manual = false %}{% if course.lab_manual and course.lab_manual != "" %}{% assign has_manual = true %}{% endif %}
+{% if has_syllabus or has_manual %}
+<div style="font-size: 0.9rem; display: flex; flex-wrap: wrap; column-gap: var(--space-3); row-gap: 4px;">
+{% if has_syllabus %}
 <a href="{{ site.url }}{{ site.baseurl }}/{{ course.syllabus }}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px;">
   <i class="fa-solid fa-file-pdf"></i> Syllabus
 </a>
+{% endif %}
+{% if has_manual %}
+<a href="{{ site.url }}{{ site.baseurl }}/{{ course.lab_manual }}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px;">
+  <i class="fa-solid fa-file-pdf"></i> Lab Manual
+</a>
+{% endif %}
 </div>
 {% endif %}
 
