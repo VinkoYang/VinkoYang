@@ -38,6 +38,8 @@ git push origin source --tags
 
 ## [待发布]
 
+- 新 post `_posts/2026-10-05-ten-habits-for-a-better-science-talk.md`：以 Joanne Kamens 的 Addgene 文章《10 Steps to a Perfect Science Talk》（2016）为框架，作为演讲系列第四篇，补前三篇没覆盖的“讲者习惯与临场”部分；保留她的十步顺序，每步先概述原文再落到本实验室做法，已有内容的步骤链回 expectations / build / venue 三篇而不重复。新增要点：按项目维护 running deck（第 4 步）、对外的报告先在组会完整试讲（第 6 步）、投影实测校对、“不知道就说会回复”。原文转述逐条对照原文核过（第 1 步资源、第 7 步视频、第 8 步措辞、第 10 步），唯一直引是 “more is almost never better”。`2026-09-15-presentation-strategy-by-venue.md` 末尾加一句链到第四篇。
+- 新 post `_posts/2026-10-05-how-to-meet-people-at-a-scientific-conference.md`：以 Joanne Kamens 的 Addgene 文章《How to Make Friends and Meet People at a Scientific Conference》（2014）为框架，按原文 before / during / after 三段组织，每条先转述原文再落到本实验室做法；2014 年的过时工具已替换（Twitter hashtag、LinkedIn 群组 → 会议 app / LinkedIn；PubMed alert → Google Scholar alert；名片之外加 QR 码），并标明是更新。与已有文章衔接：会场选择链 Target Journals and Conferences，聊研究时别泄露未发表计划链 Presentation Strategy by Venue，结尾链 Ten Habits。直引两处（“Is this seat taken? Can I join you?”、“Once is just a meeting…”）按原文核对。文末附出发前 / 会中 / 回来一周内的清单。
 
 ---
 
