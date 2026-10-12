@@ -95,3 +95,5 @@ Every one of these venues is answering the same question differently: **what doe
 A seminar room has earned your map of the literature and your honest confusion, because it is there to help you. A full-paper session has earned every claim in your paper, exactly as reviewed, because the work is public and the audience is qualified to check it. An extended-abstract session has earned your framing and your finished results, and has earned nothing at all about the study you have not run yet.
 
 Get that question right and the deck mostly builds itself. Get it wrong and no amount of the craft in the first two posts will save the talk — you will be presenting an excellent version of the wrong thing.
+
+The last piece is you, the speaker: the habits before a talk and the delivery during it. [The fourth post](/blogs/ten-habits-for-a-better-science-talk/) works through that, using Joanne Kamens's ten steps as the frame.

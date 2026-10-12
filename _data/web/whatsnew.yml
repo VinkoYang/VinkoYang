@@ -8,6 +8,14 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "2.6.2"
+  date: 2026-10-12
+  changes:
+    - "New grant: the Lamar University 2026–2027 Excellence in Assessment Grant for AI-Resilient Assessment: An LLM-Facilitated Oral Defense Protocol for STEM Graduate Education, now listed on the About page and in the CV."
+    - "New lab news: in the second Advanced Robotics (INEN 6301) UR10e race, students programmed the robot to work with the conveyor and sensors through I/O, and Group 2 ran the fastest cycle."
+    - "Two new blog posts on conference skills: Ten Habits for a Better Science Talk, and How to Meet People at a Scientific Conference."
+    - "Fixed broken links in A Learning Path for Unity and XR Development after Unity and Meta moved several tutorials and docs."
+
 - version: "2.6.1"
   date: 2026-10-01
   changes:

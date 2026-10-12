@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v2.6.1**（`source` 分支，已发布，2026-10-01）。
+**当前版本：v2.6.2**（`source` 分支，已发布，2026-10-12）。
 
 ## 两份日志，别混
 
@@ -44,6 +44,10 @@ git push origin source --tags
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [2.6.2] - 2026-10-12
+
+**内容更新。** 新增 grant：2026–2027 Excellence in Assessment Grant（$5,000，AI-Resilient Assessment），About 页与 CV 同步，首页 news 加一条。新增 lab news：INEN 6301 第二次 UR10e 竞赛，加入传送带与 sensor I/O，Group 2 最快，封面图 1600×1200。演讲系列第四篇《Ten Habits for a Better Science Talk》和《How to Meet People at a Scientific Conference》，均以 Joanne Kamens 的 Addgene 文章为框架，并接回已有文章。修复 Unity XR learning path 的失效链接（Unity Learn VR pathway、Meta 文档与论坛）。
 
 ### [2.6.1] - 2026-10-01
 
