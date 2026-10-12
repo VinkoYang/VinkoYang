@@ -38,7 +38,7 @@ Start here even if the goal is AR or VR. Almost every XR bug a beginner hits is 
 
 Once you can move a cube around a scene, add the headset.
 
-- [Create with VR Pathway](https://learn.unity.com/pathway/create-with-vr) — Unity's structured VR introduction. Do this one properly; it is the best free VR curriculum available.
+- [VR Development Pathway](https://learn.unity.com/pathway/vr-development) — Unity's structured VR introduction. Do this one properly; it is the best free VR curriculum available.
 - [XR Interaction Toolkit (XRI) documentation](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@latest) — Unity's official interaction layer: grabbing, locomotion, UI rays, sockets. **This is the package you will actually build on.** Learn its interactor/interactable model rather than writing your own grab code.
 - [Unity XR overview](https://docs.unity3d.com/Manual/XR.html) — how the XR subsystems, providers, and plug-ins fit together.
 - [OpenXR](https://www.khronos.org/openxr/) — the cross-vendor standard your project should target by default. Vendor-specific SDKs are for vendor-specific features, not as a starting point.
@@ -53,7 +53,7 @@ The key thing most beginners get wrong: in Unity you normally do **not** write a
 - [AR Foundation documentation](https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@latest) — Unity's cross-platform AR layer. Plane detection, image tracking, anchors, face tracking, light estimation, one API for both mobile platforms.
 - [Google ARCore](https://developers.google.com/ar) (Android) — the underlying platform. Read it for capability limits, supported-device lists, and features AR Foundation exposes only partially, such as the Geospatial API and Cloud Anchors.
 - [Apple ARKit](https://developer.apple.com/augmented-reality/) (iOS) — the same role on the Apple side. Note that iOS builds require a Mac with Xcode; settle that before you promise an iOS demo.
-- [Vuforia Engine](https://developer.vuforia.com/) — marker and image-target tracking with a long track record. Strong for image and model targets; check the current licensing terms before committing, since the free tier has constraints that matter for published work.
+- [Vuforia Engine](https://developer.vuforia.com/home) — marker and image-target tracking with a long track record. Strong for image and model targets; check the current licensing terms before committing, since the free tier has constraints that matter for published work.
 - [Apple visionOS](https://developer.apple.com/visionos/) — relevant only if you have the hardware, but worth knowing the path exists.
 
 **Choosing between them:** AR Foundation for anything device-tracked and cross-platform; Vuforia when your interaction is fundamentally built around printed markers or specific physical objects.
@@ -82,7 +82,7 @@ You are a researcher, not a modeler. Use existing assets for everything that is 
 
 XR is the one platform where bad design makes people physically ill. Treat this section as a requirement, not as enrichment.
 
-- [Designing for VR (Unity)](https://learn.unity.com/tutorial/designing-for-vr) — the starting point, and short.
+- [Comfort and Accessibility (Unity)](https://learn.unity.com/pathway/vr-development/unit/ergonomics-and-optimization/tutorial/3-1-comfort-and-accessibility-2) — the starting point, and short: simulator sickness, snap turning, fades, and inclusive settings.
 - [Meta design guidelines](https://developers.meta.com/horizon/design/) — comfort, locomotion, hand interaction, and UI distance. The most concrete, hardware-grounded guidance available.
 - [Apple Human Interface Guidelines: spatial design](https://developer.apple.com/design/human-interface-guidelines/designing-for-visionos) — a different, gaze-and-pinch-centered design philosophy. Worth reading even if you never ship to visionOS, because the contrast clarifies what is essential versus merely conventional.
 - [Google: design for AR](https://developers.google.com/ar/design) — mobile AR specifics: onboarding, surface discovery, and the fact that your user is holding a phone at arm's length and getting tired.
@@ -96,7 +96,7 @@ Standalone devices are mobile-class hardware rendering two eyes at a high refres
 
 - [Unity Profiler](https://docs.unity3d.com/Manual/Profiler.html) — profile **on the device**, over USB. Editor numbers are close to meaningless for headset performance.
 - [Optimizing graphics performance](https://docs.unity3d.com/Manual/OptimizingGraphicsPerformance.html) — draw calls, batching, overdraw, texture memory.
-- [Meta performance tooling for Unity](https://developers.meta.com/horizon/documentation/unity/unity-perf-guidelines/) — OVR Metrics and the platform-specific levers: fixed foveated rendering, Application SpaceWarp, render scale.
+- [Meta performance tooling for Unity](https://developers.meta.com/horizon/documentation/unity/unity-perf/) — OVR Metrics and the platform-specific levers: fixed foveated rendering, Application SpaceWarp, render scale.
 
 The practical rule: decide your target frame rate at the start, test on hardware weekly, and treat a drop below it as a bug rather than as tuning work for later.
 
@@ -109,7 +109,7 @@ I have written this up separately: [Unity Version Control Tutorial & Introductio
 ## 8. Community and help
 
 - [Unity Discussions](https://discussions.unity.com/) — the official forum; it replaced the old `forum.unity.com`, and old links redirect there.
-- [Meta Developer Community](https://developers.meta.com/community/) — Quest-specific problems, often with staff responses.
+- [Meta Community Forums](https://communityforums.atmeta.com/) — Quest-specific problems, often with staff responses.
 - [Unity Discord](https://discord.com/invite/unity) — fast answers for small blockers.
 - [r/Unity3D](https://www.reddit.com/r/Unity3D/) and [r/virtualreality](https://www.reddit.com/r/virtualreality/) — uneven, but good for "is this normal?" questions.
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/unity3d) — best for concrete C# and API errors.
@@ -134,7 +134,7 @@ For a student starting from zero who needs to be productive within a semester:
 | 1 | Unity Essentials, Editor fluency | A scene you built yourself, running |
 | 2 | C# scripting basics | An object that responds to input |
 | 3 | Version control and project setup | Repository with LFS; a teammate can clone and run it |
-| 4–5 | Create with VR, or AR Foundation | A build running on the target device |
+| 4–5 | VR Development Pathway, or AR Foundation | A build running on the target device |
 | 6 | XR Interaction Toolkit in depth | Grab, teleport, and a working world-space UI |
 | 7 | Assets, lighting, audio | The scene looks and sounds deliberate |
 | 8 | Profiling and comfort pass | Holds target frame rate on-device; two people tested it without discomfort |
