@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v2.6.1**（`source` 分支，已发布，2026-10-01）。
+**当前版本：v2.6.2**（`source` 分支，已发布，2026-10-12）。
 
 ## 两份日志，别混
 
@@ -38,17 +38,16 @@ git push origin source --tags
 
 ## [待发布]
 
-- 新 post `_posts/2026-10-05-ten-habits-for-a-better-science-talk.md`：以 Joanne Kamens 的 Addgene 文章《10 Steps to a Perfect Science Talk》（2016）为框架，作为演讲系列第四篇，补前三篇没覆盖的“讲者习惯与临场”部分；保留她的十步顺序，每步先概述原文再落到本实验室做法，已有内容的步骤链回 expectations / build / venue 三篇而不重复。新增要点：按项目维护 running deck（第 4 步）、对外的报告先在组会完整试讲（第 6 步）、投影实测校对、“不知道就说会回复”。原文转述逐条对照原文核过（第 1 步资源、第 7 步视频、第 8 步措辞、第 10 步），唯一直引是 “more is almost never better”。`2026-09-15-presentation-strategy-by-venue.md` 末尾加一句链到第四篇。
-- 新 post `_posts/2026-10-05-how-to-meet-people-at-a-scientific-conference.md`：以 Joanne Kamens 的 Addgene 文章《How to Make Friends and Meet People at a Scientific Conference》（2014）为框架，按原文 before / during / after 三段组织，每条先转述原文再落到本实验室做法；2014 年的过时工具已替换（Twitter hashtag、LinkedIn 群组 → 会议 app / LinkedIn；PubMed alert → Google Scholar alert；名片之外加 QR 码），并标明是更新。与已有文章衔接：会场选择链 Target Journals and Conferences，聊研究时别泄露未发表计划链 Presentation Strategy by Venue，结尾链 Ten Habits。直引两处（“Is this seat taken? Can I join you?”、“Once is just a meeting…”）按原文核对。文末附出发前 / 会中 / 回来一周内的清单。
-- 修 `_posts/2026-09-17-unity-xr-learning-path.md` 失效链接（全文 curl 逐条复查）：Create with VR Pathway（404，Unity 已下架）换成 VR Development Pathway，八周表第 4–5 周同步改名；Designing for VR 教程（404）换成该 pathway 的 3.1 Comfort and Accessibility；Meta 性能文档 `unity-perf-guidelines`（404）→ `unity-perf`；Meta Developer Community（404）→ Meta Community Forums（communityforums.atmeta.com）；Vuforia 改指 `/home` 免跳转超时。Reddit / Stack Overflow / Unity Discussions 对脚本返回 403，浏览器正常，未动。
-- 新 grant：`_data/profile/grants.yml` 顶部加 Excellence in Assessment Grant（Office of the Provost + Office of Data Analytics, Reporting and Assessment，2026–2027，$5,000，“AI-Resilient Assessment: An LLM-Facilitated Oral Defense Protocol for STEM Graduate Education”），About 页与 CV 的 Grants 同步更新；通知写的是 “up to $5000”，这里按 $5,000 记；起止只写学年 2026 - 2027，具体月份待经费安排确定后再补。`_data/web/news.yml` 顶部加一条首页 news（2026-10-12）。未加 funders logo（校内经费，无现成 logo）。
-- 新 lab news `_lab_news/advanced-robotics-cobot-io-race.md`（2026-10-05）：INEN 6301 第二次 UR10e 竞赛，加入 I/O——Sensor 1 检测到 cube 后由程序启动传送带送到 Sensor 3 位置，UR10e 再抓回 Sensor 1；Group 2 最快（按要求不写具体用时）。合影名单：前排 Sajita Shrestha，后排右到左 Aminat Ayankoya、Vivian Latona、Rocktim Shil、Adnan Shafi。封面原图 1920×1440 缩到 1600×1200（quality 82）存为 `images/lab/news/2026-10-05-cobot-io/io-race-winners.jpg`；首页 news 加一条指向。
 
 ---
 
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [2.6.2] - 2026-10-12
+
+**内容更新。** 新增 grant：2026–2027 Excellence in Assessment Grant（$5,000，AI-Resilient Assessment），About 页与 CV 同步，首页 news 加一条。新增 lab news：INEN 6301 第二次 UR10e 竞赛，加入传送带与 sensor I/O，Group 2 最快，封面图 1600×1200。演讲系列第四篇《Ten Habits for a Better Science Talk》和《How to Meet People at a Scientific Conference》，均以 Joanne Kamens 的 Addgene 文章为框架，并接回已有文章。修复 Unity XR learning path 的失效链接（Unity Learn VR pathway、Meta 文档与论坛）。
 
 ### [2.6.1] - 2026-10-01
 
