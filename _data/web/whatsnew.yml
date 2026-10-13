@@ -8,6 +8,13 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "2.6.3"
+  date: 2026-10-13
+  changes:
+    - "New lab news: high school researcher Aiden Ma (Westbrook High School) won first place out of 29 entrants at the inaugural AI & Software Pitch Competition at Lamar EXPO 2026 with MOTION, an AR rehabilitation system. The MOTION entry on the Research page now notes the win."
+    - "The About page and CV now include a High School Research Advisor section, starting with Aiden Ma."
+    - "New blog post: A Quick Start on User Studies for XR Research, a guide to experimental design, counterbalancing, standard XR questionnaires, sample size, and choosing a statistical test, with a checklist for reading user-study papers."
+
 - version: "2.6.2"
   date: 2026-10-12
   changes:
