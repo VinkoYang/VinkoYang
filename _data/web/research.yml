@@ -262,7 +262,7 @@
     poster: ""
     slide: ""
 
-- title: "MOTION: AI-Driven Biomechanical Motion Capture for Augmented Reality Rehabilitation"
+- title: "MOTION: Musculoskeletal Optimization and Treatment through Immersive Orthopedic Navigation"
   image: "research/2026-4_Motion.jpg"
   focus: [5]
   start_date: "2026-2"
@@ -277,7 +277,7 @@
     - Embodied Interaction
     - Adaptive Interfaces
   abstract: >
-    MOTION is an AI-powered AR rehabilitation system that uses real-time biomechanical motion capture and adaptive feedback to improve movement accuracy and engagement. By combining body tracking, gamified interaction, and remote clinician support, the platform enables accessible and personalized rehabilitation in XR environments.
+    MOTION is an AI-powered AR rehabilitation system that uses real-time biomechanical motion capture and adaptive feedback to improve movement accuracy and engagement. By combining body tracking, gamified interaction, and remote clinician support, the platform enables accessible and personalized rehabilitation in XR environments. The project won First Place at the inaugural AI & Software Pitch Competition at Lamar EXPO 2026, where ten finalists were selected from 29 entrants.
   links:
     paper: ""
     webpage: ""

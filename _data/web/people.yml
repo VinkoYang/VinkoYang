@@ -203,6 +203,19 @@ students:
     year_end: now
     website: "https://www.linkedin.com/in/rezwanul-ashraf-ruddro-28772b199/"
 
+  # 高中生暑期/课外科研指导：MOTION 项目（见 research.yml），
+  # 2026 EXPO AI & Software Pitch Competition 决赛第一名。
+  # 项目已结束，不在 Team 页面显示，只保留 mentoring 履历和 CV 记录。
+  - name: Aiden Ma
+    show_team: false
+    show_about: true
+    mentoring_role: high_school_advisor
+    info: High School Research Intern
+    location: Westbrook High School
+    degree: High School Research Intern
+    year_start: 2026
+    year_end: 2026
+
   - name: Justin Barrera
     show_team: false
     show_about: true
