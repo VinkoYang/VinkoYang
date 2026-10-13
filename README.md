@@ -609,8 +609,11 @@ MIT
 
 ### Prerequisites
 
-- Ruby 3.x — install via [rbenv](https://github.com/rbenv/rbenv) or [RubyInstaller](https://rubyinstaller.org/) (Windows)
-- Bundler: `gem install bundler`
+- **Ruby 3.2** — match the version CI uses in [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), so a local build behaves like the deployed one. `Gemfile.lock` is also locked to the `x64-mingw-ucrt` platform, so a 3.2 install on Windows installs straight from the lockfile instead of re-solving dependencies.
+  - Windows: `winget install RubyInstallerTeam.RubyWithDevKit.3.2` — take the **WithDevKit** (MSYS2) package, not plain `RubyInstallerTeam.Ruby.3.2`. Seven gems here build native extensions on install (`eventmachine`, `http_parser.rb`, `date`, `json`, `racc`, `stringio`, `bigdecimal`) and will fail without the toolchain.
+  - macOS/Linux: [rbenv](https://github.com/rbenv/rbenv), then `rbenv install 3.2`
+- **Bundler** — already there. Ruby 3.2 ships Bundler 2.4.19, exactly what `Gemfile.lock` asks for under `BUNDLED WITH`. Don't run `gem install bundler`.
+- **Node 20** — optional. Only `npm run cv` needs it (rebuilds the CV PDF from `_data/`). Serving the site doesn't.
 
 ### Install Dependencies
 
@@ -618,31 +621,64 @@ MIT
 bundle install
 ```
 
+Installs 11 direct dependencies and 56 gems in total.
+
+### Windows: `bundle` is not recognized
+
+The RubyInstaller writes `C:\Ruby32-x64\bin` into the **user** `PATH` in the registry. Processes that were already running when you installed it never re-read that, so they keep the old `PATH`:
+
+```
+bundle : The term 'bundle' is not recognized as the name of a cmdlet, function, ...
+```
+
+Opening a new terminal **tab** in VS Code does not fix this. VS Code snapshots the environment when it starts and every terminal tab is a child of that process, so a new tab inherits the same stale snapshot. To fix it:
+
+- **Permanently** — quit VS Code entirely (close all windows so the process exits) and reopen it. `Developer: Reload Window` is not enough.
+- **For the current terminal only** — prepend the path by hand:
+
+  ```powershell
+  $env:PATH = "C:\Ruby32-x64\bin;$env:PATH"
+  ```
+
+Verify with `ruby -v` and `bundle -v`; you should see 3.2.x and 2.4.19.
+
 ### Run the Dev Server
 
 ```bash
 bundle exec jekyll serve
 ```
 
-Then open `http://localhost:4000` in your browser. The server watches for file changes and rebuilds automatically — just refresh the page.
+Then open `http://localhost:4000` in your browser. A full build takes about 5 seconds. The server watches for file changes and rebuilds automatically — just refresh the page.
+
+If the repository lives in a synced folder (OneDrive, Dropbox, iCloud), send the build output somewhere outside it:
+
+```bash
+bundle exec jekyll serve --destination C:\jekyll-build\academic-website
+```
+
+Each rebuild rewrites every file under the destination. Left at the default `_site/`, the sync client queues thousands of file changes on every save, which slows builds down and can abort one by locking a file mid-write.
 
 ### Useful Flags
 
-| Flag              | Effect                               |
-| ----------------- | ------------------------------------ |
-| `--livereload`  | Auto-refresh browser on file change  |
-| `--drafts`      | Include posts in`_drafts/`         |
-| `--incremental` | Faster rebuilds (only changed files) |
-| `--port 4001`   | Change the default port              |
+| Flag            | Effect                                 |
+| --------------- | -------------------------------------- |
+| `--livereload`  | Auto-refresh browser on file change    |
+| `--drafts`      | Include posts in `_drafts/`            |
+| `--incremental` | Faster rebuilds (only changed files)   |
+| `--port 4001`   | Change the default port                |
+| `--destination` | Write the built site elsewhere         |
 
 ```bash
-# Example: live-reload on a custom port
-bundle exec jekyll serve --livereload --port 4001
+# Example: live-reload on a custom port, building outside the synced folder
+bundle exec jekyll serve --livereload --port 4001 --destination C:\jekyll-build\academic-website
 ```
 
 ### Troubleshooting
 
+- **`bundle` / `gem` / `ruby` not recognized** — a stale `PATH`, not a broken install. See [Windows: `bundle` is not recognized](#windows-bundle-is-not-recognized) above.
+- **`>>` instead of the normal prompt** — PowerShell is waiting for you to close a quote or bracket from the previous line. Press `Ctrl+C` and retype the command.
 - **Gem conflicts** — run `bundle update` to resolve dependency mismatches.
 - **Port already in use** — kill the existing process (`lsof -i :4000` on Mac/Linux, `netstat -ano | findstr :4000` on Windows) or use `--port`.
 - **Changes not showing** — `_config.yml` changes require a full server restart; other files hot-reload automatically.
+- **`Please add the following to your Gemfile ... gem 'wdm'`** — harmless. Windows file watching falls back to polling, which costs some CPU but works. Add `gem 'wdm', '>= 0.1.0'` to the `Gemfile` if you want event-driven watching.
 - **`jekyll-scholar` errors** — make sure your BibTeX in `assets/ref.bib` is valid; a malformed entry will abort the build.

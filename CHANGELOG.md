@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v2.6.2**（`source` 分支，已发布，2026-10-12）。
+**当前版本：v2.6.3**（`source` 分支，已发布，2026-10-13）。
 
 ## 两份日志，别混
 
@@ -44,6 +44,10 @@ git push origin source --tags
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [2.6.3] - 2026-10-13
+
+**内容更新。** 新增高中生 Aiden Ma（Westbrook High School）的指导记录：`people.yml` 首条 `mentoring_role: high_school_advisor`（`show_team: false`），About 页与 CV 的 High School Research Advisor 分组首次有内容；lab news 记录 EXPO 2026 首届 AI & Software Pitch Competition 中 MOTION 获第一名（29 人投稿、10 人进决赛），封面从官方 brochure PDF 按 600 DPI 重新渲染裁切；首页 news 与 research 页 MOTION 条目同步更新。新 post《A Quick Start on User Studies for XR Research》，发布前修正 CVI 截断值出处和 Field 一书的作者，并加上 Unity XR learning path 与 Lamar IRB 的链接。README 本地环境说明改写。
 
 ### [2.6.2] - 2026-10-12
 
