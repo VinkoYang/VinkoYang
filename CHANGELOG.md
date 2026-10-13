@@ -41,7 +41,7 @@ git push origin source --tags
 - 补上高中生 Aiden Ma（Westbrook High School）的指导记录与获奖。
   - `_data/web/people.yml`：students 新增 Aiden Ma，`mentoring_role: high_school_advisor`（全站首条），`show_team: false`（项目 2026-03 已结束，不进 Team 卡片区）。about.md 的 High School Research Advisor 分组和 CV 的同名 subhead 模板早就写好，之前一直是空的，这是第一条落到该分组的记录。注意 `degree` 必填：build-cv.js 的 guidanceLine 直接拼 `degree, institution`，缺字段会输出 undefined。
   - `_data/web/news.yml`：新增 2026-05-01 获奖条目，插在 2026-05-16 与 2026-04-26 之间。
-  - `_lab_news/ai-software-pitch-competition-2026.md`：EXPO 2026 首届 AI & Software Pitch Competition（Office of Undergraduate Research 主办，5/1 Setzer Student Center Neches Room），29 人投稿选 10 人决赛，MOTION 拿第一名；正文含三个获奖名次的表格，指回 research 页和已有的 `files/posters/Motion_Spring_Conference_Poster.pdf`。封面图用 OUR 的获奖公告，放在 `images/lab/news/2026-05-01-ai-pitch-competition/`。
+  - `_lab_news/ai-software-pitch-competition-2026.md`：EXPO 2026 首届 AI & Software Pitch Competition（Office of Undergraduate Research 主办，5/1 Setzer Student Center Neches Room），29 人投稿选 10 人决赛，MOTION 拿第一名；正文含三个获奖名次的表格，指回 research 页和已有的 `files/posters/Motion_Spring_Conference_Poster.pdf`。封面图用 OUR 的获奖公告，放在 `images/lab/news/2026-05-01-ai-pitch-competition/`：从官方 brochure PDF（Awards Ceremony EXPO 2026，第 2 页右半栏）用 pypdfium2 按 600 DPI 渲染后裁切，输出 1600×2698；版面是活文字不是扫描件，所以重渲染比截图清晰得多。文字图色数少，调色板量化到 256 色后 227 KB。
   - `_data/web/research.yml`：MOTION 条目补上官方全称，abstract 末尾加获奖一句。
 
 ---
