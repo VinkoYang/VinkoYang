@@ -43,6 +43,7 @@ git push origin source --tags
   - `_data/web/news.yml`：新增 2026-05-01 获奖条目，插在 2026-05-16 与 2026-04-26 之间。
   - `_lab_news/ai-software-pitch-competition-2026.md`：EXPO 2026 首届 AI & Software Pitch Competition（Office of Undergraduate Research 主办，5/1 Setzer Student Center Neches Room），29 人投稿选 10 人决赛，MOTION 拿第一名；正文含三个获奖名次的表格，指回 research 页和已有的 `files/posters/Motion_Spring_Conference_Poster.pdf`。封面图用 OUR 的获奖公告，放在 `images/lab/news/2026-05-01-ai-pitch-competition/`：从官方 brochure PDF（Awards Ceremony EXPO 2026，第 2 页右半栏）用 pypdfium2 按 600 DPI 渲染后裁切，输出 1600×2698；版面是活文字不是扫描件，所以重渲染比截图清晰得多。文字图色数少，调色板量化到 256 色后 227 KB。
   - `_data/web/research.yml`：MOTION 条目补上官方全称，abstract 末尾加获奖一句。
+- 新 post `_posts/2026-10-13-user-study-quick-start.md`《A Quick Start on User Studies for XR Research》（从 `_drafts/` 移入，日期改为发布日）：以虚构的 VR 火灾疏散训练 2 × 2 设计为贯穿例子，讲 IV/DV/construct 词汇、within/between/mixed、counterbalancing（含 4 条件 balanced Latin square，已核对每个有序相邻对恰好出现一次）、常见研究类型、XR 常用量表（NASA-TLX、SAGAT/SART、SUS、IPQ、SSQ/VRSQ、CVI 等）、信效度、power、检验选择、实验流程和读论文十问。发布前修正：CVI 截断值出处补 Polit, Beck & Owen (2007) 与 Polit & Beck (2006)（.78 / .90 两条并非 Lynn 原文）；*Discovering Statistics Using R* 补全合著者 Jeremy Miles、Zoë Field。新加两处内链：引言末尾链 Unity XR learning path，第 9 节 IRB 链 Lamar IRB 页（curl 200）。
 
 ---
 
