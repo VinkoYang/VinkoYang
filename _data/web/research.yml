@@ -160,7 +160,7 @@
     - Errors
     - Robots
   abstract: >
-    The purpose of this study is to introduce a calibration method for the registration problem in a video seethrough Augmented Reality (AR) system. This study investigates error sources and presents an efficient calibration procedure to reduce the misalignment accuracy via HMD-to-Camera transformation.
+    The purpose of this study is to introduce a calibration method for the registration problem in a video see-through Augmented Reality (AR) system. This study investigates error sources and presents an efficient calibration procedure to reduce the misalignment accuracy via HMD-to-Camera transformation.
   links:
     paper: ""
     webpage: "https://asmedigitalcollection.asme.org/computingengineering/article/24/3/031003/1166670/A-Global-Correction-Framework-for-Camera"

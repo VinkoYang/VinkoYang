@@ -38,6 +38,8 @@ git push origin source --tags
 
 ## [待发布]
 
+**站点审计第 1 轮 · 文字与书目勘误。** 首页简介 "Depsrtment" → "Department"；`experience.yml` 的 "May." → "May"、"taking … classes" → "teaching …"、Monroe CC 一条改为 "Delivered lectures both in person and online."；`news.yml`/`research.yml` 的 "Xr"、"seethrough" 拼写；`ref.bib`：摘要 "TTo"/"re-planing"/"to verified"，标题 `{HAR²bot}`（原 `HAR^2bot` 原样渲染）与 `“{I} can see your password”` 大小写，作者 "Huangg" → "Huang"，talk 会议名 "Southesat" → "Southeast"。`publications.md` 用 `bibliography_count` 判断，没有 @unpublished 条目时不再输出空的 Preprints 标题。
+
 
 ---
 
