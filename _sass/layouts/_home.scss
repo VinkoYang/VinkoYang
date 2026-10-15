@@ -74,10 +74,6 @@
     transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  &:hover img {
-    transform: scale(1.02);
-  }
-
   .banner-caption {
     padding: var(--space-3) var(--space-4);
     font-size: 0.75rem;
@@ -144,8 +140,7 @@
   transition: box-shadow var(--transition-slow), transform var(--transition-slow);
 
   &:hover {
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-3px);
+    border-color: var(--accent-soft);
     text-decoration: none;
     color: inherit;
   }
@@ -211,8 +206,6 @@
 
   &:hover,
   &:focus-visible {
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-2px);
     border-color: var(--accent-soft);
     text-decoration: none;
     color: inherit;

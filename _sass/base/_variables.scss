@@ -14,7 +14,9 @@
   --font-accent: 'Stoke', Georgia, serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
-  // Accent scale — Material Blue: #E3F2FD / #90CAF9 / #2196F3 / #0D47A1.
+  // Accent scale — Material Blue: #E3F2FD / #90CAF9 / #1565C0 / #0D47A1.
+  // Base was #2196F3 until the 2026-10 audit: 2.9:1 on parchment failed WCAG AA
+  // for link text; #1565C0 (Blue 800) is ~5.3:1 on parchment, 5.8:1 under white.
   // Four rungs instead of one flat accent, each with a fixed job so the
   // blues layer against each other rather than repeating one tone:
   //   wash — tinted fills: chips, hover backgrounds, callouts
@@ -23,12 +25,12 @@
   //   deep — emphasis + hover: hovered links, headings, strong marks
   --accent-wash: #e3f2fd;
   --accent-soft: #90caf9;
-  --accent: #2196f3;
+  --accent: #1565c0;
   --accent-deep: #0d47a1;
 
   // Back-compat aliases for existing rules.
   --accent-hover: var(--accent-deep);
-  --accent-light: rgba(33, 150, 243, 0.09);
+  --accent-light: rgba(21, 101, 192, 0.08);
 
   // Light mode — warm parchment tones
   --bg-primary: #f8f6f1;

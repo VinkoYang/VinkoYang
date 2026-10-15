@@ -16,26 +16,25 @@
   text-transform: uppercase;
   letter-spacing: 0.04em;
 
+  // One filled action (PDF) per entry; every other link is a quiet outline.
+  // The old palette gave each link type its own color (arXiv red, slides
+  // orange, video red, project steel blue…), so a row read as six badges.
   &.btn-pdf {
     background-color: var(--accent);
     color: #fff;
     &:hover { background-color: var(--accent-hover); color: #fff; }
   }
 
-  &.btn-doi {
-    background-color: var(--text-primary);
-    color: var(--bg-primary);
-    &:hover { opacity: 0.85; color: var(--bg-primary); }
-  }
-
-  &.btn-arxiv {
-    background-color: #b31b1b;
-    color: #fff;
-    &:hover { background-color: #8c1515; color: #fff; }
-  }
-
+  &.btn-doi,
+  &.btn-arxiv,
   &.btn-bib,
-  &.btn-abstract {
+  &.btn-abstract,
+  &.btn-website,
+  &.btn-git,
+  &.btn-paper,
+  &.btn-project,
+  &.btn-slides,
+  &.btn-video {
     background-color: transparent;
     color: var(--text-secondary);
     border-color: var(--border-color);
@@ -43,42 +42,6 @@
       border-color: var(--accent);
       color: var(--accent);
     }
-  }
-
-  &.btn-website {
-    background-color: var(--accent);
-    color: #fff;
-    &:hover { background-color: var(--accent-hover); color: #fff; }
-  }
-
-  &.btn-git {
-    background-color: var(--text-primary);
-    color: var(--bg-primary);
-    &:hover { opacity: 0.85; color: var(--bg-primary); }
-  }
-
-  &.btn-paper {
-    background-color: #b31b1b;
-    color: #fff;
-    &:hover { background-color: #8c1515; color: #fff; }
-  }
-
-  &.btn-project {
-    background-color: #2a6496;
-    color: #fff;
-    &:hover { background-color: #1e4d72; color: #fff; }
-  }
-
-  &.btn-slides {
-    background-color: #c2571a;
-    color: #fff;
-    &:hover { background-color: #9c4514; color: #fff; }
-  }
-
-  &.btn-video {
-    background-color: #c4302b;
-    color: #fff;
-    &:hover { background-color: #9d2622; color: #fff; }
   }
 }
 

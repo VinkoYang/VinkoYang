@@ -110,11 +110,6 @@
   box-shadow: var(--shadow-sm);
   transition: box-shadow var(--transition-slow), transform var(--transition-slow);
 
-  &:hover {
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-2px);
-  }
-
   .research-card-h-img {
     flex: 0 0 240px;
     width: 240px;
@@ -133,10 +128,6 @@
       object-position: center;
       display: block;
       transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    &:hover img, &:hover video {
-      transform: scale(1.04);
     }
 
     canvas.research-card-pdf {

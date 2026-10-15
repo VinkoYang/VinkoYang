@@ -35,7 +35,7 @@ links:
 # (wash/soft/base/deep) with separate light and dark values — too much for one
 # key — and live in _sass/base/_variables.scss. Keep this in sync with the
 # --accent rung there.
-accent_color: "#2196F3"
+accent_color: "#1565C0"
 dark_mode: true              # show dark mode toggle in navbar
 description: "Academic webpage of Dr. Wenhao Yang"
 baseurl: ""

@@ -50,6 +50,8 @@ git push origin source --tags
 
 **站点审计第 2 轮 · 事实更正（作者确认）。** 学位名 "Doctoral of Industrial Engineering" → "Doctor of Engineering in Industrial Engineering"（Lamar 只有 D.E.，无 PhD；`people.yml` 7 处、`student_guidance.yml` 3 处）；`awards.yml` National Encouragement Scholarship 年份 2025 → 2015；邮编统一为 77710（`_config.yml` 的 `office_city`、`experience.yml` 两处）。`ref.bib`：`liu2026all`（NeurIPS 2026）`journal` → `booktitle`；`wang2025exploring`（ICCV 2025）删去 arXiv DOI，避免 DOI 与 arXiv 两个按钮指向同一预印本。
 
+**站点审计第 2 轮 · 主题色与克制设计（作者确认）。** 浅色主题 `--accent` #2196f3 → #1565c0（Material Blue 800，米色底约 5.3:1、白字约 5.8:1，原 2.9:1 不达 AA），`--accent-light` 同步，`_config.yml` 的 `accent_color`（favicon/导航 logo）同步；深色主题不变。出版物按钮只保留 PDF 一个实心按钮，DOI/arXiv/Website/Project/Slides/Video/BIB/Abstract 统一为描边样式（原 6 种颜色）。去装饰：头像卡片的渐变底、顶部渐变色条、阴影加深与头像 hover 放大；团队卡片渐变底；非链接卡片（`.card-academic`、设备卡、团队卡、研究卡、视频卡）的 hover 上浮与图片放大全部删除；链接卡片（首页研究/软件卡、lab news 卡）hover 改为只变边框色。首页侧栏删除 Visitor Map（mapmyvisitors 第三方脚本 + jQuery）。`_a11y.scss` 的暗色按钮修正只保留 PDF。
+
 
 ---
 

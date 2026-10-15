@@ -35,10 +35,9 @@
   box-shadow: none;
 }
 
-// Dark mode: the filled PDF / Website pills sit on the light #90caf9 accent,
-// so white text was ~1.7:1. Use the page ground as the text color instead.
-[data-bs-theme="dark"] .btn-pill.btn-pdf,
-[data-bs-theme="dark"] .btn-pill.btn-website {
+// Dark mode: the filled PDF pill sits on the light #90caf9 accent, so white
+// text was ~1.7:1. Use the page ground as the text color instead.
+[data-bs-theme="dark"] .btn-pill.btn-pdf {
   color: var(--bg-primary);
   &:hover { color: var(--bg-primary); }
 }
