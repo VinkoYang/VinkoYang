@@ -56,6 +56,8 @@ git push origin source --tags
 
 **站点审计第 2 轮 · 学术功能、标题层级与嵌入视频。** 出版物：`ref.bib` 新增 `abbr` 字段（MSEC/JIM/JCISE/IROS/ICCV/NeurIPS/IDETC-CIE/AHFE），`bibtemplate.html` 在按钮行首渲染中性色 `.venue-badge`；每篇论文输出 ScholarlyArticle（博士论文为 Thesis）JSON-LD，作者里的本人指向 `/#person`，有 DOI 时作 `sameAs`；新增 Dissertation 段（原 @book 条目从未显示）。Talks 显示日期（`data` 字段）与地点（`address`），日期晚于构建日的加 "Upcoming" 标记。`site.js` 复制 BibTeX 时额外剔除 project/slides/video/abbr/data/keywords；`ref.bib` 头注释补充新字段说明并把 `/papers/` 改为 `/files/papers/`。YouTube：新增 `_includes/yt_embed.html`，iframe 先用 srcdoc 只显示缩略图和播放键，点击才加载播放器（`lab.md`、`videos.md`、`research_post.html`），/lab/ 移动端 8.8 → 5.2 MB。标题层级：首页段标题 h3 → h2、卡片 h4 → h3（CSS 保持原外观），Lab News 轮播标题 h3 → h2，设备名 h4 → h3，About 的 PI 姓名 h3 → h2，删去 Lab 页与 h1 重复的 "About XRAI Lab"，Videos 页 h1 改为 "Videos" 下分两个 h2，Research/Projects/Teaching 加读屏专用 h2（`.sr-only`），页脚 h5 → h2。`default.html` 把 hero 图移进 `<main>`；窄屏可横向滚动的文章表格加 `tabindex=0`。axe（13 页 × 明暗）：color-contrast 201 → 0，heading-order 40 → 0。
 
+**勘误。** `ref.bib` 中 `yang2024ha`（J. Intell. Manuf. 2024）摘要里 4 处 "HAbot" 改为 "HAR²bot"（粘贴时丢了 R²，与标题一致）。
+
 
 ---
 
