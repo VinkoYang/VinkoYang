@@ -48,6 +48,8 @@ git push origin source --tags
 
 **站点审计第 1 轮 · 可访问性与移动端。** 新增 `_sass/utilities/_a11y.scss`（`main.scss` 最后引入，每条规则对应一条审计结论）：跳转链接 `.skip-link` + `<main id="main">`；全站 `:focus-visible` 2px 实线轮廓（取代 Bootstrap 25% 透明的 nav 焦点环）；暗色模式 PDF/Website 按钮文字改用底色（原白字配 #90caf9 约 1.7:1）；h1–h3 `text-wrap: balance`；首页 News 日期由 11px Cinzel 改为正文字体 13px；Wherefold 卡片缩略图 `object-fit: contain`（原被裁成 "VhereFol"）；触屏设备常显 BibTeX 复制按钮；`prefers-reduced-motion` 下关闭过渡动画。手机端（≤768px）首页侧栏改 `display: contents`，头像 + 联系图标的紧凑卡片排到最前（原在约 4,500px 以下），News 跟在正文后；≤575px 出版物取消年份徽章浮动、收窄卡片内边距，每行字数从约 28 提到约 40。`--text-muted` 浅色 #8a857c → #6b665d、深色 #7d796f → #a29d92（均 ≥4.5:1），补上被 10 处引用却未定义的 `--text-tertiary`。标记：`homelay.html` 侧栏加 `home-sidebar` 类；侧栏图标链接加 `aria-label`，头像去掉 `loading=lazy` 并写明宽高；搜索浮层加 `role=dialog`/`aria-label`；lab news 封面 alt 取 `cover_alt` 或标题。axe（13 页 × 明暗）：color-contrast 361 → 201（剩余均为 #2196f3 强调色，待定），page-has-heading-one 22 → 0，region 28 → 2。
 
+**站点审计第 2 轮 · 事实更正（作者确认）。** 学位名 "Doctoral of Industrial Engineering" → "Doctor of Engineering in Industrial Engineering"（Lamar 只有 D.E.，无 PhD；`people.yml` 7 处、`student_guidance.yml` 3 处）；`awards.yml` National Encouragement Scholarship 年份 2025 → 2015；邮编统一为 77710（`_config.yml` 的 `office_city`、`experience.yml` 两处）。`ref.bib`：`liu2026all`（NeurIPS 2026）`journal` → `booktitle`；`wang2025exploring`（ICCV 2025）删去 arXiv DOI，避免 DOI 与 arXiv 两个按钮指向同一预印本。
+
 
 ---
 

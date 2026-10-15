@@ -9,12 +9,12 @@ doctoral_dissertation_committee:
     year_start: 2024
     year_end: "now"
   - name: "Ka Hin Kevin Lee"
-    degree: "Doctoral of Industrial Engineering"
+    degree: "Doctor of Engineering in Industrial Engineering"
     institution: "Lamar University"
     year_start: 2024
     year_end: 2025
   - name: "Oyedele J Adewol"
-    degree: "Doctoral of Industrial Engineering"
+    degree: "Doctor of Engineering in Industrial Engineering"
     institution: "Lamar University"
     year_start: 2024
     year_end: "now"
@@ -29,7 +29,7 @@ doctoral_dissertation_committee:
     qualifying_exam: "INTERVAL-BASED RESILIENCY MONITORING FOR MULTIPLE INFRASTRUCTURE"
     qualifying_exam_passed: "2026-04"
   - name: "Rafiul Azim Jowarder"
-    degree: "Doctoral of Industrial Engineering"
+    degree: "Doctor of Engineering in Industrial Engineering"
     institution: "Lamar University"
     year_start: 2025
     year_end: "now"

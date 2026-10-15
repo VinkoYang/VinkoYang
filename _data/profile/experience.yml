@@ -2,7 +2,7 @@
 professional_experience:
   - position: "Assistant Professor"
     company: "Lamar University"
-    location: "Beaumont, TX 77705, USA"
+    location: "Beaumont, TX 77710, USA"
     dates: "Jul. 2024 – Present"
     highlights:
       - "Research Interests: Human-robot Interaction, Robotics manipulation, Programming by Demonstration, Robotics System Design, Augmented & Virtual Reality, Human Factors, Tele-robots, Cobots, Cyber-Physical Systems, Digital Twin, Industry 4.0, Smart Factory."
@@ -58,7 +58,7 @@ professional_experience:
 teaching_experience:
   - position: "Assistant Professor"
     institution: "Lamar University"
-    location: "Beaumont, TX 77705, USA"
+    location: "Beaumont, TX 77710, USA"
     dates: "Jul. 2024 – Present"
     description: "Department of Industrial and Systems Engineering, teaching online and face-to-face classes at the graduate and undergraduate levels:"
     courses:
