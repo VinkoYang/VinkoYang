@@ -46,6 +46,8 @@ git push origin source --tags
 
 **站点审计第 1 轮 · 性能。** 研究卡片的 4 个 GIF（共约 30 MB）改用视频：新增 `_includes/card_media.html`，`.gif` 渲染为 `<video autoplay muted loop playsinline>`，取同名 `.mp4`/`.webm` 与 `-poster.jpg`（均由 ffmpeg 从 GIF 生成，GIF 原文件保留）；`research.md`、`home.md` 改用该 include，`_research.scss`/`_home.scss` 的卡片图片规则加上 `video`；`site.js` 在 `prefers-reduced-motion` 下暂停这些视频并显示控件。图片：JPEG 长边压到 1600（头像 800，q82 渐进式，同名覆盖）；4 张不透明 PNG 照片转 JPEG 并更新引用（`xrai_lab_wide`、`2026_Vertical-HorizontalIllusion`、`team/ayden`、`equip-metaquest3`），合计 31.3 MB → 4.7 MB。MathJax（约 600 KB）改为页面 front matter 写 `math: true` 才加载（目前无页面用到公式），README 同步说明。本地实测移动端页面体积：首页 22.1 → 2.8 MB，/research/ 38.6 → 5.8 MB，/lab/ 18.6 → 8.8 MB（剩余主要是 YouTube 嵌入）。
 
+**站点审计第 1 轮 · 可访问性与移动端。** 新增 `_sass/utilities/_a11y.scss`（`main.scss` 最后引入，每条规则对应一条审计结论）：跳转链接 `.skip-link` + `<main id="main">`；全站 `:focus-visible` 2px 实线轮廓（取代 Bootstrap 25% 透明的 nav 焦点环）；暗色模式 PDF/Website 按钮文字改用底色（原白字配 #90caf9 约 1.7:1）；h1–h3 `text-wrap: balance`；首页 News 日期由 11px Cinzel 改为正文字体 13px；Wherefold 卡片缩略图 `object-fit: contain`（原被裁成 "VhereFol"）；触屏设备常显 BibTeX 复制按钮；`prefers-reduced-motion` 下关闭过渡动画。手机端（≤768px）首页侧栏改 `display: contents`，头像 + 联系图标的紧凑卡片排到最前（原在约 4,500px 以下），News 跟在正文后；≤575px 出版物取消年份徽章浮动、收窄卡片内边距，每行字数从约 28 提到约 40。`--text-muted` 浅色 #8a857c → #6b665d、深色 #7d796f → #a29d92（均 ≥4.5:1），补上被 10 处引用却未定义的 `--text-tertiary`。标记：`homelay.html` 侧栏加 `home-sidebar` 类；侧栏图标链接加 `aria-label`，头像去掉 `loading=lazy` 并写明宽高；搜索浮层加 `role=dialog`/`aria-label`；lab news 封面 alt 取 `cover_alt` 或标题。axe（13 页 × 明暗）：color-contrast 361 → 201（剩余均为 #2196f3 强调色，待定），page-has-heading-one 22 → 0，region 28 → 2。
+
 
 ---
 

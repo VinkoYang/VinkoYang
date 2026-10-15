@@ -36,7 +36,8 @@
   --bg-card: #ffffff;
   --text-primary: #2c2a25;
   --text-secondary: #5c5850;
-  --text-muted: #8a857c;
+  --text-muted: #6b665d;      // ≥4.5:1 on all light grounds (was #8a857c, 3.1–3.7:1)
+  --text-tertiary: var(--text-muted);
   --border-color: #e2ded6;
   --shadow-sm: 0 1px 3px rgba(44, 42, 37, 0.06);
   --shadow-md: 0 4px 12px rgba(44, 42, 37, 0.08);
@@ -89,7 +90,8 @@
   --bg-card: #2a2924;
   --text-primary: #e8e4dc;
   --text-secondary: #b5b0a5;
-  --text-muted: #7d796f;
+  --text-muted: #a29d92;      // ≥4.5:1 on all dark grounds (was #7d796f, 3.4–4.0:1)
+  --text-tertiary: var(--text-muted);
   --border-color: #3d3a33;
   --shadow-sm: 0 1px 3px rgba(12, 10, 7, 0.3);
   --shadow-md: 0 4px 12px rgba(12, 10, 7, 0.35);

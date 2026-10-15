@@ -5,6 +5,8 @@
 
   <body>
 
+    <a class="skip-link" href="#main">Skip to content</a>
+
     {% include header.html %}
 
     {% if page.hero_image %}
@@ -13,7 +15,7 @@
     </div>
     {% endif %}
 
-    <main class="site-container">
+    <main class="site-container" id="main" tabindex="-1">
       {{ content }}
     </main>
 

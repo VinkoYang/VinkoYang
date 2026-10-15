@@ -21,7 +21,7 @@
       </ul>
       <div class="d-flex align-items-center" style="gap: var(--space-2);">
         <button class="search-toggle" id="searchToggle" aria-label="Search site">
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
         </button>
         {% if site.dark_mode %}
         <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
@@ -34,11 +34,11 @@
 </nav>
 
 <!-- Search overlay -->
-<div class="search-overlay" id="searchOverlay">
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search this site">
 <div class="search-modal">
 <div class="search-input-wrapper">
 <i class="fa-solid fa-magnifying-glass search-input-icon"></i>
-<input type="text" class="search-input" id="searchInput" placeholder="Search pages..." autocomplete="off">
+<input type="text" class="search-input" id="searchInput" placeholder="Search pages..." autocomplete="off" aria-label="Search pages">
 <kbd class="search-kbd">ESC</kbd>
 </div>
 <div class="search-results" id="searchResults"></div>

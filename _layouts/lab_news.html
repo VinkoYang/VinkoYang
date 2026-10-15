@@ -24,7 +24,7 @@ layout: default
 
     {% if page.cover and page.cover != "" %}
     <figure class="labnews-cover">
-      <img src="{{ site.url }}{{ site.baseurl }}/images/{{ page.cover }}" alt="" itemprop="image" loading="eager">
+      <img src="{{ site.url }}{{ site.baseurl }}/images/{{ page.cover }}" alt="{{ page.cover_alt | default: page.title | escape }}" itemprop="image" loading="eager">
     </figure>
     {% endif %}
 
