@@ -1,11 +1,11 @@
 ---
 title: "Home"
 layout: homelay
-sitemap: false
 permalink: /
+description: "Wenhao Yang is an Assistant Professor of Industrial and Systems Engineering at Lamar University and directs the XRAI Lab, researching AR/VR/MR, robotics, and human-robot interaction."
 ---
 
-<h2 class="home-hero">{{ site.name }}</h2>
+<h1 class="home-hero">{{ site.name }}</h1>
 <p class="home-hero-sub">{{ site.title }}, {{ site.institution }}</p>
 
 ### About me

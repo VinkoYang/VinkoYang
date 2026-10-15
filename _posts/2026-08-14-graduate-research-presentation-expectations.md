@@ -6,8 +6,6 @@ categories: ["Teaching & Learning"]
 tags: ["presentations", "research-methods", "advising"]
 ---
 
-# Graduate Research Presentation Expectations
-
 I have sat through enough lab meetings and qualifying exams now to notice a pattern, and I want to write it down before the next round of presentations, so that everyone in the group can read it beforehand instead of hearing it, again, after the fact.
 
 The pattern is this: students spend their effort in the wrong place. They spend hours choosing a color palette, hunting for a clean icon set, animating a transition, and then they spend twenty minutes, the night before, checking whether the claim on slide fourteen is actually true. It should be the other way around. A slide deck is not the product of your research. It is a vehicle for a story, and the only job of the vehicle is to get the story across clearly. Nobody remembers a beautiful slide with a weak claim on it. Everybody remembers a shaky slide that clearly explained why the problem mattered.

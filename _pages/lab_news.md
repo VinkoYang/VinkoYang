@@ -1,11 +1,11 @@
 ---
 title: "Lab News"
 layout: gridlay
-sitemap: false
 permalink: /lab/news/
+description: "Lab news from the XRAI Lab at Lamar University: student projects, robot competitions, and events."
 ---
 
-## Lab News
+# Lab News
 
 News, visits, and events from the [XRAI Lab]({{ site.url }}{{ site.baseurl }}/lab/).
 For short one-line updates, see [News]({{ site.url }}{{ site.baseurl }}/allnews.html).

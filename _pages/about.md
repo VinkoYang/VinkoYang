@@ -1,11 +1,11 @@
 ---
 title: "About"
 layout: gridlay
-sitemap: false
 permalink: /about/
+description: "Education, appointments, grants, awards, and service of Dr. Wenhao Yang, Assistant Professor of Industrial and Systems Engineering at Lamar University."
 ---
 
-## About
+# About
 
 <div class="section-card">
 <div class="pi-card">

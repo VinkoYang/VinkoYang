@@ -1,13 +1,11 @@
 ---
 layout: post
-title: "Literature Search and Paper Collection"
+title: "Literature Search and Paper Collection: A Practical Guide for New Researchers"
 date: 2026-07-27
 categories: ["Teaching & Learning"]
 tags: ["literature-review", "research-skills", "academic-writing", "research-methods"]
 ---
 
-
-# Literature Search and Paper Collection: A Practical Guide for New Researchers
 
 If you're just starting out in research, one of the first — and most underrated — skills you need is knowing how to *find* the right papers. It sounds simple, but it's not. Good literature search isn't about typing a phrase into Google and grabbing the first ten results. It's a skill that directly shapes the quality of your research: the papers you find determine the questions you ask, the methods you consider, and the gaps you're able to identify.
 

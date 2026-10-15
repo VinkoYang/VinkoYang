@@ -1,11 +1,11 @@
 ---
 title: "Research"
 layout: gridlay
-sitemap: false
 permalink: /research/
+description: "Research projects by Wenhao Yang and the XRAI Lab at Lamar University: AR/VR/MR for robotics, human-robot interaction, immersive training, and industrial XR."
 ---
 
-## Research
+# Research
 
 <input type="text" class="pub-search" id="researchSearch" placeholder="Search by title or keyword...">
 

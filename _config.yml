@@ -135,3 +135,7 @@ exclude:
   - package.json
   - package-lock.json
   - docs
+  - README.md   # repo docs — not site pages; keep them out of _site and the sitemap
+  - CHANGELOG.md
+  - LICENSE
+  - setup.sh

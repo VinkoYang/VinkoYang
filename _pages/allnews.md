@@ -1,11 +1,11 @@
 ---
 title: "News"
 layout: gridlay
-sitemap: false
 permalink: /allnews.html
+description: "News from Wenhao Yang: papers, grants, talks, and XRAI Lab updates."
 ---
 
-## News
+# News
 
 <div class="section-card" markdown="0">
 <div class="news-timeline">

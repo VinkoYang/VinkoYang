@@ -1,12 +1,10 @@
 ---
 layout: post
-title: "Target Journals and Conferences"
+title: "A Researcher's Guide to Target Journals and Conferences in HRI, AR/VR, and Smart Manufacturing"
 date: 2026-07-27
 categories: ["Research & Scholarship"]
 tags: ["publishing", "HRI", "AR-VR", "smart-manufacturing"]
 ---
-
-# A Researcher's Guide to Target Journals and Conferences in HRI, AR/VR, and Smart Manufacturing
 
 If you work at the intersection of **human-robot interaction (HRI), augmented/virtual reality (AR/VR), robot programming, digital twins, and smart manufacturing (Industry 4.0)**, the venue landscape can feel scattered — some venues live in the robotics world, some in HCI, some in mechanical/industrial engineering, and some in computer vision. Below is a curated, tiered list of journals and conferences relevant to this research area, with a short description of each venue's scope and a link to its official homepage. Useful as a quick-reference for literature reviews or when deciding where to submit next.
 

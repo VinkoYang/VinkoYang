@@ -1,11 +1,11 @@
 ---
 title: "Team"
 layout: gridlay
-sitemap: false
 permalink: /team/
+description: "Members of the XRAI Lab at Lamar University, led by Dr. Wenhao Yang: doctoral, master's, and undergraduate researchers and collaborators."
 ---
 
-## Team
+# Team
 
 **We are looking for new team members!**
 

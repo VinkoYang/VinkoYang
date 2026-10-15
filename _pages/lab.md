@@ -1,11 +1,11 @@
 ---
 title: "Lab"
 layout: gridlay
-sitemap: false
 permalink: /lab/
 hero_image: images/lab/xrai_lab_wide.png
+description: "The XRAI Lab at Lamar University: research focus, collaborative robots, mobile robots, XR headsets, and equipment for extended reality, AI, and robotics research."
 ---
-## XRAI Lab
+# XRAI Lab
 
 <div class="section-card">
 <h3>About XRAI Lab</h3>

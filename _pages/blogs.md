@@ -1,11 +1,11 @@
 ---
 title: "Blog"
 layout: gridlay
-sitemap: false
 permalink: /blogs/
+description: "Guides by Wenhao Yang for new researchers: lab equipment onboarding, literature search, research presentations, and XR and robotics tools."
 ---
 
-## Blog
+# Blog
 
 {% assign research_project_posts = site.posts | where_exp: "p", "p.categories contains 'Research Projects'" %}
 {% if site.posts.size > 0 %}

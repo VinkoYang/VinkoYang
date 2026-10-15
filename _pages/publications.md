@@ -1,11 +1,11 @@
 ---
 title: "Publications"
 layout: gridlay
-sitemap: false
 permalink: /publications/
+description: "Journal articles and conference papers by Wenhao Yang on augmented reality, human-robot interaction, and robotics, with PDFs, DOIs, and BibTeX."
 ---
 
-## Publications
+# Publications
 
 <input type="text" class="pub-search" id="pubSearch" placeholder="Filter by title, author, or year...">
 

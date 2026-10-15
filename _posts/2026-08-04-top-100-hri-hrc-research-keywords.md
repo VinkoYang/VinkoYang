@@ -5,8 +5,6 @@ date: 2026-08-04
 categories: ["Research & Scholarship"]
 tags: ["HRI", "HRC", "human-robot-interaction", "glossary"]
 ---
-# Top 100 HRI & HRC Research Keywords
-
 ---
 
 ### 🤝 1. Collaboration Paradigms & Co-Presence

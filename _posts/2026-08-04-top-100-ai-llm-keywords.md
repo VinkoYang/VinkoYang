@@ -6,8 +6,6 @@ categories: ["Research & Scholarship"]
 tags: ["AI", "LLM", "machine-learning", "glossary"]
 ---
 
-# Top 100 High-Frequency AI Large Language Model Keywords
-
 ---
 
 ### 📑 1. Architecture & Core Tech

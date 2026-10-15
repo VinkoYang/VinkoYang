@@ -1,11 +1,11 @@
 ---
 title: "Videos"
 layout: gridlay
-sitemap: false
 permalink: /videos/
+description: "Research demo videos from Wenhao Yang and the XRAI Lab: AR/VR robot interfaces, human-robot interaction, and immersive training."
 ---
 
-## Research Videos
+# Research Videos
 
 <div class="video-list" markdown="0">
 {% for v in site.data.videos %}

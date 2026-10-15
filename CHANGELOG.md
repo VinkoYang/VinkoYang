@@ -42,6 +42,8 @@ git push origin source --tags
 
 **站点审计第 1 轮 · 文字与书目勘误。** 首页简介 "Depsrtment" → "Department"；`experience.yml` 的 "May." → "May"、"taking … classes" → "teaching …"、Monroe CC 一条改为 "Delivered lectures both in person and online."；`news.yml`/`research.yml` 的 "Xr"、"seethrough" 拼写；`ref.bib`：摘要 "TTo"/"re-planing"/"to verified"，标题 `{HAR²bot}`（原 `HAR^2bot` 原样渲染）与 `“{I} can see your password”` 大小写，作者 "Huangg" → "Huang"，talk 会议名 "Southesat" → "Southeast"。`publications.md` 用 `bibliography_count` 判断，没有 @unpublished 条目时不再输出空的 Preprints 标题。
 
+**站点审计第 1 轮 · SEO。** `head.html` 重写：首页 title 改为“Wenhao Yang – Assistant Professor, Lamar University”；meta/OG/Twitter description 按 `description` → lab news `summary` → 文章 excerpt → `site.description` 回退，不再全站同一句；文章与 lab news 用 `og:type article`、有 `cover` 时用作分享图。JSON-LD 改为 `@graph`：一个带 `@id`（`/#person`）的 Person 节点（职称、邮箱、头像、Lamar 与系名、`sameAs` 取 `site.links` 全部非空项），首页挂 ProfilePage，文章/lab news 挂 BlogPosting，其余页面挂 WebPage，均指回同一 Person，用于同名消歧。13 个主页面去掉 `sitemap: false`（原先 sitemap 只有文章），补 `description` 前置字段；页面标题由 `##` 改为 `#`，首页姓名由 `<h2>` 改为 `<h1>`，每页恰好一个 h1。14 篇文章删掉正文里重复的 `# 标题`（与 layout 的 h1 重复，也让 excerpt 变成标题），其中 3 篇正文标题比 front matter 更完整，改用正文标题。导航链接补尾斜杠，省掉每次点击的 301。`_config.yml` 的 `exclude` 加 `README.md`、`CHANGELOG.md`、`LICENSE`、`setup.sh`，不再发布到站点。
+
 
 ---
 

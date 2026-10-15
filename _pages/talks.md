@@ -1,11 +1,11 @@
 ---
 title: "Talks"
 layout: gridlay
-sitemap: false
 permalink: /talks/
+description: "Invited and conference talks by Wenhao Yang on extended reality, robotics, and human-robot interaction."
 ---
 
-## Talks
+# Talks
 
 <div class="section-card" id="pubList">
 <h3>Invited Talks</h3>

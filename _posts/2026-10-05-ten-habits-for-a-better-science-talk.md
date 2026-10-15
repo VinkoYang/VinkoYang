@@ -6,8 +6,6 @@ categories: ["Teaching & Learning"]
 tags: ["presentations", "public-speaking", "advising"]
 ---
 
-# Ten Habits for a Better Science Talk
-
 The three earlier posts in this series are about the talk itself: [what I look for when I watch one](/blogs/graduate-research-presentation-expectations/), [how to build one slide by slide](/blogs/how-to-build-a-good-research-presentation/), and [how to pitch it to the room you are in](/blogs/presentation-strategy-by-venue/). This one is about the speaker. It covers what you do in the months before a talk and what you do once you are standing in front of people.
 
 It is built on an article I recommend reading in full: Joanne Kamens's ["10 Steps to a Perfect Science Talk"](https://blog.addgene.org/10-steps-to-a-perfect-science-talk), published on the Addgene blog in 2016. Kamens wrote it for life scientists, but almost none of it depends on the field. I have kept her ten steps and her order. For each one I give the short version of her advice, then what it means in our lab, and a link to the earlier post where that topic already has more detail.
