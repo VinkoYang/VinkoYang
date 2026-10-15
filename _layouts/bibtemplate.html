@@ -12,9 +12,9 @@
   {% if entry.type == 'incollection' and entry.data or entry.type == 'incollection' and entry.address %}
   {% assign _today = site.time | date: '%Y-%m-%d' %}
   <div class="talk-meta">
-    {% if entry.data %}<span><i class="fa-regular fa-calendar" aria-hidden="true"></i> {{ entry.data | date: "%b %-d, %Y" }}</span>{% endif %}
+    {% if entry.data %}<span><i class="fa-regular fa-calendar" aria-hidden="true"></i> {% if entry.data_end and entry.data_end != entry.data %}{% assign _m1 = entry.data | date: "%Y-%m" %}{% assign _m2 = entry.data_end | date: "%Y-%m" %}{% if _m1 == _m2 %}{{ entry.data | date: "%b %-d" }}–{{ entry.data_end | date: "%-d, %Y" }}{% else %}{{ entry.data | date: "%b %-d" }} – {{ entry.data_end | date: "%b %-d, %Y" }}{% endif %}{% else %}{{ entry.data | date: "%b %-d, %Y" }}{% endif %}</span>{% endif %}
     {% if entry.address %}<span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> {{ entry.address }}</span>{% endif %}
-    {% if entry.data and entry.data > _today %}<span class="upcoming-badge">Upcoming</span>{% endif %}
+    {% assign _talk_last = entry.data_end | default: entry.data %}{% if entry.data and _talk_last > _today %}<span class="upcoming-badge">Upcoming</span>{% endif %}
   </div>
   {% endif %}
 

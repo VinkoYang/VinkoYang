@@ -22,7 +22,7 @@ His work spans interdisciplinary areas including advanced manufacturing, human-c
 user-centered system design, aiming to develop scalable and effective solutions for complex engineering challenges.
 
 Dr. Yang has extensive experience in developing and [teaching]({{ site.url }}{{ site.baseurl }}/teaching) courses
-in robotics and immersive technologies, including Collaborative Robot Operation and Programming, AR/VR Applications,
+in robotics and immersive technologies, including ST: Collab Robot Ops Pro, ST: AR/VR in Manufacturing,
 Introduction to Robotics, and Robotics and Automation in Manufacturing.
 He is passionate about making complex technologies accessible and impactful through both research and education.
 
@@ -68,14 +68,15 @@ US attractions that he assembled and now visualizes through an interactive map.
 <div class="home-software-list" markdown="0">
 {% for item in sorted_projects limit:2 %}
 {% assign card_id = item.title | slugify %}
-<a href="{{ site.url }}{{ site.baseurl }}/projects#{{ card_id }}" class="home-software-card">
+{% assign project_url = site.url | append: site.baseurl | append: "/projects/#" | append: card_id %}
+<article class="home-software-card">
 {% if item.image and item.image != "" %}
-<div class="home-software-card-media">
-<img src="{{ site.url }}{{ site.baseurl }}/images/{{ item.image }}" alt="{{ item.title }}" loading="lazy">
-</div>
+<a class="home-software-card-media" href="{{ project_url }}" tabindex="-1" aria-hidden="true">
+<img src="{{ site.url }}{{ site.baseurl }}/images/{{ item.image }}" alt="" loading="lazy">
+</a>
 {% endif %}
 <div class="home-software-card-body">
-<h3>{{ item.title }}</h3>
+<h3><a href="{{ project_url }}">{{ item.title }}</a></h3>
 {% if item.status or item.role or item.start_date %}
 <div class="home-software-meta">
 {% if item.status and item.status != "" %}<span class="home-software-status">{{ item.status }}</span>{% endif %}
@@ -83,17 +84,20 @@ US attractions that he assembled and now visualizes through an interactive map.
 {% if item.start_date %}<span>{{ item.start_date }}{% if item.end_date %}&ndash;{{ item.end_date }}{% else %}&ndash;Present{% endif %}</span>{% endif %}
 </div>
 {% endif %}
-<p>{{ item.abstract | truncatewords: 42 }}</p>
+<div data-clamp>
+<p class="js-clamp-text" id="home-{{ card_id }}-abstract">{{ item.abstract }}</p>
+<button type="button" class="js-clamp-toggle" aria-expanded="false" aria-controls="home-{{ card_id }}-abstract" hidden><span class="js-clamp-label">Show more</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+</div>
 {% if item.stack %}
 <div class="home-software-stack">
 {% for tech in item.stack limit:6 %}<span>{{ tech }}</span>{% endfor %}{% if item.stack.size > 6 %}<span>+{{ item.stack.size | minus: 6 }} more</span>{% endif %}
 </div>
 {% endif %}
-<div class="home-software-cta">View project <i class="fa-solid fa-arrow-right"></i></div>
+<a class="home-software-cta" href="{{ project_url }}">View project <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
 </div>
-</a>
+</article>
 {% endfor %}
 </div>
 
-<p style="margin-top: var(--space-4);"><a href="{{ site.url }}{{ site.baseurl }}/projects">See all projects &rarr;</a></p>
+<p style="margin-top: var(--space-4);"><a href="{{ site.url }}{{ site.baseurl }}/projects/">See all projects &rarr;</a></p>
 {% endif %}

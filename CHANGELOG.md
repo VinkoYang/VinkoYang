@@ -58,6 +58,8 @@ git push origin source --tags
 
 **勘误。** `ref.bib` 中 `yang2024ha`（J. Intell. Manuf. 2024）摘要里 4 处 "HAbot" 改为 "HAR²bot"（粘贴时丢了 R²，与标题一致）。
 
+**站点审计第 3 轮 · 作者确认的事实与内容。** `liu2026all` 年份改为 2025（NeurIPS 2025，vol. 38）。INEN-5301 两门课统一为官方名：`teaching.yml` 的 Collab Robot 课 `INEN 5301-05` → `INEN 5301-02`、名称 "ST: Collab Robot Ops Pro"，AR/VR 课名 "ST: AR/VR in Manufacturing"；`experience.yml`（锚点 `#inen-5301-02`）与首页简介同步；课程描述 "you will" → "students"。RIT 助研："7 conference papers" → 3，"Meta Quest 1/2/3/pro" → "Meta Quest 1/2/Pro"；`awards.yml` NUAA Outstanding Graduate 2019 → 2018。Join the Lab 加适配条件（会用 AI、会编程、Unity/ROS 2/Python/用户研究经验）。Talks：IDETC 2026 补 `data`/`data_end`（Aug 23–26, 2026）与地点 Hilton Americas-Houston；新增可选字段 `data_end`，`bibtemplate.html` 渲染日期区间、Upcoming 以结束日判断；有日期的 talk 补标准 `month` 字段，同年内按月份排序（原 Feb 排在 Mar 前）；`site.js` 复制 BibTeX 时同时剔除 `data_end`。首页 "Software I've Built" 卡片由整卡链接改为 `<article>`（标题/缩略图/View project 各自是链接），简介显示全文并用 Show more 折叠（原 `truncatewords: 42`）。
+
 
 ---
 

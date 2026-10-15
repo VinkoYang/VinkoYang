@@ -67,9 +67,9 @@
 
   // ----- Strip internal-only fields from displayed BibTeX -----
   // Removes site-only fields (pdf, note, arxiv, project, slides, video, abbr,
-  // data, keywords) so they don't appear in the BIB popup or get copied.
+  // data, data_end, keywords) so they don't appear in the BIB popup or get copied.
 
-  var BIB_FIELD_STRIP = /^\s*(pdf|note|arxiv|project|slides|video|abbr|data|keywords)\s*=/i;
+  var BIB_FIELD_STRIP = /^\s*(pdf|note|arxiv|project|slides|video|abbr|data|data_end|keywords)\s*=/i;
 
   document.querySelectorAll('[id^="bib-"] pre').forEach(function (pre) {
     var lines = pre.textContent.split('\n');

@@ -8,7 +8,7 @@ professional_experience:
       - "Research Interests: Human-robot Interaction, Robotics manipulation, Programming by Demonstration, Robotics System Design, Augmented & Virtual Reality, Human Factors, Tele-robots, Cobots, Cyber-Physical Systems, Digital Twin, Industry 4.0, Smart Factory."
       - "Established the XRAI (Extended Reality + Artificial Intelligence, and Robotics) Lab, supporting 10+ graduate and undergraduate researchers in robotics, AR/VR, and cobotics."
       - "Secured $148,000 in internal funding and initiated 4 interdisciplinary research projects with Engineering and Computer Science."
-      - "Teaching: <a href='/teaching/#inen-5301-05'>Robotics Operations and Programming (INEN-5301)</a>, <a href='/teaching/#inen-5301-01'>AR/VR in manufacturing (INEN-5301)</a>, <a href='/teaching/#inen-5358'>Introduction to Robotics (INEN-5358)</a>, <a href='/teaching/#inen-6301'>Advanced Robotics (INEN-6301)</a>, <a href='/teaching/#inen-4375'>Simulation of Industrial Systems (INEN-4375)</a>, <a href='/teaching/#inen-6110'>Professional Seminar (INEN-6110)</a>."
+      - "Teaching: <a href='/teaching/#inen-5301-02'>ST: Collab Robot Ops Pro (INEN-5301-02)</a>, <a href='/teaching/#inen-5301-01'>ST: AR/VR in Manufacturing (INEN-5301-01)</a>, <a href='/teaching/#inen-5358'>Introduction to Robotics (INEN-5358)</a>, <a href='/teaching/#inen-6301'>Advanced Robotics (INEN-6301)</a>, <a href='/teaching/#inen-4375'>Simulation of Industrial Systems (INEN-4375)</a>, <a href='/teaching/#inen-6110'>Professional Seminar (INEN-6110)</a>."
 
   - position: "Software Engineer"
     company: "Meta Reality Labs"
@@ -26,8 +26,8 @@ professional_experience:
     dates: "Aug. 2019 – May 2023"
     highlights:
       - "Responsible for supporting and assisting Dr. Yunbo Zhang in various research activities and projects."
-      - "Managed the setup and maintenance of a CDIME robotics research lab with 3 robot manipulators (Aubo, UFactory) and 6+ VR HMDs (Oculus Rift, HTC Vive, Meta Quest 1/2/3/pro)."
-      - "Led development of human-robot collaboration experiments, resulting in 7 conference papers and advancing research in HRI, smart manufacturing, and AR/VR development."
+      - "Managed the setup and maintenance of a CDIME robotics research lab with 3 robot manipulators (Aubo, UFactory) and 6+ VR HMDs (Oculus Rift, HTC Vive, Meta Quest 1/2/Pro)."
+      - "Led development of human-robot collaboration experiments, resulting in 3 conference papers and advancing research in HRI, smart manufacturing, and AR/VR development."
       - "Mentored 5 junior graduate/undergraduate students, providing training in robot programming, motion planning, and VR development."
 
   - position: "Research Intern"
@@ -62,14 +62,14 @@ teaching_experience:
     dates: "Jul. 2024 – Present"
     description: "Department of Industrial and Systems Engineering, teaching online and face-to-face classes at the graduate and undergraduate levels:"
     courses:
-      - "<a href='/teaching/#inen-5301-05'>Robotics Operations and Programming (INEN-5301)</a>"
-      - "<a href='/teaching/#inen-5301-01'>AR/VR in manufacturing (INEN-5301)</a>"
+      - "<a href='/teaching/#inen-5301-02'>ST: Collab Robot Ops Pro (INEN-5301-02)</a>"
+      - "<a href='/teaching/#inen-5301-01'>ST: AR/VR in Manufacturing (INEN-5301-01)</a>"
       - "<a href='/teaching/#inen-5358'>Introduction to Robotics (INEN-5358)</a>"
       - "<a href='/teaching/#inen-6301'>Advanced Robotics (INEN-6301)</a>"
       - "<a href='/teaching/#inen-4375'>Simulation of Industrial Systems (INEN-4375)</a>"
       - "<a href='/teaching/#inen-6110'>Professional Seminar (INEN-6110)</a>"
     highlights:
-      - "Developed and launched 2 new graduate courses in AR/VR (INEN-5301-01) and Robotics (INEN-5301-05)."
+      - "Developed and launched 2 new graduate courses in AR/VR (INEN-5301-01) and Robotics (INEN-5301-02)."
       - "Integrated immersive VR coding and development modules into INEN-5301-01 course, improving student engagement scores by 35% in the 2025 Spring term (27/20) and 30% in the 2026 Spring term (26/20), respectively."
 
   - position: "Guest Lecturer"

@@ -26,6 +26,8 @@
                                                         (place file in /files/papers/)
     abbr   = {ICCV},                                 -> venue badge before the buttons
     data   = {2026-12-01},   (talks)                 -> talk date; "Upcoming" badge if after build date
+    data_end = {2026-12-04}, (talks, optional)       -> last day, shown as a range "Dec 1–4, 2026"
+    month  = {dec},          (talks)                 -> standard field; sorts talks within a year
     address= {City, Country}, (talks)                -> talk location
     These, plus project/slides/video/keywords, are stripped from the copied BibTeX.
 
@@ -195,7 +197,7 @@
   booktitle={Advances in Neural Information Processing Systems},
   volume={38},
   pages={88139--88166},
-  year={2026},
+  year={2025},
   url={https://proceedings.neurips.cc/paper_files/paper/2025/hash/7f8b8bc8ebac661c442c4dafd5d98c08-Abstract-Conference.html},
   pdf={NeurIPS-2025-all-you-need-is-one-capsule-prompt-tuning-with-a-single-vector-Paper-Conference.pdf},
   abstract={Prompt-based learning has emerged as a parameter-efficient finetuning (PEFT) approach to facilitate Large Language Model (LLM) adaptation to downstream tasks by conditioning generation with task-aware guidance. Despite its successes, current prompt-based learning methods heavily rely on laborious grid searching for optimal prompt length and typically require considerable number of prompts, introducing additional computational burden. Worse yet, our pioneer findings indicate that the task-aware prompt design is inherently limited by its absence of instance-aware information, leading to a subtle attention interplay with the input sequence. In contrast, simply incorporating instance-aware information as a part of the guidance can enhance the prompt-tuned model performance without additional fine-tuning. Moreover, we find an interesting phenomenon, namely "attention anchor", that incorporating instance-aware tokens at the earliest position of the sequence can successfully preserve strong attention to critical structural information and exhibit more active attention interaction with all input tokens. In light of our observation, we introduce Capsule Prompt-Tuning (CaPT), an efficient and effective solution that leverages off-the-shelf, informative instance semantics into prompt-based learning. Our approach innovatively integrates both instance-aware and task-aware information in a nearly parameter-free manner (i.e., one single capsule prompt). Empirical results demonstrate that our method can exhibit superior performance across various language tasks (e.g., 84.03\% average accuracy on T5-Large), serving as an "attention anchor," while enjoying high parameter efficiency (e.g., 0.003\% of model parameters on Llama3.2-1B).}
@@ -238,6 +240,7 @@
   booktitle={AHFE Hawaii International Conference},
   address={Hawaii, USA},
   year={2026},
+  month={dec},
   data={2026-12-01},
   keywords={talk}
 }
@@ -247,6 +250,10 @@
   author={Yang, Wenhao and Li, Yueqing and Liu, Xinyu},
   booktitle={ASME International Design Engineering Technical Conferences and Computers and Information in Engineering Conference (IDETC/CIE)},
   year={2026},
+  month={aug},
+  data={2026-08-23},
+  data_end={2026-08-26},
+  address={Hilton Americas-Houston, Houston, TX, USA},
   slides={files/slides/idetc2026-mr-vhi-talk_20260824.pdf},
   video={https://youtu.be/njVBP0nEefs},
   keywords={talk}
@@ -257,6 +264,7 @@
   author={Yang, Wenhao},
   booktitle={ISA Southeast Texas Section Meeting},
   year={2026},
+  month={mar},
   data={2026-03-24},
   keywords={invited}
 }
@@ -266,6 +274,7 @@
   author={Yang, Wenhao},
   booktitle={ISA Southeast Texas Section Cybersecurity, AI & Automation (CAA) Symposium},
   year={2026},
+  month={feb},
   data={2026-02-25},
   keywords={invited}
 }
@@ -275,6 +284,7 @@
   author={Yang, Wenhao},
   booktitle={Process Solutions Summit and VectoberFest},
   year={2025},
+  month={oct},
   data={2025-10-16},
   keywords={invited}
 }
