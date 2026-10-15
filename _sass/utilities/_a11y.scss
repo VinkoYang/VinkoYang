@@ -45,6 +45,9 @@
 // Headings: avoid one-word last lines on long titles
 h1, h2, h3 { text-wrap: balance; }
 
+// In-page anchors (/lab/#team, /publications/#talks) land below the sticky navbar
+h2[id], h3[id] { scroll-margin-top: 80px; }
+
 // News dates: Cinzel capitals at 11px were hard to read; use the body face
 .news-timeline .news-date {
   font-family: var(--font-body);
@@ -103,8 +106,8 @@ h1, h2, h3 { text-wrap: balance; }
 @media (max-width: 575.98px) {
   // Publications: card padding + list indent + floated year badge left ~28
   // characters per line. Un-float the badge and give the text the width.
-  #pubList.section-card { padding: var(--space-4); }
-  #pubList ol { padding-left: 1.25rem; }
+  .pub-list.section-card { padding: var(--space-4); }
+  .pub-list ol { padding-left: 1.25rem; }
   .year-badge {
     float: none;
     margin: 0 0 var(--space-2);

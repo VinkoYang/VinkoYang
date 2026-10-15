@@ -51,14 +51,13 @@ analytics:
 nav_pages:
   - name: about
   - name: publications
-  - name: talks
   - name: research
   - name: projects
   - name: lab
-  - name: team
   - name: teaching
   - name: videos
   - name: blogs
+    label: Blog
 
 # ============================================================
 # Advanced Settings (you probably don't need to change these)

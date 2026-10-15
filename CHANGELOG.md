@@ -52,6 +52,8 @@ git push origin source --tags
 
 **站点审计第 2 轮 · 主题色与克制设计（作者确认）。** 浅色主题 `--accent` #2196f3 → #1565c0（Material Blue 800，米色底约 5.3:1、白字约 5.8:1，原 2.9:1 不达 AA），`--accent-light` 同步，`_config.yml` 的 `accent_color`（favicon/导航 logo）同步；深色主题不变。出版物按钮只保留 PDF 一个实心按钮，DOI/arXiv/Website/Project/Slides/Video/BIB/Abstract 统一为描边样式（原 6 种颜色）。去装饰：头像卡片的渐变底、顶部渐变色条、阴影加深与头像 hover 放大；团队卡片渐变底；非链接卡片（`.card-academic`、设备卡、团队卡、研究卡、视频卡）的 hover 上浮与图片放大全部删除；链接卡片（首页研究/软件卡、lab news 卡）hover 改为只变边框色。首页侧栏删除 Visitor Map（mapmyvisitors 第三方脚本 + jQuery）。`_a11y.scss` 的暗色按钮修正只保留 PDF。
 
+**站点审计第 2 轮 · 信息架构（作者确认）。** 导航 11 项 → 9 项：Talks 并入 Publications（新增 `## Talks` 段，Invited / Contributed 两组；出版物各类改为 h2 标题 + 独立卡片 `.pub-list`，修正 h1 → h3 跳级），Team 并入 Lab（`team.md` 正文移到新 `_includes/lab_team.html`，放在 Research Focus 之后；PI/各学位/Alumni/Collaborators/行政支持统一用 `team-group-title` 小标题）。Videos、Projects 保留独立页面。新增 `_layouts/redirect.html`（meta refresh + canonical + noindex），`/talks/` → `/publications/#talks`，`/team/` → `/lab/#team`，两页 `sitemap: false`，`search.json` 跳过带 `redirect_to` 的页面。新增 **Join the Lab** 段（`/lab/#join-the-lab`）：招 D.E. 与硕士论文方向，无 RA 资助，申请走 Lamar 研究生申请，邮件附 CV + 研究想法（mailto 预填主题）；删去 `people.yml` 里 "This could be you!" 占位卡；首页 "welcomes motivated students" 与 team 链接改指向 Lab 页锚点，页脚加 "Join the lab"。导航 `blogs` 加 `label: Blog`（与页面标题一致）。`search.json` 收录博客文章（原只有页面与 lab news）。锚点标题加 `scroll-margin-top` 避免被吸顶导航遮住；`team_card.html` 与 `lab_team.html` 的图标链接补 `aria-label`；`people.yml` 注释里的 `team.md` 改为 `lab_team.html`。
+
 
 ---
 

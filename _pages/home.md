@@ -26,9 +26,9 @@ in robotics and immersive technologies, including Collaborative Robot Operation 
 Introduction to Robotics, and Robotics and Automation in Manufacturing.
 He is passionate about making complex technologies accessible and impactful through both research and education.
 
-He directs the [XRAI Lab]({{ site.url }}{{ site.baseurl }}/lab), where his [team]({{ site.url }}{{ site.baseurl }}/team)
+He directs the [XRAI Lab]({{ site.url }}{{ site.baseurl }}/lab), where his [team]({{ site.url }}{{ site.baseurl }}/lab/#team)
 explores innovative approaches at the intersection of robotics, XR technologies, and industrial applications.
-Dr. Yang welcomes motivated students to join his group and contribute to cutting-edge research in these areas.
+Dr. Yang welcomes motivated students to [join the lab]({{ site.url }}{{ site.baseurl }}/lab/#join-the-lab) and contribute to research in these areas.
 
 Outside the lab, he builds and ships [software]({{ site.url }}{{ site.baseurl }}/projects) — most recently
 [Wherefold](https://wherefold.com), a bilingual travel platform built on a structured database of 5,110 curated
