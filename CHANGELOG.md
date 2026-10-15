@@ -44,6 +44,8 @@ git push origin source --tags
 
 **站点审计第 1 轮 · SEO。** `head.html` 重写：首页 title 改为“Wenhao Yang – Assistant Professor, Lamar University”；meta/OG/Twitter description 按 `description` → lab news `summary` → 文章 excerpt → `site.description` 回退，不再全站同一句；文章与 lab news 用 `og:type article`、有 `cover` 时用作分享图。JSON-LD 改为 `@graph`：一个带 `@id`（`/#person`）的 Person 节点（职称、邮箱、头像、Lamar 与系名、`sameAs` 取 `site.links` 全部非空项），首页挂 ProfilePage，文章/lab news 挂 BlogPosting，其余页面挂 WebPage，均指回同一 Person，用于同名消歧。13 个主页面去掉 `sitemap: false`（原先 sitemap 只有文章），补 `description` 前置字段；页面标题由 `##` 改为 `#`，首页姓名由 `<h2>` 改为 `<h1>`，每页恰好一个 h1。14 篇文章删掉正文里重复的 `# 标题`（与 layout 的 h1 重复，也让 excerpt 变成标题），其中 3 篇正文标题比 front matter 更完整，改用正文标题。导航链接补尾斜杠，省掉每次点击的 301。`_config.yml` 的 `exclude` 加 `README.md`、`CHANGELOG.md`、`LICENSE`、`setup.sh`，不再发布到站点。
 
+**站点审计第 1 轮 · 性能。** 研究卡片的 4 个 GIF（共约 30 MB）改用视频：新增 `_includes/card_media.html`，`.gif` 渲染为 `<video autoplay muted loop playsinline>`，取同名 `.mp4`/`.webm` 与 `-poster.jpg`（均由 ffmpeg 从 GIF 生成，GIF 原文件保留）；`research.md`、`home.md` 改用该 include，`_research.scss`/`_home.scss` 的卡片图片规则加上 `video`；`site.js` 在 `prefers-reduced-motion` 下暂停这些视频并显示控件。图片：JPEG 长边压到 1600（头像 800，q82 渐进式，同名覆盖）；4 张不透明 PNG 照片转 JPEG 并更新引用（`xrai_lab_wide`、`2026_Vertical-HorizontalIllusion`、`team/ayden`、`equip-metaquest3`），合计 31.3 MB → 4.7 MB。MathJax（约 600 KB）改为页面 front matter 写 `math: true` 才加载（目前无页面用到公式），README 同步说明。本地实测移动端页面体积：首页 22.1 → 2.8 MB，/research/ 38.6 → 5.8 MB，/lab/ 18.6 → 8.8 MB（剩余主要是 YouTube 嵌入）。
+
 
 ---
 

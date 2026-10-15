@@ -275,7 +275,7 @@ __Using this template? Share your site and I'll add it here!__
 - **Single JS file** (4KB minified) — dark mode, search, toggles, scroll effects, copy button
 - **Auto-generated sitemap** via `jekyll-sitemap`
 - **Open Graph + Twitter Cards** — links look good when shared on social media
-- **MathJax 3** — LaTeX formula rendering out of the box
+- **MathJax 3** — LaTeX formula rendering; add `math: true` to a page's front matter to load it
 
 ## Screenshots
 

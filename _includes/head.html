@@ -83,7 +83,8 @@
   {% include analytics.html %}
   {% endif %}
 
-  {% include mathjax.html %}
+  {%- comment -%} MathJax is ~600 KB and no page uses math today; set `math: true` in a page's front matter to load it. {%- endcomment -%}
+  {% if page.math %}{% include mathjax.html %}{% endif %}
 
   {%- comment -%}
   JSON-LD. One Person node with a stable @id (site root + #person) that every page

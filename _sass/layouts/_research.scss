@@ -123,7 +123,7 @@
     overflow: hidden;
     background: var(--bg-secondary);
 
-    img {
+    img, video {
       position: absolute;
       top: 0;
       left: 0;
@@ -135,7 +135,7 @@
       transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    &:hover img {
+    &:hover img, &:hover video {
       transform: scale(1.04);
     }
 

@@ -51,7 +51,7 @@ US attractions that he assembled and now visualizes through an interactive map.
 {% assign card_id = item.title | slugify %}
 <a href="{{ site.url }}{{ site.baseurl }}/research#{{ card_id }}" class="home-project-card">
 {% if item.image and item.image != "" %}
-<img src="{{ site.url }}{{ site.baseurl }}/images/{{ item.image }}" alt="{{ item.title }}" loading="lazy">
+{% include card_media.html image=item.image alt=item.title %}
 {% endif %}
 <div class="home-project-card-body">
 <h4>{{ item.title }}</h4>

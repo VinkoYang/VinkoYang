@@ -412,3 +412,17 @@
     document.fonts.ready.then(syncToggles);
   }
 })();
+
+// ---------------------------------------------------------------
+// Reduced motion — research-card videos (converted from GIFs) autoplay by
+// default; for visitors who ask for less motion, stop them on the poster
+// frame and expose native controls so they can still play on demand.
+// ---------------------------------------------------------------
+(function () {
+  if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('video[autoplay]').forEach(function (v) {
+    v.removeAttribute('autoplay');
+    v.pause();
+    v.controls = true;
+  });
+})();
