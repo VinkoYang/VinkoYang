@@ -46,7 +46,7 @@ renders its title and body.
     {% assign project_videos = site.data.videos | where: "project_id", page.project_id %}
     {% for v in project_videos %}
     <div class="embed-16x9">
-      <iframe src="{{ v.embed_src }}" title="{{ v.title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      {% include yt_embed.html src=v.embed_src title=v.title %}
     </div>
     {% endfor %}
     {% endif %}

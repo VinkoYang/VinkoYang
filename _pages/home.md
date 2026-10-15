@@ -8,7 +8,7 @@ description: "Wenhao Yang is an Assistant Professor of Industrial and Systems En
 <h1 class="home-hero">{{ site.name }}</h1>
 <p class="home-hero-sub">{{ site.title }}, {{ site.institution }}</p>
 
-### About me
+## About me
 
 Dr. Wenhao Yang is an Assistant Professor in the [Department of Industrial and Systems Engineering](https://www.lamar.edu/engineering/industrial/) at
 [Lamar University](https://www.lamar.edu), where he joined in Fall 2024.
@@ -43,7 +43,7 @@ US attractions that he assembled and now visualizes through an interactive map.
 <a href="{{ site.url }}{{ site.baseurl }}/research" class="chip">Spatial Computing</a>
 </div>
 
-### Recent Research
+## Recent Research
 
 {% assign sorted_research = site.data.web.research | sort: "end_date" | reverse %}
 <div class="home-projects-grid" markdown="0">
@@ -54,7 +54,7 @@ US attractions that he assembled and now visualizes through an interactive map.
 {% include card_media.html image=item.image alt=item.title %}
 {% endif %}
 <div class="home-project-card-body">
-<h4>{{ item.title }}</h4>
+<h3>{{ item.title }}</h3>
 <p>{{ item.abstract | truncatewords: 20 }}</p>
 </div>
 </a>
@@ -62,7 +62,7 @@ US attractions that he assembled and now visualizes through an interactive map.
 </div>
 
 {% if site.data.web.projects and site.data.web.projects.size > 0 %}
-### Software I've Built
+## Software I've Built
 
 {% assign sorted_projects = site.data.web.projects | sort: "end_date" | reverse %}
 <div class="home-software-list" markdown="0">
@@ -75,7 +75,7 @@ US attractions that he assembled and now visualizes through an interactive map.
 </div>
 {% endif %}
 <div class="home-software-card-body">
-<h4>{{ item.title }}</h4>
+<h3>{{ item.title }}</h3>
 {% if item.status or item.role or item.start_date %}
 <div class="home-software-meta">
 {% if item.status and item.status != "" %}<span class="home-software-status">{{ item.status }}</span>{% endif %}

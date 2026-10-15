@@ -7,6 +7,8 @@ description: "Research projects by Wenhao Yang and the XRAI Lab at Lamar Univers
 
 # Research
 
+<h2 class="sr-only">All research projects</h2>
+
 <input type="text" class="pub-search" id="researchSearch" placeholder="Search by title or keyword...">
 
 {% assign kw_string = "" %}

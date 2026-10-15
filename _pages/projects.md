@@ -7,6 +7,8 @@ description: "Software built by Wenhao Yang, including Wherefold, a bilingual US
 
 # Projects
 
+<h2 class="sr-only">All projects</h2>
+
 Software I have designed and built outside of my academic research.
 
 <input type="text" class="pub-search" id="projectSearch" placeholder="Search by name, technology, or keyword...">

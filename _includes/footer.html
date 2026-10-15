@@ -1,7 +1,7 @@
 <footer class="site-footer">
   <div class="footer-grid">
     <div>
-      <h5>About</h5>
+      <h2 class="footer-heading">About</h2>
       <p>
         <a href="{{ site.baseurl }}/about/">{{ site.name }}</a><br>
         <a href="https://www.lamar.edu/engineering/industrial/faculty/yang/" target="_blank">{{ site.title }}</a><br>
@@ -9,7 +9,7 @@
       </p>
     </div>
     <div>
-      <h5>Contact</h5>
+      <h2 class="footer-heading">Contact</h2>
       <p>
         <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i> {{ site.email }}</a><br>
         <a href="{{ site.baseurl }}/lab/#join-the-lab"><i class="fa-solid fa-user-plus"></i> Join the lab</a><br>
@@ -17,7 +17,7 @@
       </p>
     </div>
     <div>
-      <h5>Links</h5>
+      <h2 class="footer-heading">Links</h2>
       <p>
         {% if site.links.google_scholar and site.links.google_scholar != "" %}<a href="{{ site.links.google_scholar }}"><i class="ai ai-google-scholar"></i> Google Scholar</a><br>{% endif %}
         {% if site.links.researchgate and site.links.researchgate != "" %}<a href="{{ site.links.researchgate }}"><i class="ai ai-researchgate"></i> ResearchGate</a><br>{% endif %}

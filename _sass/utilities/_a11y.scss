@@ -45,6 +45,30 @@
 // Headings: avoid one-word last lines on long titles
 h1, h2, h3 { text-wrap: balance; }
 
+// Screen-reader-only text (section headings that keep the outline h1 → h2 → h3)
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Headings promoted for document outline (h3→h2 etc.) keep their old look:
+// no section underline, and home section titles stay at the h3 size.
+.site-footer h2::after,
+.pi-name::after,
+.labnews-carousel-title::after { display: none; }
+.labnews-carousel-title { font-size: 1.3125rem; }
+.home-content > h2:not(.home-hero) {
+  font-size: 1.3125rem;
+  &::after { display: none; }
+}
+
 // In-page anchors (/lab/#team, /publications/#talks) land below the sticky navbar
 h2[id], h3[id] { scroll-margin-top: 80px; }
 

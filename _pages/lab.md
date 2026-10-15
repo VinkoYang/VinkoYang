@@ -8,7 +8,6 @@ description: "The XRAI Lab at Lamar University: research focus, team, how to joi
 # XRAI Lab
 
 <div class="section-card">
-<h3>About XRAI Lab</h3>
 <p style="font-size: 0.95rem; line-height: 1.75; margin-bottom: var(--space-4);">
 The <strong>Extended Reality, Artificial Intelligence, and Robotics (XRAI) Lab</strong> aims to advance the seamless integration of Extended Reality (XR), Artificial Intelligence (AI), and Robotics to create intelligent, interactive, and adaptive systems.
 Our research focuses on next-generation technologies that seamlessly bridge the physical and virtual worlds, enabling intuitive human–machine interaction, augmenting human capabilities, and supporting collaborative autonomy.
@@ -64,7 +63,7 @@ Through interdisciplinary innovation, the XRAI Lab redefines how intelligent sys
 <h3 class="rr-title">{{ _rr_video.title }}</h3>
 </div>
 <div class="rr-video-wrap">
-<iframe src="{{ _rr_video.embed_src }}" title="{{ _rr_video.title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{% include yt_embed.html src=_rr_video.embed_src title=_rr_video.title %}
 </div>
 <p class="rr-abstract">{{ _rr_video.abstract | strip_newlines | strip }}</p>
 <div class="rr-actions">
@@ -88,7 +87,7 @@ Through interdisciplinary innovation, the XRAI Lab redefines how intelligent sys
 {% endif %}
 <div class="equipment-body">
 <p class="equipment-category">{{ item.category }}</p>
-<h4 class="equipment-name">{% if equip_post %}<a href="{{ site.url }}{{ site.baseurl }}{{ equip_post.url }}">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}</h4>
+<h3 class="equipment-name">{% if equip_post %}<a href="{{ site.url }}{{ site.baseurl }}{{ equip_post.url }}">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}</h3>
 <details class="equipment-more" markdown="0"><summary>Description</summary><p class="equipment-desc">{{ item.description }}</p></details>
 {% if item.accessories and item.accessories.size > 0 -%}
 <details class="equipment-more equipment-accessories" markdown="0"><summary>Accessories ({{ item.accessories.size }})</summary><ul>{% for acc in item.accessories %}<li>{{ acc.name }}{% if acc.maker %} <span class="equipment-accessory-maker">· {{ acc.maker }}</span>{% endif %}</li>{% endfor %}</ul></details>

@@ -66,9 +66,10 @@
   }
 
   // ----- Strip internal-only fields from displayed BibTeX -----
-  // Removes pdf, note, arxiv lines so they don't appear in the BIB popup or get copied.
+  // Removes site-only fields (pdf, note, arxiv, project, slides, video, abbr,
+  // data, keywords) so they don't appear in the BIB popup or get copied.
 
-  var BIB_FIELD_STRIP = /^\s*(pdf|note|arxiv)\s*=/i;
+  var BIB_FIELD_STRIP = /^\s*(pdf|note|arxiv|project|slides|video|abbr|data|keywords)\s*=/i;
 
   document.querySelectorAll('[id^="bib-"] pre').forEach(function (pre) {
     var lines = pre.textContent.split('\n');
@@ -424,5 +425,19 @@
     v.removeAttribute('autoplay');
     v.pause();
     v.controls = true;
+  });
+})();
+
+// ---------------------------------------------------------------
+// Horizontally scrollable tables (wide tables in posts) must be reachable by
+// keyboard to be scrolled: make only the ones that actually overflow focusable.
+// ---------------------------------------------------------------
+(function () {
+  document.querySelectorAll('.post-body table').forEach(function (t) {
+    if (t.scrollWidth > t.clientWidth + 1) {
+      t.setAttribute('tabindex', '0');
+      t.setAttribute('role', 'region');
+      t.setAttribute('aria-label', 'Scrollable table');
+    }
   });
 })();

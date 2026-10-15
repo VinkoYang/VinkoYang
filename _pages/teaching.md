@@ -7,6 +7,8 @@ description: "Courses taught by Dr. Wenhao Yang at Lamar University in robotics,
 
 # Teaching
 
+<h2 class="sr-only">Courses</h2>
+
 {% for course in site.data.profile.teaching %}
 <div class="section-card" id="{{ course.code | downcase | replace: ' ', '-' }}">
 

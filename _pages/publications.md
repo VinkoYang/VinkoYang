@@ -30,6 +30,12 @@ description: "Journal articles, conference papers, and talks by Wenhao Yang on a
 {% bibliography --query @inproceedings %}
 </div>
 
+## Dissertation
+
+<div class="section-card pub-list">
+{% bibliography --query @book %}
+</div>
+
 ## Talks
 
 <div class="section-card pub-list">
