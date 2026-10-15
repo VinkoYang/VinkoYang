@@ -14,7 +14,6 @@ echo ""
 # Check for old-style config (migration detection)
 if grep -q "^affiliation:" _config.yml 2>/dev/null; then
   echo "It looks like you have an old-style _config.yml."
-  echo "See UPGRADING.md for migration instructions."
   echo ""
   exit 1
 fi

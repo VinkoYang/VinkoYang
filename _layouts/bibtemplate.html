@@ -10,7 +10,7 @@
 
   {% assign bibtest = false %}
   {% if entry.file %}
-  {% assign bibfile = "/papers/" | append: entry.file %}
+  {% assign bibfile = "/files/papers/" | append: entry.file %}
   {% for file in site.static_files %}
     {% if file.path contains bibfile %}
      {% assign bibtest = true %}
@@ -20,9 +20,9 @@
 
   <div class="pub-actions">
     {% if entry.pdf %}
-    <a href="{{ site.url }}{{ site.baseurl }}/papers/{{ entry.pdf }}" target="_blank" class="btn-pill btn-pdf">PDF</a>
+    <a href="{{ site.url }}{{ site.baseurl }}/files/papers/{{ entry.pdf }}" target="_blank" class="btn-pill btn-pdf">PDF</a>
     {% elsif bibtest %}
-    <a href="{{ site.url }}{{ site.baseurl }}/papers/{{ entry.file }}" target="_blank" class="btn-pill btn-pdf">PDF</a>
+    <a href="{{ site.url }}{{ site.baseurl }}/files/papers/{{ entry.file }}" target="_blank" class="btn-pill btn-pdf">PDF</a>
     {% endif %}
 
     {% if entry.doi %}

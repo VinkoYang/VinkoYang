@@ -130,10 +130,6 @@ scholar:
 exclude:
   - Gemfile
   - Gemfile.lock
-  - update_bootstrap.sh
-  - switch_theme.sh
-  - tags
-  - Rakefile
   - node_modules
   - cv          # CV markdown source; rendered to files/cv.pdf by CI
   - package.json

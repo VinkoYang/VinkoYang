@@ -20,7 +20,7 @@
 #   authors     — list of {name, url} (name must match people.yml for auto-linking)
 #   mentors     — list of {name, url} (same auto-linking rules as authors)
 #   links:
-#     paper     — filename in /papers/ (e.g. "yang2024can.pdf"), OR a full external URL
+#     paper     — filename in /files/papers/ (e.g. "yang2024can.pdf"), OR a full external URL
 #     webpage   — full external URL
 #     video     — list of {url, date}, e.g.:
 #                   video:

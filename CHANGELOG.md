@@ -38,6 +38,8 @@ git push origin source --tags
 
 ## [待发布]
 
+**仓库整理。** 删除无引用文件：`papers/` 下模板遗留的 `example_proceeding.pdf`、`feynman06.pdf`、`feynman39.pdf`，以及 `Rakefile`、`UPGRADING.md`（README 与 `setup.sh` 里的引用同步删除）。`papers/` 整体移到 `files/papers/`（`_layouts/bibtemplate.html`、`_includes/research_links.html` 路径同步，PDF 的线上 URL 由 `/papers/…` 变为 `/files/papers/…`）。`assets/javascript/` 合并进 `assets/js/vendor/`，只保留 `bootstrap.bundle.min.js`（`footer.html` 路径同步），删除未被引用的 `popper/` 目录（281 个文件，bundle 已内含 Popper）。`_config.yml` 的 `exclude` 去掉已不存在的 `update_bootstrap.sh`、`switch_theme.sh`、`tags`、`Rakefile`。
+
 **站点审计第 1 轮 · 文字与书目勘误。** 首页简介 "Depsrtment" → "Department"；`experience.yml` 的 "May." → "May"、"taking … classes" → "teaching …"、Monroe CC 一条改为 "Delivered lectures both in person and online."；`news.yml`/`research.yml` 的 "Xr"、"seethrough" 拼写；`ref.bib`：摘要 "TTo"/"re-planing"/"to verified"，标题 `{HAR²bot}`（原 `HAR^2bot` 原样渲染）与 `“{I} can see your password”` 大小写，作者 "Huangg" → "Huang"，talk 会议名 "Southesat" → "Southeast"。`publications.md` 用 `bibliography_count` 判断，没有 @unpublished 条目时不再输出空的 Preprints 标题。
 
 
