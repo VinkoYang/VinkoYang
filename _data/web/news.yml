@@ -1,6 +1,9 @@
 # News items shown on the home page sidebar.
 # The 5 most recent are shown; all appear on /allnews.
 # Each entry needs: date, headline
+- date: October 26, 2026
+  headline: "<b>INEN 6301 Advanced Robotics</b> palletizing challenge: the UR10e picked six cubes off the conveyor and stacked them on a 2 × 3 pallet, and the winning team finished in 71.794 s — <a href='/lab/news/advanced-robotics-cobot-palletizing-challenge/'>read about the challenge</a>."
+
 - date: October 12, 2026
   headline: "Our proposal <b>‘AI-Resilient Assessment: An LLM-Facilitated Oral Defense Protocol for STEM Graduate Education’</b> was selected for the Lamar University 2026–2027 <b>Excellence in Assessment Grant</b>."
 
