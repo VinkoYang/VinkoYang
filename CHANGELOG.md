@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v2.6.3**（`source` 分支，已发布，2026-10-13）。
+**当前版本：v3.0.0**（`source` 分支，已发布，2026-10-27）。
 
 ## 两份日志，别混
 
@@ -38,35 +38,16 @@ git push origin source --tags
 
 ## [待发布]
 
-**仓库整理。** 删除无引用文件：`papers/` 下模板遗留的 `example_proceeding.pdf`、`feynman06.pdf`、`feynman39.pdf`，以及 `Rakefile`、`UPGRADING.md`（README 与 `setup.sh` 里的引用同步删除）。`papers/` 整体移到 `files/papers/`（`_layouts/bibtemplate.html`、`_includes/research_links.html` 路径同步，PDF 的线上 URL 由 `/papers/…` 变为 `/files/papers/…`）。`assets/javascript/` 合并进 `assets/js/vendor/`，只保留 `bootstrap.bundle.min.js`（`footer.html` 路径同步），删除未被引用的 `popper/` 目录（281 个文件，bundle 已内含 Popper）。`_config.yml` 的 `exclude` 去掉已不存在的 `update_bootstrap.sh`、`switch_theme.sh`、`tags`、`Rakefile`。
-
-**站点审计第 1 轮 · 文字与书目勘误。** 首页简介 "Depsrtment" → "Department"；`experience.yml` 的 "May." → "May"、"taking … classes" → "teaching …"、Monroe CC 一条改为 "Delivered lectures both in person and online."；`news.yml`/`research.yml` 的 "Xr"、"seethrough" 拼写；`ref.bib`：摘要 "TTo"/"re-planing"/"to verified"，标题 `{HAR²bot}`（原 `HAR^2bot` 原样渲染）与 `“{I} can see your password”` 大小写，作者 "Huangg" → "Huang"，talk 会议名 "Southesat" → "Southeast"。`publications.md` 用 `bibliography_count` 判断，没有 @unpublished 条目时不再输出空的 Preprints 标题。
-
-**站点审计第 1 轮 · SEO。** `head.html` 重写：首页 title 改为“Wenhao Yang – Assistant Professor, Lamar University”；meta/OG/Twitter description 按 `description` → lab news `summary` → 文章 excerpt → `site.description` 回退，不再全站同一句；文章与 lab news 用 `og:type article`、有 `cover` 时用作分享图。JSON-LD 改为 `@graph`：一个带 `@id`（`/#person`）的 Person 节点（职称、邮箱、头像、Lamar 与系名、`sameAs` 取 `site.links` 全部非空项），首页挂 ProfilePage，文章/lab news 挂 BlogPosting，其余页面挂 WebPage，均指回同一 Person，用于同名消歧。13 个主页面去掉 `sitemap: false`（原先 sitemap 只有文章），补 `description` 前置字段；页面标题由 `##` 改为 `#`，首页姓名由 `<h2>` 改为 `<h1>`，每页恰好一个 h1。14 篇文章删掉正文里重复的 `# 标题`（与 layout 的 h1 重复，也让 excerpt 变成标题），其中 3 篇正文标题比 front matter 更完整，改用正文标题。导航链接补尾斜杠，省掉每次点击的 301。`_config.yml` 的 `exclude` 加 `README.md`、`CHANGELOG.md`、`LICENSE`、`setup.sh`，不再发布到站点。
-
-**站点审计第 1 轮 · 性能。** 研究卡片的 4 个 GIF（共约 30 MB）改用视频：新增 `_includes/card_media.html`，`.gif` 渲染为 `<video autoplay muted loop playsinline>`，取同名 `.mp4`/`.webm` 与 `-poster.jpg`（均由 ffmpeg 从 GIF 生成，GIF 原文件保留）；`research.md`、`home.md` 改用该 include，`_research.scss`/`_home.scss` 的卡片图片规则加上 `video`；`site.js` 在 `prefers-reduced-motion` 下暂停这些视频并显示控件。图片：JPEG 长边压到 1600（头像 800，q82 渐进式，同名覆盖）；4 张不透明 PNG 照片转 JPEG 并更新引用（`xrai_lab_wide`、`2026_Vertical-HorizontalIllusion`、`team/ayden`、`equip-metaquest3`），合计 31.3 MB → 4.7 MB。MathJax（约 600 KB）改为页面 front matter 写 `math: true` 才加载（目前无页面用到公式），README 同步说明。本地实测移动端页面体积：首页 22.1 → 2.8 MB，/research/ 38.6 → 5.8 MB，/lab/ 18.6 → 8.8 MB（剩余主要是 YouTube 嵌入）。
-
-**站点审计第 1 轮 · 可访问性与移动端。** 新增 `_sass/utilities/_a11y.scss`（`main.scss` 最后引入，每条规则对应一条审计结论）：跳转链接 `.skip-link` + `<main id="main">`；全站 `:focus-visible` 2px 实线轮廓（取代 Bootstrap 25% 透明的 nav 焦点环）；暗色模式 PDF/Website 按钮文字改用底色（原白字配 #90caf9 约 1.7:1）；h1–h3 `text-wrap: balance`；首页 News 日期由 11px Cinzel 改为正文字体 13px；Wherefold 卡片缩略图 `object-fit: contain`（原被裁成 "VhereFol"）；触屏设备常显 BibTeX 复制按钮；`prefers-reduced-motion` 下关闭过渡动画。手机端（≤768px）首页侧栏改 `display: contents`，头像 + 联系图标的紧凑卡片排到最前（原在约 4,500px 以下），News 跟在正文后；≤575px 出版物取消年份徽章浮动、收窄卡片内边距，每行字数从约 28 提到约 40。`--text-muted` 浅色 #8a857c → #6b665d、深色 #7d796f → #a29d92（均 ≥4.5:1），补上被 10 处引用却未定义的 `--text-tertiary`。标记：`homelay.html` 侧栏加 `home-sidebar` 类；侧栏图标链接加 `aria-label`，头像去掉 `loading=lazy` 并写明宽高；搜索浮层加 `role=dialog`/`aria-label`；lab news 封面 alt 取 `cover_alt` 或标题。axe（13 页 × 明暗）：color-contrast 361 → 201（剩余均为 #2196f3 强调色，待定），page-has-heading-one 22 → 0，region 28 → 2。
-
-**站点审计第 2 轮 · 事实更正（作者确认）。** 学位名 "Doctoral of Industrial Engineering" → "Doctor of Engineering in Industrial Engineering"（Lamar 只有 D.E.，无 PhD；`people.yml` 7 处、`student_guidance.yml` 3 处）；`awards.yml` National Encouragement Scholarship 年份 2025 → 2015；邮编统一为 77710（`_config.yml` 的 `office_city`、`experience.yml` 两处）。`ref.bib`：`liu2026all`（NeurIPS 2026）`journal` → `booktitle`；`wang2025exploring`（ICCV 2025）删去 arXiv DOI，避免 DOI 与 arXiv 两个按钮指向同一预印本。
-
-**站点审计第 2 轮 · 主题色与克制设计（作者确认）。** 浅色主题 `--accent` #2196f3 → #1565c0（Material Blue 800，米色底约 5.3:1、白字约 5.8:1，原 2.9:1 不达 AA），`--accent-light` 同步，`_config.yml` 的 `accent_color`（favicon/导航 logo）同步；深色主题不变。出版物按钮只保留 PDF 一个实心按钮，DOI/arXiv/Website/Project/Slides/Video/BIB/Abstract 统一为描边样式（原 6 种颜色）。去装饰：头像卡片的渐变底、顶部渐变色条、阴影加深与头像 hover 放大；团队卡片渐变底；非链接卡片（`.card-academic`、设备卡、团队卡、研究卡、视频卡）的 hover 上浮与图片放大全部删除；链接卡片（首页研究/软件卡、lab news 卡）hover 改为只变边框色。首页侧栏删除 Visitor Map（mapmyvisitors 第三方脚本 + jQuery）。`_a11y.scss` 的暗色按钮修正只保留 PDF。
-
-**站点审计第 2 轮 · 信息架构（作者确认）。** 导航 11 项 → 9 项：Talks 并入 Publications（新增 `## Talks` 段，Invited / Contributed 两组；出版物各类改为 h2 标题 + 独立卡片 `.pub-list`，修正 h1 → h3 跳级），Team 并入 Lab（`team.md` 正文移到新 `_includes/lab_team.html`，放在 Research Focus 之后；PI/各学位/Alumni/Collaborators/行政支持统一用 `team-group-title` 小标题）。Videos、Projects 保留独立页面。新增 `_layouts/redirect.html`（meta refresh + canonical + noindex），`/talks/` → `/publications/#talks`，`/team/` → `/lab/#team`，两页 `sitemap: false`，`search.json` 跳过带 `redirect_to` 的页面。新增 **Join the Lab** 段（`/lab/#join-the-lab`）：招 D.E. 与硕士论文方向，无 RA 资助，申请走 Lamar 研究生申请，邮件附 CV + 研究想法（mailto 预填主题）；删去 `people.yml` 里 "This could be you!" 占位卡；首页 "welcomes motivated students" 与 team 链接改指向 Lab 页锚点，页脚加 "Join the lab"。导航 `blogs` 加 `label: Blog`（与页面标题一致）。`search.json` 收录博客文章（原只有页面与 lab news）。锚点标题加 `scroll-margin-top` 避免被吸顶导航遮住；`team_card.html` 与 `lab_team.html` 的图标链接补 `aria-label`；`people.yml` 注释里的 `team.md` 改为 `lab_team.html`。
-
-**站点审计第 2 轮 · 学术功能、标题层级与嵌入视频。** 出版物：`ref.bib` 新增 `abbr` 字段（MSEC/JIM/JCISE/IROS/ICCV/NeurIPS/IDETC-CIE/AHFE），`bibtemplate.html` 在按钮行首渲染中性色 `.venue-badge`；每篇论文输出 ScholarlyArticle（博士论文为 Thesis）JSON-LD，作者里的本人指向 `/#person`，有 DOI 时作 `sameAs`；新增 Dissertation 段（原 @book 条目从未显示）。Talks 显示日期（`data` 字段）与地点（`address`），日期晚于构建日的加 "Upcoming" 标记。`site.js` 复制 BibTeX 时额外剔除 project/slides/video/abbr/data/keywords；`ref.bib` 头注释补充新字段说明并把 `/papers/` 改为 `/files/papers/`。YouTube：新增 `_includes/yt_embed.html`，iframe 先用 srcdoc 只显示缩略图和播放键，点击才加载播放器（`lab.md`、`videos.md`、`research_post.html`），/lab/ 移动端 8.8 → 5.2 MB。标题层级：首页段标题 h3 → h2、卡片 h4 → h3（CSS 保持原外观），Lab News 轮播标题 h3 → h2，设备名 h4 → h3，About 的 PI 姓名 h3 → h2，删去 Lab 页与 h1 重复的 "About XRAI Lab"，Videos 页 h1 改为 "Videos" 下分两个 h2，Research/Projects/Teaching 加读屏专用 h2（`.sr-only`），页脚 h5 → h2。`default.html` 把 hero 图移进 `<main>`；窄屏可横向滚动的文章表格加 `tabindex=0`。axe（13 页 × 明暗）：color-contrast 201 → 0，heading-order 40 → 0。
-
-**勘误。** `ref.bib` 中 `yang2024ha`（J. Intell. Manuf. 2024）摘要里 4 处 "HAbot" 改为 "HAR²bot"（粘贴时丢了 R²，与标题一致）。
-
-**站点审计第 3 轮 · 作者确认的事实与内容。** `liu2026all` 年份改为 2025（NeurIPS 2025，vol. 38）。INEN-5301 两门课统一为官方名：`teaching.yml` 的 Collab Robot 课 `INEN 5301-05` → `INEN 5301-02`、名称 "ST: Collab Robot Ops Pro"，AR/VR 课名 "ST: AR/VR in Manufacturing"；`experience.yml`（锚点 `#inen-5301-02`）与首页简介同步；课程描述 "you will" → "students"。RIT 助研："7 conference papers" → 3，"Meta Quest 1/2/3/pro" → "Meta Quest 1/2/Pro"；`awards.yml` NUAA Outstanding Graduate 2019 → 2018。Join the Lab 加适配条件（会用 AI、会编程、Unity/ROS 2/Python/用户研究经验）。Talks：IDETC 2026 补 `data`/`data_end`（Aug 23–26, 2026）与地点 Hilton Americas-Houston；新增可选字段 `data_end`，`bibtemplate.html` 渲染日期区间、Upcoming 以结束日判断；有日期的 talk 补标准 `month` 字段，同年内按月份排序（原 Feb 排在 Mar 前）；`site.js` 复制 BibTeX 时同时剔除 `data_end`。首页 "Software I've Built" 卡片由整卡链接改为 `<article>`（标题/缩略图/View project 各自是链接），简介显示全文并用 Show more 折叠（原 `truncatewords: 42`）。
-
-**Lab news。** 新增《Advanced Robotics (INEN 6301): Conveyor-Fed Palletizing Cycle-Time Challenge》（`_lab_news/advanced-robotics-cobot-palletizing-challenge.md`）：2026-10-26 实验课，按 UR Academy module 9 用 Palletizing 模板，传送带送 6 个方块到 Sensor 2、UR10e 码到 2 × 3 托盘，冠军队 71.794 s；封面 `images/lab/news/2026-10-26-cobot-palletizing/palletizing-winners.jpg`（1600×1200）。首页 news 加一条指向。
 
 ---
 
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [3.0.0] - 2026-10-27
+
+**站点审计（三轮）与信息架构调整。** 导航 11 → 9 项：Talks 并入 Publications（Invited / Contributed 两组），Team 并入 Lab（`_includes/lab_team.html`），新 `_layouts/redirect.html` 让 `/talks/`、`/team/` 跳到对应锚点；Lab 页新增 Join the Lab。出版物：`ref.bib` 新增 `abbr` 渲染 venue 徽章，每篇输出 ScholarlyArticle/Thesis JSON-LD，新增 Dissertation 段，talk 显示日期区间（`data`/`data_end`）、地点与 Upcoming 并按月排序。SEO：`head.html` 重写（逐页 description、`@graph` 下统一指向 `/#person` 的 Person JSON-LD），主页面进 sitemap，每页恰好一个 h1，`search.json` 收录博客。性能：研究卡片 GIF 改 mp4/webm（`card_media.html`），图片 31.3 → 4.7 MB，MathJax 按 `math: true` 加载，YouTube 点击才加载（`yt_embed.html`）。可访问性：新增 `_a11y.scss`（skip link、焦点环、对比度、移动端首页重排），浅色 `--accent` #2196f3 → #1565c0，标题层级全站修正，axe color-contrast 与 heading-order 归零。去装饰：渐变、hover 上浮、多色按钮、Visitor Map。仓库整理：删模板遗留文件，`papers/` → `files/papers/`（PDF 线上 URL 随之改变），`assets/javascript/` 并入 `assets/js/vendor/`。作者确认的勘误：学位名（D.E.）、课程官方名与编号、奖项年份、邮编、多条 bib 元数据。新 lab news：INEN 6301 传送带码垛挑战，冠军 71.794 s，首页 news 同步。
 
 ### [2.6.3] - 2026-10-13
 
