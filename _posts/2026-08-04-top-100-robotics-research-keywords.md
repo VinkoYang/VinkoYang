@@ -5,8 +5,6 @@ date: 2026-08-04
 categories: ["Research & Scholarship"]
 tags: ["robotics", "control", "SLAM", "glossary"]
 ---
-# Top 100 Robotics Research Keywords
-
 ---
 
 ### 🦾 1. Kinematics, Dynamics & Control

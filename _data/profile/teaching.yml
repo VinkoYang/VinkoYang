@@ -18,8 +18,8 @@
 #     date: "2026-09"          # YYYY-MM，用于 /videos/ 排序（取最新一条视频的时间）
 
 
-- code: "INEN 5301-05"
-  name: "Collaborative Robot Operations and Programming"
+- code: "INEN 5301-02"
+  name: "ST: Collab Robot Ops Pro"
   semesters:
     - "Fall 2024"
     - "Fall 2025"
@@ -28,7 +28,7 @@
     This hands-on course covers fundamental concepts of industrial robotics, including
     kinematics, programming, and collaborative robot operations. Students gain practical
     experience programming a real UR10e cobot using PolyScope X interface under guidance
-    from certified trainers. Through realistic lab scenarios, you will develop skills in
+    from certified trainers. Through realistic lab scenarios, students develop skills in
     robot task automation, learn to create and optimize robot programs, and master the
     unique features of PolyScope X for manufacturing applications. Upon completion,
     students earn the "Educational Robotics Training - Core" certification. See the
@@ -62,7 +62,7 @@
       url: "https://academy.universal-robots.com/free-e-learning/"
 
 - code: "INEN 5301-01"
-  name: "AR/VR in Manufacturing"
+  name: "ST: AR/VR in Manufacturing"
   semesters:
     - "Spring 2025" 
     - "Spring 2026" 

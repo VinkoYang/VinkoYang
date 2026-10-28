@@ -14,7 +14,9 @@
   --font-accent: 'Stoke', Georgia, serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
-  // Accent scale — Material Blue: #E3F2FD / #90CAF9 / #2196F3 / #0D47A1.
+  // Accent scale — Material Blue: #E3F2FD / #90CAF9 / #1565C0 / #0D47A1.
+  // Base was #2196F3 until the 2026-10 audit: 2.9:1 on parchment failed WCAG AA
+  // for link text; #1565C0 (Blue 800) is ~5.3:1 on parchment, 5.8:1 under white.
   // Four rungs instead of one flat accent, each with a fixed job so the
   // blues layer against each other rather than repeating one tone:
   //   wash — tinted fills: chips, hover backgrounds, callouts
@@ -23,12 +25,12 @@
   //   deep — emphasis + hover: hovered links, headings, strong marks
   --accent-wash: #e3f2fd;
   --accent-soft: #90caf9;
-  --accent: #2196f3;
+  --accent: #1565c0;
   --accent-deep: #0d47a1;
 
   // Back-compat aliases for existing rules.
   --accent-hover: var(--accent-deep);
-  --accent-light: rgba(33, 150, 243, 0.09);
+  --accent-light: rgba(21, 101, 192, 0.08);
 
   // Light mode — warm parchment tones
   --bg-primary: #f8f6f1;
@@ -36,7 +38,8 @@
   --bg-card: #ffffff;
   --text-primary: #2c2a25;
   --text-secondary: #5c5850;
-  --text-muted: #8a857c;
+  --text-muted: #6b665d;      // ≥4.5:1 on all light grounds (was #8a857c, 3.1–3.7:1)
+  --text-tertiary: var(--text-muted);
   --border-color: #e2ded6;
   --shadow-sm: 0 1px 3px rgba(44, 42, 37, 0.06);
   --shadow-md: 0 4px 12px rgba(44, 42, 37, 0.08);
@@ -89,7 +92,8 @@
   --bg-card: #2a2924;
   --text-primary: #e8e4dc;
   --text-secondary: #b5b0a5;
-  --text-muted: #7d796f;
+  --text-muted: #a29d92;      // ≥4.5:1 on all dark grounds (was #7d796f, 3.4–4.0:1)
+  --text-tertiary: var(--text-muted);
   --border-color: #3d3a33;
   --shadow-sm: 0 1px 3px rgba(12, 10, 7, 0.3);
   --shadow-md: 0 4px 12px rgba(12, 10, 7, 0.35);

@@ -5,16 +5,20 @@
 
   <body>
 
+    <a class="skip-link" href="#main">Skip to content</a>
+
     {% include header.html %}
 
-    {% if page.hero_image %}
-    <div class="page-hero">
-      <img src="{{ site.url }}{{ site.baseurl }}/{{ page.hero_image }}" alt="{{ page.title }}" loading="eager">
-    </div>
-    {% endif %}
+    <main id="main" tabindex="-1">
+      {% if page.hero_image %}
+      <div class="page-hero">
+        <img src="{{ site.url }}{{ site.baseurl }}/{{ page.hero_image }}" alt="{{ page.title }}" loading="eager">
+      </div>
+      {% endif %}
 
-    <main class="site-container">
-      {{ content }}
+      <div class="site-container">
+        {{ content }}
+      </div>
     </main>
 
     {% include footer.html %}

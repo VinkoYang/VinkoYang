@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v2.6.3**（`source` 分支，已发布，2026-10-13）。
+**当前版本：v3.0.0**（`source` 分支，已发布，2026-10-27）。
 
 ## 两份日志，别混
 
@@ -44,6 +44,10 @@ git push origin source --tags
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [3.0.0] - 2026-10-27
+
+**站点审计（三轮）与信息架构调整。** 导航 11 → 9 项：Talks 并入 Publications（Invited / Contributed 两组），Team 并入 Lab（`_includes/lab_team.html`），新 `_layouts/redirect.html` 让 `/talks/`、`/team/` 跳到对应锚点；Lab 页新增 Join the Lab。出版物：`ref.bib` 新增 `abbr` 渲染 venue 徽章，每篇输出 ScholarlyArticle/Thesis JSON-LD，新增 Dissertation 段，talk 显示日期区间（`data`/`data_end`）、地点与 Upcoming 并按月排序。SEO：`head.html` 重写（逐页 description、`@graph` 下统一指向 `/#person` 的 Person JSON-LD），主页面进 sitemap，每页恰好一个 h1，`search.json` 收录博客。性能：研究卡片 GIF 改 mp4/webm（`card_media.html`），图片 31.3 → 4.7 MB，MathJax 按 `math: true` 加载，YouTube 点击才加载（`yt_embed.html`）。可访问性：新增 `_a11y.scss`（skip link、焦点环、对比度、移动端首页重排），浅色 `--accent` #2196f3 → #1565c0，标题层级全站修正，axe color-contrast 与 heading-order 归零。去装饰：渐变、hover 上浮、多色按钮、Visitor Map。仓库整理：删模板遗留文件，`papers/` → `files/papers/`（PDF 线上 URL 随之改变），`assets/javascript/` 并入 `assets/js/vendor/`。作者确认的勘误：学位名（D.E.）、课程官方名与编号、奖项年份、邮编、多条 bib 元数据。新 lab news：INEN 6301 传送带码垛挑战，冠军 71.794 s，首页 news 同步。
 
 ### [2.6.3] - 2026-10-13
 

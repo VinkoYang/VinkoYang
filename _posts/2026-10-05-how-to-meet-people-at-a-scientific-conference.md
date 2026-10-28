@@ -6,8 +6,6 @@ categories: ["Teaching & Learning"]
 tags: ["conferences", "networking", "professional-development", "advising"]
 ---
 
-# How to Meet People at a Scientific Conference
-
 Most students treat a conference as the talk they give plus the talks they attend. That is maybe half of what the trip is for. The other half is the people, and it is the half students most often come home without, because they spent three days sitting with their lab mates.
 
 This post is built on an article I recommend to every student before their first conference: Joanne Kamens's ["How to Make Friends and Meet People at a Scientific Conference"](https://blog.addgene.org/how-to-make-friends-and-meet-people-at-a-scientific-conference), published on the Addgene blog in 2014. I follow her structure, before, during, and after the conference, and add what it means for our lab. A few of her tools have dated since 2014; I have updated those where it matters.

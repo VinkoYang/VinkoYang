@@ -9,21 +9,12 @@
 }
 
 .team-card {
-  background: linear-gradient(
-    160deg,
-    var(--bg-card) 0%,
-    var(--bg-secondary) 100%
-  );
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);
   padding: var(--space-8) var(--space-6);
   text-align: center;
   transition: box-shadow var(--transition-slow), transform var(--transition-slow);
-
-  &:hover {
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-3px);
-  }
 
   .team-photo {
     width: 100px;
@@ -34,10 +25,6 @@
     border: 2px solid var(--bg-primary);
     box-shadow: 0 0 0 1px var(--border-color);
     transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  &:hover .team-photo {
-    transform: scale(1.06);
   }
 
   .team-name {

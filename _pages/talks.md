@@ -1,18 +1,7 @@
 ---
 title: "Talks"
-layout: gridlay
-sitemap: false
+layout: redirect
 permalink: /talks/
+redirect_to: /publications/#talks
+sitemap: false
 ---
-
-## Talks
-
-<div class="section-card" id="pubList">
-<h3>Invited Talks</h3>
-
-{% bibliography --query @incollection[keywords ^= invited] %}
-
-<h3>Regular Talks</h3>
-
-{% bibliography --query @incollection[keywords != invited] %}
-</div>

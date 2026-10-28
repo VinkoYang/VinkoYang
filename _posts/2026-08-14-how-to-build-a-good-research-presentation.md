@@ -5,8 +5,6 @@ date: 2026-08-14
 categories: ["Teaching & Learning"]
 tags: ["presentations", "research-methods", "advising"]
 ---
-# How to Build a Good Research Presentation
-
 The last post in this series covered what I look for when I watch a talk: the standards, the traps, the things that quietly signal thin thinking. This one is the other half. Given those standards, what does a talk that meets them actually look like, slide by slide. Think of it as the outline I would hand you if you sat down in my office and asked, "okay, where do I even start."
 
 I will walk through the structure roughly in the order it appears on stage. For each part I will explain what it needs to do, how long it should take, and what a slide that does its job actually looks like.

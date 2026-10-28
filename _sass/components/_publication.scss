@@ -139,3 +139,43 @@
     color: var(--text-muted);
   }
 }
+
+// Venue abbreviation (bib `abbr`) — leads the action row, neutral so it
+// reads as a label, not a button.
+.venue-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;  // same box height as the outlined pills
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  margin-right: var(--space-1);
+}
+
+// Talk date / place line under the citation
+.talk-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  margin-top: var(--space-2);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+
+  i { color: var(--text-muted); margin-right: 0.25rem; }
+}
+
+.upcoming-badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}

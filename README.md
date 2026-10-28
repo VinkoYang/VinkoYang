@@ -275,7 +275,7 @@ __Using this template? Share your site and I'll add it here!__
 - **Single JS file** (4KB minified) — dark mode, search, toggles, scroll effects, copy button
 - **Auto-generated sitemap** via `jekyll-sitemap`
 - **Open Graph + Twitter Cards** — links look good when shared on social media
-- **MathJax 3** — LaTeX formula rendering out of the box
+- **MathJax 3** — LaTeX formula rendering; add `math: true` to a page's front matter to load it
 
 ## Screenshots
 
@@ -356,7 +356,7 @@ links:
   google_scholar: "https://scholar.google.com/citations?user=YOUR_ID"
   github: "https://github.com/yourusername"
   orcid: "https://orcid.org/0000-0000-0000-0000"
-  cv: "papers/cv.pdf"        # place your CV in the papers/ directory
+  cv: "files/cv.pdf"        # place your CV in the files/ directory
   twitter: ""                # leave blank to hide
   linkedin: ""
 ```
@@ -378,7 +378,7 @@ Edit `assets/ref.bib` with your BibTeX entries. The publications page is auto-ge
   volume = {42},
   pages = {1--10},
   doi = {10.1234/example},
-  file = {smith2024.pdf},       % place PDF in papers/
+  file = {smith2024.pdf},       % place PDF in files/papers/
   abstract = {We present...}
 }
 ```
@@ -584,10 +584,6 @@ Purchase a domain, update the `CNAME` file, and configure DNS. See [GitHub&#39;s
 ### Self-Hosting
 
 Build with `bundle exec jekyll serve`, then upload `_site/` to your server. Set `url` and `baseurl` in `_config.yml` accordingly.
-
-## Upgrading
-
-Coming from the previous version? See [UPGRADING.md](UPGRADING.md).
 
 ## Alternatives
 

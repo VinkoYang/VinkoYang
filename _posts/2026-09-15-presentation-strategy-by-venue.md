@@ -6,8 +6,6 @@ categories: ["Teaching & Learning"]
 tags: ["presentations", "conferences", "research-methods", "advising"]
 ---
 
-# Presentation Strategy by Venue: What to Show, and What to Hold Back
-
 The two earlier posts in this series were about craft. [The first](/blogs/graduate-research-presentation-expectations/) covered what I look for when I watch a talk, and [the second](/blogs/how-to-build-a-good-research-presentation/) covered how to build one, slide by slide. Both of them assume a question has already been answered, and I have noticed that most students never actually stop to answer it: *who is in the room, and what do they have the right to walk out with?*
 
 That question changes the deck more than any design choice will. The same project, presented well, looks genuinely different in a Friday seminar than it does in a fifteen-minute conference session — and the two conference formats, full paper and extended abstract, are not the same talk either. Students get this wrong in both directions. They bring a stiff, over-formal conference talk to a seminar where nobody wanted one, and then they bring a seminar's openness to a conference room full of people working on the same problem they are.

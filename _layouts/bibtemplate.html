@@ -8,9 +8,19 @@
   {% assign _bold_pat = "<strong>" | append: _author_pat | append: "</strong>" %}
   <div class="text-justify">{{ reference | replace: _author_pat, _bold_pat }}</div>
 
+  {%- comment -%} Talks: show date (`data` field, YYYY-MM-DD) and place; flag talks still ahead of the build date. {%- endcomment -%}
+  {% if entry.type == 'incollection' and entry.data or entry.type == 'incollection' and entry.address %}
+  {% assign _today = site.time | date: '%Y-%m-%d' %}
+  <div class="talk-meta">
+    {% if entry.data %}<span><i class="fa-regular fa-calendar" aria-hidden="true"></i> {% if entry.data_end and entry.data_end != entry.data %}{% assign _m1 = entry.data | date: "%Y-%m" %}{% assign _m2 = entry.data_end | date: "%Y-%m" %}{% if _m1 == _m2 %}{{ entry.data | date: "%b %-d" }}–{{ entry.data_end | date: "%-d, %Y" }}{% else %}{{ entry.data | date: "%b %-d" }} – {{ entry.data_end | date: "%b %-d, %Y" }}{% endif %}{% else %}{{ entry.data | date: "%b %-d, %Y" }}{% endif %}</span>{% endif %}
+    {% if entry.address %}<span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> {{ entry.address }}</span>{% endif %}
+    {% assign _talk_last = entry.data_end | default: entry.data %}{% if entry.data and _talk_last > _today %}<span class="upcoming-badge">Upcoming</span>{% endif %}
+  </div>
+  {% endif %}
+
   {% assign bibtest = false %}
   {% if entry.file %}
-  {% assign bibfile = "/papers/" | append: entry.file %}
+  {% assign bibfile = "/files/papers/" | append: entry.file %}
   {% for file in site.static_files %}
     {% if file.path contains bibfile %}
      {% assign bibtest = true %}
@@ -19,10 +29,11 @@
   {% endif %}
 
   <div class="pub-actions">
+    {% if entry.abbr %}<span class="venue-badge" title="{{ entry.booktitle | default: entry.journal | escape }}">{{ entry.abbr }}</span>{% endif %}
     {% if entry.pdf %}
-    <a href="{{ site.url }}{{ site.baseurl }}/papers/{{ entry.pdf }}" target="_blank" class="btn-pill btn-pdf">PDF</a>
+    <a href="{{ site.url }}{{ site.baseurl }}/files/papers/{{ entry.pdf }}" target="_blank" class="btn-pill btn-pdf">PDF</a>
     {% elsif bibtest %}
-    <a href="{{ site.url }}{{ site.baseurl }}/papers/{{ entry.file }}" target="_blank" class="btn-pill btn-pdf">PDF</a>
+    <a href="{{ site.url }}{{ site.baseurl }}/files/papers/{{ entry.file }}" target="_blank" class="btn-pill btn-pdf">PDF</a>
     {% endif %}
 
     {% if entry.doi %}
@@ -73,4 +84,26 @@
     <pre>{{ entry.abstract }}</pre>
   </div>
   {% endif %}
+
+  {%- if entry.type == 'article' or entry.type == 'inproceedings' or entry.type == 'unpublished' or entry.type == 'book' -%}
+  {%- assign _venue = entry.journal | default: entry.booktitle | default: entry.publisher -%}
+  {%- assign _authors = entry.author | split: " and " -%}
+  {%- assign _lb = "{" -%}{%- assign _rb = "}" -%}
+  {%- assign _title = entry.title | remove: _lb | remove: _rb -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "{% if entry.type == 'book' %}Thesis{% else %}ScholarlyArticle{% endif %}",
+    "name": {{ _title | jsonify }},
+    "datePublished": {{ entry.year | jsonify }},
+    "author": [{% for a in _authors %}{% assign _parts = a | strip | split: ", " %}{% if a contains _last and a contains site.scholar.first_name[0] %}{ "@id": {{ site.url | append: site.baseurl | append: '/#person' | jsonify }} }{% else %}{ "@type": "Person", "name": {{ _parts | reverse | join: " " | jsonify }} }{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}]
+    {%- if _venue %},
+    "isPartOf": { "@type": "{% if entry.type == 'article' %}Periodical{% else %}CreativeWork{% endif %}", "name": {{ _venue | jsonify }} }{% endif %}
+    {%- if entry.doi %},
+    "sameAs": {{ entry.doi | prepend: 'https://doi.org/' | jsonify }}{% endif %}
+    {%- if entry.url %},
+    "url": {{ entry.url | jsonify }}{% endif %}
+  }
+  </script>
+  {%- endif %}
 </div>

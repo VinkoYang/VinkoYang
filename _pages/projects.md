@@ -1,11 +1,13 @@
 ---
 title: "Projects"
 layout: gridlay
-sitemap: false
 permalink: /projects/
+description: "Software built by Wenhao Yang, including Wherefold, a bilingual US travel platform built on a curated database of attractions."
 ---
 
-## Projects
+# Projects
+
+<h2 class="sr-only">All projects</h2>
 
 Software I have designed and built outside of my academic research.
 

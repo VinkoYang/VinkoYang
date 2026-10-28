@@ -1,0 +1,149 @@
+// =============================================================
+// Accessibility + small-screen fixes (site audit, round 1)
+// =============================================================
+// Kept in one partial, imported last, so each rule can be traced back to
+// an audit finding and reverted on its own.
+
+// Skip link — first focusable element on every page (default.html)
+.skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: -100px;
+  z-index: 2000;
+  padding: var(--space-2) var(--space-4);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  text-decoration: none;
+
+  &:focus { top: var(--space-2); }
+}
+
+// Visible keyboard focus everywhere. Bootstrap's nav ring is a 25%-alpha
+// box-shadow with outline:none, which is close to invisible on parchment.
+:focus-visible {
+  outline: 2px solid var(--accent-deep);
+  outline-offset: 2px;
+}
+.nav-link:focus-visible,
+.btn-pill:focus-visible,
+.chip:focus-visible {
+  outline: 2px solid var(--accent-deep);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+// Dark mode: the filled PDF pill sits on the light #90caf9 accent, so white
+// text was ~1.7:1. Use the page ground as the text color instead.
+[data-bs-theme="dark"] .btn-pill.btn-pdf {
+  color: var(--bg-primary);
+  &:hover { color: var(--bg-primary); }
+}
+
+// Headings: avoid one-word last lines on long titles
+h1, h2, h3 { text-wrap: balance; }
+
+// Screen-reader-only text (section headings that keep the outline h1 → h2 → h3)
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Headings promoted for document outline (h3→h2 etc.) keep their old look:
+// no section underline, and home section titles stay at the h3 size.
+.site-footer h2::after,
+.pi-name::after,
+.labnews-carousel-title::after { display: none; }
+.labnews-carousel-title { font-size: 1.3125rem; }
+.home-content > h2:not(.home-hero) {
+  font-size: 1.3125rem;
+  &::after { display: none; }
+}
+
+// In-page anchors (/lab/#team, /publications/#talks) land below the sticky navbar
+h2[id], h3[id] { scroll-margin-top: 80px; }
+
+// News dates: Cinzel capitals at 11px were hard to read; use the body face
+.news-timeline .news-date {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-variant-numeric: tabular-nums;
+}
+
+// Software card thumbnails are logos — show them whole instead of cropping
+.home-software-card-media img {
+  object-fit: contain;
+  padding: var(--space-4);
+  background: #fff;
+}
+
+// BibTeX copy button is hover-revealed; touch screens never hover
+@media (hover: none) {
+  .copy-btn { opacity: 1; }
+}
+
+// ---- Phones -------------------------------------------------
+@media (max-width: 768px) {
+  // Home: the sidebar used to drop below ~4,500px of content, burying the
+  // photo and contact links. Put a compact profile card first and let News
+  // follow the main content. The hero h1 already carries name and title.
+  .home-grid { display: flex; flex-direction: column; }
+  .home-sidebar { display: contents; }
+  .home-content { order: 0; }
+  .home-sidebar > .profile-card {
+    order: -1;
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    text-align: left;
+    padding: var(--space-4);
+
+    .profile-photo {
+      width: 72px;
+      height: 72px;
+      flex: 0 0 72px;
+      margin: 0;
+    }
+    .profile-name, .profile-title, .profile-institution { display: none; }
+    .profile-links {
+      margin: 0;
+      padding: 0;
+      border-top: 0;
+      justify-content: flex-start;
+    }
+  }
+  .home-sidebar > .section-card { order: 1; margin-top: 0 !important; }
+}
+
+@media (max-width: 575.98px) {
+  // Publications: card padding + list indent + floated year badge left ~28
+  // characters per line. Un-float the badge and give the text the width.
+  .pub-list.section-card { padding: var(--space-4); }
+  .pub-list ol { padding-left: 1.25rem; }
+  .year-badge {
+    float: none;
+    margin: 0 0 var(--space-2);
+  }
+}
+
+// ---- Reduced motion -----------------------------------------
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -5,8 +5,6 @@ date: 2026-08-06
 categories: ["Industry Insights"]
 tags: ["web-development", "React", "TypeScript", "Mapbox", "PostgreSQL", "side-projects"]
 ---
-# Building Wherefold: Curating a US Travel Database and Turning It Into a Map
-
 [Wherefold](https://wherefold.com) is a side project I shipped this summer, and it breaks into two pieces of work I did myself, end to end. First, I curated a structured attraction database from scratch: 5,110 attractions across 1,274 US cities and 36 national parks, each one carrying 20+ curated fields — coordinates, category, opening hours, pricing tier, contact info, bilingual description, suggested visit duration, best time to visit, transportation options, and more. Second, I designed and built the interactive bilingual (English/Chinese) map platform that turns that database into something a traveler can actually explore. This post covers both halves: how the database was assembled and reviewed, and how it became a product.
 
 ---

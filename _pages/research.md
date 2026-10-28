@@ -1,11 +1,13 @@
 ---
 title: "Research"
 layout: gridlay
-sitemap: false
 permalink: /research/
+description: "Research projects by Wenhao Yang and the XRAI Lab at Lamar University: AR/VR/MR for robotics, human-robot interaction, immersive training, and industrial XR."
 ---
 
-## Research
+# Research
+
+<h2 class="sr-only">All research projects</h2>
 
 <input type="text" class="pub-search" id="researchSearch" placeholder="Search by title or keyword...">
 
@@ -73,7 +75,7 @@ permalink: /research/
   {% if item.image contains ".pdf" %}
 <canvas class="research-card-pdf" data-pdf="{{ site.url }}{{ site.baseurl }}/images/{{ item.image }}"></canvas>
   {% else %}
-<img src="{{ site.url }}{{ site.baseurl }}/images/{{ item.image }}" alt="{{ item.title }}" loading="lazy">
+{% include card_media.html image=item.image alt=item.title %}
   {% endif %}
 {% else %}
 <div class="research-card-h-img-placeholder"><i class="fa-solid fa-flask"></i></div>

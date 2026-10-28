@@ -1,9 +1,11 @@
 ---
 title: "Videos"
 layout: gridlay
-sitemap: false
 permalink: /videos/
+description: "Research demo videos from Wenhao Yang and the XRAI Lab: AR/VR robot interfaces, human-robot interaction, and immersive training."
 ---
+
+# Videos
 
 ## Research Videos
 
@@ -13,7 +15,7 @@ permalink: /videos/
 <div class="video-card-v">
 <h3 class="video-card-v-title">{{ v.title }}</h3>
 <div class="embed-16x9">
-<iframe src="{{ v.embed_src }}" title="{{ v.title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{% include yt_embed.html src=v.embed_src title=v.title %}
 </div>
 {% if v.keywords %}<div class="video-card-v-keywords">{% for kw in v.keywords %}<span class="research-kw">{{ kw }}</span>{% endfor %}</div>{% endif %}
 <div class="video-card-v-desc" data-clamp>
@@ -33,7 +35,7 @@ permalink: /videos/
 <div class="video-card-v">
 <h3 class="video-card-v-title">{{ v.title }}</h3>
 <div class="embed-16x9">
-<iframe src="{{ v.embed_src }}" title="{{ v.title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{% include yt_embed.html src=v.embed_src title=v.title %}
 </div>
 <p class="video-card-v-abstract">{{ v.course_label }}</p>
 </div>

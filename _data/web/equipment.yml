@@ -493,7 +493,7 @@
 
 - name: "Meta Quest 3 & 3S"
   category: "XR Headset"
-  image: "lab/equip-metaquest3.png"
+  image: "lab/equip-metaquest3.jpg"
   description: >
     The Meta Quest 3 and Quest 3S are standalone mixed reality headsets that support both fully immersive VR 
     and passthrough-based AR experiences. With inside-out tracking and wireless operation, they provide a flexible 

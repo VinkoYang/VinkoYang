@@ -66,9 +66,10 @@
   }
 
   // ----- Strip internal-only fields from displayed BibTeX -----
-  // Removes pdf, note, arxiv lines so they don't appear in the BIB popup or get copied.
+  // Removes site-only fields (pdf, note, arxiv, project, slides, video, abbr,
+  // data, data_end, keywords) so they don't appear in the BIB popup or get copied.
 
-  var BIB_FIELD_STRIP = /^\s*(pdf|note|arxiv)\s*=/i;
+  var BIB_FIELD_STRIP = /^\s*(pdf|note|arxiv|project|slides|video|abbr|data|data_end|keywords)\s*=/i;
 
   document.querySelectorAll('[id^="bib-"] pre').forEach(function (pre) {
     var lines = pre.textContent.split('\n');
@@ -411,4 +412,32 @@
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(syncToggles);
   }
+})();
+
+// ---------------------------------------------------------------
+// Reduced motion — research-card videos (converted from GIFs) autoplay by
+// default; for visitors who ask for less motion, stop them on the poster
+// frame and expose native controls so they can still play on demand.
+// ---------------------------------------------------------------
+(function () {
+  if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('video[autoplay]').forEach(function (v) {
+    v.removeAttribute('autoplay');
+    v.pause();
+    v.controls = true;
+  });
+})();
+
+// ---------------------------------------------------------------
+// Horizontally scrollable tables (wide tables in posts) must be reachable by
+// keyboard to be scrolled: make only the ones that actually overflow focusable.
+// ---------------------------------------------------------------
+(function () {
+  document.querySelectorAll('.post-body table').forEach(function (t) {
+    if (t.scrollWidth > t.clientWidth + 1) {
+      t.setAttribute('tabindex', '0');
+      t.setAttribute('role', 'region');
+      t.setAttribute('aria-label', 'Scrollable table');
+    }
+  });
 })();

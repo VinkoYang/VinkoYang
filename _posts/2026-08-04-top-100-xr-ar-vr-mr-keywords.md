@@ -5,8 +5,6 @@ date: 2026-08-04
 categories: ["Research & Scholarship"]
 tags: ["XR", "AR", "VR", "glossary"]
 ---
-# Top 100 XR (AR/VR/MR) Keywords
-
 ---
 
 ### 🕶️ 1. Hardware, Optics & Displays

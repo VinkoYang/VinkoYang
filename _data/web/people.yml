@@ -5,7 +5,7 @@
 #
 # Pages that consume this file:
 #   _pages/about.md    → people.pi, people.students (show_about: true)
-#   _pages/team.md     → people.pi, people.students (show_team: true),
+#   _includes/lab_team.html→ people.pi, people.students (show_team: true),
 #                         people.alumni, people.collaborators
 #   _pages/research.md → auto-links author/mentor names to their website
 # =============================================================================
@@ -13,10 +13,10 @@
 
 # -----------------------------------------------------------------------------
 # PI
-# Used in: about.md (education list), team.md (PI card), research.md (author link)
+# Used in: about.md (education list), lab_team.html (PI card), research.md (author link)
 # Fields:
 #   website        – canonical URL linked from research page author credits
-#   education      – full degree list shown in about.md / team.md
+#   education      – full degree list shown in about.md / lab_team.html
 #   educationshort – condensed list shown in sidebar
 # -----------------------------------------------------------------------------
 pi:
@@ -33,13 +33,13 @@ pi:
 
 # -----------------------------------------------------------------------------
 # Collaborators (external mentors, co-advisors, visiting researchers, etc.)
-# Used in: team.md (Collaborators section), research.md (mentor link lookup)
+# Used in: lab_team.html (Collaborators section), research.md (mentor link lookup)
 # Required: name
 # Optional: affiliation, website, photo, email
 # Display flags:
-#   show_collaborator – true → show in team.md Collaborators table
+#   show_collaborator – true → show in lab_team.html Collaborators table
 # Sort field:
-#   last_name – used for alphabetical sorting by last name in team.md
+#   last_name – used for alphabetical sorting by last name in lab_team.html
 # -----------------------------------------------------------------------------
 # EXAMPLE:
 # collaborators:
@@ -122,19 +122,19 @@ collaborators:
 
 # -----------------------------------------------------------------------------
 # Students (current and incoming members)
-# Used in: team.md (card grid), about.md (mentoring list), research.md (author link)
+# Used in: lab_team.html (card grid), about.md (mentoring list), research.md (author link)
 #
 # Required: name
 # Display flags:
-#   show_team  – true → show card in team.md grid
+#   show_team  – true → show card in lab_team.html grid
 #   show_about – true → show in about.md "Students and Mentoring" list
-# Card fields (team.md):
+# Card fields (lab_team.html):
 #   photo    – relative path under images/ (e.g. team/mobin.jpg)
 #   info     – short role label shown on the card, e.g. "Ph.D. Student",
 #              "M.S. Student", "DE Student", "Undergraduate Research Assistant",
 #              "High School Research Intern"
 #   lamar_id – Lamar University student ID (e.g. L20701411). 目前不在网站上渲染
-#              （team.md 里那行已注释掉），只作内部记录保留。
+#              （lab_team.html 里那行已注释掉），只作内部记录保留。
 #   email, website, scholar, github
 # Mentoring list fields (about.md):
 #   location – institution
@@ -159,7 +159,7 @@ collaborators:
 #     email: achen@lamar.edu
 #     website: https://alicechen.github.io
 #     location: Lamar University
-#     degree: Doctoral of Industrial Engineering
+#     degree: Doctor of Engineering in Industrial Engineering
 #     year_start: 2025
 #     year_end: now
 
@@ -173,7 +173,7 @@ students:
     lamar_id: L20645178
     email: layyalasomay@lamar.edu
     location: Lamar University
-    degree: Doctoral of Industrial Engineering
+    degree: Doctor of Engineering in Industrial Engineering
     year_start: 2025 
     year_end: now
 
@@ -185,7 +185,7 @@ students:
     info: DE Student
     email: mrabby@lamar.edu
     location: Lamar University
-    degree: Doctoral of Industrial Engineering
+    degree: Doctor of Engineering in Industrial Engineering
     year_start: 2025
     year_end: now
 
@@ -198,7 +198,7 @@ students:
     lamar_id: L20611330
     email: rruddro@lamar.edu
     location: Lamar University
-    degree: Doctoral of Industrial Engineering
+    degree: Doctor of Engineering in Industrial Engineering
     year_start: 2026 
     year_end: now
     website: "https://www.linkedin.com/in/rezwanul-ashraf-ruddro-28772b199/"
@@ -250,7 +250,7 @@ students:
     show_team: true
     show_about: true
     mentoring_role: undergraduate_advisor
-    photo: team/ayden.png
+    photo: team/ayden.jpg
     info: Undergraduate Research Assistant
     lamar_id: L20645136
     email: ahicks25@lamar.edu
@@ -269,7 +269,7 @@ students:
     lamar_id: L20616039
     email: pbioucki@lamar.edu
     location: Lamar University
-    degree: Doctoral of Industrial Engineering
+    degree: Doctor of Engineering in Industrial Engineering
     year_start: 2026
     year_end: now
 
@@ -282,7 +282,7 @@ students:
     mentoring_role: doctoral_advisor
     info: DE Student
     location: Lamar University
-    degree: Doctoral of Industrial Engineering
+    degree: Doctor of Engineering in Industrial Engineering
     year_start: 2024
     year_end: 2026
 
@@ -294,21 +294,16 @@ students:
     info: DE Student
     email: rnaini@lamar.edu
     location: Lamar University
-    degree: Doctoral of Industrial Engineering
+    degree: Doctor of Engineering in Industrial Engineering
     year_start: 2026
     year_end: now
     website: "https://www.linkedin.com/in/rohithn10/"
 
-  - name: "This could be you!"
-    show_team: true
-    show_about: false
-    photo: team/rock.jpg
-    info: See openings for more info
 
 
 # -----------------------------------------------------------------------------
 # Alumni (former members)
-# Used in: team.md (alumni table)
+# Used in: lab_team.html (alumni table)
 # Required: name
 # Optional: duration, degree, thesis, info (current position)
 #   thesis – can contain HTML (e.g. <a href="...">title</a>)
@@ -344,7 +339,7 @@ alumni:
 
 # -----------------------------------------------------------------------------
 # Other (admin support, affiliates, etc.)
-# Used in: team.md (Other section, if enabled)
+# Used in: lab_team.html (Other section, if enabled)
 # Required: name
 # Optional: role, email, website, note
 # -----------------------------------------------------------------------------

@@ -1,17 +1,17 @@
 ---
 title: "About"
 layout: gridlay
-sitemap: false
 permalink: /about/
+description: "Education, appointments, grants, awards, and service of Dr. Wenhao Yang, Assistant Professor of Industrial and Systems Engineering at Lamar University."
 ---
 
-## About
+# About
 
 <div class="section-card">
 <div class="pi-card">
 <img src="{{ site.url }}{{ site.baseurl }}/images/{{ site.photo }}" class="pi-photo" alt="{{ site.name }}" loading="lazy">
 <div>
-<h3 class="pi-name">{{ site.name }}</h3>
+<h2 class="pi-name">{{ site.name }}</h2>
 <p class="pi-title">{{ site.title }}</p>
 {% if site.department %}<p class="pi-dept">{{ site.department }}</p>{% endif %}
 {% if site.college %}<p class="pi-dept">{{ site.college }}</p>{% endif %}

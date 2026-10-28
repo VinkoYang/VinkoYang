@@ -10,7 +10,7 @@ institution_location: "4400 MLK Blvd., PO Box 10009, Beaumont, Texas 77710"
 email: wenhao.yang@lamar.edu
 phone: "+1-409-880-1891"  # shown on About/Team PI cards and the generated CV header; leave blank to omit
 office: "Cherry Engineering Building, Room 2628"  # shown on About/Team PI cards and the generated CV header
-office_city: "Beaumont, TX 77705"  # appended to office on the CV header only; if office and office_city are both blank the CV falls back to institution_location
+office_city: "Beaumont, TX 77710"  # appended to office on the CV header only; if office and office_city are both blank the CV falls back to institution_location
 photo: profile/VinkoYang-1-1.jpg  # place your photo in images/ -- used for the on-page avatar (About/Team/sidebar)
 share_image: profile/avatartion_yang_01.png  # place your photo in images/ -- used only for social-share preview (og:image)
 
@@ -35,7 +35,7 @@ links:
 # (wash/soft/base/deep) with separate light and dark values — too much for one
 # key — and live in _sass/base/_variables.scss. Keep this in sync with the
 # --accent rung there.
-accent_color: "#2196F3"
+accent_color: "#1565C0"
 dark_mode: true              # show dark mode toggle in navbar
 description: "Academic webpage of Dr. Wenhao Yang"
 baseurl: ""
@@ -51,14 +51,13 @@ analytics:
 nav_pages:
   - name: about
   - name: publications
-  - name: talks
   - name: research
   - name: projects
   - name: lab
-  - name: team
   - name: teaching
   - name: videos
   - name: blogs
+    label: Blog
 
 # ============================================================
 # Advanced Settings (you probably don't need to change these)
@@ -130,12 +129,12 @@ scholar:
 exclude:
   - Gemfile
   - Gemfile.lock
-  - update_bootstrap.sh
-  - switch_theme.sh
-  - tags
-  - Rakefile
   - node_modules
   - cv          # CV markdown source; rendered to files/cv.pdf by CI
   - package.json
   - package-lock.json
   - docs
+  - README.md   # repo docs — not site pages; keep them out of _site and the sitemap
+  - CHANGELOG.md
+  - LICENSE
+  - setup.sh

@@ -1,0 +1,17 @@
+{%- comment -%}
+Card thumbnail for a research item. Params: include.image (path under /images/),
+include.alt. Animated GIFs are 5–11 MB each, so a `.gif` is rendered as a muted
+looping video from the sibling `<name>.mp4` / `<name>.webm` with `<name>-poster.jpg`
+(all generated from the GIF; keep the three next to it when adding a new one).
+site.js pauses these videos under prefers-reduced-motion.
+{%- endcomment -%}
+{%- assign media_url = include.image | prepend: '/images/' | prepend: site.baseurl | prepend: site.url -%}
+{%- if include.image contains ".gif" -%}
+{%- assign media_base = media_url | remove: ".gif" -%}
+<video autoplay muted loop playsinline preload="none" poster="{{ media_base }}-poster.jpg" aria-label="{{ include.alt | escape }}">
+<source src="{{ media_base }}.mp4" type="video/mp4">
+<source src="{{ media_base }}.webm" type="video/webm">
+</video>
+{%- else -%}
+<img src="{{ media_url }}" alt="{{ include.alt | escape }}" loading="lazy">
+{%- endif -%}

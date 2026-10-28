@@ -1,11 +1,15 @@
 ---
 layout: null
 ---
-[{% assign entries = "" | split: "" %}{% for page in site.pages %}{% if page.title and page.url != '/404.html' %}{% capture entry %}{
+[{% assign entries = "" | split: "" %}{% for page in site.pages %}{% if page.title and page.url != '/404.html' and page.redirect_to == nil %}{% capture entry %}{
   "title": {{ page.title | jsonify }},
   "url": {{ page.url | prepend: site.baseurl | jsonify }},
   "content": {{ page.content | strip_html | truncatewords: 200 | jsonify }}
-}{% endcapture %}{% assign entries = entries | push: entry %}{% endif %}{% endfor %}{% for item in site.lab_news %}{% if item.title %}{% capture entry %}{
+}{% endcapture %}{% assign entries = entries | push: entry %}{% endif %}{% endfor %}{% for item in site.posts %}{% capture entry %}{
+  "title": {{ item.title | jsonify }},
+  "url": {{ item.url | prepend: site.baseurl | jsonify }},
+  "content": {{ item.content | strip_html | truncatewords: 200 | jsonify }}
+}{% endcapture %}{% assign entries = entries | push: entry %}{% endfor %}{% for item in site.lab_news %}{% if item.title %}{% capture entry %}{
   "title": {{ item.title | jsonify }},
   "url": {{ item.url | prepend: site.baseurl | jsonify }},
   "content": {{ item.content | strip_html | truncatewords: 200 | jsonify }}

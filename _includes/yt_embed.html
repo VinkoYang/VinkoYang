@@ -1,0 +1,17 @@
+{%- comment -%}
+YouTube embed that loads only a thumbnail until clicked (~4 MB of player JS per
+iframe otherwise). The iframe starts from a tiny srcdoc page showing the video's
+poster and a play link; clicking navigates the iframe to the real player with
+autoplay. Browsers without srcdoc support fall back to the normal src.
+Params: include.src (a youtube.com/embed/... URL), include.title.
+Non-YouTube URLs render as a plain lazy iframe.
+{%- endcomment -%}
+{%- assign yt_src = include.src -%}
+{%- if yt_src contains "youtube.com/embed/" or yt_src contains "youtube-nocookie.com/embed/" -%}
+{%- assign yt_id = yt_src | split: "/embed/" | last | split: "?" | first -%}
+{%- if yt_src contains "?" -%}{%- assign yt_play = yt_src | append: "&autoplay=1" -%}{%- else -%}{%- assign yt_play = yt_src | append: "?autoplay=1" -%}{%- endif -%}
+<iframe src="{{ yt_src }}" title="{{ include.title | escape }}" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
+  srcdoc="<style>*{margin:0;padding:0;overflow:hidden}html,body{height:100%;background:#000}a,img{position:absolute;inset:0;width:100%;height:100%}img{object-fit:cover}span{position:absolute;top:50%;left:50%;width:68px;height:48px;margin:-24px 0 0 -34px;border-radius:12px;background:rgba(33,33,33,.85);color:#fff;font:24px/48px sans-serif;text-align:center}a:hover span,a:focus span{background:#f00}</style><a href='{{ yt_play }}' aria-label='Play video'><img src='https://i.ytimg.com/vi/{{ yt_id }}/hqdefault.jpg' alt=''><span>&#9654;</span></a>"></iframe>
+{%- else -%}
+<iframe src="{{ yt_src }}" title="{{ include.title | escape }}" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{%- endif -%}

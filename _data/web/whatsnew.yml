@@ -8,6 +8,17 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "3.0.0"
+  date: 2026-10-27
+  changes:
+    - "The site menu is shorter: Talks now live on the Publications page and the Team is on the Lab page. Old /talks/ and /team/ links redirect there."
+    - "New Join the Lab section on the Lab page for prospective D.E. and master's thesis students, covering what makes a good fit and how to apply."
+    - "Each paper on the Publications page now shows its venue, and talks show their dates and locations, with upcoming talks marked."
+    - "Pages load much faster: research animations are now short videos, photos are smaller, and YouTube videos load only when you press play."
+    - "Easier to read and navigate: stronger color contrast, a darker blue accent, visible keyboard focus, a skip-to-content link, and a phone layout that shows the profile card first. Blog posts now appear in site search."
+    - "New lab news: in the Advanced Robotics (INEN 6301) palletizing challenge, the UR10e stacked six conveyor-fed cubes on a 2 × 3 pallet, and the winning team finished in 71.794 s."
+    - "Corrected degree names, course titles, award years, and several publication entries."
+
 - version: "2.6.3"
   date: 2026-10-13
   changes:

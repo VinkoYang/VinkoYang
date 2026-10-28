@@ -1,6 +1,9 @@
 # News items shown on the home page sidebar.
 # The 5 most recent are shown; all appear on /allnews.
 # Each entry needs: date, headline
+- date: October 26, 2026
+  headline: "<b>INEN 6301 Advanced Robotics</b> palletizing challenge: the UR10e picked six cubes off the conveyor and stacked them on a 2 × 3 pallet, and the winning team finished in 71.794 s — <a href='/lab/news/advanced-robotics-cobot-palletizing-challenge/'>read about the challenge</a>."
+
 - date: October 12, 2026
   headline: "Our proposal <b>‘AI-Resilient Assessment: An LLM-Facilitated Oral Defense Protocol for STEM Graduate Education’</b> was selected for the Lamar University 2026–2027 <b>Excellence in Assessment Grant</b>."
 
@@ -32,7 +35,7 @@
   headline: "<b>Aiden Ma</b> (Westbrook High School), whom I mentor, won <b>First Place</b> at the inaugural <b>AI &amp; Software Pitch Competition</b> at Lamar EXPO 2026 with <b>MOTION</b> — ten finalists were selected from 29 entrants — <a href='/lab/news/ai-software-pitch-competition-2026/'>read about the project and the competition</a>."
 
 - date: April 26, 2026
-  headline: "'Seeing Isn't Believing: The Vertical-horizontal Illusion Across Screens and Xr Headsets' accepted in the IDETC/CIE2026 conference proceedings."
+  headline: "'Seeing Isn't Believing: The Vertical-Horizontal Illusion Across Screens and XR Headsets' accepted in the IDETC/CIE2026 conference proceedings."
 
 - date: August 23, 2023
   headline: "Joining IDETC-CIE 2023 in Boston, MA! Presenting two groundbreaking works: tackling cybersecurity risks in smart manufacturing and advancing global calibration in VST AR system."
