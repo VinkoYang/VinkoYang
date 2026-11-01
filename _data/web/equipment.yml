@@ -1,6 +1,6 @@
 - name: "Universal Robots UR10e"
   category: "Collaborative Robot"
-  image: "lab/equip_ur10e.jpeg"
+  image: "lab/equip_ur10e.jpg"
   description: >
     A 6-DOF collaborative robot arm with a 12.5 kg payload, 1300 mm reach, and a force/torque sensor built into the tool flange.
     It anchors our robot cell for teaching and research in collaborative automation.
@@ -115,6 +115,9 @@
 
     - name: "2F-85 Adaptive Gripper"
       maker: "Robotiq"
+      images:
+        - src: "lab/accessories/ur10e_2f85.jpg"
+          alt: "Robotiq 2F-85 gripper below the Wrist Camera on our UR10e"
       description: >
         A two-finger electric gripper with an 85 mm stroke. The fingers can pinch a part in parallel or wrap around it, and the gripper reports object detection back to the robot program.
         It is the gripper students use in the pick-and-place exercises.
@@ -150,6 +153,9 @@
 
     - name: "Wrist Camera"
       maker: "Robotiq"
+      images:
+        - src: "lab/accessories/ur10e_wrist_camera.jpg"
+          alt: "Robotiq Wrist Camera between the UR10e tool flange and the gripper"
       description: >
         A camera mounted between the robot's tool flange and the gripper.
         From the teach pendant, students teach it a part, and it then locates that part on the work surface and passes the position to the robot program, with no separate vision PC.
@@ -184,6 +190,9 @@
 
     - name: "Academy Hardware Set"
       maker: "Universal Robots"
+      images:
+        - src: "lab/accessories/ur10e_academy_conveyor.jpg"
+          alt: "Academy Hardware Set conveyor belt beside the parts tray"
       description: >
         UR's training kit for classrooms and labs, built to work with any UR cobot.
         Ours is a beech multiplex panel with conveyor belts, an I/O simulator, and presence sensors that detect when a part is in position.
@@ -203,8 +212,26 @@
           url: "https://www.universal-robots.com/articles/ur/application-installation/conveyor-tracking-with-wizard/"
           note: "UR's step-by-step article on the conveyor tracking wizard"
 
+    - name: "I/O and Simulated Safety Scanner Box"
+      maker: "Universal Robots"
+      images:
+        - src: "lab/accessories/ur10e_io_safety_simulator.jpg"
+          alt: "Universal Robots I/O box with toggle switches, output lights, and a simulated safety scanner dial"
+      description: >
+        A desktop box wired to the controller's I/O so students can trigger inputs and watch outputs without building a cell.
+        Toggle switches drive the digital inputs, lights show the digital outputs, a knob feeds an analog input, and two lights are labeled for the conveyor belts.
+        Its simulated safety scanner section switches the robot into Reduced Mode or Safeguard Mode and resets the safeguard stop, so safety I/O can be configured and tested without a real scanner. An emergency stop button sits on top.
+      specs:
+        - "Digital inputs DI[0]–DI[4] on toggle switches; outputs DO[0]–DO[4] on lights"
+        - "Analog input AI[0] on a knob; conveyor lights CB1 and CB2"
+        - "Reduced Mode (CI[2]/CI[3]), Safeguard Mode (SI[0]/SI[1]), Safeguard Reset (CI[0]/CI[1])"
+        - "Emergency stop button"
+
     - name: "nanoScan3 Core Safety Laser Scanners"
       maker: "SICK"
+      images:
+        - src: "lab/accessories/ur10e_nanoscan3.jpg"
+          alt: "SICK nanoScan3 Core scanner on its mounting bracket"
       description: >
         Two compact safety laser scanners watch the floor around the cell. Each monitors a protective field and a warning field, and the robot stops when a person steps into the protective field.
         The fields are set up on the UR teach pendant with SICK's nanoScan3 Tool URCap.
@@ -237,7 +264,7 @@
 
 - name: "UFACTORY xArm 6"
   category: "Collaborative Robot"
-  image: "lab/equip_xarm6.jpeg"
+  image: "lab/equip_xarm6.jpg"
   description: >
     A lightweight 6-DOF collaborative robot arm with a 5 kg payload, 700 mm reach, and ±0.1 mm repeatability, fully open to programming from Python and ROS 2.
     It is our platform for research in human-centered robotics, perception-driven manipulation, and immersive human-robot interaction.
@@ -317,7 +344,7 @@
 
 - name: "Dobot Magician Robotic Arm"
   category: "Desktop Robot Arm"
-  image: "lab/equip_dobot_magician.png"
+  image: "lab/equip_dobot_magician.jpg"
   description: >
     A 4-axis desktop robot arm for teaching, with a 500 g payload, 320 mm reach, and ±0.2 mm repeatability. The lab has ten units, enough for a full class lab.
     Students swap its tools to pick and place with suction or a gripper, write and draw, and 3D print, and program it in blocks or Python.
@@ -343,7 +370,7 @@
 
 - name: "Clearpath Husky A300 with Robot Arm"
   category: "Mobile Manipulator"
-  image: "lab/equip_husky.jpeg"
+  image: "lab/equip_husky.jpg"
   description: >
     A rugged, all-terrain unmanned ground vehicle (UGV) for autonomous mobile robotics research: IP54-rated, up to 2 m/s, and able to climb 30° grades, running ROS 2 Jazzy.
     With a robot arm on its top plate, the platform supports mobile manipulation tasks that combine navigation and object interaction in complex environments.
@@ -396,7 +423,7 @@
 
 - name: "Clearpath TurtleBot 4"
   category: "Mobile Robot"
-  image: "lab/equip_turtlebot4.jpg"
+  image: "lab/equip_turtlebot4_lab.jpg"
   description: >
     A ROS 2 mobile robot for education and research, built on the iRobot Create 3 base with a Raspberry Pi 4B on board.
     It maps its surroundings, navigates autonomously, and runs AI models on its camera, with a 9 kg payload and 2.5–4 hours of operation per charge.
@@ -501,7 +528,7 @@
 
 - name: "Orbbec Astra+ 3D Camera"
   category: "Depth Camera"
-  image: "lab/equip_orbbec_astra_plus.jpg"
+  image: "lab/equip_orbbec_astra_plus_lab.jpg"
   description: >
     A structured-light RGB-D camera for indoor scenes, with stable depth from 0.6 to 8 m, precision within 0.3% at 1 m, and 1080p color. The lab has three units.
     It suits fixed, indoor setups such as watching a workspace or a robot cell from a stand.
@@ -514,3 +541,40 @@
     An IP65-rated stereo depth camera with a 95 mm baseline, working indoors or outdoors with an optimal depth range of 0.25 to 6 m and a built-in IMU.
     Its wide 90° depth field of view and rugged housing suit cameras mounted on mobile robots and arms.
   manual: "https://www.orbbec.com/docs/orbbec-gemini-330-series-documentation/"
+
+# Shared equipment: not owned by the XRAI Lab, but available to lab members.
+# `shared: true` moves the card into the Lab page's "Shared Equipment" grid.
+
+- name: "CNC Masters 1440 Lathe"
+  category: "CNC Lathe"
+  shared: true
+  image: "lab/equip_cnc_masters_1440.jpg"
+  description: >
+    A 14 × 40 inch lathe (14 in swing over the bed, 40 in between centers) with a 3 hp spindle motor that runs either under CNC or by hand.
+    It is programmed with CNC Masters' MX software and handles turning, facing, boring, chamfering, and threading.
+  manual: "https://www.cncmasters.com/product/cnc-lathe-machine-1440/"
+
+- name: "Haas Mini Mill 2"
+  category: "CNC Mill"
+  shared: true
+  image: "lab/equip_haas_mini_mill_2.jpg"
+  description: >
+    A compact 40-taper vertical machining center with 20 × 16 × 14 inch X/Y/Z travels and an automatic tool changer, run by the Haas control.
+    It mills, drills, and taps small parts from CAD/CAM programs.
+  manual: "https://haascnc.com/owners/Service/operators-manual.html"
+
+- name: "FARO Quantum E FaroArm"
+  category: "Portable CMM"
+  shared: true
+  image: "lab/equip_faro_quantum_e.jpg"
+  description: >
+    A portable coordinate measuring arm: touching a part with its probe records 3D points, so dimensions can be measured and checked against CAD on the bench rather than in a metrology room.
+  manual: "https://knowledge.faro.com/Hardware/FaroArm_and_ScanArm/FaroArm_and_ScanArm"
+
+- name: "LearnLab PLC Training System"
+  category: "PLC Trainer"
+  shared: true
+  image: "lab/equip_learnlab_plc.jpg"
+  description: >
+    A portable programmable logic controller trainer in a flight case, with push buttons, indicator lights, relays, contactors, and limit switches wired to a PLC.
+    Students use it to practice ladder-logic programming, wiring, and troubleshooting of industrial controls.

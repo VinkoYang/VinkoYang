@@ -3,6 +3,19 @@ title: "Lab"
 layout: gridlay
 permalink: /lab/
 hero_image: images/lab/xrai_lab_wide.jpg
+hero_slides:
+  - src: images/lab/xrai_lab_wide.jpg
+    alt: "XRAI Lab banner: extended reality, artificial intelligence, and robotics"
+  - src: images/lab/environment/lab_space_1.jpg
+    alt: "The lab floor with the Husky mobile robot, CNC mill, and the UR10e cell"
+  - src: images/lab/environment/lab_space_2.jpg
+    alt: "Rows of steel workbenches running the length of the lab"
+  - src: images/lab/environment/lab_space_3.jpg
+    alt: "Student workstations along the lab benches"
+  - src: images/lab/environment/lab_space_4.jpg
+    alt: "The Husky mobile robot in the open floor area"
+  - src: images/lab/environment/lab_space_5.jpg
+    alt: "Haas mini mill, studio lights, and the xArm 6 at the front of the lab"
 description: "The XRAI Lab at Lamar University: research focus, team, how to join, and the robots, XR headsets, and cameras we use for extended reality, AI, and robotics research."
 ---
 # XRAI Lab
@@ -76,29 +89,17 @@ Through interdisciplinary innovation, the XRAI Lab redefines how intelligent sys
 ## Equipment
 
 <div class="equipment-grid">
-{% for item in site.data.web.equipment %}
-{% assign equip_id = item.name | slugify %}
-{% assign equip_post = site.posts | where: "equipment_id", equip_id | first %}
-<div class="equipment-card">
-{% if item.image and item.image != "" %}
-<img src="{{ site.url }}{{ site.baseurl }}/images/{{ item.image }}" class="equipment-thumb" alt="{{ item.name }}" loading="lazy">
-{% else %}
-<div class="equipment-thumb-placeholder"><i class="fa-solid fa-microchip"></i></div>
-{% endif %}
-<div class="equipment-body">
-<p class="equipment-category">{{ item.category }}</p>
-<h3 class="equipment-name">{% if equip_post %}<a href="{{ site.url }}{{ site.baseurl }}{{ equip_post.url }}">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}</h3>
-<details class="equipment-more" markdown="0"><summary>Description</summary><p class="equipment-desc">{{ item.description }}</p></details>
-{% if item.accessories and item.accessories.size > 0 -%}
-<details class="equipment-more equipment-accessories" markdown="0"><summary>Accessories ({{ item.accessories.size }})</summary><ul>{% for acc in item.accessories %}<li>{{ acc.name }}{% if acc.maker %} <span class="equipment-accessory-maker">· {{ acc.maker }}</span>{% endif %}</li>{% endfor %}</ul></details>
-{% endif -%}
-{%- comment -%}Whitespace trims and markdown="0" below are load-bearing: without them kramdown treats the one-line links div as inline content and escapes its closing tag.{%- endcomment -%}
-{% assign has_manual = false %}{% if item.manual and item.manual != "" %}{% assign has_manual = true %}{% endif -%}
-{% assign show_tutorials = false %}{% unless equip_post %}{% if item.tutorials and item.tutorials.size > 0 %}{% assign show_tutorials = true %}{% endif %}{% endunless -%}
-{% if has_manual or equip_post or show_tutorials %}
-<div class="equipment-links" markdown="0">{% if has_manual %}<a href="{{ item.manual }}" class="equipment-link"{% if item.manual contains "://" %} target="_blank" rel="noopener"{% endif %}><i class="fa-solid fa-book"></i> Manual</a>{% endif %}{% if equip_post %}<a href="{{ site.url }}{{ site.baseurl }}{{ equip_post.url }}" class="equipment-link"><i class="fa-solid fa-book-open-reader"></i> Training Guide</a>{% endif %}{% if show_tutorials %}{% for t in item.tutorials %}<a href="{{ t.url }}" class="equipment-link"{% if t.url contains "://" %} target="_blank" rel="noopener"{% endif %}><i class="fa-solid fa-circle-play"></i> {{ t.title }}</a>{% endfor %}{% endif %}</div>
-{% endif -%}
+{% for item in site.data.web.equipment %}{% unless item.shared %}
+{% include equipment_card.html item=item %}
+{% endunless %}{% endfor %}
 </div>
-</div>
-{% endfor %}
+
+### Shared Equipment
+
+These machines are not owned by the XRAI Lab, but lab members can use them in their projects.
+
+<div class="equipment-grid">
+{% for item in site.data.web.equipment %}{% if item.shared %}
+{% include equipment_card.html item=item %}
+{% endif %}{% endfor %}
 </div>

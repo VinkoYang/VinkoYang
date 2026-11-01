@@ -10,7 +10,22 @@
     {% include header.html %}
 
     <main id="main" tabindex="-1">
-      {% if page.hero_image %}
+      {% if page.hero_slides and page.hero_slides.size > 1 %}
+      {%- comment -%}Crossfading hero. Behavior lives in the hero slideshow IIFE in assets/js/site.js.{%- endcomment -%}
+      <div class="page-hero page-hero-slideshow" data-hero-slideshow role="region" aria-roledescription="carousel" aria-label="{{ page.title }} photos">
+        <div class="hero-slides">
+          {% for s in page.hero_slides %}
+          <img class="hero-slide{% if forloop.first %} is-active{% endif %}" src="{{ site.url }}{{ site.baseurl }}/{{ s.src }}" alt="{{ s.alt | escape }}" width="2000" height="761" decoding="async"{% if forloop.first %} loading="eager"{% else %} loading="lazy" aria-hidden="true"{% endif %}>
+          {% endfor %}
+        </div>
+        <div class="hero-controls">
+          <button type="button" class="hero-toggle" aria-label="Pause slideshow"><i class="fa-solid fa-pause" aria-hidden="true"></i></button>
+          {% for s in page.hero_slides %}
+          <button type="button" class="hero-dot{% if forloop.first %} is-active{% endif %}"{% if forloop.first %} aria-current="true"{% endif %} aria-label="Show photo {{ forloop.index }} of {{ page.hero_slides.size }}"></button>
+          {% endfor %}
+        </div>
+      </div>
+      {% elsif page.hero_image %}
       <div class="page-hero">
         <img src="{{ site.url }}{{ site.baseurl }}/{{ page.hero_image }}" alt="{{ page.title }}" loading="eager">
       </div>

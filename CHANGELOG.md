@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v3.0.0**（`source` 分支，已发布，2026-10-27）。
+**当前版本：v3.1.0**（`source` 分支，已发布，2026-11-01）。
 
 ## 两份日志，别混
 
@@ -44,6 +44,10 @@ git push origin source --tags
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [3.1.0] - 2026-11-01
+
+**Lab 页实拍照片与共享设备。** 设备卡片图换成 2026-10 实拍（1600×1600，去 EXIF/GPS；TurtleBot 4、Astra+ 改文件名破缓存）。Lab 页封面改为淡入淡出轮播：`default.html` 新增 `hero_slides` front matter，`site.js` 新 hero slideshow IIFE（6 秒切换，暂停按钮，悬停/聚焦暂停，reduced-motion 默认暂停），XRAI banner + 5 张环境图。equipment.yml 新增配件 `images` 字段和设备 `shared` 字段：UR10e 训练指南配件配实拍图，模拟安全扫描器面板从 Academy Hardware Set 拆成独立配件；Lab 页新增 Shared Equipment 小节（卡片 markup 抽到 `equipment_card.html`），收录 CNC Masters 1440、Haas Mini Mill 2、FARO Quantum E、LearnLab PLC。
 
 ### [3.0.0] - 2026-10-27
 

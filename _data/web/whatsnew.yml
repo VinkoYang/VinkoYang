@@ -8,6 +8,14 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "3.1.0"
+  date: 2026-11-01
+  changes:
+    - "The Lab page header is now a slideshow: the XRAI banner followed by photos of the lab space. It pauses on hover, and a pause button stops it."
+    - "Equipment cards on the Lab page now show photos taken in our lab."
+    - "New Shared Equipment section on the Lab page: machines lab members can use but the lab does not own, including a CNC Masters 1440 lathe, a Haas Mini Mill 2, a FARO Quantum E measuring arm, and a LearnLab PLC trainer."
+    - "The UR10e Training Guide now shows photos of the 2F-85 gripper, Wrist Camera, conveyor, nanoScan3 safety scanners, and the I/O and simulated safety scanner box."
+
 - version: "3.0.0"
   date: 2026-10-27
   changes:
