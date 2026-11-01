@@ -3,6 +3,19 @@ title: "Lab"
 layout: gridlay
 permalink: /lab/
 hero_image: images/lab/xrai_lab_wide.jpg
+hero_slides:
+  - src: images/lab/xrai_lab_wide.jpg
+    alt: "XRAI Lab banner: extended reality, artificial intelligence, and robotics"
+  - src: images/lab/environment/lab_space_1.jpg
+    alt: "The lab floor with the Husky mobile robot, CNC mill, and the UR10e cell"
+  - src: images/lab/environment/lab_space_2.jpg
+    alt: "Rows of steel workbenches running the length of the lab"
+  - src: images/lab/environment/lab_space_3.jpg
+    alt: "Student workstations along the lab benches"
+  - src: images/lab/environment/lab_space_4.jpg
+    alt: "The Husky mobile robot in the open floor area"
+  - src: images/lab/environment/lab_space_5.jpg
+    alt: "Haas mini mill, studio lights, and the xArm 6 at the front of the lab"
 description: "The XRAI Lab at Lamar University: research focus, team, how to join, and the robots, XR headsets, and cameras we use for extended reality, AI, and robotics research."
 ---
 # XRAI Lab

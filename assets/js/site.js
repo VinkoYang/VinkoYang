@@ -290,6 +290,86 @@
 
 
 // =============================================================
+// Hero slideshow — crossfading page hero (markup in _layouts/default.html).
+// Autoplays, so WCAG 2.2.2 applies: a pause button is always shown,
+// hover and keyboard focus hold the current slide, and reduced-motion
+// visitors start paused.
+// =============================================================
+
+(function () {
+  'use strict';
+
+  var root = document.querySelector('[data-hero-slideshow]');
+  if (!root) return;
+
+  var slides = root.querySelectorAll('.hero-slide');
+  var dots = root.querySelectorAll('.hero-dot');
+  var toggle = root.querySelector('.hero-toggle');
+  if (slides.length < 2) return;
+
+  var INTERVAL = 6000;
+  var current = 0;
+  var timer = null;
+  var paused = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var held = false;
+
+  function show(index) {
+    current = (index + slides.length) % slides.length;
+    slides.forEach(function (slide, i) {
+      var active = i === current;
+      slide.classList.toggle('is-active', active);
+      if (active) slide.removeAttribute('aria-hidden');
+      else slide.setAttribute('aria-hidden', 'true');
+    });
+    dots.forEach(function (dot, i) {
+      dot.classList.toggle('is-active', i === current);
+      if (i === current) dot.setAttribute('aria-current', 'true');
+      else dot.removeAttribute('aria-current');
+    });
+  }
+
+  function schedule() {
+    clearInterval(timer);
+    timer = null;
+    if (paused || held || document.hidden) return;
+    timer = setInterval(function () { show(current + 1); }, INTERVAL);
+  }
+
+  function syncToggle() {
+    if (!toggle) return;
+    toggle.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow');
+    toggle.innerHTML = '<i class="fa-solid ' + (paused ? 'fa-play' : 'fa-pause') + '" aria-hidden="true"></i>';
+  }
+
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      paused = !paused;
+      syncToggle();
+      schedule();
+    });
+  }
+
+  dots.forEach(function (dot, i) {
+    dot.addEventListener('click', function () {
+      show(i);
+      schedule();
+    });
+  });
+
+  function hold(on) { held = on; schedule(); }
+  root.addEventListener('mouseenter', function () { hold(true); });
+  root.addEventListener('mouseleave', function () { hold(false); });
+  root.addEventListener('focusin', function () { hold(true); });
+  root.addEventListener('focusout', function (e) {
+    if (!root.contains(e.relatedTarget)) hold(false);
+  });
+  document.addEventListener('visibilitychange', schedule);
+
+  syncToggle();
+  schedule();
+})();
+
+// =============================================================
 // Lab news carousel — scroll-snap track with dot indicators.
 // Manually driven (swipe / dots / keyboard) — no autoplay, so
 // WCAG 2.2.2 (pause for automatically-moving content) does not apply.

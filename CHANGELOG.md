@@ -38,6 +38,9 @@ git push origin source --tags
 
 ## [待发布]
 
+- **Lab 页设备照片换成实验室实拍**：UR10e、xArm 6、Dobot Magician、Husky、TurtleBot 4、Orbbec Astra+ 六张卡片图换成 2026-10 新拍照片（1600×1600 方图，去 EXIF/GPS）。原 `equip_ur10e.jpeg`、`equip_xarm6.jpeg`、`equip_dobot_magician.png`、`equip_husky.jpeg` 删除，换成同名 `.jpg`，`_data/web/equipment.yml` 路径同步。
+- **Lab 页顶部封面改成自动轮播**：`_layouts/default.html` 新增 `hero_slides` front matter（≥2 张时渲染淡入淡出轮播，否则仍走 `hero_image`）。`_pages/lab.md` 放 XRAI banner + 5 张实验室环境图（`images/lab/environment/`，裁成 banner 同比例 2000×761）。行为在 `assets/js/site.js` 新的 hero slideshow IIFE：6 秒切换，带暂停按钮和圆点（WCAG 2.2.2），鼠标悬停/键盘聚焦暂停，`prefers-reduced-motion` 默认暂停，标签页隐藏时停。样式在 `_sass/layouts/_lab.scss` 的 `.page-hero-slideshow`。
+- **UR10e 训练指南配件加实拍图**：equipment.yml 配件新增可选 `images`（`src` + `alt`）字段，`_includes/equipment_accessories.html` 渲染在厂商名下面，样式 `.accessory-photos`（单图限宽 28rem，两图并排，手机单列）。已配图：2F-85、Wrist Camera、Academy Hardware Set（传送带 + 模拟安全扫描器面板）、nanoScan3。图在 `images/lab/accessories/`。
 
 ---
 

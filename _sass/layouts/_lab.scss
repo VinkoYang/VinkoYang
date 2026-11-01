@@ -223,6 +223,89 @@
   }
 }
 
+// Crossfading variant: slides are stacked and the active one fades in.
+// Slide images are cropped to the banner's 2000 × 761 so nothing jumps.
+.page-hero-slideshow {
+  position: relative;
+
+  .hero-slides {
+    position: relative;
+    aspect-ratio: 2000 / 761;
+    overflow: hidden;
+    background: var(--bg-secondary);
+  }
+
+  .hero-slide {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+
+    &.is-active {
+      opacity: 1;
+    }
+  }
+
+  .hero-controls {
+    position: absolute;
+    right: var(--space-4);
+    bottom: var(--space-3);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    line-height: 1;
+  }
+
+  .hero-dot {
+    width: 0.625rem;
+    height: 0.625rem;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+
+    &.is-active {
+      background: #fff;
+      transform: scale(1.25);
+    }
+  }
+
+  .hero-toggle {
+    width: 1.75rem;
+    height: 1.75rem;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    font-size: 0.7rem;
+    cursor: pointer;
+  }
+
+  .hero-dot:focus-visible,
+  .hero-toggle:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 576px) {
+    .hero-controls {
+      right: var(--space-2);
+      bottom: var(--space-2);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-slide {
+      transition: none;
+    }
+  }
+}
+
 .equipment-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));

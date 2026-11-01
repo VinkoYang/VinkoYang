@@ -1,6 +1,6 @@
 - name: "Universal Robots UR10e"
   category: "Collaborative Robot"
-  image: "lab/equip_ur10e.jpeg"
+  image: "lab/equip_ur10e.jpg"
   description: >
     A 6-DOF collaborative robot arm with a 12.5 kg payload, 1300 mm reach, and a force/torque sensor built into the tool flange.
     It anchors our robot cell for teaching and research in collaborative automation.
@@ -115,6 +115,9 @@
 
     - name: "2F-85 Adaptive Gripper"
       maker: "Robotiq"
+      images:
+        - src: "lab/accessories/ur10e_2f85.jpg"
+          alt: "Robotiq 2F-85 gripper below the Wrist Camera on our UR10e"
       description: >
         A two-finger electric gripper with an 85 mm stroke. The fingers can pinch a part in parallel or wrap around it, and the gripper reports object detection back to the robot program.
         It is the gripper students use in the pick-and-place exercises.
@@ -150,6 +153,9 @@
 
     - name: "Wrist Camera"
       maker: "Robotiq"
+      images:
+        - src: "lab/accessories/ur10e_wrist_camera.jpg"
+          alt: "Robotiq Wrist Camera between the UR10e tool flange and the gripper"
       description: >
         A camera mounted between the robot's tool flange and the gripper.
         From the teach pendant, students teach it a part, and it then locates that part on the work surface and passes the position to the robot program, with no separate vision PC.
@@ -184,6 +190,11 @@
 
     - name: "Academy Hardware Set"
       maker: "Universal Robots"
+      images:
+        - src: "lab/accessories/ur10e_academy_conveyor.jpg"
+          alt: "Academy Hardware Set conveyor belt beside the parts tray"
+        - src: "lab/accessories/ur10e_academy_safety_sim.jpg"
+          alt: "Academy Hardware Set simulated safety scanner panel"
       description: >
         UR's training kit for classrooms and labs, built to work with any UR cobot.
         Ours is a beech multiplex panel with conveyor belts, an I/O simulator, and presence sensors that detect when a part is in position.
@@ -205,6 +216,9 @@
 
     - name: "nanoScan3 Core Safety Laser Scanners"
       maker: "SICK"
+      images:
+        - src: "lab/accessories/ur10e_nanoscan3.jpg"
+          alt: "SICK nanoScan3 Core scanner on its mounting bracket"
       description: >
         Two compact safety laser scanners watch the floor around the cell. Each monitors a protective field and a warning field, and the robot stops when a person steps into the protective field.
         The fields are set up on the UR teach pendant with SICK's nanoScan3 Tool URCap.
@@ -237,7 +251,7 @@
 
 - name: "UFACTORY xArm 6"
   category: "Collaborative Robot"
-  image: "lab/equip_xarm6.jpeg"
+  image: "lab/equip_xarm6.jpg"
   description: >
     A lightweight 6-DOF collaborative robot arm with a 5 kg payload, 700 mm reach, and ±0.1 mm repeatability, fully open to programming from Python and ROS 2.
     It is our platform for research in human-centered robotics, perception-driven manipulation, and immersive human-robot interaction.
@@ -317,7 +331,7 @@
 
 - name: "Dobot Magician Robotic Arm"
   category: "Desktop Robot Arm"
-  image: "lab/equip_dobot_magician.png"
+  image: "lab/equip_dobot_magician.jpg"
   description: >
     A 4-axis desktop robot arm for teaching, with a 500 g payload, 320 mm reach, and ±0.2 mm repeatability. The lab has ten units, enough for a full class lab.
     Students swap its tools to pick and place with suction or a gripper, write and draw, and 3D print, and program it in blocks or Python.
@@ -343,7 +357,7 @@
 
 - name: "Clearpath Husky A300 with Robot Arm"
   category: "Mobile Manipulator"
-  image: "lab/equip_husky.jpeg"
+  image: "lab/equip_husky.jpg"
   description: >
     A rugged, all-terrain unmanned ground vehicle (UGV) for autonomous mobile robotics research: IP54-rated, up to 2 m/s, and able to climb 30° grades, running ROS 2 Jazzy.
     With a robot arm on its top plate, the platform supports mobile manipulation tasks that combine navigation and object interaction in complex environments.
