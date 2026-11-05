@@ -38,6 +38,8 @@ git push origin source --tags
 
 ## [待发布]
 
+- content: About 页 grants 加入 2026 SRUF 本科生 fellowship 内部基金（Co-PI，Justin Barrera 项目）
+
 
 ---
 
