@@ -39,6 +39,7 @@ git push origin source --tags
 ## [待发布]
 
 - content: About 页 grants 加入 2026 SRUF 本科生 fellowship 内部基金（Co-PI，Justin Barrera 项目）
+- content: 新增 lab news `cardinal-view-2026`（2026-11-07 Cardinal View：Husky A300 + Gen3 lite、MR 飓风训练 + 院长体验、LLM pick-and-place、机械臂画画），图片压缩到 1600px 放入 `images/lab/news/2026-11-07-cardinal-view/`，嵌入 AR flooding demo YouTube
 
 
 ---
