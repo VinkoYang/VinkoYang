@@ -8,6 +8,12 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "3.1.1"
+  date: 2026-11-08
+  changes:
+    - "New lab news post on Cardinal View 2026: the Husky A300 mobile manipulator, the mixed reality hurricane training system (including a visit from the Dean of Engineering), an LLM-driven pick-and-place demo, and a robot arm that draws line sketches."
+    - "The About page now lists the 2026 SRUF undergraduate fellowship under grants."
+
 - version: "3.1.0"
   date: 2026-11-01
   changes:
