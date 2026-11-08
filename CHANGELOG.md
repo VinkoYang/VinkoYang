@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v3.1.0**（`source` 分支，已发布，2026-11-01）。
+**当前版本：v3.1.1**（`source` 分支，已发布，2026-11-08）。
 
 ## 两份日志，别混
 
@@ -38,8 +38,6 @@ git push origin source --tags
 
 ## [待发布]
 
-- content: About 页 grants 加入 2026 SRUF 本科生 fellowship 内部基金（Co-PI，Justin Barrera 项目）
-- content: 新增 lab news `cardinal-view-2026`（2026-11-07 Cardinal View：Husky A300 + Gen3 lite、MR 飓风训练 + 院长体验、LLM pick-and-place、机械臂画画），图片压缩到 1600px 放入 `images/lab/news/2026-11-07-cardinal-view/`，嵌入 AR flooding demo YouTube
 
 
 ---
@@ -47,6 +45,10 @@ git push origin source --tags
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [3.1.1] - 2026-11-08
+
+**Cardinal View lab news 与 grants 补充。** 新增 lab news `cardinal-view-2026`（Husky A300 + Gen3 lite、MR 飓风训练与院长体验、LLM pick-and-place、机械臂画画），6 张照片压缩到 1600px，嵌入 AR flooding demo YouTube；About 页 grants 加入 2026 SRUF 本科生 fellowship（Co-PI）。
 
 ### [3.1.0] - 2026-11-01
 
