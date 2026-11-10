@@ -38,6 +38,7 @@ git push origin source --tags
 
 ## [待发布]
 
+- content: CV Master Thesis Committee 加 Jannatul Hur（导师 Yueqing Li，2026-11-09 答辩通过），`_data/profile/student_guidance.yml`
 
 
 ---
