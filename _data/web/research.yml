@@ -470,3 +470,30 @@
       - url: "https://youtu.be/YtjXZ8cdC8E"
         date: "2026-08"
     bib: ""
+
+- title: "Spatially Registered Beam Analysis in Mixed Reality: A Standalone Headset Tool and a Laboratory Gantry Crane Case Study"
+  image: "research/2026_ARBeamGantry.jpg"
+  focus: [2, 4]
+  start_date: "2026-10"
+  end_date: "2026-11"
+  authors:
+    - name: "Wenhao Yang"
+    - name: "Mohammed Abdullah Al Akib"
+    - name: "Acyut Kaneria"
+    - name: "Sushil Doranga"
+  keywords:
+    - Mixed Reality
+    - Beam Analysis
+    - Spatial Registration
+    - Manufacturing Education
+    - Open-Source Software
+  abstract: >
+    Beam analysis results are usually shown on paper or a screen, away from the member. This project builds an open-source mixed-reality tool that runs standalone on a Meta Quest 3S and overlays shear force, bending moment, and bending stress on a real member at true scale. A local solver based on singularity functions handles multiple point and partial uniform loads and up to six pinned or clamped supports, including statically indeterminate cases; on 11 textbook cases and a case-study girder it reproduces the closed-form solutions and agrees with two other solvers. The beam is registered with two controller touches and step nudges, and the case study places the overlay on the girder of a laboratory gantry crane under simulated trolley loads. The loads are simulated, so the tool is a digital model intended for instruction in manufacturing education. Submitted to NAMRC 55 (2027); code released as the AR Beam Learning Module.
+  links:
+    paper: ""
+    webpage: ""
+    video:
+      - url: "https://youtu.be/WrtzLXeWMVE"
+        date: "2026-10"
+    bib: ""
+    github: "https://github.com/VinkoYang/AR-Beam-Stress-Analysis"
