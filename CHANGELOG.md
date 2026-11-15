@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v3.1.1**（`source` 分支，已发布，2026-11-08）。
+**当前版本：v3.1.2**（`source` 分支，已发布，2026-11-15）。
 
 ## 两份日志，别混
 
@@ -38,10 +38,6 @@ git push origin source --tags
 
 ## [待发布]
 
-- content: CV Master Thesis Committee 加 Jannatul Hur（导师 Yueqing Li，2026-11-09 答辩通过），`_data/profile/student_guidance.yml`
-- content: news 加 NAMRC 55 投稿（2026-11-13，写 submitted），`_data/web/news.yml`
-- content: Projects 加 AR Beam Learning Module（GitHub VinkoYang/AR-Beam-Stress-Analysis，Zenodo v1.0.0，YouTube demo），图 `images/projects/ar-beam-learning-module.jpg` 取自该 repo `Docs/media/gantry-stress-colour.jpg`；Projects 页导语和 description 不再写"学术研究之外"，`_data/web/projects.yml`、`_pages/projects.md`
-- content: Research 加 NAMRC 55 论文项目（focus 2 + 4，作者 Yang/Akib/Kaneria/Doranga，摘要据投稿摘要，写 submitted；YouTube demo + GitHub），图 `images/research/2026_ARBeamGantry.jpg`，占位 post `_posts/2026-11-13-spatially-registered-beam-analysis-in-mixed-reality.md`（published: false），`_data/web/research.yml`
 
 
 ---
@@ -49,6 +45,10 @@ git push origin source --tags
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [3.1.2] - 2026-11-15
+
+**NAMRC 55 投稿与 AR Beam 开源工具上线。** News 加 NAMRC 55 投稿（2026-11-13，只写 submitted）；Research 加论文项目（focus 2 + 4，摘要据投稿摘要，带 YouTube demo 和 GitHub，占位 post published: false）；Projects 加 AR Beam Learning Module 卡片（GitHub、Zenodo v1.0.0、demo），Projects 页导语不再写“学术研究之外”；CV Master Thesis Committee 加 Jannatul Hur。
 
 ### [3.1.1] - 2026-11-08
 
