@@ -2,14 +2,14 @@
 title: "Projects"
 layout: gridlay
 permalink: /projects/
-description: "Software built by Wenhao Yang, including Wherefold, a bilingual US travel platform built on a curated database of attractions."
+description: "Software built by Wenhao Yang, including the open-source AR Beam Learning Module for Meta Quest and Wherefold, a bilingual US travel platform built on a curated database of attractions."
 ---
 
 # Projects
 
 <h2 class="sr-only">All projects</h2>
 
-Software I have designed and built outside of my academic research.
+Software I have designed and built, from open-source research tools to side projects.
 
 <input type="text" class="pub-search" id="projectSearch" placeholder="Search by name, technology, or keyword...">
 

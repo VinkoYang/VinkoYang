@@ -22,6 +22,23 @@
 #     blog      — write-up about this project: a site-relative path
 #                 (e.g. "/blogs/building-wherefold/") or a full external URL
 
+- title: "AR Beam Learning Module"
+  image: "projects/ar-beam-learning-module.jpg"
+  start_date: "2026-10"
+  end_date: "2026-11"
+  role: "Lead developer — solver, mixed-reality interface, on-site registration"
+  status: "Open source (MIT), v1.0.1"
+  stack:
+    - "Unity"
+    - "C#"
+    - "Meta Quest 3S"
+    - "OpenXR"
+    - "XR Interaction Toolkit"
+  abstract: "A mixed-reality tool that runs standalone on a Meta Quest 3S and shows beam-theory results at true scale. The user sets up a beam (length, section, material, point loads, partial uniform loads, and up to six pin or clamp supports, including statically indeterminate cases), and a local solver based on singularity functions returns the deflected shape, a bending-stress colour map, the shear-force and bending-moment diagrams, and the support reactions while the inputs change. In on-site mode the virtual beam is registered onto a real member with two controller touches and step nudges, so the diagrams and colours appear on the member under simulated loads; nothing is measured on the member. The solver reproduces the closed-form solutions for 11 textbook cases and a laboratory gantry crane girder, and its results are cross-checked against two other solvers. Release v1.0.0, the version described in our NAMRC 55 submission, is archived on Zenodo (doi:10.5281/zenodo.24206301). The image shows the overlay on the gantry girder under a simulated 8.90 kN trolley load."
+  links:
+    github: "https://github.com/VinkoYang/AR-Beam-Stress-Analysis"
+    demo: "https://youtu.be/WrtzLXeWMVE"
+
 - title: "Wherefold — Interactive US Travel Guide"
   image: "projects/wherefold.png"
   start_date: "2026-06"

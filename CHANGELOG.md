@@ -39,6 +39,8 @@ git push origin source --tags
 ## [待发布]
 
 - content: CV Master Thesis Committee 加 Jannatul Hur（导师 Yueqing Li，2026-11-09 答辩通过），`_data/profile/student_guidance.yml`
+- content: news 加 NAMRC 55 投稿（2026-11-13，写 submitted），`_data/web/news.yml`
+- content: Projects 加 AR Beam Learning Module（GitHub VinkoYang/AR-Beam-Stress-Analysis，Zenodo v1.0.0，YouTube demo），图 `images/projects/ar-beam-learning-module.jpg` 取自该 repo `Docs/media/gantry-stress-colour.jpg`；Projects 页导语和 description 不再写"学术研究之外"，`_data/web/projects.yml`、`_pages/projects.md`
 
 
 ---
