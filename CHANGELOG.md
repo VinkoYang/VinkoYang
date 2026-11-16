@@ -38,6 +38,7 @@ git push origin source --tags
 
 ## [待发布]
 
+- fix: 首页侧栏恢复 Visitor Map（mapmyvisitors，原样还原 99f127d 删除的 `_includes/sidebar.html` 段落，含深浅色主题切换重载逻辑）
 
 
 ---
