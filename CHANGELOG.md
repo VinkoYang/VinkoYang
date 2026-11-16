@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v3.1.1**（`source` 分支，已发布，2026-11-08）。
+**当前版本：v3.1.2**（`source` 分支，已发布，2026-11-15）。
 
 ## 两份日志，别混
 
@@ -45,6 +45,10 @@ git push origin source --tags
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [3.1.2] - 2026-11-15
+
+**NAMRC 55 投稿与 AR Beam 开源工具上线。** News 加 NAMRC 55 投稿（2026-11-13，只写 submitted）；Research 加论文项目（focus 2 + 4，摘要据投稿摘要，带 YouTube demo 和 GitHub，占位 post published: false）；Projects 加 AR Beam Learning Module 卡片（GitHub、Zenodo v1.0.0、demo），Projects 页导语不再写“学术研究之外”；CV Master Thesis Committee 加 Jannatul Hur。
 
 ### [3.1.1] - 2026-11-08
 

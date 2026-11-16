@@ -8,6 +8,13 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "3.1.2"
+  date: 2026-11-15
+  changes:
+    - "News and Research now include our NAMRC 55 submission on spatially registered beam analysis in mixed reality."
+    - "The Projects page lists the open-source AR Beam Learning Module for Meta Quest 3S, with links to the code and a demo video."
+    - "The CV lists one more master's thesis committee."
+
 - version: "3.1.1"
   date: 2026-11-08
   changes:

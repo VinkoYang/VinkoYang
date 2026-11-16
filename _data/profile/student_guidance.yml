@@ -48,6 +48,15 @@ master_thesis_committee:
     email: "mrahman152@lamar.edu"
     advisor: "Xinyu Liu"
     note: "Robotics research on the TurtleBot and Dobot Magician platforms."
+  - name: "Jannatul Hur"
+    degree: "M.S. Industrial Engineering"
+    institution: "Lamar University"
+    year_start: 2026
+    year_end: 2026
+    # 以下字段 CV 不渲染，纯数据记录
+    advisor: "Yueqing Li"
+    thesis: "Enhancing Learning Efficiency and Ergonomic Well-Being: A Comparative Study of Handwritten, AI-Assisted and Digital Structured Note-Taking"
+    defense_passed: "2026-11-09"
 
 # Senior Design (capstone) teams mentored as faculty mentor — CV only
 # ("Student Guidance" section). The instructor of record is a separate person;
