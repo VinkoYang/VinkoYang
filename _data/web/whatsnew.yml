@@ -8,6 +8,11 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "3.1.3"
+  date: 2026-11-18
+  changes:
+    - "The Visitor Map is back in the home page sidebar."
+
 - version: "3.1.2"
   date: 2026-11-15
   changes:
