@@ -16,7 +16,7 @@ hero_slides:
     alt: "The Husky mobile robot in the open floor area"
   - src: images/lab/environment/lab_space_5.jpg
     alt: "Haas mini mill, studio lights, and the xArm 6 at the front of the lab"
-description: "The XRAI Lab at Lamar University: research focus, team, how to join, and the robots, XR headsets, and cameras we use for extended reality, AI, and robotics research."
+description: "The XRAI Lab at Lamar University: research focus, how to join, and the robots, XR headsets, and cameras we use for extended reality, AI, and robotics research."
 ---
 # XRAI Lab
 
@@ -63,7 +63,21 @@ Through interdisciplinary innovation, the XRAI Lab redefines how intelligent sys
 {% endfor %}
 </div>
 
-{% include lab_team.html %}
+## Join the Lab
+
+We are recruiting students for two degree paths in Industrial Engineering at Lamar University:
+
+- **Doctor of Engineering (D.E.) in Industrial Engineering**
+- **Master's degree, thesis option**
+
+You will fit in well if you **use AI tools** in your work, **can code**, and have experience with any of **Unity, ROS 2, Python**, or **user studies**.
+
+There are **no funded (RA) positions** at this time. Admission to either program goes through Lamar University's graduate application.
+
+If you would like to work with the XRAI Lab, email <a href="mailto:{{ site.email }}?subject=Prospective%20student%20-%20XRAI%20Lab">{{ site.email }}</a> with:
+
+1. your **CV**, and
+2. a short description of a **research idea** you want to pursue — ideally connected to one of the [research focus areas](#research-focus) above.
 
 ## Recent Research
 

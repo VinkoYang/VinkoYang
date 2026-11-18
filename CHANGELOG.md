@@ -38,6 +38,7 @@ git push origin source --tags
 
 ## [待发布]
 
+- **Team 从 Lab 页拆回独立 `/team/`。** Lab 页太长。`_includes/lab_team.html` 内容搬回 `_pages/team.md`（gridlay，不再是 redirect 存根），include 删除；页内标题随 h1 上提一级（组名 h3→h2，`pi-name` / `team-name` h4→h3，`team_card.html` 同步），保证 heading-order 连续。Join the Lab 留在 Lab 页原位（footer 与首页都链 `/lab/#join-the-lab`）。导航 `_config.yml` 在 lab 后加回 team（9 → 10 项）；首页 "team" 链接改指 `/team/`；Lab 页 description 去掉 "team"；`people.yml`、`_a11y.scss` 注释里的旧路径同步更新。
 
 
 ---
