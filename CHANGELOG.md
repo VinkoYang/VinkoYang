@@ -42,6 +42,7 @@ git push origin source --tags
 - **文章封面字段 `cover`。** front matter 写 `cover: "blog/xxx.webp"`(路径从 `/images/` 起)。列表页和 `_layouts/post.html` 都读它，文章页在 tag 下方、正文上方显示 16:9 封面图；`head.html` 原本就用 `page.cover` 生成 og:image。9 篇设备教程先用 `images/lab/equip_*` 实拍图。其余 20 篇的 Gemini prompt 在 `docs/blog-cover-prompts.md`。
 - **博客浏览数和点赞数。** 新增 Cloudflare Worker `workers/post-stats/`(D1 存储，SQL 原子加一，不用 KV 是因为 KV 读改写在并发下会丢计数)。接口：`GET /stats` 返回所有文章的 views/likes，`POST /view` 计一次浏览(同一 IP 同一篇每天只算一次，IP 用带日期的加盐哈希存，不能跨天关联，cron 每天清理)，`POST /like` 点赞/取消(浏览器 localStorage 里的随机 UUID 作身份，同一 IP 同一篇每天最多 5 个赞)。只接受本站 Origin 的 POST。前端 `assets/js/post-stats.js`(不进 esbuild 包，只在博客页加载)：列表卡片摘要下显示眼睛/心形图标和数字，文章页正文末尾加点赞按钮(`aria-pressed`，44px 高)和浏览数。`_config.yml` 新增 `post_stats.endpoint`，为空时这些元素完全不渲染(Liquid 里空字符串算真，所以判断写成 `endpoint and endpoint != ""`)；Worker 不可达时也保持隐藏。`workers` 加入 Jekyll `exclude`。部署步骤见 `workers/post-stats/README.md`。
 - **计数服务上线。** Worker 部署到新的 Cloudflare 账号，地址 `https://post-stats.vinko-w-yang.workers.dev`，`_config.yml` 的 `post_stats.endpoint` 已填，`wrangler.toml` 换成新账号的 D1 `database_id`。线上测过浏览、点赞、取消点赞、外站 403、CORS 预检，测试数据已清空。
+- **文章页标题下也显示浏览数和点赞数。** `_layouts/post.html` 的 `.post-meta` 行末加 `[data-post-stats-top]`(眼睛/心形图标和数字，心形是跳到文末点赞按钮的锚点)，`post-stats.js` 同时更新顶部和文末两处，原来只在文末，打开文章第一屏看不到。
 
 
 ---

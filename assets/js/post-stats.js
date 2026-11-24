@@ -54,6 +54,8 @@
     // Single post: count the view, then wire the like button
     var box = document.querySelector('[data-post-stats]');
     if (!box) return;
+    var top = document.querySelector('[data-post-stats-top]');
+    var roots = top ? [box, top] : [box];
     var path = box.getAttribute('data-path');
     var btn = box.querySelector('.post-like');
     var likedKey = 'ps-liked:' + path;
@@ -61,14 +63,13 @@
 
     function render(liked) {
       btn.setAttribute('aria-pressed', liked ? 'true' : 'false');
-      setText(box, 'likes', likes);
+      roots.forEach(function (r) { setText(r, 'likes', likes); });
     }
 
     post('/view', { path: path }).then(function (s) {
       likes = s.likes;
-      setText(box, 'views', s.views);
+      roots.forEach(function (r) { setText(r, 'views', s.views); r.hidden = false; });
       render(store(likedKey) === '1');
-      box.hidden = false;
     }).catch(function () {});
 
     btn.addEventListener('click', function () {

@@ -242,3 +242,34 @@
     &:disabled { cursor: progress; }
   }
 }
+
+// Same counts in the post meta line under the title
+.post-meta-stats {
+  &[hidden] { display: none; }
+
+  > span,
+  .post-meta-likes {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-right: var(--space-3);
+    vertical-align: middle;
+    color: inherit;
+    text-decoration: none;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .post-meta-likes:hover { color: var(--accent); }
+
+  svg {
+    width: 1em;
+    height: 1em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+.post-like { scroll-margin-top: 50vh; }
