@@ -38,6 +38,7 @@ git push origin source --tags
 
 ## [待发布]
 
+- fix: 撤回 3.3.0 的超宽屏放大。`--container-max` 在 ≥1800px 时长到 70vw(2560 下 1792px)，但正文 65ch、Blog/Research 列表 1052px、卡片内文字都另有上限，结果每页内容挤在左半边，卡片右半空白，导航栏和正文不对齐。现在所有屏幕都是 1100px 居中。`_wide.scss` 只留视频两列；删掉宽屏下的 65ch 段落上限、首页网格/软件卡/四列研究、实验室幻灯片 21:9、视频框改写；`.blog-list` / `.research-feed` 的 `max-width` 已等于容器宽度，删掉。2560 下用 puppeteer 截图逐页核对。
 
 ---
 

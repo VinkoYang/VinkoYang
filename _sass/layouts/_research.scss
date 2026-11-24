@@ -184,8 +184,6 @@
   display: flex;
   flex-direction: column;
   margin-top: var(--space-6);
-  // Same cap as .blog-list: on wide screens the text stays next to the cover.
-  max-width: var(--reading-max, 1052px);
 }
 
 .research-row {

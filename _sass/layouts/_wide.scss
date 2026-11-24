@@ -1,60 +1,14 @@
 // =============================================================
-// Wide and ultrawide screens (viewport >= 1800px)
+// Wide screens (viewport >= 1800px)
 // =============================================================
-// At this width --container-max grows past 1100px (base/_variables.scss).
-// Everything that only makes sense in the wider container lives here, so the
-// breakpoint is in one place and nothing below 1800px is affected. Imported
-// after the other layouts so these rules win at equal specificity.
+// The container stays 1100px on every screen (base/_variables.scss), so only
+// rules that are a deliberate choice for big monitors belong here. v3.3.0 put
+// a widening container plus per-page patches in this file; they left the text
+// in the left half of each page and were removed.
 
 $wide: 1800px;
-$ultrawide: 2400px;
-
-// Reading measure: ~65ch is ~100 characters per line in this font. Several
-// blocks set `max-width: none` because the 1100px container already kept
-// them short; in the wider container they need the cap back.
-$measure: 65ch;
 
 @media (min-width: $wide) {
-
-  .section-card p,
-  .section-card li,
-  .rf-desc,
-  .rr-abstract,
-  .labnews-slide-summary,
-  .news-timeline .news-item,
-  .home-software-card-body p {
-    max-width: $measure;
-  }
-
-  // Citations are scanned rather than read; allow a longer line.
-  .text-justify {
-    max-width: 100ch;
-  }
-
-  // ---- Home ------------------------------------------------------
-  .home-grid {
-    grid-template-columns: minmax(0, 1fr) clamp(340px, 20%, 420px);
-  }
-
-  .home-software-card {
-    grid-template-columns: clamp(200px, 22%, 380px) 1fr;
-  }
-
-  // ---- Lab -------------------------------------------------------
-  // A full-width 16:9 photo or video would be taller than the screen.
-  .labnews-slide img {
-    aspect-ratio: 21 / 9;
-    max-height: 58vh;
-  }
-
-  // The base rule sizes the box with padding-bottom, which tracks the
-  // parent's width and ignores max-width; switch to aspect-ratio here.
-  .rr-video-wrap {
-    height: auto;
-    padding-bottom: 0;
-    aspect-ratio: 16 / 9;
-    max-width: calc(60vh * 16 / 9);
-  }
 
   // ---- Videos ----------------------------------------------------
   // Two per row (approved). Titles reserve two lines so the paired
@@ -66,12 +20,5 @@ $measure: 65ch;
 
   .video-card-v .video-card-v-title {
     min-height: calc(2 * 1.4em);
-  }
-}
-
-@media (min-width: $ultrawide) {
-  // Home recent research: 2x2 thumbnails would be taller than the screen.
-  .home-projects-grid {
-    grid-template-columns: repeat(4, 1fr);
   }
 }
