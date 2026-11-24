@@ -38,6 +38,7 @@ git push origin source --tags
 
 ## [待发布]
 
+- **Research 加 6 个项目卡片。** `_data/web/research.yml` 追加 RADAR（IROS 2024，paper 链 IEEE，摘要据 bib abstract 压缩）、Kyozo Link（Rafiul，LLM + Dobot + coding agent）、VR Force Visualization（KIT IPEK 合作）、DRIFT（淡水贻贝生境筛查）、VR Student Retention（Boyett 项目）、Spoken Feedback from Small Local LMs（Rezwanul，IISE 2027 线）。摘要据各项目 README / plan，进行中的不报结果；end_date 为估计，yml 里注释标出；image 留空走占位图标。每个卡片配 `published: false` 占位 post（`_posts/`）。`assets/ref.bib` 的 yang2024radar 加 `project` 字段，Publications 页出 Project 按钮回链 Research 卡片。
 
 
 ---
