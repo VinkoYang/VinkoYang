@@ -48,7 +48,7 @@ analytics:
 # Blog view / like counts — Cloudflare Worker in workers/post-stats.
 # Empty endpoint = counts and like button are not rendered at all.
 post_stats:
-  endpoint: ""
+  endpoint: "https://post-stats.vinko-w-yang.workers.dev"
 
 # ============================================================
 # STEP 4: Choose Your Pages (comment out any you don't need)

@@ -41,6 +41,7 @@ git push origin source --tags
 - **Blog 列表改成 Medium 式横向卡片。** 原来标题只是一个和正文同字号的加粗链接，夹在日期、分类胶囊和 4–6 个 tag 胶囊中间不显眼。`_pages/blogs.md` 改成：左侧文字栏依次为「日期 · 分类」灰色小字、Quattrocento 1.375rem 加粗标题(`<h2>`)、两行摘要(`description` 优先，否则取首段；首段是标题的不显示)。列表页去掉 tag 胶囊，去掉外层 `.section-card`，行内样式移到新文件 `_sass/layouts/_blog.scss`。整卡可点，hover 时标题变蓝、封面微放大(尊重 reduced-motion)，右侧 16:9 封面。≤640px 时封面缩成 120px 宽，仍在右侧。宽屏下 `.blog-list` 限宽 `var(--reading-max, 1052px)`，和普通屏一样，封面不会被推到最右边、和文字分开。没有封面的文章显示米色占位，上面是分类名加一条蓝色短线，所有卡片的封面位对齐。
 - **文章封面字段 `cover`。** front matter 写 `cover: "blog/xxx.webp"`(路径从 `/images/` 起)。列表页和 `_layouts/post.html` 都读它，文章页在 tag 下方、正文上方显示 16:9 封面图；`head.html` 原本就用 `page.cover` 生成 og:image。9 篇设备教程先用 `images/lab/equip_*` 实拍图。其余 20 篇的 Gemini prompt 在 `docs/blog-cover-prompts.md`。
 - **博客浏览数和点赞数。** 新增 Cloudflare Worker `workers/post-stats/`(D1 存储，SQL 原子加一，不用 KV 是因为 KV 读改写在并发下会丢计数)。接口：`GET /stats` 返回所有文章的 views/likes，`POST /view` 计一次浏览(同一 IP 同一篇每天只算一次，IP 用带日期的加盐哈希存，不能跨天关联，cron 每天清理)，`POST /like` 点赞/取消(浏览器 localStorage 里的随机 UUID 作身份，同一 IP 同一篇每天最多 5 个赞)。只接受本站 Origin 的 POST。前端 `assets/js/post-stats.js`(不进 esbuild 包，只在博客页加载)：列表卡片摘要下显示眼睛/心形图标和数字，文章页正文末尾加点赞按钮(`aria-pressed`，44px 高)和浏览数。`_config.yml` 新增 `post_stats.endpoint`，为空时这些元素完全不渲染(Liquid 里空字符串算真，所以判断写成 `endpoint and endpoint != ""`)；Worker 不可达时也保持隐藏。`workers` 加入 Jekyll `exclude`。部署步骤见 `workers/post-stats/README.md`。
+- **计数服务上线。** Worker 部署到新的 Cloudflare 账号，地址 `https://post-stats.vinko-w-yang.workers.dev`，`_config.yml` 的 `post_stats.endpoint` 已填，`wrangler.toml` 换成新账号的 D1 `database_id`。线上测过浏览、点赞、取消点赞、外站 403、CORS 预检，测试数据已清空。
 
 
 ---

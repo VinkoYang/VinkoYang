@@ -9,7 +9,7 @@ ALLOWED_ORIGINS = "https://wenhaoyang.com,https://www.wenhaoyang.com,http://loca
 [[d1_databases]]
 binding = "DB"
 database_name = "post-stats"
-database_id = "1c406fb0-7e44-4529-9dca-8a113a93da30"
+database_id = "245a59cc-9ac2-4b78-a851-502c24e7baa9"
 migrations_dir = "migrations"
 
 # Daily cleanup of the view de-duplication table
