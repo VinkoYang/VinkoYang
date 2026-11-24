@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v3.2.0**（`source` 分支，已发布，2026-11-18）。
+**当前版本：v3.2.1**（`source` 分支，已发布，2026-11-24）。
 
 ## 两份日志，别混
 
@@ -38,8 +38,6 @@ git push origin source --tags
 
 ## [待发布]
 
-- **Research 加 6 个项目卡片。** `_data/web/research.yml` 追加 RADAR（IROS 2024，paper 链 IEEE，摘要据 bib abstract 压缩）、Kyozo Link（Rafiul，LLM + Dobot + coding agent）、VR Force Visualization（KIT IPEK 合作）、DRIFT（淡水贻贝生境筛查）、VR Student Retention（Boyett 项目）、Spoken Feedback from Small Local LMs（Rezwanul，IISE 2027 线）。摘要据各项目 README / plan，进行中的不报结果；end_date 为估计，yml 里注释标出；image 留空走占位图标。每个卡片配 `published: false` 占位 post（`_posts/`）。`assets/ref.bib` 的 yang2024radar 加 `project` 字段，Publications 页出 Project 按钮回链 Research 卡片。
-- **撤下 KIT IPEK 卡片，修 Research 页无图卡片的布局 bug。** KIT 那条（ICED27 双盲，截稿 2026-12-07）从 `research.yml` 删掉，占位 post 一并删除，录用后再加。bug 原因：`_pages/research.md` 无图分支那行 `<div ...><i></i></div>` 被 kramdown 当 markdown 解析，`</div>` 被转义成文本，div 不闭合，后面整页布局塌掉（以前每张卡都有图，这个分支没被触发过）。改成无图时也走 `card_media.html`，用新加的通用占位图 `images/research/placeholder.svg`。新卡片配图：RADAR 取 IROS graphical abstract 的实拍面板，DRIFT 取 Unity 河道渲染截图，Retention 取场景原型 pptx 里的 Unity 截图，Spoken Feedback 取 10-21 demo 视频 115 s 一帧的右侧裁切（avatar + UR 机械臂，避开带 exam / score 字样的屏幕和字幕）；Kyozo 只有文字密集的架构图，暂用占位图。
 
 
 ---
@@ -47,6 +45,10 @@ git push origin source --tags
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [3.2.1] - 2026-11-24
+
+**Research 加 5 个项目。** RADAR、Kyozo Link、DRIFT、VR Student Retention、Spoken Feedback from Small Local LMs，各配一个 `published: false` 的占位 post。RADAR 的 bib 加了 `project` 回链。KIT IPEK 卡片因为 ICED27 双盲评审先不放。顺手修了 `research.md` 里「没有图」那条分支的 bug：`</div>` 被 kramdown 转义，导致卡片不闭合。现在没有图时也走 `card_media`，显示通用占位图 `placeholder.svg`。
 
 ### [3.2.0] - 2026-11-18
 
