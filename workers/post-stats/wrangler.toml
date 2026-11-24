@@ -1,0 +1,17 @@
+# Blog view and like counter for wenhaoyang.com (see README.md in this folder).
+name = "post-stats"
+main = "src/index.js"
+compatibility_date = "2026-11-01"
+
+[vars]
+ALLOWED_ORIGINS = "https://wenhaoyang.com,https://www.wenhaoyang.com,http://localhost:4000,http://127.0.0.1:4000"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "post-stats"
+database_id = "1c406fb0-7e44-4529-9dca-8a113a93da30"
+migrations_dir = "migrations"
+
+# Daily cleanup of the view de-duplication table
+[triggers]
+crons = ["17 3 * * *"]

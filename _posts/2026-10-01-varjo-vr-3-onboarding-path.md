@@ -3,6 +3,7 @@ layout: post
 title: "Getting Started with the Varjo VR-3"
 date: 2026-10-01
 categories: ["Teaching & Learning"]
+cover: "lab/equip-Varjo-VR-3.png"
 tags: ["equipment", "varjo", "virtual-reality", "eye-tracking", "tutorial"]
 equipment_id: varjo-vr-3
 ---

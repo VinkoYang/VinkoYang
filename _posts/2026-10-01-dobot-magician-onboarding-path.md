@@ -3,6 +3,7 @@ layout: post
 title: "Getting Started with the Dobot Magician"
 date: 2026-10-01
 categories: ["Teaching & Learning"]
+cover: "lab/equip_dobot_magician.jpg"
 tags: ["equipment", "dobot", "robot-arm", "robotics", "education", "tutorial"]
 equipment_id: dobot-magician-robotic-arm
 ---

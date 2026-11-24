@@ -22,27 +22,39 @@ description: "Guides by Wenhao Yang for new researchers: lab equipment onboardin
   <a href="#" class="chip chip-muted" data-filter="Opinions & Dialogue">Opinions & Dialogue</a>
 </div>
 
-<div class="section-card" markdown="0">
+<div class="blog-list" markdown="0">
 {% for post in site.posts %}
-<div class="news-item" data-category="{{ post.categories | join: ',' }}" style="padding: 1rem 0; border-bottom: 1px solid var(--border-color);">
-<span class="news-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-{% if post.last_modified_at and post.last_modified_at != post.date %}&nbsp;&middot;&nbsp;<span class="text-muted" style="font-size:0.78rem;">Updated {{ post.last_modified_at | date: "%b %-d, %Y" }}</span>{% endif %}
-{% if post.categories %}&nbsp;&middot;&nbsp;<span class="chip chip-muted" style="font-size:0.7rem; padding:0.15rem 0.6rem;">{{ post.categories | join: ", " }}</span>{% endif %}
-<br>
-<a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" style="font-weight: 600;">{{ post.title }}</a>
-{% if post.tags %}
-<div style="margin-top: 0.4rem;">
-{% for tag in post.tags %}<span class="chip chip-muted" style="font-size:0.68rem; padding:0.1rem 0.55rem; margin-right:0.3rem;">#{{ tag }}</span>{% endfor %}
-</div>
-{% endif %}
-</div>
+{%- assign excerpt = post.description -%}
+{%- unless excerpt -%}{%- unless post.excerpt contains "<h" -%}{%- assign excerpt = post.excerpt -%}{%- endunless -%}{%- endunless -%}
+<article class="blog-card" data-category="{{ post.categories | join: ',' }}">
+  <div class="blog-card-body">
+    <p class="blog-card-meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>{% if post.categories %}<span class="bc-dot" aria-hidden="true">&middot;</span>{{ post.categories | join: ", " }}{% endif %}</p>
+    <h2 class="blog-card-title"><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+    {%- if excerpt %}
+    <p class="blog-card-excerpt">{{ excerpt | strip_html | strip_newlines | normalize_whitespace }}</p>
+    {%- endif %}
+    {%- if site.post_stats.endpoint and site.post_stats.endpoint != "" %}
+    <p class="blog-card-stats" data-stats-path="{{ post.url }}" hidden>
+      <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><span data-stat="views">0</span><span class="sr-only"> views</span></span>
+      <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></svg><span data-stat="likes">0</span><span class="sr-only"> likes</span></span>
+    </p>
+    {%- endif %}
+  </div>
+  <div class="blog-card-cover">
+    {%- if post.cover -%}
+    <img src="{{ post.cover | prepend: '/images/' | prepend: site.baseurl | prepend: site.url }}" alt="" width="1600" height="900" loading="lazy" decoding="async">
+    {%- else -%}
+    <span class="blog-card-cover-fallback" aria-hidden="true"><span>{{ post.categories.first }}</span></span>
+    {%- endif -%}
+  </div>
+</article>
 {% endfor %}
 </div>
 
 <script>
 (function () {
   var buttons = document.querySelectorAll('#blogFilter .chip');
-  var items = document.querySelectorAll('.news-item[data-category]');
+  var items = document.querySelectorAll('.blog-card[data-category]');
   buttons.forEach(function (btn) {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
@@ -60,6 +72,9 @@ description: "Guides by Wenhao Yang for new researchers: lab equipment onboardin
   });
 })();
 </script>
+{% if site.post_stats.endpoint and site.post_stats.endpoint != "" %}
+<script src="{{ site.baseurl }}/assets/js/post-stats.js" data-endpoint="{{ site.post_stats.endpoint }}" defer></script>
+{% endif %}
 {% else %}
 <p class="text-muted">No blog posts yet.</p>
 {% endif %}

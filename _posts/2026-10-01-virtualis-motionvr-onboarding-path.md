@@ -3,6 +3,7 @@ layout: post
 title: "Getting Started with the Virtualis MotionVR Station"
 date: 2026-10-01
 categories: ["Teaching & Learning"]
+cover: "lab/equip_virtrualis.jpeg"
 tags: ["equipment", "virtualis", "motionvr", "balance", "posturography", "virtual-reality", "tutorial"]
 equipment_id: virtualis-motionvr-station
 ---

@@ -3,6 +3,7 @@ layout: post
 title: "Getting Started with the UFACTORY xArm 6"
 date: 2026-10-01
 categories: ["Teaching & Learning"]
+cover: "lab/equip_xarm6.jpg"
 tags: ["equipment", "xarm6", "cobot", "robotics", "collaborative-robot", "tutorial"]
 equipment_id: ufactory-xarm-6
 ---

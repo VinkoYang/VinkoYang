@@ -3,6 +3,7 @@ layout: post
 title: "Getting Started with the UR10e Cobot"
 date: 2026-09-24
 categories: ["Teaching & Learning"]
+cover: "lab/equip_ur10e.jpg"
 tags: ["equipment", "ur10e", "cobot", "robotics", "collaborative-robot", "tutorial"]
 equipment_id: universal-robots-ur10e
 ---
