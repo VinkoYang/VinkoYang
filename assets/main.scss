@@ -54,6 +54,7 @@ $baseurl: "{{ site.url }}{{ site.baseurl }}";
 @import "layouts/lab";
 @import "layouts/equipment_accessories";
 @import "layouts/videos";
+@import "layouts/wide";
 
 // Utilities
 @import "utilities/dark-mode";

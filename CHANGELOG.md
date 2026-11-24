@@ -38,11 +38,21 @@ git push origin source --tags
 
 ## [待发布]
 
+- **超宽屏自适应。** 原来 `--container-max` 写死 1100px，3440 宽的屏上内容只占中间约 1/3。`_sass/base/_variables.scss` 加媒体查询：视口 ≥ 1800px 时 `--container-max: clamp(1100px, 70vw, 1920px)`(1800→1260，2560→1792，3440→1920 封顶；试过 2200，一行看不过来)，1800 以下不变。header/footer/页面容器都读这个变量。新加 `--reading-max`(= 1100px 容器的内容宽 1052px，断点两侧一致)，`.post-wrapper` 改用它，博客/实验室新闻/研究详情页不被拉宽。宽屏专用的规则全部集中在新文件 `_sass/layouts/_wide.scss`(断点 `$wide: 1800px`，首页 4 列用 `$ultrawide: 2400px`)：
+  - 文字行宽：`.section-card p/li`、Lab 的 `.rf-desc` `.rr-abstract`、轮播字幕、news timeline、首页 software 卡片正文原来是 `max-width: none`，宽屏下每行 260–350 字，统一限 65ch(这个字体约 100 字)；Publications 引文限 100ch。
+  - Projects：两列竖版卡片，上面 16:9 图、下面文字(和 ≤640px 窄屏的堆叠方式相同)。试过横版卡片两列(难看)、横版一行一张加右侧栏(右边空)，最后定这个。正文 `flex: 1` 撑满格子，链接行沿用 `margin-top: auto`，同一排的按钮底部对齐。
+  - 首页：边栏 `clamp(340px, 20%, 420px)`；software 卡片缩略图 22%；≥ 2400px 时 Recent Research 一行 4 张。
+  - Lab：新闻轮播 21:9、限高 58vh(轮播 JS 一个点对应一张，没改一屏两张)；`.rr-video-wrap` 原来用 padding-bottom 撑高度，max-width 不起作用，宽屏下改 `aspect-ratio` + 限宽，3440 下从约 2088×1174 降到 1536×864。
+  - Videos：两列；标题预留两行高，同排视频顶端对齐。
+- **Projects 卡片配图别扭(普通屏也生效)。** 图片列原来固定 240px 宽，而卡片被正文撑到 ~320px 高，横图被 `object-fit: cover` 裁成竖条。`_sass/layouts/_research.scss` 改成 `clamp(240px, 32%, 420px)`，1440 屏上约 336px。
+- **修老 bug：实验室新闻/研究详情页的 46rem 窄版从没生效。** `.labnews-wrapper { max-width: 46rem }` 和后面导入的 `.post-wrapper { max-width }` 同优先级，被覆盖，文章每行约 147 字。选择器改成 `.post-wrapper.labnews-wrapper`。这条普通屏也生效，这两类页面会变窄。
+- **Research 页改成和 Blog 一样的列表，图在左、文字在右。** `_pages/research.md` 的卡片换成 `.research-row`(样式在 `_sass/layouts/_research.scss` 末尾，数值照搬 `_blog.scss`)：去掉卡片边框/阴影，行间细线分隔；左侧 16:9 封面 `clamp(200px, 30%, 300px)`(图片、PDF 首页、GIF 转的视频都填满)；右侧依次为「起止年月 · 研究方向」灰色小字(年月格式 `Oct 2026`，方向名从 `research_areas.yml` 按 `focus` 取)、1.375rem 标题、作者/导师一行灰字、两行摘要 + Show more、缩小的链接按钮。关键词胶囊不再显示，搜索框改为同时匹配 `data-keywords`，Keyword 下拉筛选不变。有写作页的项目整行可点(同博客)，作者链接、链接按钮、Show more 在遮罩上层仍可单独点。宽屏下和 `.blog-list` 一样限宽 `--reading-max`，不再两列；`_wide.scss` 的两列竖版规则只剩 Projects 在用。≤640px 改成上下结构：封面全宽 16:9 在上，文字在下(左右并排时 120px 封面旁的文字太挤)。顺带修了作者行「Wenhao Yang , James Curry」逗号前多一个空格(`.research-meta span` 的 inline-flex gap 把链接和逗号隔开)，只改了这个列表里的作者行，详情页 `research_post.html` 未动。Projects 页不受影响。
 - **Blog 列表改成 Medium 式横向卡片。** 原来标题只是一个和正文同字号的加粗链接，夹在日期、分类胶囊和 4–6 个 tag 胶囊中间不显眼。`_pages/blogs.md` 改成：左侧文字栏依次为「日期 · 分类」灰色小字、Quattrocento 1.375rem 加粗标题(`<h2>`)、两行摘要(`description` 优先，否则取首段；首段是标题的不显示)。列表页去掉 tag 胶囊，去掉外层 `.section-card`，行内样式移到新文件 `_sass/layouts/_blog.scss`。整卡可点，hover 时标题变蓝、封面微放大(尊重 reduced-motion)，右侧 16:9 封面。≤640px 时封面缩成 120px 宽，仍在右侧。宽屏下 `.blog-list` 限宽 `var(--reading-max, 1052px)`，和普通屏一样，封面不会被推到最右边、和文字分开。没有封面的文章显示米色占位，上面是分类名加一条蓝色短线，所有卡片的封面位对齐。
 - **文章封面字段 `cover`。** front matter 写 `cover: "blog/xxx.webp"`(路径从 `/images/` 起)。列表页和 `_layouts/post.html` 都读它，文章页在 tag 下方、正文上方显示 16:9 封面图；`head.html` 原本就用 `page.cover` 生成 og:image。9 篇设备教程先用 `images/lab/equip_*` 实拍图。其余 20 篇的 Gemini prompt 在 `docs/blog-cover-prompts.md`。
 - **博客浏览数和点赞数。** 新增 Cloudflare Worker `workers/post-stats/`(D1 存储，SQL 原子加一，不用 KV 是因为 KV 读改写在并发下会丢计数)。接口：`GET /stats` 返回所有文章的 views/likes，`POST /view` 计一次浏览(同一 IP 同一篇每天只算一次，IP 用带日期的加盐哈希存，不能跨天关联，cron 每天清理)，`POST /like` 点赞/取消(浏览器 localStorage 里的随机 UUID 作身份，同一 IP 同一篇每天最多 5 个赞)。只接受本站 Origin 的 POST。前端 `assets/js/post-stats.js`(不进 esbuild 包，只在博客页加载)：列表卡片摘要下显示眼睛/心形图标和数字，文章页正文末尾加点赞按钮(`aria-pressed`，44px 高)和浏览数。`_config.yml` 新增 `post_stats.endpoint`，为空时这些元素完全不渲染(Liquid 里空字符串算真，所以判断写成 `endpoint and endpoint != ""`)；Worker 不可达时也保持隐藏。`workers` 加入 Jekyll `exclude`。部署步骤见 `workers/post-stats/README.md`。
 - **计数服务上线。** Worker 部署到新的 Cloudflare 账号，地址 `https://post-stats.vinko-w-yang.workers.dev`，`_config.yml` 的 `post_stats.endpoint` 已填，`wrangler.toml` 换成新账号的 D1 `database_id`。线上测过浏览、点赞、取消点赞、外站 403、CORS 预检，测试数据已清空。
 - **文章页标题下也显示浏览数和点赞数。** `_layouts/post.html` 的 `.post-meta` 行末加 `[data-post-stats-top]`(眼睛/心形图标和数字，心形是跳到文末点赞按钮的锚点)，`post-stats.js` 同时更新顶部和文末两处，原来只在文末，打开文章第一屏看不到。
+
 
 
 ---

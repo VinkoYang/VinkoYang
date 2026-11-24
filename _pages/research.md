@@ -62,15 +62,18 @@ description: "Research projects by Wenhao Yang and the XRAI Lab at Lamar Univers
 </div>
 
 {% assign sorted_research = site.data.web.research | sort: "end_date" | reverse %}
-<div class="research-list" id="researchList">
+<div class="research-feed" id="researchList">
 {% for item in sorted_research %}
 {% assign kw_joined = item.keywords | join: "|" %}
 {% assign card_start_yr = item.start_date | split: "-" | first %}
 {% if item.end_date %}{% assign card_end_yr = item.end_date | split: "-" | first %}{% else %}{% assign card_end_yr = 'now' | date: "%Y" %}{% endif %}
 {% assign card_id = item.title | slugify %}
 {% assign focus_joined = item.focus | join: "|" %}
-<div class="research-card-h" id="{{ card_id }}" data-research-searchable data-keywords="{{ kw_joined | downcase }}" data-focus="{{ focus_joined }}" data-start-year="{{ card_start_yr }}" data-end-year="{{ card_end_yr }}">
-<div class="research-card-h-img">
+{% assign project_post = site.posts | where: "project_id", card_id | first %}
+{% assign focus_names = "" %}
+{% for f in item.focus %}{% assign _area = site.data.web.research_areas | where: "id", f | first %}{% if _area %}{% if focus_names != "" %}{% assign focus_names = focus_names | append: ", " %}{% endif %}{% assign focus_names = focus_names | append: _area.name %}{% endif %}{% endfor %}
+<article class="research-row" id="{{ card_id }}" data-research-searchable data-keywords="{{ kw_joined | downcase }}" data-focus="{{ focus_joined }}" data-start-year="{{ card_start_yr }}" data-end-year="{{ card_end_yr }}">
+<div class="research-row-cover">
 {% if item.image and item.image != "" %}
   {% if item.image contains ".pdf" %}
 <canvas class="research-card-pdf" data-pdf="{{ site.url }}{{ site.baseurl }}/images/{{ item.image }}"></canvas>
@@ -81,23 +84,19 @@ description: "Research projects by Wenhao Yang and the XRAI Lab at Lamar Univers
 {% include card_media.html image="research/placeholder.svg" alt=item.title %}
 {% endif %}
 </div>
-<div class="research-card-h-body">
-{% assign project_post = site.posts | where: "project_id", card_id | first %}
-<h3 class="research-card-h-title">{% if project_post %}<a href="{{ site.url }}{{ site.baseurl }}{{ project_post.url }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</h3>
-{% if item.authors or item.mentors or item.start_date %}
-<div class="research-meta">
+<div class="research-row-body">
+{% if item.start_date or focus_names != "" %}
+<p class="research-row-meta">{% if item.start_date %}<span>{{ item.start_date | append: "-01" | date: "%b %Y" }} &ndash; {% if item.end_date %}{{ item.end_date | append: "-01" | date: "%b %Y" }}{% else %}Present{% endif %}</span>{% endif %}{% if focus_names != "" %}<span class="research-row-focus">{% if item.start_date %}<span class="bc-dot" aria-hidden="true">&middot;</span>{% endif %}{{ focus_names }}</span>{% endif %}</p>
+{% endif %}
+<h3 class="research-row-title">{% if project_post %}<a href="{{ site.url }}{{ site.baseurl }}{{ project_post.url }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</h3>
+{% if item.authors or item.mentors %}
+<div class="research-meta research-row-people">
 {% include research_people.html people=item.authors icon="fa-solid fa-user" %}
 {% include research_people.html people=item.mentors icon="fa-solid fa-graduation-cap" %}
-{% if item.start_date %}<span><i class="fa-regular fa-calendar"></i> {{ item.start_date }}{% if item.end_date %} &ndash; {{ item.end_date }}{% else %} &ndash; Present{% endif %}</span>{% endif %}
 </div>
 {% endif %}
-{% if item.keywords %}
-<div class="research-card-h-keywords">
-{% for kw in item.keywords %}<span class="research-kw">{{ kw }}</span>{% endfor %}
-</div>
-{% endif %}
-<div class="research-card-h-desc" data-clamp>
-<p class="research-card-h-abstract js-clamp-text" id="{{ card_id }}-abstract">{{ item.abstract }}</p>
+<div class="research-row-desc" data-clamp>
+<p class="research-row-abstract js-clamp-text" id="{{ card_id }}-abstract">{{ item.abstract }}</p>
 <button type="button" class="js-clamp-toggle" aria-expanded="false" aria-controls="{{ card_id }}-abstract" hidden><span class="js-clamp-label">Show more</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
 </div>
 {% assign has_link = false %}
@@ -111,11 +110,11 @@ description: "Research projects by Wenhao Yang and the XRAI Lab at Lamar Univers
 {% if item.links.arxiv and item.links.arxiv != "" %}{% assign has_link = true %}{% endif %}
 {% if item.links.supplementary and item.links.supplementary != "" %}{% assign has_link = true %}{% endif %}
 {% if has_link %}
-<div class="research-card-h-links">{% include research_links.html links=item.links %}
+<div class="research-row-links">{% include research_links.html links=item.links %}
 </div>
 {% endif %}
 </div>
-</div>
+</article>
 {% endfor %}
 </div>
 
@@ -130,8 +129,9 @@ description: "Research projects by Wenhao Yang and the XRAI Lab at Lamar Univers
   function applyFilters() {
     var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
     cards.forEach(function (card) {
-      var text = card.textContent.toLowerCase();
+      // Keyword chips are not shown in the row, so match data-keywords too.
       var kwAttr = card.getAttribute('data-keywords') || '';
+      var text = card.textContent.toLowerCase() + ' ' + kwAttr;
       var kwArr = kwAttr.split('|').map(function (k) { return k.trim(); });
       var focusAttr = card.getAttribute('data-focus') || '';
       var focusArr = focusAttr.split('|').map(function (f) { return f.trim(); });
