@@ -8,6 +8,14 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "3.3.0"
+  date: 2026-11-24
+  changes:
+    - "The Blog is now a list with larger titles, a two-line excerpt, and a cover image for each post. Posts show view and like counts, and you can like a post at the end of the article."
+    - "Research and Projects use the same list layout, with the image on the left. Each entry shows its dates, the people involved, and a short summary that opens with Show more. On phones the image sits above the text."
+    - "On screens 1800 px wide or more, pages use more of the width, while long text keeps a readable line length. Lab news posts and research write-ups now use a narrower text column on all screens."
+    - "On phones, the home page profile card shows a larger photo with all contact links in one row."
+
 - version: "3.2.1"
   date: 2026-11-24
   changes:
