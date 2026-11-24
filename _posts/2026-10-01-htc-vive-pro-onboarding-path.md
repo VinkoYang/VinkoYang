@@ -3,7 +3,7 @@ layout: post
 title: "Getting Started with the HTC VIVE Pro and VIVE Trackers"
 date: 2026-10-01
 categories: ["Teaching & Learning"]
-cover: "lab/equip_htc_vive_pro.jpg"
+cover: "blog/equip_htc_vive_pro.webp"
 tags: ["equipment", "htc-vive", "vive-tracker", "virtual-reality", "motion-tracking", "tutorial"]
 equipment_id: htc-vive-pro
 ---

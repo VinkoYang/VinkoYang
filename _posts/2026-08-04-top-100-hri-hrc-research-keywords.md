@@ -3,6 +3,7 @@ layout: post
 title: "Top 100 HRI & HRC Research Keywords"
 date: 2026-08-04
 categories: ["Research & Scholarship"]
+cover: "blog/top-100-hri-hrc-research-keywords.webp"
 tags: ["HRI", "HRC", "human-robot-interaction", "glossary"]
 ---
 ---

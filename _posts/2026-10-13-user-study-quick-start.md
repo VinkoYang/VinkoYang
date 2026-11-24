@@ -3,6 +3,7 @@ layout: post
 title: "A Quick Start on User Studies for XR Research"
 date: 2026-10-13
 categories: ["Teaching & Learning"]
+cover: "blog/user-study-quick-start.webp"
 tags: ["user-study", "research-methods", "experimental-design", "xr", "vr", "advising"]
 ---
 

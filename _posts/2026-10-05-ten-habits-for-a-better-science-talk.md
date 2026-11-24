@@ -3,6 +3,7 @@ layout: post
 title: "Ten Habits for a Better Science Talk"
 date: 2026-10-05
 categories: ["Teaching & Learning"]
+cover: "blog/ten-habits-for-a-better-science-talk.webp"
 tags: ["presentations", "public-speaking", "advising"]
 ---
 

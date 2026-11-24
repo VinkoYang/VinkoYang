@@ -487,7 +487,6 @@ The config file is organized into 4 numbered steps:
 | `_data/web/research_areas.yml`                      | Lab research focus areas                                  |
 | `_data/web/equipment.yml`                           | Lab equipment listing                                     |
 | `_data/web/funders.yml`                             | Funder logos                                              |
-| `_data/web/great_mathematicians_and_physicists.csv` | Table data for one blog post                              |
 
 Files under `_data/profile/` are the canonical CV data — editing them updates both the About page **and** the generated CV PDF (see `cv/README.md`). See also `_data/profile/summary.yml`, `committee_memberships.yml`, `conference_service.yml`, `student_guidance.yml`, `certifications.yml`, `memberships.yml`, which are CV-only sections not shown on the site.
 

@@ -4,6 +4,7 @@ title: "Useful Links & Resources"
 date: 2026-06-18
 last_modified_at: 2026-08-22
 categories: ["Research & Scholarship"]
+cover: "blog/links-resources.webp"
 tags: ["resources", "tools", "productivity", "research"]
 ---
 

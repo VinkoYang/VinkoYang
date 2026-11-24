@@ -3,6 +3,7 @@ layout: post
 title: "A Beginner's Guide to LLM Skills: How Language Models Learn to Act"
 date: 2026-07-17
 categories: ["Teaching & Learning"]
+cover: "blog/understanding-llm-skills.webp"
 tags: ["LLM", "AI-agents", "machine-learning", "VR-education"]
 ---
 Large language models (LLMs) started out as text predictors . You gave them a prompt, they gave you words back. But the most interesting systems being built today don't just *talk*, they *do*: they search the web, call APIs, write code, and even move through virtual environments. The bridge between "a model that talks" and "a model that acts" is what the community has started calling **LLM skills** — structured, invokable, composable units of capability that an agent can call on to get something done.

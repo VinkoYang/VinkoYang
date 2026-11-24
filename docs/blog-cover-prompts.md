@@ -19,7 +19,6 @@ Editorial flat illustration, 16:9 landscape. Warm parchment background #f8f6f1, 
 
 | # | 文章 | 文件名 | 主体 |
 |---|---|---|---|
-| 1 | Great Mathematicians and Physicists | `great-mathematicians-and-physicists` | `Subject: a brass drawing compass, a swinging pendulum, and a planetary orbit diagram drawn in ink lines, arranged like objects on an old scholar's desk.` |
 | 2 | Useful Links & Resources | `links-resources` | `Subject: a neat wooden desk organizer holding folders and bookmarks, with thin blue lines connecting each folder to small floating cards, like a map of resources.` |
 | 3 | How to Actually Read an Academic Paper | `academic-reading-training` | `Subject: an open printed research paper shown as abstract grey text blocks and a simple chart, with blue highlighter marks and margin arrows, a magnifying glass resting on it.` |
 | 4 | A Beginner's Guide to LLM Skills | `understanding-llm-skills` | `Subject: a central rounded chat-bubble shape with modular tool cards (a wrench, a magnifier, a calendar, a code bracket shape) plugging into it like puzzle pieces.` |

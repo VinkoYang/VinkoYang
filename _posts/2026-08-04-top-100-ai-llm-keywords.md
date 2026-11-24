@@ -3,6 +3,7 @@ layout: post
 title: "Top 100 High-Frequency AI Large Language Model Keywords"
 date: 2026-08-04
 categories: ["Research & Scholarship"]
+cover: "blog/top-100-ai-llm-keywords.webp"
 tags: ["AI", "LLM", "machine-learning", "glossary"]
 ---
 

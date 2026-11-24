@@ -39,6 +39,8 @@ git push origin source --tags
 ## [待发布]
 
 - fix: 撤回 3.3.0 的超宽屏放大。`--container-max` 在 ≥1800px 时长到 70vw(2560 下 1792px)，但正文 65ch、Blog/Research 列表 1052px、卡片内文字都另有上限，结果每页内容挤在左半边，卡片右半空白，导航栏和正文不对齐。现在所有屏幕都是 1100px 居中。`_wide.scss` 只留视频两列；删掉宽屏下的 65ch 段落上限、首页网格/软件卡/四列研究、实验室幻灯片 21:9、视频框改写；`.blog-list` / `.research-feed` 的 `max-width` 已等于容器宽度，删掉。2560 下用 puppeteer 截图逐页核对。
+- content: 博客封面补齐，共 27 篇有 `cover`（新增 17 篇；设备教程 10 篇从 `images/lab/` 实拍图换成 PPT 做的封面）。图放 `images/blog/<slug>.webp`，统一 1600×900 WebP q82(27 张 16 MB JPG → 1.5 MB)。源文件 `docs/blog_cover.pptx` 不进 git(15 MB，靠 OneDrive 同步)，`.gitignore` 加 `docs/*.pptx`、Office 锁文件 `~$*`、`.jekyll-metadata`。修了两处 front matter：virtualis 那篇 `---` 前误打的 `lof`，以及多个 `cover` 路径和文件名里从聊天窗口带进来的零宽空格 U+200B。
+- content: 删除博文 Great Mathematicians and Physicists 和它独用的 `_data/web/great_mathematicians_and_physicists.csv`;README 数据文件表、`docs/blog-cover-prompts.md` 里对应行一并删掉。`_includes/csv_to_table.html` 暂无引用，留着备用。
 
 ---
 

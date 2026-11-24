@@ -3,6 +3,7 @@ layout: post
 title: "Unity Version Control Tutorial & Introduction"
 date: 2026-07-17
 categories: ["Teaching & Learning"]
+cover: "blog/unity-version-control-tutorial-introduction.webp"
 tags: ["unity", "game-development", "version-control", "tutorial"]
 ---
 Unity Version Control (UVCS, formerly known as Plastic SCM) is Unity's official version control system designed specifically for game development. It excels at handling large binary files, offers high-performance collaboration, and supports both centralized and distributed workflows—making it ideal for teams of artists and programmers alike.
