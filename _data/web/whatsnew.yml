@@ -8,6 +8,13 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "3.3.1"
+  date: 2026-11-24
+  changes:
+    - "Most blog posts now have a cover image, and the equipment tutorials have new covers."
+    - "The Great Mathematicians and Physicists post has been removed."
+    - "On very wide screens, pages are back to a single centered column, so the text lines up with the menu again."
+
 - version: "3.3.0"
   date: 2026-11-24
   changes:

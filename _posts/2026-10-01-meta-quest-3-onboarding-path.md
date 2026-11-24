@@ -3,7 +3,7 @@ layout: post
 title: "Getting Started with the Meta Quest 3 and 3S"
 date: 2026-10-01
 categories: ["Teaching & Learning"]
-cover: "lab/equip-metaquest3.jpg"
+cover: "blog/equip-metaquest3.webp"
 tags: ["equipment", "meta-quest", "mixed-reality", "virtual-reality", "unity", "tutorial"]
 equipment_id: meta-quest-3-3s
 ---

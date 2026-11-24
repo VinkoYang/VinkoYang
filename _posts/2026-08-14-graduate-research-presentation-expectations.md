@@ -3,6 +3,7 @@ layout: post
 title: "Graduate Research Presentation Expectations"
 date: 2026-08-14
 categories: ["Teaching & Learning"]
+cover: "blog/graduate-research-presentation-expectations.webp"
 tags: ["presentations", "research-methods", "advising"]
 ---
 

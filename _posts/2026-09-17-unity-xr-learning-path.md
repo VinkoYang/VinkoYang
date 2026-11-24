@@ -3,6 +3,7 @@ layout: post
 title: "A Learning Path for Unity and XR Development"
 date: 2026-09-17
 categories: ["Teaching & Learning"]
+cover: "blog/unity-xr-learning-path.webp"
 tags: ["unity", "xr", "ar", "vr", "resources", "tutorial", "game-development"]
 ---
 

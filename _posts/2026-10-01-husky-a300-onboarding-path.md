@@ -3,7 +3,7 @@ layout: post
 title: "Getting Started with the Clearpath Husky A300"
 date: 2026-10-01
 categories: ["Teaching & Learning"]
-cover: "lab/equip_husky.jpg"
+cover: "blog/equip_husky.webp"
 tags: ["equipment", "husky", "mobile-manipulation", "ros2", "robotics", "tutorial"]
 equipment_id: clearpath-husky-a300-with-robot-arm
 ---

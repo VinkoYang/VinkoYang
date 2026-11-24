@@ -3,6 +3,7 @@ layout: post
 title: "Top 100 XR (AR/VR/MR) Keywords"
 date: 2026-08-04
 categories: ["Research & Scholarship"]
+cover: "blog/top-100-xr-ar-vr-mr-keywords.webp"
 tags: ["XR", "AR", "VR", "glossary"]
 ---
 ---

@@ -3,6 +3,7 @@ layout: post
 title: "Literature Search and Paper Collection: A Practical Guide for New Researchers"
 date: 2026-07-27
 categories: ["Teaching & Learning"]
+cover: "blog/literature-search-and-paper-collection.webp"
 tags: ["literature-review", "research-skills", "academic-writing", "research-methods"]
 ---
 

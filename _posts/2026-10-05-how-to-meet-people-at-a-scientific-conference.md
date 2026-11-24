@@ -3,6 +3,7 @@ layout: post
 title: "How to Meet People at a Scientific Conference"
 date: 2026-10-05
 categories: ["Teaching & Learning"]
+cover: "blog/how-to-meet-people-at-a-scientific-conference.webp"
 tags: ["conferences", "networking", "professional-development", "advising"]
 ---
 

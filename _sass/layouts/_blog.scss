@@ -6,9 +6,6 @@
   display: flex;
   flex-direction: column;
   margin-top: var(--space-6);
-  // Wide screens widen --container-max; keep the list at the normal-screen
-  // width so the cover stays next to the text instead of drifting right.
-  max-width: var(--reading-max, 1052px);
 }
 
 .blog-card {

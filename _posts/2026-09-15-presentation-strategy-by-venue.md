@@ -3,6 +3,7 @@ layout: post
 title: "Presentation Strategy by Venue: What to Show, and What to Hold Back"
 date: 2026-09-15
 categories: ["Teaching & Learning"]
+cover: "blog/presentation-strategy-by-venue.webp"
 tags: ["presentations", "conferences", "research-methods", "advising"]
 ---
 

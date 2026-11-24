@@ -3,6 +3,7 @@ layout: post
 title: "A Researcher's Guide to Target Journals and Conferences in HRI, AR/VR, and Smart Manufacturing"
 date: 2026-07-27
 categories: ["Research & Scholarship"]
+cover: "blog/target-journals-and-conferences.webp"
 tags: ["publishing", "HRI", "AR-VR", "smart-manufacturing"]
 ---
 

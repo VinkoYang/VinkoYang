@@ -9,6 +9,11 @@ node_modules/
 .worktrees/
 .claude/
 .vs/
+.jekyll-metadata
+~$*
+
+# Blog cover source deck (15 MB, synced by OneDrive); exported covers live in images/blog/
+docs/*.pptx
 
 # CV is generated from _data/profile/*.yml + assets/ref.bib at build time
 cv/cv.generated.html
