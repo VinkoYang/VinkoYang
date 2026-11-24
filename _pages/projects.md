@@ -57,36 +57,34 @@ Software I have designed and built, from open-source research tools to side proj
 </div>
 
 {% assign sorted_projects = site.data.web.projects | sort: "end_date" | reverse %}
-<div class="research-list" id="projectList">
+<div class="research-feed" id="projectList">
 {% for item in sorted_projects %}
 {% assign stack_joined = item.stack | join: "|" %}
 {% assign card_start_yr = item.start_date | split: "-" | first %}
 {% if item.end_date %}{% assign card_end_yr = item.end_date | split: "-" | first %}{% else %}{% assign card_end_yr = 'now' | date: "%Y" %}{% endif %}
 {% assign card_id = item.title | slugify %}
-<div class="research-card-h" id="{{ card_id }}" data-project-searchable data-stack="{{ stack_joined | downcase }}" data-start-year="{{ card_start_yr }}" data-end-year="{{ card_end_yr }}">
-<div class="research-card-h-img">
+{% assign writeup_url = "" %}
+{% if item.links.blog and item.links.blog != "" %}{% unless item.links.blog contains "://" %}{% assign writeup_url = item.links.blog | prepend: site.baseurl | prepend: site.url %}{% endunless %}{% endif %}
+<article class="research-row" id="{{ card_id }}" data-project-searchable data-stack="{{ stack_joined | downcase }}" data-start-year="{{ card_start_yr }}" data-end-year="{{ card_end_yr }}">
+<div class="research-row-cover">
 {% if item.image and item.image != "" %}
 <img src="{{ site.url }}{{ site.baseurl }}/images/{{ item.image }}" alt="{{ item.title }}" loading="lazy">
 {% else %}
-<div class="research-card-h-img-placeholder"><i class="fa-solid fa-laptop-code"></i></div>
+<span class="research-row-cover-fallback" aria-hidden="true"><i class="fa-solid fa-laptop-code"></i></span>
 {% endif %}
 </div>
-<div class="research-card-h-body">
-<h3 class="research-card-h-title">{{ item.title }}</h3>
-{% if item.role or item.status or item.start_date %}
-<div class="research-meta">
-{% if item.role and item.role != "" %}<span><i class="fa-solid fa-user"></i> {{ item.role }}</span>{% endif %}
-{% if item.status and item.status != "" %}<span><i class="fa-solid fa-signal"></i> {{ item.status }}</span>{% endif %}
-{% if item.start_date %}<span><i class="fa-regular fa-calendar"></i> {{ item.start_date }}{% if item.end_date %} &ndash; {{ item.end_date }}{% else %} &ndash; Present{% endif %}</span>{% endif %}
+<div class="research-row-body">
+{% if item.start_date or item.status %}
+<p class="research-row-meta">{% if item.start_date %}<span>{{ item.start_date | append: "-01" | date: "%b %Y" }} &ndash; {% if item.end_date %}{{ item.end_date | append: "-01" | date: "%b %Y" }}{% else %}Present{% endif %}</span>{% endif %}{% if item.status and item.status != "" %}<span>{% if item.start_date %}<span class="bc-dot" aria-hidden="true">&middot;</span>{% endif %}{{ item.status }}</span>{% endif %}</p>
+{% endif %}
+<h3 class="research-row-title">{% if writeup_url != "" %}<a href="{{ writeup_url }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</h3>
+{% if item.role and item.role != "" %}
+<div class="research-meta research-row-people">
+<span><i class="fa-solid fa-user"></i> {{ item.role }}</span>
 </div>
 {% endif %}
-{% if item.stack %}
-<div class="research-card-h-keywords">
-{% for tech in item.stack %}<span class="research-kw">{{ tech }}</span>{% endfor %}
-</div>
-{% endif %}
-<div class="research-card-h-desc" data-clamp>
-<p class="research-card-h-abstract js-clamp-text" id="{{ card_id }}-abstract">{{ item.abstract }}</p>
+<div class="research-row-desc" data-clamp>
+<p class="research-row-abstract js-clamp-text" id="{{ card_id }}-abstract">{{ item.abstract }}</p>
 <button type="button" class="js-clamp-toggle" aria-expanded="false" aria-controls="{{ card_id }}-abstract" hidden><span class="js-clamp-label">Show more</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
 </div>
 {% assign has_link = false %}
@@ -96,11 +94,11 @@ Software I have designed and built, from open-source research tools to side proj
 {% if item.links.docs and item.links.docs != "" %}{% assign has_link = true %}{% endif %}
 {% if item.links.blog and item.links.blog != "" %}{% assign has_link = true %}{% endif %}
 {% if has_link %}
-<div class="research-card-h-links">{% if item.links.webpage and item.links.webpage != "" %}<a href="{{ item.links.webpage }}" target="_blank" class="research-link"><i class="fa-solid fa-globe"></i> Visit site</a>{% endif %}{% if item.links.github and item.links.github != "" %}<a href="{{ item.links.github }}" target="_blank" class="research-link"><i class="fa-brands fa-github"></i> GitHub</a>{% endif %}{% if item.links.demo and item.links.demo != "" %}<a href="{{ item.links.demo }}" target="_blank" class="research-link"><i class="fa-brands fa-youtube"></i> Demo</a>{% endif %}{% if item.links.docs and item.links.docs != "" %}<a href="{{ item.links.docs }}" target="_blank" class="research-link"><i class="fa-regular fa-file-lines"></i> Docs</a>{% endif %}{% if item.links.blog and item.links.blog != "" %}{% if item.links.blog contains "://" %}<a href="{{ item.links.blog }}" target="_blank" class="research-link"><i class="fa-solid fa-pen-nib"></i> Blog post</a>{% else %}<a href="{{ site.url }}{{ site.baseurl }}{{ item.links.blog }}" class="research-link"><i class="fa-solid fa-pen-nib"></i> Blog post</a>{% endif %}{% endif %}
+<div class="research-row-links">{% if item.links.webpage and item.links.webpage != "" %}<a href="{{ item.links.webpage }}" target="_blank" class="research-link"><i class="fa-solid fa-globe"></i> Visit site</a>{% endif %}{% if item.links.github and item.links.github != "" %}<a href="{{ item.links.github }}" target="_blank" class="research-link"><i class="fa-brands fa-github"></i> GitHub</a>{% endif %}{% if item.links.demo and item.links.demo != "" %}<a href="{{ item.links.demo }}" target="_blank" class="research-link"><i class="fa-brands fa-youtube"></i> Demo</a>{% endif %}{% if item.links.docs and item.links.docs != "" %}<a href="{{ item.links.docs }}" target="_blank" class="research-link"><i class="fa-regular fa-file-lines"></i> Docs</a>{% endif %}{% if item.links.blog and item.links.blog != "" %}{% if item.links.blog contains "://" %}<a href="{{ item.links.blog }}" target="_blank" class="research-link"><i class="fa-solid fa-pen-nib"></i> Blog post</a>{% else %}<a href="{{ site.url }}{{ site.baseurl }}{{ item.links.blog }}" class="research-link"><i class="fa-solid fa-pen-nib"></i> Blog post</a>{% endif %}{% endif %}
 </div>
 {% endif %}
 </div>
-</div>
+</article>
 {% endfor %}
 </div>
 
@@ -114,8 +112,9 @@ Software I have designed and built, from open-source research tools to side proj
   function applyFilters() {
     var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
     cards.forEach(function (card) {
-      var text = card.textContent.toLowerCase();
+      // Tech chips are not shown in the row, so match data-stack too.
       var stackAttr = card.getAttribute('data-stack') || '';
+      var text = card.textContent.toLowerCase() + ' ' + stackAttr;
       var stackArr = stackAttr.split('|').map(function (s) { return s.trim(); });
       var startYr = parseInt(card.getAttribute('data-start-year') || '0', 10);
       var endYr = parseInt(card.getAttribute('data-end-year') || '9999', 10);

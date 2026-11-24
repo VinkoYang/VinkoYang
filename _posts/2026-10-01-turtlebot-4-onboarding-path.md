@@ -3,6 +3,7 @@ layout: post
 title: "Getting Started with the TurtleBot 4"
 date: 2026-10-01
 categories: ["Teaching & Learning"]
+cover: "lab/equip_turtlebot4_lab.jpg"
 tags: ["equipment", "turtlebot4", "mobile-robot", "ros2", "navigation", "tutorial"]
 equipment_id: clearpath-turtlebot-4
 ---

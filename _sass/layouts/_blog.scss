@@ -1,0 +1,275 @@
+// Blog index — Medium-style list: text on the left (date · category,
+// large bold title, two-line excerpt), 16:9 cover on the right.
+// No card chrome: items are separated by a hairline, like a reading list.
+
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--space-6);
+  // Wide screens widen --container-max; keep the list at the normal-screen
+  // width so the cover stays next to the text instead of drifting right.
+  max-width: var(--reading-max, 1052px);
+}
+
+.blog-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-6);
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--border-color);
+
+  &:first-child { padding-top: var(--space-2); }
+  &:last-child { border-bottom: none; }
+
+  // Cover: fixed 16:9 box so the list does not jump while images load.
+  .blog-card-cover {
+    flex: 0 0 clamp(200px, 30%, 300px);
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--bg-secondary);
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+  }
+
+  // No cover yet: keep the box so every title starts at the same x.
+  .blog-card-cover-fallback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    width: 100%;
+    height: 100%;
+    padding: var(--space-3);
+    box-shadow: inset 0 0 0 1px var(--border-color);
+    border-radius: inherit;
+    font-family: var(--font-display);
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    text-align: center;
+    color: var(--text-muted);
+
+    &::after {
+      content: "";
+      width: 2rem;
+      height: 2px;
+      background: var(--accent);
+    }
+  }
+
+  .blog-card-body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .blog-card-meta {
+    margin: 0;
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+
+    .bc-dot { margin: 0 0.4rem; }
+  }
+
+  .blog-card-title {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 1.375rem;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0;
+    text-transform: none;
+    text-wrap: balance;
+
+    &::after { display: none; }
+
+    a {
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+
+      // Whole card is the click target
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+      }
+
+      &:focus-visible { outline: none; }
+    }
+  }
+
+  .blog-card-excerpt {
+    margin: 0;
+    max-width: none;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &:hover {
+    .blog-card-title a { color: var(--accent); }
+    .blog-card-cover img { transform: scale(1.03); }
+  }
+
+  &:focus-within {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: var(--radius-md);
+  }
+
+  @media (max-width: 640px) {
+    gap: var(--space-4);
+    padding: var(--space-4) 0;
+
+    .blog-card-cover { flex-basis: 120px; }
+    .blog-card-cover-fallback { font-size: 0.5625rem; }
+    .blog-card-title { font-size: 1.0625rem; }
+    .blog-card-excerpt { font-size: 0.875rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .blog-card-cover img { transition: none; }
+    &:hover .blog-card-cover img { transform: none; }
+  }
+}
+
+// Single post: optional cover under the meta line
+.post-cover {
+  margin: 0 0 var(--space-8);
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-secondary);
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// View / like counts (filled by assets/js/post-stats.js; hidden until loaded)
+.blog-card .blog-card-stats {
+  display: flex;
+  gap: var(--space-4);
+  margin: var(--space-1) 0 0;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+
+  &[hidden] { display: none; }
+
+  > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+}
+
+.blog-card-stats svg,
+.post-stats svg {
+  width: 1em;
+  height: 1em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.post-stats {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  margin-top: var(--space-10);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+
+  &[hidden] { display: none; }
+
+  .post-views {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .post-like {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    padding: 0 var(--space-4);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-full);
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    font: inherit;
+    cursor: pointer;
+    transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+
+    svg { width: 1.15em; height: 1.15em; }
+
+    &:hover { color: var(--accent); border-color: var(--accent-soft); }
+    &:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    &[aria-pressed="true"] {
+      color: var(--accent);
+      border-color: var(--accent-soft);
+      background: var(--accent-light);
+
+      svg { fill: currentColor; }
+    }
+
+    &:disabled { cursor: progress; }
+  }
+}
+
+// Same counts in the post meta line under the title
+.post-meta-stats {
+  &[hidden] { display: none; }
+
+  > span,
+  .post-meta-likes {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-right: var(--space-3);
+    vertical-align: middle;
+    color: inherit;
+    text-decoration: none;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .post-meta-likes:hover { color: var(--accent); }
+
+  svg {
+    width: 1em;
+    height: 1em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+.post-like { scroll-margin-top: 50vh; }

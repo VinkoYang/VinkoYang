@@ -45,6 +45,11 @@ url: "https://wenhaoyang.com"
 analytics:
   google_id: "G-7VDC03WDXT"
 
+# Blog view / like counts — Cloudflare Worker in workers/post-stats.
+# Empty endpoint = counts and like button are not rendered at all.
+post_stats:
+  endpoint: "https://post-stats.vinko-w-yang.workers.dev"
+
 # ============================================================
 # STEP 4: Choose Your Pages (comment out any you don't need)
 # ============================================================
@@ -139,3 +144,4 @@ exclude:
   - CHANGELOG.md
   - LICENSE
   - setup.sh
+  - workers     # Cloudflare Worker source, deployed separately

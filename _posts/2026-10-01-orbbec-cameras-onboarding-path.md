@@ -3,6 +3,7 @@ layout: post
 title: "Getting Started with Our Orbbec Depth Cameras"
 date: 2026-10-01
 categories: ["Teaching & Learning"]
+cover: "lab/equip_orbbec_astra_plus_lab.jpg"
 tags: ["equipment", "orbbec", "depth-camera", "computer-vision", "ros2", "tutorial"]
 equipment_id: ["orbbec-astra-3d-camera", "orbbec-gemini-335l"]
 ---

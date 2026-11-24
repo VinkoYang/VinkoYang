@@ -48,11 +48,13 @@ $baseurl: "{{ site.url }}{{ site.baseurl }}";
 @import "layouts/grid";
 @import "layouts/home";
 @import "layouts/post";
+@import "layouts/blog";
 @import "layouts/team";
 @import "layouts/research";
 @import "layouts/lab";
 @import "layouts/equipment_accessories";
 @import "layouts/videos";
+@import "layouts/wide";
 
 // Utilities
 @import "utilities/dark-mode";

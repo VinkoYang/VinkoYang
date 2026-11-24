@@ -47,8 +47,14 @@
   --shadow-navbar: 0 1px 4px rgba(44, 42, 37, 0.1);
 
   // Layout
+  // --container-max widens on large screens (see the media query after this
+  // block). --reading-max stays fixed for long-form pages (blog posts, lab
+  // news, research write-ups), where a wider column would only push the TOC
+  // away from 68ch text. It equals the 1100px container's content box, so
+  // posts are the same width on either side of the breakpoint.
   --container-max: 1100px;
   --container-padding: 1.5rem;
+  --reading-max: calc(1100px - 2 * var(--container-padding));
 
   // Spacing scale
   --space-1: 0.25rem;
@@ -72,6 +78,17 @@
   --transition-fast: 150ms ease;
   --transition-base: 250ms ease;
   --transition-slow: 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+// Wide and ultrawide screens: grow the container with the viewport instead of
+// leaving a 1100px strip in the middle. Below 1800px nothing changes.
+// 1800px → 1260px, 2560px → 1792px, 3440px → 1920px (cap; wider than that
+// can't be read without turning your head). Per-page adjustments for the
+// wider container live in layouts/_wide.scss and use the same breakpoint.
+@media (min-width: 1800px) {
+  :root {
+    --container-max: clamp(1100px, 70vw, 1920px);
+  }
 }
 
 // Dark mode — rich warm dark

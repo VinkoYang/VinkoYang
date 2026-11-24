@@ -1,5 +1,5 @@
 // =============================================================
-// Research page — horizontal card list
+// Research and Projects pages — filters, shared metadata, list rows
 // =============================================================
 
 .research-filter-bar {
@@ -92,95 +92,6 @@
   }
 }
 
-.research-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
-  margin-top: var(--space-6);
-}
-
-.research-card-h {
-  display: flex;
-  gap: var(--space-6);
-  scroll-margin-top: calc(var(--space-6) + 70px);
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--transition-slow), transform var(--transition-slow);
-
-  .research-card-h-img {
-    flex: 0 0 240px;
-    width: 240px;
-    min-height: 180px;
-    position: relative;
-    overflow: hidden;
-    background: var(--bg-secondary);
-
-    img, video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    canvas.research-card-pdf {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      pointer-events: none;
-    }
-  }
-
-  .research-card-h-img-placeholder {
-    width: 100%;
-    height: 100%;
-    min-height: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-    color: var(--text-tertiary);
-  }
-
-  .research-card-h-body {
-    flex: 1;
-    padding: var(--space-6);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-  }
-
-  .research-card-h-title {
-    font-family: var(--font-heading);
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin: 0;
-    color: var(--text-primary);
-
-    &::after {
-      display: none;
-    }
-  }
-
-  .research-card-h-abstract {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    line-height: 1.75;
-    margin: 0;
-    max-width: none;
-  }
-}
-
 .research-meta {
   display: flex;
   flex-wrap: wrap;
@@ -262,14 +173,199 @@
   }
 }
 
-@media (max-width: 640px) {
-  .research-card-h {
-    flex-direction: column;
+// =============================================================
+// Research and Projects lists — Medium-style, same treatment as the Blog
+// index (layouts/_blog.scss) but mirrored: 16:9 cover on the left, text on
+// the right. No card chrome; rows are separated by a hairline. Phones stack
+// the cover above the text.
+// =============================================================
 
-    .research-card-h-img {
+.research-feed {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--space-6);
+  // Same cap as .blog-list: on wide screens the text stays next to the cover.
+  max-width: var(--reading-max, 1052px);
+}
+
+.research-row {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-6);
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--border-color);
+  scroll-margin-top: calc(var(--space-6) + 70px);
+
+  &:first-child { padding-top: var(--space-2); }
+  &:last-child { border-bottom: none; }
+
+  // Fixed 16:9 box so rows do not jump while media loads. Media is absolutely
+  // positioned so the PDF canvas, <img> and GIF-as-<video> all fill it alike.
+  .research-row-cover {
+    position: relative;
+    flex: 0 0 clamp(200px, 30%, 300px);
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--bg-secondary);
+
+    img, video, canvas {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    canvas { pointer-events: none; }
+  }
+
+  // Projects without an image: keep the box so titles line up.
+  .research-row-cover-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    color: var(--text-tertiary);
+  }
+
+  .research-row-body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .research-row-meta {
+    margin: 0;
+    max-width: none;
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+
+    .bc-dot { margin: 0 0.4rem; }
+  }
+
+  .research-row-title {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 1.375rem;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0;
+    text-transform: none;
+    text-wrap: balance;
+    color: var(--text-primary);
+
+    &::after { display: none; }
+
+    a {
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+
+      // Rows with a write-up are clickable as a whole, like blog cards.
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+      }
+
+      &:focus-visible { outline: none; }
+    }
+  }
+
+  // Interactive bits sit above the whole-row link overlay.
+  .js-clamp-toggle,
+  .research-row-people,
+  .research-row-links {
+    position: relative;
+    z-index: 1;
+  }
+
+  .research-row-desc { gap: var(--space-1); }
+
+  // Kramdown wraps the toggle button and each people span in a <p>.
+  .research-row-desc > p,
+  .research-row-people > p { margin: 0; }
+
+  .research-row-abstract {
+    margin: 0;
+    max-width: none;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+
+  // Blog excerpts show two lines; the toggle still opens the full abstract.
+  .js & .research-row-abstract:not(.is-expanded) {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  .research-row-people {
+    gap: var(--space-3);
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+
+    a { color: var(--text-muted); }
+
+    // Plain inline text: the inline-flex in .research-meta turns each name
+    // link into a flex item and puts a gap before the comma ("Yang , Curry").
+    span { display: inline; }
+    i { margin-right: 0.3em; }
+  }
+
+  .research-row-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    margin-top: var(--space-1);
+
+    > p { display: contents; }
+
+    .research-link {
+      padding: 2px 10px;
+      font-size: 0.78rem;
+    }
+  }
+
+  &:has(.research-row-title a):hover {
+    .research-row-title a { color: var(--accent); }
+    .research-row-cover img,
+    .research-row-cover video { transform: scale(1.03); }
+  }
+
+  &:has(.research-row-title a:focus-visible) {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: var(--radius-md);
+  }
+
+  @media (max-width: 640px) {
+    // Side by side was cramped on phones: stack a full-width cover over the text.
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-3);
+    padding: var(--space-6) 0;
+
+    .research-row-cover {
       flex: 0 0 auto;
       width: 100%;
-      height: 200px;
     }
+
+    .research-row-title { font-size: 1.1875rem; }
+    .research-row-abstract { font-size: 0.875rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .research-row-cover img,
+    .research-row-cover video { transition: none; transform: none !important; }
   }
 }
