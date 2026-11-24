@@ -40,45 +40,6 @@ $measure: 65ch;
     grid-template-columns: clamp(200px, 22%, 380px) 1fr;
   }
 
-  // ---- Projects cards --------------------------------------------
-  // The Research page no longer uses these cards: it is a blog-style list
-  // (.research-feed in layouts/_research.scss) capped at --reading-max.
-  // Two per row as vertical cards: 16:9 image on top, text below (the same
-  // stacking the cards use under 640px). Horizontal cards two per row were
-  // tried and rejected; one horizontal card per row left either very long
-  // lines or a sparse side column.
-  .research-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .research-card-h {
-    flex-direction: column;
-    gap: 0;
-
-    .research-card-h-img {
-      flex: 0 0 auto;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      min-height: 0;
-    }
-
-    .research-card-h-img-placeholder {
-      min-height: 0;
-    }
-
-    // flex: 1 lets the body fill the stretched grid cell, and the links
-    // row keeps its base `margin-top: auto`, so buttons in the same row of
-    // cards line up along the bottom.
-    .research-card-h-body {
-      padding: var(--space-6) var(--space-8) var(--space-8);
-    }
-
-    .research-card-h-abstract {
-      font-size: 0.95rem;
-    }
-  }
-
   // ---- Lab -------------------------------------------------------
   // A full-width 16:9 photo or video would be taller than the screen.
   .labnews-slide img {
