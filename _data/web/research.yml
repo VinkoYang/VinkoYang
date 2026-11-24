@@ -499,7 +499,7 @@
     github: "https://github.com/VinkoYang/AR-Beam-Stress-Analysis"
 
 - title: "RADAR: Robotics Assembly by Demonstration via Augmented Reality"
-  image: ""
+  image: "research/2024_RADAR.jpg"
   focus: [3, 4]
   start_date: "2023-09"
   end_date: "2024-11"
@@ -522,7 +522,7 @@
     bib: ""
 
 - title: "Kyozo Link: Local Language Model Robot Control Improved by a Coding Agent"
-  image: ""
+  image: "research/placeholder.svg"
   focus: [3, 5]
   start_date: "2026-10"
   end_date: "2027-05"   # 估计,进行中
@@ -545,30 +545,8 @@
     video: []
     bib: ""
 
-- title: "Visualizing Forces in Virtual Reality with Real Haptic Feedback"
-  image: ""
-  focus: [1, 3]
-  start_date: "2026-10"
-  end_date: "2027-06"   # 估计,进行中
-  authors:
-    - name: "Wenhao Yang"
-    - name: "Simon Saurbier"
-  keywords:
-    - Virtual Reality
-    - Force Visualization
-    - Haptic Feedback
-    - Human-Machine Interaction
-    - User Study
-  abstract: >
-    In the Human-Machine Symbiosis Lab (HMS-Lab) at IPEK, Karlsruhe Institute of Technology, a robot lets users feel real forces and vibrations while they work in virtual reality (VR), but the forces themselves cannot be seen. Most existing work on force visualization in VR uses visual cues to replace missing haptic feedback, while the HMS-Lab setup combines real haptic feedback with visual overlays. In this collaboration, we design visual cues for a virtual drilling task and compare how accurately and comfortably users read them. The first study focuses on the alignment angle between the drill axis and the wall normal, since holding the drill perpendicular to the wall is a common difficulty. Candidate cues include reference lines, rings with dots, and 3D arrows placed on the wall or at the drill tail. Lamar develops the cues in the HMS-Lab Unity project, and IPEK runs the user study in Germany. A second study is expected to combine the visual cues with robot-rendered haptic feedback.
-  links:
-    paper: ""
-    webpage: ""
-    video: []
-    bib: ""
-
 - title: "DRIFT: Drought Refugia Identification for Freshwater Mussels in Texas"
-  image: ""
+  image: "research/2026_DRIFT.jpg"
   focus: [1]
   start_date: "2026-08"
   end_date: "2027-05"   # 估计,进行中
@@ -590,7 +568,7 @@
     bib: ""
 
 - title: "Scripted Virtual Reality Scenes to Support Student Learning and Retention"
-  image: ""
+  image: "research/2026_RetentionVR.jpg"
   focus: [2]
   start_date: "2025-09"
   end_date: "2027-05"   # 估计,进行中
@@ -613,7 +591,7 @@
     bib: ""
 
 - title: "Spoken Feedback from Small Local Language Models in a Virtual Robotics Laboratory"
-  image: ""
+  image: "research/2026_LocalLMFeedback.jpg"
   focus: [2, 5]
   start_date: "2026-09"
   end_date: "2027-05"   # 估计,进行中
