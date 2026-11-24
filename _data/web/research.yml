@@ -497,3 +497,119 @@
         date: "2026-10"
     bib: ""
     github: "https://github.com/VinkoYang/AR-Beam-Stress-Analysis"
+
+- title: "RADAR: Robotics Assembly by Demonstration via Augmented Reality"
+  image: "research/2024_RADAR.jpg"
+  focus: [3, 4]
+  start_date: "2023-09"
+  end_date: "2024-11"
+  authors:
+    - name: "Wenhao Yang"
+    - name: "Shi Bai"
+    - name: "Yunbo Zhang"
+  keywords:
+    - Human-Robot Collaboration
+    - Augmented Reality
+    - Robotic Assembly
+    - Learning from Demonstration
+    - Task Planning
+  abstract: >
+    High-mix, low-volume manufacturing needs robots that can take on long-horizon assembly tasks, and existing frameworks lack a cross-task structure for human-robot assembly collaboration, which limits their use in complex tasks. In this project, we developed RADAR, a human-robot collaboration system for Robotic Assembly by Demonstration via Augmented Reality (AR). We first designed the conceptual model of the system, including its workflow and components. The system brings human input into robotic metal beam assembly through AR interactions and interfaces. We also developed a task planner that adjusts the division of assembly tasks between the human and the robot at coarse and fine resolutions. We validated RADAR in practical scenarios, including the RAMP assembly benchmark, where human involvement enhanced assembly precision and success rates. Published at IEEE/RSJ IROS 2024.
+  links:
+    paper: "https://ieeexplore.ieee.org/document/10801493"
+    webpage: ""
+    video: []
+    bib: ""
+
+- title: "Kyozo Link: Local Language Model Robot Control Improved by a Coding Agent"
+  image: "research/placeholder.svg"
+  focus: [3, 5]
+  start_date: "2026-10"
+  end_date: "2027-05"   # 估计,进行中
+  authors:
+    - name: "Rafiul Azim Jowarder"
+  mentors:
+    - name: "Wenhao Yang"
+    - name: "James Curry"
+  keywords:
+    - Large Language Models
+    - Coding Agents
+    - Robot Control
+    - Tool Use
+    - Local Deployment
+  abstract: >
+    A small language model running on a local computer can control a robot through natural-language commands, but improving such a system usually means that a developer reads the logs and edits the code by hand. This project studies whether a cloud-hosted coding agent can take over that loop. Kyozo Link, the application developed for this project, runs Qwen3-4B locally through Ollama as the runtime agent and controls a 4-axis Dobot arm and an RGB-D camera through about 23 tools, for commands such as moving, swapping, rotating, and stacking cubes. The runtime model and prompt are kept fixed. After each round, the coding agent reads the run logs and modifies the application code. We then re-test each code version on a fixed set of 20 tasks for success rate and completion time, and an independent camera watcher scores each run. The study records what the agent changed and how each change affected performance. Four code versions have been tested so far, and the cross-version analysis is in progress.
+  links:
+    paper: ""
+    webpage: ""
+    video: []
+    bib: ""
+
+- title: "DRIFT: Drought Refugia Identification for Freshwater Mussels in Texas"
+  image: "research/2026_DRIFT.jpg"
+  focus: [1]
+  start_date: "2026-08"
+  end_date: "2027-05"   # 估计,进行中
+  authors:
+    - name: "Wenhao Yang"
+    - name: "Amrit Silwal"
+  keywords:
+    - Remote Sensing
+    - Freshwater Mussels
+    - Habitat Screening
+    - Landsat
+    - Drought
+  abstract: >
+    Freshwater mussel surveys in Texas are expensive, and field staff find mussels more often when they search stream reaches that keep water during droughts. The Lower Neches Valley Authority (LNVA) asked for a way to use historical imagery to narrow survey areas to sustainable mussel habitat. To answer this request, we are developing DRIFT (Drought Refugia Identification for Freshwater mussels in Texas). Existing surface water products report how often a pixel holds water in each month or year. DRIFT first tags each satellite observation with the flow state of its reach on that date, using USGS gauge records, and then computes water persistence only over the low-flow observations. The ratio of low-flow persistence to normal-flow persistence on the same reach is used as the measure of drought vulnerability. On the Neches mainstem pilot, Landsat (30 m) agreed with Sentinel-2 (10 m) at r = 0.94, which supports the use of the 1984–present Landsat archive. Whether the ratio predicts mussel occurrence is still an open question, since many tributaries are too narrow or too covered by canopy to be measured in the imagery. A student project is building seasonal river channel layers and a 2D and Unity viewer for the results.
+  links:
+    paper: ""
+    webpage: ""
+    video: []
+    bib: ""
+
+- title: "Scripted Virtual Reality Scenes to Support Student Learning and Retention"
+  image: "research/2026_RetentionVR.jpg"
+  focus: [2]
+  start_date: "2025-09"
+  end_date: "2027-05"   # 估计,进行中
+  authors:
+    - name: "Rezwanul Ashraf Ruddro"
+  mentors:
+    - name: "Kirstie Boyett"
+    - name: "Wenhao Yang"
+  keywords:
+    - Virtual Reality
+    - Student Retention
+    - Higher Education
+    - Virtual Avatars
+  abstract: >
+    Students at academic risk often struggle with academic stress, with finding campus resources, and with communicating with instructors and classmates. In this project, we are developing a virtual reality (VR) application with scripted scenes on these situations for a study led by Dr. Kirstie Boyett (Criminal Justice), which is expected to help at-risk students improve their academic performance and retention. The scene content follows a scene design framework written by the study PI. The avatars use scripted dialogue rather than conversation generated by a language model, so that every participant receives the same treatment. Our team builds the VR application, and the PI's team handles the surveys, IRB, and data collection. A walkable classroom scene with a speaking avatar has been completed, and the remaining scenes are in development.
+  links:
+    paper: ""
+    webpage: ""
+    video: []
+    bib: ""
+
+- title: "Spoken Feedback from Small Local Language Models in a Virtual Robotics Laboratory"
+  image: "research/2026_LocalLMFeedback.jpg"
+  focus: [2, 5]
+  start_date: "2026-09"
+  end_date: "2027-05"   # 估计,进行中
+  authors:
+    - name: "Rezwanul Ashraf Ruddro"
+  mentors:
+    - name: "Wenhao Yang"
+    - name: "Xinyu Liu"
+  keywords:
+    - Virtual Reality
+    - Small Language Models
+    - Spoken Feedback
+    - Pedagogical Agents
+    - Engineering Education
+  abstract: >
+    Access to industrial robots in laboratory courses is limited by shared equipment, and one instructor cannot give individual feedback to every student during a session. VR laboratories with conversational agents can give spoken feedback, but most of these agents depend on cloud-hosted language models, which send student speech to external servers. Following our earlier LLM-integrated VR avatar system, this project asks how closely small local models agree with instructors when judging spoken answers, and at what response latency. We developed a VR robotics laboratory in which a pipeline running entirely on one computer transcribes the spoken answer, judges it with a local language model, and replies through speech synthesis. Questions come from a bank organized by topic and Bloom's taxonomy level. In a case study with three robotics graduate students, we plan to compare four local models (Llama 3.2 3B, Qwen 2.5 3B, Gemma 2 2B, and Gemma 3 4B) with key-point coding by two instructors, and to measure latency from answer submission to the onset of the reply.
+  links:
+    paper: ""
+    webpage: ""
+    video: []
+    bib: ""

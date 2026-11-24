@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v3.2.0**（`source` 分支，已发布，2026-11-18）。
+**当前版本：v3.2.1**（`source` 分支，已发布，2026-11-24）。
 
 ## 两份日志，别混
 
@@ -45,6 +45,10 @@ git push origin source --tags
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [3.2.1] - 2026-11-24
+
+**Research 加 5 个项目。** RADAR、Kyozo Link、DRIFT、VR Student Retention、Spoken Feedback from Small Local LMs，各配一个 `published: false` 的占位 post。RADAR 的 bib 加了 `project` 回链。KIT IPEK 卡片因为 ICED27 双盲评审先不放。顺手修了 `research.md` 里「没有图」那条分支的 bug：`</div>` 被 kramdown 转义，导致卡片不闭合。现在没有图时也走 `card_media`，显示通用占位图 `placeholder.svg`。
 
 ### [3.2.0] - 2026-11-18
 

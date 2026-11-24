@@ -8,6 +8,12 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "3.2.1"
+  date: 2026-11-24
+  changes:
+    - "Research now lists five more projects: RADAR (IROS 2024), Kyozo Link on improving a local LLM robot controller with a coding agent, DRIFT for freshwater mussel habitat screening in Texas, scripted VR scenes for student retention, and spoken feedback from small local language models in a virtual robotics lab."
+    - "The RADAR entry on the Publications page now links to its Research card."
+
 - version: "3.2.0"
   date: 2026-11-18
   changes:

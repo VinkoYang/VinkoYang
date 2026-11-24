@@ -78,7 +78,7 @@ description: "Research projects by Wenhao Yang and the XRAI Lab at Lamar Univers
 {% include card_media.html image=item.image alt=item.title %}
   {% endif %}
 {% else %}
-<div class="research-card-h-img-placeholder"><i class="fa-solid fa-flask"></i></div>
+{% include card_media.html image="research/placeholder.svg" alt=item.title %}
 {% endif %}
 </div>
 <div class="research-card-h-body">
