@@ -5,7 +5,6 @@ date: 2026-05-01
 categories: ["Research Projects"]
 tags: ["computer-vision", "machine-learning", "environmental-monitoring", "remote-sensing", "ai-assisted-learning"]
 project_id: ai-identification-and-mapping-of-invasive-aquatic-plants
-published: false
 ---
 
 ## What problem this addresses
