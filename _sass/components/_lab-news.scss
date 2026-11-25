@@ -301,5 +301,8 @@
 
   .post-body {
     p, li { max-width: none; }
+
+    // Research writeups put figures between paragraphs.
+    figure.labnews-gallery-item { margin: var(--space-6) 0; }
   }
 }

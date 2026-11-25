@@ -38,6 +38,12 @@ git push origin source --tags
 
 ## [待发布]
 
+- **5 篇 research 长文上线**(去掉 `published: false`):RADAR、VLA 对抗攻击、VHI、飓风 MR 培训、VST AR 全局标定。正文按「问题 / 方法 / 结果 / 下一步」写，素材来自各自论文/学位论文/海报/PPT。配图 16 张，放在 `images/research/<项目>/`(1600px 宽);RADAR 加了子任务成功率表 Table 1。文中 Figure/Table 引用可跳转(`#fig-N`、`#tab-1`),加了站内(Publications 锚点、互相引用)和外部链接，外链都实测可访问。
+- **修 `<figure>` 渲染。** GFM 会把 figure 里的内容当 markdown 解析，图注被包进 `<p>`,`</figcaption></figure>` 被转义成文字，后一段正文也落进图注变小字。figure 一律加 `markdown="0"`。
+- **研究详情页头部样式**(`_research.scss` 的 `.research-article`):关键词改成灰色 `#tag` 纯文字，和下面的链接按钮拉开距离;作者行修掉逗号前的空格(同列表页的 inline-flex 问题);新增 `.table-caption` 和草稿用的 `mark.todo-flag` 高亮。`_lab-news.scss` 给文中 figure 加上下间距。
+- **MOTION 占位 post** 的 `project_id` 和标题改成与 `research.yml` 一致，否则 `research_post_check` 插件在 `--unpublished` 构建时报错。
+- `research.yml`:飓风 MR 项目摘要 Quest 3 → Quest 3S,修错字 nto → onto。
+
 
 ---
 

@@ -1,10 +1,10 @@
 ---
 layout: research_post
-title: "MOTION: AI-Driven Biomechanical Motion Capture for Augmented Reality Rehabilitation"
+title: "MOTION: Musculoskeletal Optimization and Treatment through Immersive Orthopedic Navigation"
 date: 2026-03-01
 categories: ["Research Projects"]
 tags: ["mixed-reality", "motion-capture", "embodied-interaction", "adaptive-interfaces"]
-project_id: motion-ai-driven-biomechanical-motion-capture-for-augmented-reality-rehabilitation
+project_id: motion-musculoskeletal-optimization-and-treatment-through-immersive-orthopedic-navigation
 published: false
 ---
 

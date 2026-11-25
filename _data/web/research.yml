@@ -302,7 +302,7 @@
     - Hurricane Scenarios
     - Training Simulation
   abstract: >
-    This project develops and evaluates an advanced Mixed Reality (MR) training platform for hurricane and flood response, aimed at enhancing preparedness for both first responders and community members. Built using Unity and deployed on the Meta Quest 3, the system overlays dynamic virtual hazards nto real-world environments.
+    This project develops and evaluates an advanced Mixed Reality (MR) training platform for hurricane and flood response, aimed at enhancing preparedness for both first responders and community members. Built using Unity and deployed on the Meta Quest 3S, the system overlays dynamic virtual hazards onto real-world environments.
   links:
     paper: "mubarik2026mrtraining.pdf"
     webpage: ""
