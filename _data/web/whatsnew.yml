@@ -11,6 +11,11 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "3.3.3"
+  date: 2026-11-24
+  changes:
+    - "Research has a new write-up on identifying invasive aquatic plants with a lightweight image classifier, a senior design project sponsored by the Lower Neches Valley Authority."
+
 - version: "3.3.2"
   date: 2026-11-24
   changes:
