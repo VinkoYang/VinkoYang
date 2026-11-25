@@ -40,10 +40,8 @@
   end_date: "2020-11"
   authors:
     - name: "Wenhao Yang"
-      url: ""
-  mentors:
-    - name: ""
-      url: ""
+    - name: "Qinqin Xiao"
+    - name: "Yunbo Zhang"
   keywords:
     - Human-Robot Interaction
     - Augmented Reality
@@ -64,6 +62,10 @@
   focus: [1, 3]
   start_date: "2019-11"
   end_date: "2021-10"
+  authors:
+    - name: "Wenhao Yang"
+    - name: "Qinqin Xiao"
+    - name: "Yunbo Zhang"
   keywords:
     - Human-Robot Interaction
     - Augmented Reality
@@ -86,6 +88,9 @@
   focus: [1]
   start_date: "2021-5"
   end_date: "2021-11"
+  authors:
+    - name: "Wenhao Yang"
+    - name: "Yunbo Zhang"
   keywords:
     - Augmented Reality
   abstract: >
@@ -102,6 +107,11 @@
   focus: [1]
   start_date: "2021-9"
   end_date: "2021-11"
+  authors:
+    - name: "Chuhua Xian"
+    - name: "Jun Zhang"
+    - name: "Wenhao Yang"
+    - name: "Yunbo Zhang"
   keywords:
     - Augmented Reality
   abstract: >
@@ -154,6 +164,9 @@
   focus: [4]
   start_date: "2021-10"
   end_date: "2023-2"
+  authors:
+    - name: "Wenhao Yang"
+    - name: "Yunbo Zhang"
   keywords:
     - Augmented Reality
     - Calibration
@@ -213,8 +226,8 @@
 - title: "Seeing Isn't Believing: The Vertical-Horizontal Illusion Across Screens and XR Headsets"
   image: "research/2026_Vertical-HorizontalIllusion.jpg"
   focus: [1]
-  start_date: "2026-2"
-  end_date: "2026-3"
+  start_date: "2026-02"
+  end_date: "2026-08"
   authors:
     - name: "Wenhao Yang"
     - name: "Yueqing Li"
@@ -225,7 +238,7 @@
     - Human Computer Interaction 
     - Spatial Perception
   abstract: >
-    The Vertical-Horizontal Illusion (VHI) biases perceived geometric proportions across visual displays. This study introduces the Square Recognition Test (SRT), a unified method to measure perceived squareness across devices. A within-subject study (N = 24) on PC, mobile, and AR HMDs shows a consistent bias toward slightly wider-than-tall rectangles (PSE ≈ 1.02-1.04), indicating device-invariant VHI effects. Two AR variants were compared, and curved-canvas rendering produced lower bias and higher accuracy than flat-canvas AR, pointing to rendering geometry as an actionable lever for perceptual calibration in XR interface design. Accepted to ASME IDETC/CIE 2026 (Houston, TX).
+    The Vertical-Horizontal Illusion (VHI) biases perceived geometric proportions across visual displays. This study introduces the Square Recognition Test (SRT), a unified method to measure perceived squareness across devices. A within-subject study (N = 24) on PC, mobile, and AR HMDs shows a consistent bias toward slightly wider-than-tall rectangles (PSE ≈ 1.02-1.04), suggesting that the VHI magnitude is largely device-invariant for square judgments. Two AR variants were compared, and curved-canvas rendering gave higher accuracy than flat-canvas AR on the same headset, suggesting that rendering geometry may be an actionable lever for perceptual calibration in XR interface design. Presented at ASME IDETC/CIE 2026 (Houston, TX, August 2026).
   links:
     paper: "yang2026seeing.pdf"
     webpage: ""
@@ -302,7 +315,7 @@
     - Hurricane Scenarios
     - Training Simulation
   abstract: >
-    This project develops and evaluates an advanced Mixed Reality (MR) training platform for hurricane and flood response, aimed at enhancing preparedness for both first responders and community members. Built using Unity and deployed on the Meta Quest 3, the system overlays dynamic virtual hazards nto real-world environments.
+    This project develops and evaluates an advanced Mixed Reality (MR) training platform for hurricane and flood response, aimed at enhancing preparedness for both first responders and community members. Built using Unity and deployed on the Meta Quest 3S, the system overlays dynamic virtual hazards onto real-world environments.
   links:
     paper: "mubarik2026mrtraining.pdf"
     webpage: ""
