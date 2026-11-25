@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v3.3.3**（`source` 分支，已发布，2026-11-24）。
+**当前版本：v3.3.4**（`source` 分支，已发布，2026-11-24）。
 
 ## 两份日志，别混
 
@@ -38,14 +38,16 @@ git push origin source --tags
 
 ## [待发布]
 
-- 性能（Research 页 + 首页研究卡片）：去掉 pdf.js。唯一一张 PDF 缩略图 `2025_ICCV_open_vla.pdf` 用 `pdftoppm` 导出首页为 `images/research/2025_ICCV_open_vla.jpg`（900 px，164 KB），`research.yml` 改指向 jpg；`_pages/research.md` 删掉 `.pdf` → `<canvas>` 分支和底部 CDN pdf.js 脚本块，以后研究卡片封面一律用图片。
-- 性能：`card_media.html` 的视频去掉 `autoplay`（浏览器常无视 `preload="none"` 直接下载 autoplay 视频），改为 `data-inview-play`；`site.js` 原 reduced-motion 段改写为 IntersectionObserver（`rootMargin: 200px`），进视口才 `play()`、离开即 `pause()`，reduced-motion 下停在 poster 并给 controls，无 IO 时退回全部播放。`site.min.js` 已重建。headless Chrome 验证：首屏 0 个视频请求，滚到才加载，离开视口暂停，视口内正常播放。
 
 ---
 
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [3.3.4] - 2026-11-24
+
+**研究卡片加载瘦身。** 原来唯一一张 PDF 封面改成导出的 jpg，CDN 上的 pdf.js 删掉了。卡片视频去掉 `autoplay`，改用 IntersectionObserver 控制：滚进视口才播放，滚出去就暂停；访客开了减少动效时只停在 poster 帧。用 headless Chrome 实测，首屏没有任何视频请求。
 
 ### [3.3.3] - 2026-11-24
 
