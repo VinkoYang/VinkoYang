@@ -11,6 +11,11 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "3.3.5"
+  date: 2026-11-25
+  changes:
+    - "Research has a new write-up on Kyozo Link, a robot cell whose control software was written and improved entirely by an AI coding agent, starting from a photo of the arm's nameplate. The project card now links to the public code and development record."
+
 - version: "3.3.4"
   date: 2026-11-24
   changes:
