@@ -43,6 +43,7 @@ git push origin source --tags
 - **研究详情页头部样式**(`_research.scss` 的 `.research-article`):关键词改成灰色 `#tag` 纯文字，和下面的链接按钮拉开距离;作者行修掉逗号前的空格(同列表页的 inline-flex 问题);新增 `.table-caption` 和草稿用的 `mark.todo-flag` 高亮。`_lab-news.scss` 给文中 figure 加上下间距。
 - **MOTION 占位 post** 的 `project_id` 和标题改成与 `research.yml` 一致，否则 `research_post_check` 插件在 `--unpublished` 构建时报错。
 - `research.yml`:飓风 MR 项目摘要 Quest 3 → Quest 3S,修错字 nto → onto。
+- **研究详情页按钮行下方间距。** 链接按钮后面直接接视频框 `.embed-16x9` 或正文 `.post-body`,两者都没有上边距，视频贴着按钮。`.research-article` 下给它们加 `margin-top: var(--space-8)`,连续多个视频之间 `--space-4`。
 
 
 ---

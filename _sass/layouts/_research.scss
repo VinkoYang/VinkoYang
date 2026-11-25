@@ -399,6 +399,17 @@
     gap: var(--space-2);
   }
 
+  // Videos and the body start straight after the link buttons; without
+  // this the player sits flush against them.
+  > .embed-16x9,
+  > .post-body {
+    margin-top: var(--space-8);
+  }
+
+  > .embed-16x9 + .embed-16x9 {
+    margin-top: var(--space-4);
+  }
+
   .post-body {
     figure[id], .table-caption { scroll-margin-top: 5rem; }
 
