@@ -38,6 +38,7 @@ git push origin source --tags
 
 ## [待发布]
 
+- **植物识别长文上线**(去掉 `published: false`)。数字逐个对过期末 slides(第 21、26 页)和 app 截图,ResNet18、SQLite 对过 GitHub 仓库代码。MOTION 仍是空模板，不上线。
 
 ---
 
