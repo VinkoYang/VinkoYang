@@ -46,6 +46,9 @@ git push origin source --tags
 - **研究详情页按钮行下方间距。** 链接按钮后面直接接视频框 `.embed-16x9` 或正文 `.post-body`,两者都没有上边距，视频贴着按钮。`.research-article` 下给它们加 `margin-top: var(--space-8)`,连续多个视频之间 `--space-4`。
 - **第二批 4 篇 research 长文上线**:2020 AR HRI(MSEC 2021)、HAR²bot、VST 可视化误差分析(MSEC 2022)、深度补全与超分辨率(第三作者，写的是 AR 应用部分)。配图 13 张，放在 `images/research/{ar-hri-2020,har2bot,vst-error,depth-completion}/`,2020 和深度补全的图按页面区域裁切以保留矢量标注。四篇和全局标定按研究脉络互链(2020 → HAR²bot → 可视化误差 → 深度补全 / 全局标定),外链实测可访问。
 - `research.yml`:2020 AR HRI、HAR²bot、可视化误差、深度补全、全局标定 5 条按论文补全 `authors`,删掉 2020 那条空的 `mentors` 占位。
+- **VHI 措辞校准。** 长文和 `research.yml` 摘要按论文改准确定性(device-invariant、curved canvas 的结论改成 suggesting / may),补充 VHI 对正方形的含义和 SRT 抽样说明;项目日期改为 2026-02 – 2026-08。
+- **植物识别长文草稿**(仍 `published: false`),配图 2 张在 `images/research/plant-id/`。
+- `whatsnew.yml` 头部注释写明 `date` 是版本首次发布(打 tag)的日期，之后改措辞不动它。
 
 ---
 

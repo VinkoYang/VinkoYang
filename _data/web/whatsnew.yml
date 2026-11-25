@@ -3,6 +3,9 @@
 # Keep entries user-facing (what changed for a visitor), not technical
 # (that detail belongs in CHANGELOG.md at repo root).
 #
+# `date` is the day the version was first released (its tag date).
+# Rewording or fixing an entry later never changes it.
+#
 # - version: "1.0.0"
 #   date: 2026-07-30
 #   changes:
