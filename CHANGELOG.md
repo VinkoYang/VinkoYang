@@ -38,6 +38,8 @@ git push origin source --tags
 
 ## [待发布]
 
+- 性能（Research 页 + 首页研究卡片）：去掉 pdf.js。唯一一张 PDF 缩略图 `2025_ICCV_open_vla.pdf` 用 `pdftoppm` 导出首页为 `images/research/2025_ICCV_open_vla.jpg`（900 px，164 KB），`research.yml` 改指向 jpg；`_pages/research.md` 删掉 `.pdf` → `<canvas>` 分支和底部 CDN pdf.js 脚本块，以后研究卡片封面一律用图片。
+- 性能：`card_media.html` 的视频去掉 `autoplay`（浏览器常无视 `preload="none"` 直接下载 autoplay 视频），改为 `data-inview-play`；`site.js` 原 reduced-motion 段改写为 IntersectionObserver（`rootMargin: 200px`），进视口才 `play()`、离开即 `pause()`，reduced-motion 下停在 poster 并给 controls，无 IO 时退回全部播放。`site.min.js` 已重建。headless Chrome 验证：首屏 0 个视频请求，滚到才加载，离开视口暂停，视口内正常播放。
 
 ---
 

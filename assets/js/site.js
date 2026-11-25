@@ -495,17 +495,37 @@
 })();
 
 // ---------------------------------------------------------------
-// Reduced motion — research-card videos (converted from GIFs) autoplay by
-// default; for visitors who ask for less motion, stop them on the poster
-// frame and expose native controls so they can still play on demand.
+// Research-card videos (converted from GIFs, see card_media.html) carry no
+// autoplay attribute so offscreen ones are not downloaded. Play each one only
+// while it is in (or near) the viewport and pause it when it leaves. Visitors
+// who ask for less motion get the poster frame plus native controls instead.
 // ---------------------------------------------------------------
 (function () {
-  if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  document.querySelectorAll('video[autoplay]').forEach(function (v) {
-    v.removeAttribute('autoplay');
-    v.pause();
-    v.controls = true;
-  });
+  var videos = document.querySelectorAll('video[data-inview-play]');
+  if (!videos.length) return;
+
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    videos.forEach(function (v) { v.controls = true; });
+    return;
+  }
+
+  function play(v) {
+    var p = v.play();
+    if (p && p.catch) p.catch(function () {});
+  }
+
+  if (!('IntersectionObserver' in window)) {
+    videos.forEach(play);
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) play(e.target);
+      else e.target.pause();
+    });
+  }, { rootMargin: '200px 0px' });
+  videos.forEach(function (v) { io.observe(v); });
 })();
 
 // ---------------------------------------------------------------
