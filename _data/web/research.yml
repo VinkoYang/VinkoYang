@@ -535,9 +535,9 @@
     bib: ""
 
 - title: "Kyozo Link: Local Language Model Robot Control Improved by a Coding Agent"
-  image: "research/placeholder.svg"
+  image: "research/2026_KyozoLink.jpg"
   focus: [3, 5]
-  start_date: "2026-10"
+  start_date: "2026-09"
   end_date: "2027-05"   # 估计,进行中
   authors:
     - name: "Rafiul Azim Jowarder"
@@ -547,16 +547,18 @@
   keywords:
     - Large Language Models
     - Coding Agents
+    - AI-Written Software
     - Robot Control
-    - Tool Use
+    - Digital Twin
     - Local Deployment
   abstract: >
-    A small language model running on a local computer can control a robot through natural-language commands, but improving such a system usually means that a developer reads the logs and edits the code by hand. This project studies whether a cloud-hosted coding agent can take over that loop. Kyozo Link, the application developed for this project, runs Qwen3-4B locally through Ollama as the runtime agent and controls a 4-axis Dobot arm and an RGB-D camera through about 23 tools, for commands such as moving, swapping, rotating, and stacking cubes. The runtime model and prompt are kept fixed. After each round, the coding agent reads the run logs and modifies the application code. We then re-test each code version on a fixed set of 20 tasks for success rate and completion time, and an independent camera watcher scores each run. The study records what the agent changed and how each change affected performance. Four code versions have been tested so far, and the cross-version analysis is in progress.
+    This case study asks whether AI can write and then improve the software for a robot cell. Starting from a photo of the arm's nameplate and the project goals, Claude, working through Claude Code, wrote every line of Kyozo Link, an application that turns typed requests into actions on a worn Dobot Magician with a single depth camera. At run time, Qwen3-4B runs locally on a laptop CPU and plans each request as a short program over 25 tested tools. A separately coded watcher with no language model scores each run, and a PyBullet digital twin runs the same code before each release. A working application took six weeks, and the code grew to about 66,000 lines and 880 tests. A baseline round and three AI-made updates passed 50%, 20%, 60%, and 65% of 20 chained tasks on the real arm in single runs, while the twin passed 90% to 100% for the last three versions. The twin, built from the specification, could not detect the worn equipment that the watcher's records exposed. No person reviewed the code line by line, and the study describes the behavioral checks used in its place and one fault they missed for three rounds. The paper was submitted to IEEE GECA 2027.
   links:
     paper: ""
     webpage: ""
     video: []
     bib: ""
+    github: "https://github.com/jowarder/kyozo-link-dobot-magician"
 
 - title: "DRIFT: Drought Refugia Identification for Freshwater Mussels in Texas"
   image: "research/2026_DRIFT.jpg"

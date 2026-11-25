@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v3.3.4**（`source` 分支，已发布，2026-11-24）。
+**当前版本：v3.3.5**（`source` 分支，已发布，2026-11-25）。
 
 ## 两份日志，别混
 
@@ -38,12 +38,15 @@ git push origin source --tags
 
 ## [待发布]
 
-
 ---
 
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [3.3.5] - 2026-11-25
+
+**Kyozo Link 长文上线。** 正文依据 2026-10-30 投 IEEE GECA 2027 的终稿 "Building Robot Arm Control Software from Nameplate Context via Working Code Iterations",顶部嵌 LinkedIn 演示视频(iframe 写在 post 里，没进 `links.video`:`videos.rb` 只认 YouTube,而且会顶掉 Lab 页 Recent Research 卡片)。三张图在 `images/research/kyozo-link/`。四轮结果按单次运行的描述性结果写，注明 Wilson 区间重叠。作者分工按用户更正：Yang 从一开始参与 robotics 部分，不是中途加入；论文里的顾问工时不上网页。**`research.yml` 按终稿改写 Kyozo Link 条目：** 新摘要(25 个 tool、四轮已完成、AI 写全部代码),start_date 改 2026-09,封面换成实验台照片 `2026_KyozoLink.jpg`,加 `github` 链到 jowarder/kyozo-link-dobot-magician,关键词加 AI-Written Software、Digital Twin。
 
 ### [3.3.4] - 2026-11-24
 
