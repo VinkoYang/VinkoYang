@@ -7,7 +7,7 @@
 - **Y（minor）**：某个页面/模块的调整或新功能，不影响整体结构。例：CV 界面调整、新增一个 section、样式改版。
 - **X（major）**：页面结构或站点架构重大调整。例：导航结构重排、数据模型迁移、换主题。
 
-**当前版本：v3.3.1**（`source` 分支，已发布，2026-11-24）。
+**当前版本：v3.3.2**（`source` 分支，已发布，2026-11-24）。
 
 ## 两份日志，别混
 
@@ -38,23 +38,16 @@ git push origin source --tags
 
 ## [待发布]
 
-- **5 篇 research 长文上线**(去掉 `published: false`):RADAR、VLA 对抗攻击、VHI、飓风 MR 培训、VST AR 全局标定。正文按「问题 / 方法 / 结果 / 下一步」写，素材来自各自论文/学位论文/海报/PPT。配图 16 张，放在 `images/research/<项目>/`(1600px 宽);RADAR 加了子任务成功率表 Table 1。文中 Figure/Table 引用可跳转(`#fig-N`、`#tab-1`),加了站内(Publications 锚点、互相引用)和外部链接，外链都实测可访问。
-- **修 `<figure>` 渲染。** GFM 会把 figure 里的内容当 markdown 解析，图注被包进 `<p>`,`</figcaption></figure>` 被转义成文字，后一段正文也落进图注变小字。figure 一律加 `markdown="0"`。
-- **研究详情页头部样式**(`_research.scss` 的 `.research-article`):关键词改成灰色 `#tag` 纯文字，和下面的链接按钮拉开距离;作者行修掉逗号前的空格(同列表页的 inline-flex 问题);新增 `.table-caption` 和草稿用的 `mark.todo-flag` 高亮。`_lab-news.scss` 给文中 figure 加上下间距。
-- **MOTION 占位 post** 的 `project_id` 和标题改成与 `research.yml` 一致，否则 `research_post_check` 插件在 `--unpublished` 构建时报错。
-- `research.yml`:飓风 MR 项目摘要 Quest 3 → Quest 3S,修错字 nto → onto。
-- **研究详情页按钮行下方间距。** 链接按钮后面直接接视频框 `.embed-16x9` 或正文 `.post-body`,两者都没有上边距，视频贴着按钮。`.research-article` 下给它们加 `margin-top: var(--space-8)`,连续多个视频之间 `--space-4`。
-- **第二批 4 篇 research 长文上线**:2020 AR HRI(MSEC 2021)、HAR²bot、VST 可视化误差分析(MSEC 2022)、深度补全与超分辨率(第三作者，写的是 AR 应用部分)。配图 13 张，放在 `images/research/{ar-hri-2020,har2bot,vst-error,depth-completion}/`,2020 和深度补全的图按页面区域裁切以保留矢量标注。四篇和全局标定按研究脉络互链(2020 → HAR²bot → 可视化误差 → 深度补全 / 全局标定),外链实测可访问。
-- `research.yml`:2020 AR HRI、HAR²bot、可视化误差、深度补全、全局标定 5 条按论文补全 `authors`,删掉 2020 那条空的 `mentors` 占位。
-- **VHI 措辞校准。** 长文和 `research.yml` 摘要按论文改准确定性(device-invariant、curved canvas 的结论改成 suggesting / may),补充 VHI 对正方形的含义和 SRT 抽样说明;项目日期改为 2026-02 – 2026-08。
-- **植物识别长文草稿**(仍 `published: false`),配图 2 张在 `images/research/plant-id/`。
-- `whatsnew.yml` 头部注释写明 `date` 是版本首次发布(打 tag)的日期，之后改措辞不动它。
 
 ---
 
 ## 历史版本
 
 从 fork 模板改成自己站点内容起(2026-06-11)算起，追溯自动归版。每版一段简要总结，细节改动看对应 commit。
+
+### [3.3.2] - 2026-11-24
+
+**9 篇研究长文上线。** 第一批 5 篇：RADAR、VLA 对抗攻击、VHI、飓风 MR 培训、VST 全局标定；第二批 4 篇:2020 AR HRI、HAR²bot、VST 可视化误差、深度补全。共 29 张配图，放在 `images/research/<项目>/`。Figure/Table 引用可跳转，文章之间按研究脉络互链。VHI 按论文改了确定性措辞。`research.yml` 补了 5 条 `authors`,修了飓风项目的设备名和错字。**详情页样式。** figure 一律加 `markdown="0"`,避免图注被 GFM 转义；关键词改成灰色 `#tag`;按钮下方的视频和正文加了上边距。MOTION 占位 post 的 `project_id` 对齐 `research.yml`。植物识别长文仍是草稿。
 
 ### [3.3.1] - 2026-11-24
 

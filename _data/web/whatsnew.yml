@@ -11,6 +11,13 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "3.3.2"
+  date: 2026-11-24
+  changes:
+    - "Nine Research projects now open a full write-up with figures: RADAR, adversarial attacks on vision-language-action models, the vertical-horizontal illusion across screens and XR headsets, mixed reality training for hurricane first responders, global calibration for VST AR, and four earlier papers on AR human-robot interaction (2020–2022)."
+    - "In a write-up, figure and table references jump to the figure. Related write-ups link to each other and to their entries on Publications."
+    - "Write-up pages have a simpler header, with keywords shown as plain tags, and more space between the link buttons, videos, and text."
+
 - version: "3.3.1"
   date: 2026-11-24
   changes:
