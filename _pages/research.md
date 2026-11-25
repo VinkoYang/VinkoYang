@@ -75,11 +75,7 @@ description: "Research projects by Wenhao Yang and the XRAI Lab at Lamar Univers
 <article class="research-row" id="{{ card_id }}" data-research-searchable data-keywords="{{ kw_joined | downcase }}" data-focus="{{ focus_joined }}" data-start-year="{{ card_start_yr }}" data-end-year="{{ card_end_yr }}">
 <div class="research-row-cover">
 {% if item.image and item.image != "" %}
-  {% if item.image contains ".pdf" %}
-<canvas class="research-card-pdf" data-pdf="{{ site.url }}{{ site.baseurl }}/images/{{ item.image }}"></canvas>
-  {% else %}
 {% include card_media.html image=item.image alt=item.title %}
-  {% endif %}
 {% else %}
 {% include card_media.html image="research/placeholder.svg" alt=item.title %}
 {% endif %}
@@ -195,34 +191,6 @@ description: "Research projects by Wenhao Yang and the XRAI Lab at Lamar Univers
   document.addEventListener('click', function () {
     document.querySelectorAll('.research-dropdown-menu').forEach(function (m) { m.classList.remove('open'); });
     document.querySelectorAll('.research-dropdown-btn').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
-  });
-})();
-</script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-<script>
-(function () {
-  var PDFJS = window['pdfjs-dist/build/pdf'];
-  PDFJS.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-
-  document.querySelectorAll('canvas.research-card-pdf[data-pdf]').forEach(function (canvas) {
-    var url = canvas.getAttribute('data-pdf');
-    var dpr = window.devicePixelRatio || 1;
-    PDFJS.getDocument(url).promise.then(function (pdf) {
-      return pdf.getPage(1);
-    }).then(function (page) {
-      var container = canvas.parentElement;
-      var w = container.offsetWidth || 240;
-      var h = container.offsetHeight || 180;
-      var viewport = page.getViewport({ scale: 1 });
-      var scale = Math.max(w / viewport.width, h / viewport.height) * dpr;
-      var scaled = page.getViewport({ scale: scale });
-      canvas.width = scaled.width;
-      canvas.height = scaled.height;
-      canvas.style.width = (scaled.width / dpr) + 'px';
-      canvas.style.height = (scaled.height / dpr) + 'px';
-      page.render({ canvasContext: canvas.getContext('2d'), viewport: scaled });
-    }).catch(function () {});
   });
 })();
 </script>

@@ -11,6 +11,11 @@
 #   changes:
 #     - "Short, visitor-facing description of the change."
 
+- version: "3.3.4"
+  date: 2026-11-24
+  changes:
+    - "Research and the home page load less up front. Project videos now download and play only when you scroll to them, and pause when you scroll past. One research cover that was drawn from a PDF is now a plain image."
+
 - version: "3.3.3"
   date: 2026-11-24
   changes:
